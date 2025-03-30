@@ -1,0 +1,250 @@
+.header-container {
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    border-block-end: 1px solid #e5e5e7;
+    background-color: #fff;
+    transition: background-color .6s, border-color .6s;
+    container-type: inline-size;
+  
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: transparent;
+      padding-block: 16px;
+  
+      .logo-container {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+  
+      .logo {
+        font-family: Macan-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 1000;
+        font-size: 2.375rem;
+        letter-spacing: -0.175rem;
+        color: rgb(64, 65, 69);
+        text-shadow: 1px 0px rgb(64, 65, 69);
+        display: inline-flex;
+        align-items: flex-end;
+        cursor: pointer;
+      
+      
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgb(29, 191, 115);
+            margin-left: 4px;
+            transform: translateY(-3px); /* תעלה אותה טיפה שיהיה מיושר */
+        }
+          
+      }
+      
+  
+      .searchbar-container {
+        display: flex;
+        width: 100%;
+        height: 2.625em;
+        margin-inline: 2em;
+  
+        .search-bar-filter-form {
+          width: min(100%, 34.375em);
+          display: flex;
+  
+          input.search-bar {
+            font-size: 1rem;
+            width: min(100%, 34.375em);
+            height: 100%;
+            padding: 10px 2px 10px 16px;
+            border: 1px solid #e5e5e7;
+            border-inline-end: 0;
+            border-top-left-radius: .3125em;
+            border-bottom-left-radius: .3125em;
+            outline: 0;
+          }
+  
+          .search-icon {
+            background-color: #222325;
+            transition: background-color .2s;
+          }
+          
+        }
+      }
+  
+      .links-container {
+        display: flex;
+        align-items: center;
+  
+        .btn {
+          margin-inline-end: 1.5em;
+          font-size: 1rem;
+          line-height: 1.5em;
+          font-weight: 700;
+          color: #62646a;
+          transition: .2s color;
+  
+          &:hover {
+            color: rgb(29, 191, 115);
+          }
+        }
+  
+        .btn:last-child {
+          border: 1px solid rgb(29, 191, 115);
+          padding: 6px 14px;
+          border-radius: 4px;
+          color: rgb(29, 191, 115);
+          transition: all 0.3s;
+  
+          &:hover {
+            background-color: rgb(29, 191, 115);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  
+
+
+// .header-container {
+//     position: fixed;
+//     top: 0px;
+//     z-index: 20;
+//     width: 100%;
+//     background-color: $clr6;
+//     container-type: inline-size;
+//     border-block-end: 1px solid $clr5;
+//     transition: background-color 0.6s, border-color 0.6s;
+
+//     .app-header {
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         background-color: transparent;
+//         padding-block: 16px;
+//         // padding-inline: 2rem;
+
+//         .logo-container {
+//             display: flex;
+//             align-items: center;
+//         } 
+
+//         .hamburger-icon {
+//             display: none;
+//             font-size: 1.375rem;
+//             padding-block-start: 0.5rem;
+//             margin-inline-end: 0.9375rem;
+//         }
+//         .logo {
+//             font-family: Macan-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+//             font-weight: 1000;
+//             font-size: 2.375rem;
+//             letter-spacing: -0.175rem;
+//             color: rgb(64, 65, 69);
+//             text-shadow: rgb(64, 65, 69) 1px 0px;
+//             cursor: pointer;
+
+//             .dot {
+//                 color: rgb(29, 191, 115);
+//                 text-shadow: 0px 0px;
+//             }
+//         }
+
+//         .searchbar-container {
+//             display: flex;
+//             width: 100%;
+//             height: 2.625em;
+//             margin-inline: 2em;
+
+//             .btn.search-icon {
+//                 background-color: rgb(34, 35, 37);
+//                 transition: background-color 0.2s;
+//             }
+//         }
+
+//         .search-bar-filter-form {
+//             width: min(100%, 34.375em);
+//             display: flex;
+//         }
+
+//         .links-container {
+//             display: flex;
+//             align-items: center;
+//             width: 10px;
+//         }
+
+//         .links-container {
+//             display: flex;
+//             align-items: center;
+//             gap: 1.5rem; // ריווח בין הקישורים
+//         }
+        
+//     }
+// }
+
+
+// .app-header {
+//     display: flex;
+//     min-height: 3.5rem;
+
+//     background-color: $clr4;
+//     padding: rem(10px) 1rem;
+    
+//     nav {
+//         display: flex;
+//         width: 100%;
+//         align-items: center;
+//         gap: 1em;
+        
+//         font-size: .8em;
+
+//         .active {
+//             color: $clr1;
+//         }
+
+//         .logo {
+//             font-size: 1.4em;
+//             font-weight: bold;
+//             margin-inline-end: 2em;
+//         }
+
+//         .login-link {
+//             margin-inline-start: auto;
+//         }
+
+//         button {
+//             margin-inline-end: 0;
+//         }
+//     }
+
+//     .user-info {
+//         display: flex;
+//         align-items: center;
+//         margin-inline-start: auto;
+
+//         color: $clr1;
+
+//         .score {
+//             padding: 8px;
+//             background-color: $clr2;
+//             border-radius: 50%;
+//             margin: 10px;
+
+//             color: $clr6;
+//         }
+
+//         img {
+//             width: 32px;
+//             aspect-ratio: 1;
+//             border-radius: 50%;
+//         }
+        
+//         .btn-link {
+//             color: $clr2;
+//         }
+//     }
+// }

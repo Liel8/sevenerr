@@ -1,0 +1,90 @@
+.app-footer-container {
+
+  .app-footer {
+    font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+    background: none;
+    padding: .8rem;
+    margin-block-start: .5rem;
+    justify-content: space-between;
+    color: #7a7d85;
+
+    .left {
+      padding-block: .8rem;
+      justify-content: left;
+      align-items: center;
+
+      .sixerr-logo {
+        font-family: Macan-bold, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-weight: 1000;
+        font-size: 2.375rem;
+        letter-spacing: -.175rem;
+        color: #7a7d85;
+        text-shadow: 1px 0 #7a7d85;
+        cursor: pointer;
+        font-size: 1.875rem;
+        letter-spacing: -.125rem;
+        cursor: context-menu;
+      }
+      .p {
+        margin-inline-start: 24px;
+      }
+  }
+    .right {
+      padding-block: .8rem;
+      justify-content: right;
+      align-self: center;
+    }
+  }
+}
+
+.empty {
+  color: #b2b2b2;
+  font-size: 14px;
+}
+
+.main-layout>*:not(.full) {
+  grid-column: 2;
+}
+
+.with-border-top {
+  border-top: 1px solid #dadbdd;
+}
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+// .app-footer{
+//     display: flex;
+//     align-items: center;
+//     justify-content:space-between;
+
+//     min-height: 3.5rem;
+
+//     padding: rem(10px) 1rem;
+//     background-color: $clr4;
+
+//     p {
+//         margin: 0;
+//     }
+//     .social-icons {
+//         display: flex;
+//         gap: 15px; 
+//         align-items: center;
+    
+//         a.icon-link {
+//           font-size: 1.4rem;
+//           color: #555;
+//           transition: color 0.3s, transform 0.2s;
+    
+//           &:hover {
+//             transform: scale(1.1);
+//           }
+//         }
+//       }
+
+// }
+
+
+
