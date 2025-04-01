@@ -28,22 +28,22 @@ export function GigPreview({ gig }) {
                 <span className="gig-price">From ${gig.price}</span>
             </div>
 
-            {/* תיאור הגיג */}
-            <div className="gig-description">
+           
+            {/* <div className="gig-description">
                 <p>{gig.about}</p>
-            </div>
+            </div> */}
 
-            {/* תגיות */}
+            {/* תגיות
             {gig.tags?.length > 0 && (
                 <ul className="tags">
                     {gig.tags.map((tag, index) => (
                         <li key={index} className="tag">{tag}</li>
                     ))}
                 </ul>
-            )}
+            )} */}
 
             {/* ביקורות */}
-            {gig.reviews?.length > 0 && (
+            {/* {gig.reviews?.length > 0 && (
                 <div className="reviews">
                     {gig.reviews.map((review, index) => (
                         <div key={index} className="review">
@@ -56,7 +56,7 @@ export function GigPreview({ gig }) {
                         </div>
                     ))}
                 </div>
-            )}
+            )} */}
         </li>
     );
 }

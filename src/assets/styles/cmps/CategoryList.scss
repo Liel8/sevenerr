@@ -1,0 +1,186 @@
+// /* סגנון כללי ל-container של רשימת הקטגוריות */
+// .category-list {
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     padding: 20px 0;
+//   }
+  
+//   /* סגנון הרשימה עם אפשרות לעטוף (wrap) את הפריטים */
+//   .category-list ul {
+//     list-style-type: none;
+//     display: flex;
+//     flex-wrap: wrap; /* מאפשר מעבר שורה */
+//     gap: 16px; /* ריווח בין הפריטים */
+//     margin: 0;
+//     padding: 0;
+//   }
+  
+//   /* עיצוב לכל פריט ברשימה (כל קטגוריה) */
+//   .category-list li {
+//     background-color: #fff;
+//     border: 1px solid #ddd;
+//     border-radius: 8px;
+//     flex: 0 1 140px;  /* רוחב התחלתי 140px, עם אפשרות התרחבות */
+//     padding: 16px;
+//     text-align: center;
+//     transition: box-shadow 0.3s ease;
+//     cursor: pointer;
+//   }
+  
+//   /* אפקט רחף (hover) להדגשה */
+//   .category-list li:hover {
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//   }
+  
+//   /* עיצוב האייקון (התמונה) בכל קטגוריה */
+//   .category-list li img {
+//     width: 32px;
+//     height: 32px;
+//     margin-bottom: 8px;
+//   }
+  
+//   /* עיצוב הכותרת (שם הקטגוריה) */
+//   .category-list li h3 {
+//     margin: 0;
+//     font-size: 14px;
+//     color: #333;
+//     font-weight: 500;
+//   }
+  
+//   /* קישור ללא עיצוב ברירת מחדל */
+//   .category-list li a {
+//     text-decoration: none;
+//     color: inherit;
+//     display: block;
+//   }
+  
+//   /* Media Queries להתאמה לרזולוציות שונות */
+  
+//   /* במסכים עד 768px נרצה להציג שני עמודות */
+//   @media (max-width: 768px) {
+//     .category-list li {
+//       flex: 0 1 calc(50% - 16px); /* שני פריטים בשורה עם מרווח */
+//     }
+//   }
+  
+//   /* במסכים עד 480px נרצה שהפריט יתפוס את כל השורה */
+//   @media (max-width: 480px) {
+//     .category-list li {
+//       flex: 0 1 calc(100% - 16px); /* פריט אחד בשורה */
+//     }
+//   }
+  
+
+/* עיצוב הקונטיינר הכללי */
+.category-list {
+    max-width: 1200px; /* אפשר לשנות בהתאם לעיצוב שלך */
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+  
+  /* עיצוב הרשימה */
+  .category-list ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* Flex מאפשר לפריטים להיות בשורה, ו-flex-wrap מאפשר להם לרדת שורה אם לא נכנס */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; /* רווח אופקי/אנכי בין הקטגוריות */
+  
+    /* אופציונלי: אם רוצים את כולם מיושרים במרכז */
+    justify-content: center;
+  }
+  
+  /* עיצוב הפריט ברשימה - כל כרטיס קטגוריה */
+  .category-list li {
+    width: 120px;                /* גודל אחיד לכרטיס */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 14px;
+    // text-align: center;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* אפקט רחף (hover) */
+  .category-list li:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* עיצוב האייקון (התמונה) */
+  .category-list li img {
+    width: 32px;
+    height: 32px;
+    // margin: 0 auto 8px; /* מרכז אופקית, עם 8px למטה */
+    margin-bottom: 2px;
+    display: block;
+    
+  }
+  
+  /* עיצוב כותרת הקטגוריה */
+  .category-list li h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  /* קישור ללא עיצוב דיפולטי */
+  .category-list li a {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* כדי שכל הכרטיס יהיה לחיץ */
+  }
+  
+// .category-list {
+//     max-width: 1200px;
+//     margin: 0 auto;
+//     padding: 20px 0;
+//     overflow-x: auto; /* מאפשר גלילה אופקית אם אין מספיק מקום */
+//   }
+  
+//   .category-list ul {
+//     list-style-type: none;
+//     margin: 0;
+//     padding: 0;
+//     display: flex;
+//     flex-wrap: nowrap; /* מונע מעבר שורה – כולם בשורה אחת */
+//     gap: 12px; /* מרווח בין הכרטיסים */
+//   }
+  
+//   .category-list li {
+//     width: 100px; /* הקטנה מהגדלים הקודמים */
+//     background-color: #fff;
+//     border: 1px solid #ddd;
+//     border-radius: 8px;
+//     padding: 8px;  /* הקטנה של המרווח הפנימי */
+//     text-align: center;
+//     transition: box-shadow 0.3s ease;
+//     cursor: pointer;
+//   }
+  
+//   .category-list li:hover {
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//   }
+  
+//   .category-list li img {
+//     width: 24px;   /* הקטנת האייקון */
+//     height: 24px;
+//     margin-bottom: 4px;
+//   }
+  
+//   .category-list li h3 {
+//     margin: 0;
+//     font-size: 12px;  /* גודל טקסט קטן יותר */
+//     color: #333;
+//     font-weight: 500;
+//   }
+  
+//   .category-list li a {
+//     text-decoration: none;
+//     color: inherit;
+//     display: block;
+//   }
+  

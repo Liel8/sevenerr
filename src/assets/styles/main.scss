@@ -17,14 +17,14 @@
 
 @import "pages/AboutUs";
 // @import "pages/HomePage";
-@import "pages/CarIndex";
+@import "pages/GigIndex.scss";
 @import "pages/ReviewIndex";
 @import "pages/UserDetails";
 @import "pages/TaskDetails";
 @import "pages/LoginSignup";
 
 // Components
-@import "cmps/list";
+// @import "cmps/list";
 @import "cmps/preview";
 
 @import "cmps/AppHeader";
@@ -35,5 +35,10 @@
 @import "cmps/ReviewEdit";
 @import "cmps/ReviewList";
 @import "cmps/ReviewPreview";
+
+@import "cmps/CategoryList.scss";
+
+@import "cmps/GigList.scss";
+@import "cmps/GigPreview.scss"
 // @import "cmps/CarList";
 // @import "cmps/CarPreview";

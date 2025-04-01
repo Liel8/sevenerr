@@ -1,57 +1,102 @@
 
 import { storageService } from '../async-storage.service'
-import { makeId } from '../util.service'
+import { loadFromStorage, makeId, saveToStorage } from '../util.service'
 import { userService } from '../user'
-import { gigs } from '../../assets/data/gigData.js'
+import {  gigs } from '../../assets/data/gigData.js'
 
 
-const STORAGE_KEY = 'gig'
+
+const STORAGE_KEY = 'gigDB'
+_createGigs()
 
 export const gigService = {
     query,
     getById,
     save,
     remove,
-    addGigMsg
+    addGigMsg, 
+    getFilterFromParams,
+    getDefaultFilter
 }
 window.cs = gigService
 
 async function query(filterBy = { txt: '', maxPrice: Infinity, sortField: 'title', sortDir: 1, category: '' }) {
-    let gigs = await storageService.query(STORAGE_KEY) || demoGigs;
+
+        let gigs = loadFromStorage(STORAGE_KEY)
+        console.log('gigsss', gigs);
+        
+
     const { txt, maxPrice, sortField, sortDir, category } = filterBy;
 
     // סינון לפי קטגוריה - השוואה ללא תלות במקרה (case-insensitive)
     if (category) {
-        gigs = gigs.filter(gig => gig.category.toLowerCase() === category.toLowerCase());
+
+        console.log('*****************');
+        console.log('inside if in query:', category);
+        
+        
+        
+        gigs = gigs.filter(gig => gig.category.includes(category));
     }
 
-    // סינון לפי טקסט (מבצע חיפוש גם ב-title, ב-about וגם בשם הבעלים)
-    if (txt) {
-        const regex = new RegExp(txt, 'i');
-        gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.about) || regex.test(gig.owner.fullname));
-    }
+    // // סינון לפי טקסט (מבצע חיפוש גם ב-title, ב-about וגם בשם הבעלים)
+    // if (txt) {
+    //     const regex = new RegExp(txt, 'i');
+    //     gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.about) || regex.test(gig.owner.fullname));
+    // }
 
-    gigs = gigs.filter(gig => gig.price <= maxPrice);
+    // gigs = gigs.filter(gig => gig.price <= maxPrice);
 
-    // מיון לפי שדות
-    if (sortField === 'title' || sortField === 'owner.fullname') {
-        gigs.sort((gig1, gig2) => 
-            gig1[sortField.split('.').reduce((o, i) => o[i], gig1)]
-            .localeCompare(gig2[sortField.split('.').reduce((o, i) => o[i], gig2)]) * +sortDir
-        );
-    }
-    if (sortField === 'price') {
-        gigs.sort((gig1, gig2) => (gig1.price - gig2.price) * +sortDir);
-    }
+    // // מיון לפי שדות
+    // if (sortField === 'title' || sortField === 'owner.fullname') {
+    //     gigs.sort((gig1, gig2) => 
+    //         gig1[sortField.split('.').reduce((o, i) => o[i], gig1)]
+    //         .localeCompare(gig2[sortField.split('.').reduce((o, i) => o[i], gig2)]) * +sortDir
+    //     );
+    // }
+    // if (sortField === 'price') {
+    //     gigs.sort((gig1, gig2) => (gig1.price - gig2.price) * +sortDir);
+    // }
 
-    // מיפוי התוצאה כך שיכלול את השדות הנדרשים, כולל את ה-"about"
-    gigs = gigs.map(({ _id, title, price, owner, category, imgUrl, about }) => ({
-        _id, title, price, owner: owner.fullname, category, imgUrl, about
-    }));
+    // // מיפוי התוצאה כך שיכלול את השדות הנדרשים, כולל את ה-"about"
+    // gigs = gigs.map(({ _id, title, price, owner, category, imgUrl, about }) => ({
+    //     _id, title, price, owner: owner.fullname, category, imgUrl, about
+    // }));
 
+    console.log(gigs);
+    
     return gigs;
 }
 
+function _createGigs() {
+    var gigsList = loadFromStorage(STORAGE_KEY)
+
+    if (!gigsList || !gigsList.length) {
+        gigsList = gigs
+        }
+        saveToStorage(STORAGE_KEY, gigs)
+    }
+
+function getFilterFromParams(searchParams, category) {
+    console.log('<><><><><>');
+    console.log(searchParams.get('category'));
+    
+    
+    return {
+        minPrice: searchParams.get('minPrice') || 0,
+        category
+
+    }
+}
+
+function getDefaultFilter() {
+        
+    return {
+        minPrice: 0,
+        category: ''
+
+    }
+}
 
 // async function query(filterBy = { txt: '', maxPrice: Infinity, sortField: 'title', sortDir: 1, category: '' }) {
 //     let gigs = await storageService.query(STORAGE_KEY) || demoGigs;

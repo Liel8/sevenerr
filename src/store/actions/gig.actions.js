@@ -1,4 +1,4 @@
-import { gigService } from '../../services/gig'
+import { gigService } from '../../services/gig/gig.service.local'
 import { store } from '../store'
 import { ADD_GIG, REMOVE_GIG, SET_GIGS, SET_GIG, UPDATE_GIG, ADD_GIG_MSG } from '../reducers/gig.reducer'
 
@@ -101,6 +101,17 @@ function getCmdAddGigMsg(msg) {
     return {
         type: ADD_GIG_MSG,
         msg
+    }
+}
+
+export async function setFilterBy(filterBy) {
+    try {
+        dispatch({
+         type: SET_FILTER, filterBy
+        })
+    } catch (err) {
+        console.log('Cannot set filter', err)
+        throw err
     }
 }
 

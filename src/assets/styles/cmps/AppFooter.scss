@@ -1,90 +1,175 @@
-.app-footer-container {
+// .app-footer-container {
+//   display: flex;
+//   justify-content: space-around;
+//   flex-wrap: nowrap;
+  
 
-  .app-footer {
-    font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
-    background: none;
-    padding: .8rem;
-    margin-block-start: .5rem;
-    justify-content: space-between;
-    color: #7a7d85;
-
-    .left {
-      padding-block: .8rem;
-      justify-content: left;
-      align-items: center;
-
-      .sixerr-logo {
-        font-family: Macan-bold, Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-weight: 1000;
-        font-size: 2.375rem;
-        letter-spacing: -.175rem;
-        color: #7a7d85;
-        text-shadow: 1px 0 #7a7d85;
-        cursor: pointer;
-        font-size: 1.875rem;
-        letter-spacing: -.125rem;
-        cursor: context-menu;
-      }
-      .p {
-        margin-inline-start: 24px;
-      }
-  }
-    .right {
-      padding-block: .8rem;
-      justify-content: right;
-      align-self: center;
-    }
-  }
-}
-
-.empty {
-  color: #b2b2b2;
-  font-size: 14px;
-}
-
-.main-layout>*:not(.full) {
-  grid-column: 2;
-}
-
-.with-border-top {
-  border-top: 1px solid #dadbdd;
-}
-
-div {
-  display: block;
-  unicode-bidi: isolate;
-}
-
-// .app-footer{
-//     display: flex;
+//   .app-footer {
+//     font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
 //     align-items: center;
-//     justify-content:space-between;
-
-//     min-height: 3.5rem;
-
-//     padding: rem(10px) 1rem;
-//     background-color: $clr4;
-
-//     p {
-//         margin: 0;
+//     padding: .8rem;
+//     border-top: 1px solid #e5e5e7;
+//     color: #7a7d85;
+//     justify-content: space-between;
+    
+//     .left{
+//       padding-block: .8rem;
+//       justify-content: left;
+//       align-items: center;
+      
 //     }
-//     .social-icons {
-//         display: flex;
-//         gap: 15px; 
-//         align-items: center;
+//       .severr-logo {
+//         font-weight: 1000;
+//         text-shadow: 1px 0 #7a7d85;
+//         letter-spacing: -0.125rem;
+//         color: #404145;
+//         font-size: 1.875rem;
+//         letter-spacing: -.125rem;
+//         cursor: context-menu;
+        
+//       }
     
-//         a.icon-link {
-//           font-size: 1.4rem;
-//           color: #555;
-//           transition: color 0.3s, transform 0.2s;
+//       p {
+//         display: block;
+//         margin-block-start: 1em;
+//         margin-block-end: 1em;
+//         margin-inline-start: 16px;
+//         margin-inline-end: 0px;
+//         unicode-bidi: isolate;
+        
+//     }
+//   }
+//     .right {
+//       display: flex;
+//       padding-block: .8rem;
+//       justify-content: right;
+//       align-self: center;
+//       margin-inline-start: 2rem;
+//       align-items: center;
+//       gap: 1.5rem;
     
-//           &:hover {
-//             transform: scale(1.1);
-//           }
-//         }
+//     .social{
+//       padding-inline-end: 32px;
+//       align-items: center;
+//     }  
+      
+//       &li:not(:last-child){
+//         margin-inline-end: 24px;
 //       }
 
+//       &li{
+//         font-size: 1.3rem;
+//         padding: 8px;
+//         margin: -8px;
+//         cursor: pointer;
+//         transition: background-color .3s, color .3s, border-radius .3s;
+//       }
+     
+//   }
+
+
+// .empty {
+//   color: #b2b2b2;
+//   font-size: 14px;
+// }
+
+// .main-layout>*:not(.full) {
+//   grid-column: 2;
+// }
+
+// .with-border-top {
+//   border-top: 1px solid #dadbdd;
+
+// }
+// .flex{
+//   display: flex;
 // }
 
 
+// @media (min-width: 600px) {
+//   grid-template-columns:minmax(32px,1fr) minmax(auto, 1360px) minmax(32px, 1fr);
+//   text-align: center;
+//   gap: 1rem;
+
+//   .logo,
+//   .empty,
+//   .social-icons {
+//     justify-self: center;
+//   }
+
+//   .right {
+//     padding-inline-start: 0;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//   }
+// }
+// }
+
+
+
+.app-footer-container {
+  /* ריווח מסוים או התאמות רספונסיביות אם צריך */
+  width: 100%;
+
+  .app-footer {
+    /* קו עליון דק */
+    border-top: 1px solid #e5e5e7;
+    font-family: "Macan", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.2rem; /* ריווח פנימי אופקי ואנכי */
+    color: #7a7d85;
+
+    /* צד שמאל (לוגו + טקסט זכויות יוצרים) */
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .severr-logo {
+        font-weight: 1000;
+        letter-spacing: -0.125rem;
+        color: #404145;
+        font-size: 1.875rem; /* ~30px */
+        cursor: default; /* כי זה לא לינק */
+      }
+
+      .empty {
+        color: #7a7d85;
+        font-size: 14px;
+        margin: 0;
+      }
+    }
+
+    /* צד ימין (אייקוני רשתות חברתיות) */
+    .right {
+      display: flex;
+      align-items: center;
+
+      .social {
+        display: flex;
+        list-style: none;
+        gap: 1rem; /* רווח בין האייקונים */
+        padding: 0;
+        margin: 0;
+
+        li {
+          a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem; /* גודל האייקון */
+            color: #7a7d85;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #404145;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 

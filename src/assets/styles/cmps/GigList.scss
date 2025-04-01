@@ -1,0 +1,36 @@
+// .gig-list {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+//     gap: .5em;
+
+//     li {
+//         display: grid;
+//         grid-template-columns: max-content auto;
+//         padding: .5em;
+//         background-color: $clr2;
+
+//         color: $clr6;
+
+//         .actions {
+//             justify-self: end;
+
+//             button {
+//                 padding: .3em .5em;
+//             }
+//         }
+//     }
+// }
+
+.gig-list-wrapper {
+    margin-bottom: 24px;
+  }
+  
+  .gig-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  

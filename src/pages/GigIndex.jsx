@@ -1,127 +1,53 @@
-// import { useEffect } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { GigList } from '../cmps/GigList';
-// import { gigService } from '../services/gig';
-// import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service';
-// import { removeGig, addGig, updateGig } from '../store/actions/gig.actions';
-
-// import { useParams } from 'react-router-dom';
-
-// export function GigIndex() {
-//     const { categoryName } = useParams(); // קבלת שם הקטגוריה מה-URL
-//     const gigs = useSelector(storeState => storeState.gigModule.gigs);
-//     const dispatch = useDispatch();
-
-//     useEffect(() => {
-//         loadGigs(categoryName); // נוסיף את שם הקטגוריה כפרמטר
-//     }, [categoryName]);
-
-//     async function loadGigs(categoryName) {
-//         try {
-//             const gigData = await gigService.query({ category: categoryName }); // מסננים לפי קטגוריה
-//             console.log('Loaded gigs:', gigData);
-//             dispatch({ type: 'SET_GIGS', gigs: gigData });
-//         } catch (err) {
-//             console.error('Cannot load gigs', err);
-//             showErrorMsg('Error loading gigs');
-//         }
-//     }
-
-//     async function onRemoveGig(gigId) {
-//         try {
-//             await removeGig(gigId);
-//             showSuccessMsg('Gig removed');
-//         } catch (err) {
-//             showErrorMsg('Cannot remove gig');
-//         }
-//     }
-
-//     async function onAddGig() {
-//         const title = prompt('Gig title?');
-//         const price = +prompt('Set price?');
-
-//         if (!title || isNaN(price) || price <= 0) {
-//             showErrorMsg('Invalid gig details');
-//             return;
-//         }
-
-//         const gig = gigService.getEmptyGig();
-//         gig.title = title;
-//         gig.price = price;
-//         gig.owner = {
-//             fullname: prompt('Owner name?') || 'Unknown',
-//             imgUrl: 'https://example.com/default-img.jpg', // תמונה ברירת מחדל
-//             level: 'basic',
-//             rate: 0
-//         };
-
-//         try {
-//             const savedGig = await addGig(gig);
-//             showSuccessMsg(`Gig added (id: ${savedGig._id})`);
-//         } catch (err) {
-//             showErrorMsg('Cannot add gig');
-//         }
-//     }
-
-//     async function onUpdateGig(gig) {
-//         const price = +prompt('New price?', gig.price);
-//         if (isNaN(price) || price <= 0 || price === gig.price) return;
-
-//         const gigToSave = { ...gig, price };
-//         try {
-//             const savedGig = await updateGig(gigToSave);
-//             showSuccessMsg(`Gig updated, new price: ${savedGig.price}`);
-//         } catch (err) {
-//             showErrorMsg('Cannot update gig');
-//         }
-//     }
-
-
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { GigList } from '../cmps/GigList';
 import { GigFilter } from '../cmps/GigFilter';
-import { gigService } from '../services/gig';
+import { gigService } from '../services/gig/gig.service.local';
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service';
-import { removeGig, addGig, updateGig } from '../store/actions/gig.actions';
-import { useParams } from 'react-router-dom';
+import { removeGig, addGig, updateGig, loadGigs } from '../store/actions/gig.actions';
+import { useParams, useSearchParams } from 'react-router-dom';
 
 export function GigIndex() {
-    const { categoryName } = useParams(); // מקבלים את הקטגוריה מה-URL
     const gigs = useSelector(storeState => storeState.gigModule.gigs);
-    const dispatch = useDispatch();
+    const {category} = useParams()
 
     // פונקציה להמרת הקטגוריה מה-URL לערך שמתאים ל-data
-    function mapCategory(urlCategory) {
-        if (!urlCategory) return '';
-        // מסירים את המילה "category" (case-insensitive)
-        const withoutPrefix = urlCategory.replace(/^category/i, '');
-        // מחזירים את המחרוזת עם אות ראשונה גדולה
-        return withoutPrefix.charAt(0).toUpperCase() + withoutPrefix.slice(1);
-    }
+    // function mapCategory(urlCategory) {
+    //     if (!urlCategory) return '';
+    //     // מסירים את המילה "category" (case-insensitive)
+    //     const withoutPrefix = urlCategory.replace(/^category/i, '');
+    //     // מחזירים את המחרוזת עם אות ראשונה גדולה
+    //     return withoutPrefix.charAt(0).toUpperCase() + withoutPrefix.slice(1);
+    // }
 
     // state עבור הפילטר – מעדכנים את הקטגוריה הממופה
-    const [filterBy, setFilterBy] = useState({ category: mapCategory(categoryName) });
+    const [searchParmas, setSearchParams] = useSearchParams()
+    const [filterBy, setFilterBy] = useState(gigService.getFilterFromParams(searchParmas, category));
+
+// console.log('search params:', searchParmas);
 
     // עדכון הפילטר בעת שינוי הפרמטר ב-URL
-    useEffect(() => {
-        setFilterBy({ category: mapCategory(categoryName) });
-    }, [categoryName]);
+    // useEffect(() => {
+    //     setFilterBy({ category: mapCategory(categoryName) });
+    // }, [categoryName]);
 
     // קריאה לטעינת הגיגים עם הפילטר המעודכן
     useEffect(() => {
-        async function loadGigs(filter) {
-            try {
-                console.log('Fetching gigs with filter:', filter);
-                const gigData = await gigService.query(filter);
-                dispatch({ type: 'SET_GIGS', gigs: gigData });
-            } catch (err) {
-                console.error('Cannot load gigs', err);
-                showErrorMsg('Error loading gigs');
-            }
+        renderSearchParams()
+        loadGigs(filterBy)
+    }, [filterBy]);
+
+
+
+    function renderSearchParams() {
+        const filterForParams = {
+            minPrice: filterBy.minPrice || 0,
+            category: filterBy.category || ''
         }
-        loadGigs(filterBy);
-    }, [filterBy, dispatch]);
+        setSearchParams(filterForParams)
+    }
+
+
 
     async function onRemoveGig(gigId) {
         try {
@@ -175,13 +101,13 @@ export function GigIndex() {
         <section className="gig-index main-layout full">
             <article className="bread-crumbs">
                 <a className="home" href="/">
-                    <img className="home-icon" src="" alt="Home" title="Go to homepage" />
+                    <img className="home-icon" src="/icons/house-icon.svg" alt="Home" title="Go to homepage" />
                 </a>
                 <span className="divider">/</span>
                 <a title="Graphics & Design Category" href="/gig">{filterBy.category || 'All Gigs'}</a>
             </article>
 
-            <GigFilter filterBy={filterBy} setFilterBy={setFilterBy} />
+            {/* <GigFilter filterBy={filterBy} setFilterBy={setFilterBy} /> */}
             <h1 className="category-header">{filterBy.category || 'All Gigs'}</h1>
             <p className="category-sub-header">Your brand's visual identity elevated to perfection.</p>
 
