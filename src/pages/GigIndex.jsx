@@ -6,6 +6,7 @@ import { gigService } from '../services/gig/gig.service.local';
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service';
 import { removeGig, addGig, updateGig, loadGigs } from '../store/actions/gig.actions';
 import { useParams, useSearchParams } from 'react-router-dom';
+import { Link } from "react-router-dom"
 
 export function GigIndex() {
     const gigs = useSelector(storeState => storeState.gigModule.gigs);
@@ -104,7 +105,8 @@ export function GigIndex() {
                     <img className="home-icon" src="/icons/house-icon.svg" alt="Home" title="Go to homepage" />
                 </a>
                 <span className="divider">/</span>
-                <a title="Graphics & Design Category" href="/gig">{filterBy.category || 'All Gigs'}</a>
+                <Link className='link-category' to="/">{filterBy.category || 'All Gigs'}</Link>
+                {/* <a title="Graphics & Design Category" href="/gig"></a> */}
             </article>
 
             {/* <GigFilter filterBy={filterBy} setFilterBy={setFilterBy} /> */}

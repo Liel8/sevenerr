@@ -33,4 +33,9 @@
     padding: 0;
     margin: 0;
   }
+  .gigs-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(309px,1fr));
+    grid-gap: 2em
+}
   

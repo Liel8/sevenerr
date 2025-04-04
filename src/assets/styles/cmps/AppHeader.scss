@@ -126,9 +126,9 @@
     align-items: center;
     justify-content: space-between;
     /* ריווח אופקי */
-    padding-inline: 20px;
+    // padding-inline: 20px;
     /* ריווח אנכי */
-    padding-block: 16px;
+    padding-block: 10px;
 
     /* לוגו (כולל נקודה ירוקה) */
     .logo-container {
@@ -172,7 +172,7 @@
       justify-content: flex-start;
       /* ריווח אופציונלי בין הלוגו לחיפוש */
       // margin-inline: 2em;
-      margin-left: 1em;
+      margin-left: -20em;
       width: 100%;
       max-width: 550px; /* רוחב מקסימלי לשורת החיפוש */
 
@@ -220,7 +220,7 @@
       align-items: center;
 
       .btn {
-        margin-inline-end: 1.5em;
+        // margin-inline-end: 1.5em;
         font-size: 1rem;
         font-weight: 700;
         color: #62646a;
@@ -228,6 +228,10 @@
 
         &:hover {
           color: #1dbf73;
+        }
+        
+        &.login {
+          margin: 1.5em;
         }
 
         /* כפתור join עם גבול ירוק והחלפת צבע בהובר */

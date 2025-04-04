@@ -1,14 +1,40 @@
-// @font-face {
-//     // font-family: caveat;
-//     // src: url(../../fonts/Caveat/Caveat-Regular.ttf);
-// }
-// @font-face {
-//     font-family: montserrat;
-//     src: url(../../fonts/Montserrat/Montserrat-Regular.ttf);
-// }
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 // body {
 //   font-family: 'Inter', "Helvetica Neue", Helvetica, Arial, sans-serif;
 // }
+
+@font-face {
+    font-family: fa-brands;
+    src: url(/assets/fa-brands-400-003f1154.ttf)
+}
+
+@font-face {
+    font-family: fa-regular;
+    src: url(/assets/fa-regular-400-7d81a1a7.ttf)
+}
+
+@font-face {
+    font-family: fa-solid;
+    src: url(/assets/fa-solid-900-cea79b34.ttf)
+}
+
+@font-face {
+    font-family: Macan;
+    src: url(/assets/Macan-Regular-aa47623a.otf)
+}
+
+@font-face {
+    font-family: Macan-Bold;
+    src: url(/assets/Macan-Bold-b484bdde.otf)
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(/assets/Roboto-Medium-9d0d55a3.ttf)
+}
+
+@font-face {
+    font-family: Domaine;
+    src: url(/assets/domaine-9cdba69e.woff)
+}

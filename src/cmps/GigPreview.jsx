@@ -1,32 +1,73 @@
-import { Link } from 'react-router-dom'
-import { gigs } from '../assets/data/gigData.js'
-
+import { useNavigate } from 'react-router-dom'
 
 export function GigPreview({ gig }) {
-    return (
-        <li className="gig-preview">
-            {/* תמונת הגיג */}
-            <div className="img-container">
-                <img className="gig-img" src={gig.imgUrl} alt={gig.title} />
-            </div>
+  const navigate = useNavigate()
 
-            {/* פרטי הבעלים */}
-            <div className="flex owner-details">
-                <div className="flex owner-details-1">
-                    <img className="owner-profile-img" src={gig.owner?.imgUrl || 'https://example.com/default-profile.jpg'} alt={gig.owner?.fullname || 'Unknown'} />
-                    <span className="owner-fullname">{gig.owner?.fullname || 'Unknown'}</span>
-                    <span className="level-number">{gig.owner?.level || 'N/A'}</span>
-                </div>
+  // פונקציה שמנווטת לדף פרטי הגיג ומעבירה את הנתונים במידת הצורך
+  const handleNavigation = () => {
+    navigate(`/gig/details/${gig._id}`, { state: { gig } })
+  }
 
-                {/* דירוג ומחיר */}
-                <div className="rating-price">
-                    <h3 className="owner-gig-title">{gig.title}</h3>
-                    <div className="flex rate-wrapper">
-                        <span className="owner-rate">{gig.owner?.rate ?? 'No rating'}</span>
-                    </div>
-                </div>
-                <span className="gig-price">From ${gig.price}</span>
-            </div>
+  return (
+    <li className="gig-preview">
+      {/* לחיצה על תמונת הגיג */}
+      <div className="img-container" onClick={handleNavigation} style={{ cursor: 'pointer' }}>
+        <img className="gig-img" src={gig.imgUrl} alt={gig.title} />
+      </div>
+
+      {/* פרטי הבעלים */}
+      <div className="flex owner-details">
+        <div className="flex owner-details-1">
+          <img
+            className="owner-profile-img"
+            src={gig.owner?.imgUrl || 'https://example.com/default-profile.jpg'}
+            alt={gig.owner?.fullname || 'Unknown'}
+          />
+          <span className="owner-fullname">{gig.owner?.fullname || 'Unknown'}</span>
+          <span className="level-number">{gig.owner?.level || 'N/A'}</span>
+        </div>
+
+        {/* דירוג ומחיר */}
+        <div className="rating-price">
+          <h3 className="owner-gig-title"  onClick={handleNavigation} style={{ cursor: 'pointer' }}>{gig.title}</h3>
+          <div className="flex rate-wrapper">
+            <span className="owner-rate">{gig.owner?.rate ?? 'No rating'}</span>
+          </div>
+        </div>
+
+        {/* לחיצה על המחיר */}
+        <div className="gig-price" onClick={handleNavigation} style={{ cursor: 'pointer' }}>
+          From ${gig.price}
+        </div>
+      </div>
+    </li>
+  )
+}
+
+
+        // <li className="gig-preview">
+        //     {/* תמונת הגיג */}
+        //     <div className="img-container">
+        //         <img className="gig-img" src={gig.imgUrl} alt={gig.title} />
+        //     </div>
+
+        //     {/* פרטי הבעלים */}
+        //     <div className="flex owner-details">
+        //         <div className="flex owner-details-1">
+        //             <img className="owner-profile-img" src={gig.owner?.imgUrl || 'https://example.com/default-profile.jpg'} alt={gig.owner?.fullname || 'Unknown'} />
+        //             <span className="owner-fullname">{gig.owner?.fullname || 'Unknown'}</span>
+        //             <span className="level-number">{gig.owner?.level || 'N/A'}</span>
+        //         </div>
+
+        //         {/* דירוג ומחיר */}
+        //         <div className="rating-price">
+        //             <h3 className="owner-gig-title">{gig.title}</h3>
+        //             <div className="flex rate-wrapper">
+        //                 <span className="owner-rate">{gig.owner?.rate ?? 'No rating'}</span>
+        //             </div>
+        //         </div>
+        //         <span className="gig-price">From ${gig.price}</span>
+        //     </div>
 
            
             {/* <div className="gig-description">
@@ -57,9 +98,9 @@ export function GigPreview({ gig }) {
                     ))}
                 </div>
             )} */}
-        </li>
+        {/* </li>
     );
-}
+} */}
 
 
 
