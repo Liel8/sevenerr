@@ -1,0 +1,37 @@
+.sub-header-container.transparent {
+    display: none;
+}
+.animate__flipInX {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+}
+.sub-header-container {
+    width: 100%;
+    border-block-end: 1.5px solid #e5e5e7;
+    position: fixed;
+    z-index: 10;
+    top: 5.25em;
+    background-color: #fff;
+
+    .category-header {
+        display: flex;
+        position: relative;
+
+        .categories-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            white-space: nowrap;
+
+            .category-link {
+                max-height: 2.5rem;
+                padding-block: .6875rem;
+                color: #62646a;
+                margin-inline-end: 1.25em;
+                transition: .2s color, .3s box-shadow;
+            }
+        }
+    }
+}

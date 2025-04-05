@@ -1,0 +1,78 @@
+
+.gig-details-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 32px;
+    max-width: 1200px;
+    margin: auto;
+  
+    .bread-crumbs {
+      grid-column: span 2;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .bread-crumbs {
+      font-size: 0.875rem;
+      color: #62646a;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+    
+      a {
+        /* עיצוב הקישור של הבית (הקישור עצמו) */
+      .home {
+          display: inline-flex;
+          align-items: center;
+          text-decoration: none;
+          color: #404145; /* צבע טקסט/אייקון כללי */
+          margin-right: 4px; /* מרווח לפני ה־"/" */
+      }
+      
+      /* עיצוב האייקון עצמו */
+      .home-icon {
+          width: 14px;       /* גודל האייקון */
+          height: 14px;
+          display: inline-block;
+          margin-right: 4px; /* רווח קטן בין האייקון לטקסט (אם יש) */
+          object-fit: cover; /* ממלא את המסגרת */
+      }
+    
+      }
+    
+      .divider {
+        margin: 0 4px;
+        color: #000000;
+      }
+    
+      .link-category {
+        color: #000000;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  
+    .gig-main {
+      h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+  
+      .gig-main-img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 24px;
+      }
+  
+      .gig-description {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+      }
+    }
+  }
+  

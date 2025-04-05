@@ -28,6 +28,8 @@
 @import "cmps/preview";
 
 @import "cmps/AppHeader";
+@import "cmps/SubHeader.scss";
+@import "cmps/HeroSection.scss";
 @import "cmps/AppFooter";
 @import "cmps/UserMsg";
 
@@ -35,11 +37,14 @@
 @import "cmps/ReviewEdit";
 @import "cmps/ReviewList";
 @import "cmps/ReviewPreview";
+@import "pages/ReviewIndex.scss";
+@import "cmps/GigPurchaseSidebar.scss";
 
 @import "cmps/CategoryList.scss";
 
 @import "cmps/GigList.scss";
-@import "cmps/GigPreview.scss"
+@import "cmps/GigPreview.scss";
+@import "pages/GigDetails.scss";
 // @import "cmps/CarList";
 // @import "cmps/CarPreview";
 

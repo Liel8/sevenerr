@@ -159,10 +159,12 @@
     flex-direction: column;
     cursor: pointer;
     transition: box-shadow 0.2s;
+    height: 100%;
   
     &:hover {
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
+
   
     /* תמונת הגיג בחלק העליון, עם יחס רוחב-גובה */
     .img-container {
@@ -245,7 +247,7 @@
   
       /* מחיר הגיג */
       .gig-price {
-        margin-top: 8px;
+        margin-top: auto;
         font-size: 0.875rem;
         font-weight: 700;
         color: #404145;

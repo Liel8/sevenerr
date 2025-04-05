@@ -113,7 +113,7 @@
 .header-container {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: 150;
   width: 100%;
   /* קו תחתון דק (אפור בהיר) */
   border-block-end: 1px solid #e5e5e7;
@@ -167,18 +167,18 @@
     .searchbar-container {
       /* מאפשר לשורת החיפוש לגדול ולתפוס מקום מרכזי */
       // flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
+      display: flex; 
       /* ריווח אופציונלי בין הלוגו לחיפוש */
-      // margin-inline: 2em;
-      margin-left: -20em;
+      margin-inline: 2em;
       width: 100%;
       max-width: 550px; /* רוחב מקסימלי לשורת החיפוש */
-
+      // align-items: center;
+      // justify-content: flex-start;
+      // margin-left: -20em;
+      
       .search-bar-filter-form {
         display: flex;
-        width: 100%;
+        width: min(100%, 34.375em);
 
         /* שדה החיפוש */
         .search-bar {
@@ -251,3 +251,6 @@
     }
   }
 }
+
+
+

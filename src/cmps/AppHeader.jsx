@@ -1,12 +1,17 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { logout } from '../store/actions/user.actions'
+import { SubHeader } from './SubHeader'
+import { HeroSection } from './HeroSection'
+
 
 export function AppHeader() {
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()
+	const location = useLocation()
+    const isHomePage = location.pathname === '/'
 
 	async function onLogout() {
 		try {
@@ -19,6 +24,7 @@ export function AppHeader() {
 	}
 
 	return (
+	<>
 		<section className="visible main-layout full header-container">
 		  <header className="app-header">
 			<div className="logo-container">
@@ -47,8 +53,15 @@ export function AppHeader() {
 			</nav>
 		  </header>
 		</section>
-	  );
-
+		{}
+		{isHomePage && <HeroSection />}
+		<SubHeader />;
+		
+		
+	
+	</>	
+	);
+}
 	// return (
 	// 	<div>
 	// 		<section className='visible main-layout full header-container'>	
@@ -77,4 +90,4 @@ export function AppHeader() {
 	// 	</div>
 
 	// )
-}
+
