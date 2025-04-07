@@ -23,7 +23,7 @@ import { Signup } from './pages/Signup.jsx'
 
 export function RootCmp() {
     return (
-        <div >
+        <div className='app-container'>
             {/* <section className='main-backdrop'></section> */}
             <AppHeader />
             <UserMsg />
@@ -35,6 +35,7 @@ export function RootCmp() {
                         <Route path="/vision" element={<AboutVision />} />
                     </Route> */}
                     <Route path="/gig/:category" element={<GigIndex />} />
+                    <Route path="/gig" element={<GigIndex />} />
                     <Route path="/gig/details/:gigId" element={<GigDetails />} />
                     <Route path="/user/:id" element={<UserDetails />} />
                     {/* <Route path="/category" element={<CategoryIndex />} /> */}

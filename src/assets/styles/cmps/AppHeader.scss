@@ -113,7 +113,7 @@
 .header-container {
   position: sticky;
   top: 0;
-  z-index: 150;
+  z-index: 1100;
   width: 100%;
   /* קו תחתון דק (אפור בהיר) */
   border-block-end: 1px solid #e5e5e7;
@@ -129,6 +129,8 @@
     // padding-inline: 20px;
     /* ריווח אנכי */
     padding-block: 10px;
+    // padding-right: 32px;
+    // padding-left: 32px;
 
     /* לוגו (כולל נקודה ירוקה) */
     .logo-container {

@@ -25,8 +25,10 @@ async function query(filterBy = { txt: '', maxPrice: Infinity, sortField: 'title
         let gigs = loadFromStorage(STORAGE_KEY)
         console.log('gigsss', gigs);
         
-
-    const { txt, maxPrice, sortField, sortDir, category } = filterBy;
+        
+        
+        const { txt, maxPrice, sortField, sortDir, category } = filterBy;
+        console.log(category);
 
     // סינון לפי קטגוריה - השוואה ללא תלות במקרה (case-insensitive)
     if (category) {

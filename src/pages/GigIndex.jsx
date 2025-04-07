@@ -11,6 +11,7 @@ import { Link } from "react-router-dom"
 export function GigIndex() {
     const gigs = useSelector(storeState => storeState.gigModule.gigs);
     const {category} = useParams()
+console.log('params:', category);
 
     // פונקציה להמרת הקטגוריה מה-URL לערך שמתאים ל-data
     // function mapCategory(urlCategory) {
@@ -43,7 +44,7 @@ export function GigIndex() {
     function renderSearchParams() {
         const filterForParams = {
             minPrice: filterBy.minPrice || 0,
-            category: filterBy.category || ''
+            // category: filterBy.category || ''
         }
         setSearchParams(filterForParams)
     }
@@ -105,7 +106,7 @@ export function GigIndex() {
                     <img className="home-icon" src="/icons/house-icon.svg" alt="Home" title="Go to homepage" />
                 </a>
                 <span className="divider">/</span>
-                <Link className='link-category' to="/">{filterBy.category || 'All Gigs'}</Link>
+                <Link className='link-category' to="/gig">{filterBy.category || 'All Gigs'}</Link>
                 {/* <a title="Graphics & Design Category" href="/gig"></a> */}
             </article>
 

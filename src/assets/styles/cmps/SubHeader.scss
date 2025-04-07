@@ -1,37 +1,67 @@
-.sub-header-container.transparent {
-    display: none;
-}
-.animate__flipInX {
-    -webkit-backface-visibility: visible !important;
-    backface-visibility: visible !important;
-    -webkit-animation-name: flipInX;
-    animation-name: flipInX;
-}
 .sub-header-container {
-    width: 100%;
-    border-block-end: 1.5px solid #e5e5e7;
-    position: fixed;
-    z-index: 10;
-    top: 5.25em;
-    background-color: #fff;
+  // display:block;
+  width: 100%;
+  position: sticky;
+  top: 5.25em; // Adjust based on your AppHeader height
+  z-index: 1000;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e7;
+  border-block-end: 1.5px solid #e5e5e7;
+  transition: transform 0.3s ease-in-out;
+  // position: fixed;
+  // z-index: 10;
 
-    .category-header {
-        display: flex;
-        position: relative;
+  &.hidden {
+    transform: translateY(-100%);
+  }
 
-        .categories-container {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            white-space: nowrap;
+  &.visible{
+    transform: translateY(0);
+    display: block;
+  }
 
-            .category-link {
-                max-height: 2.5rem;
-                padding-block: .6875rem;
-                color: #62646a;
-                margin-inline-end: 1.25em;
-                transition: .2s color, .3s box-shadow;
-            }
-        }
+  .category-header {
+    display: flex;
+  //   align-items: center;
+    position: relative;
+
+    .nav-btn {
+      background: transparent;
+      border: none;
+      font-size: 1rem;
+      padding: 0 .625rem;
+      cursor: pointer;
+      color: #404145;
     }
+
+    .categories-container {
+      // flex-wrap: nowrap;
+      // overflow-x: auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      white-space: nowrap;
+
+      li {
+        flex: 0 0 auto;
+
+        .category-link {
+          // padding: 12px 16px;
+          // color: #62646a;
+          // text-decoration: none;
+          // transition: 0.2s ease;
+
+          max-height: 2.5rem;
+          padding-block: .6875rem;
+          color: #62646a;
+          margin-inline-end: 1.25em;
+          transition: .2s color, .3s box-shadow;
+
+          // &:hover {
+          //   color: #1dbf73;
+          // }
+        }
+      }
+    }
+  }
 }
