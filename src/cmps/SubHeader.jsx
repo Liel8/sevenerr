@@ -8,7 +8,7 @@ export function SubHeader() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(!entry.isIntersecting)
+        setIsVisible(!entry.isIntersecting) // אם האלמנט יצא מהמסך – הצג את SubHeader
       },
       {
         root: null,
@@ -30,6 +30,7 @@ export function SubHeader() {
 
   return (
     <>
+      {/* זה האלמנט שמשמש כטריגר ל־observer */}
       <div ref={triggerRef}></div>
 
       {isVisible && (
@@ -64,5 +65,4 @@ export function SubHeader() {
     </>
   )
 }
-
 
