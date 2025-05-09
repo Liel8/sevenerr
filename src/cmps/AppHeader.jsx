@@ -58,14 +58,9 @@ export function AppHeader() {
 			</nav>
 		  </header>
 		</section>
-		{}
 		{isHomePage && <HeroSection />}
-		<SubHeader />
-		
-		
-	
 	</>	
-	);
+	)
 }
 	// return (
 	// 	<div>
