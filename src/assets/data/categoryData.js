@@ -1,37 +1,37 @@
 export const categories = [
     { 
       title: "Graphics & Design",
-      icon: "/icons/design-icon.svg",
+      icon: "/icons/graphics-design-icon.svg",
       link: ""
     },
     {  
       title:"Programming & Tech",
-      icon: "/icons/computer-monitor-icon.svg",
+      icon: "/icons/programming-tech-icon.svg",
       link: ""
     },
     {  
       title: "Digital Marketing",
-      icon: "/icons/smartphone-icon.svg",
+      icon: "/icons/digital-marketing-icon.svg",
       link: ""
     },
     {  
       title:"Video & Animation",
-      icon: "/icons/videos-icon.svg",
+      icon: "/icons/video-animation-icon.svg",
       link: ""
     },
     {  
       title:"Writing & Translation",
-      icon: "/icons/language-icon.svg",
+      icon: "/icons/writing-translation-icon.svg",
       link: ""
     },
     {  
       title:"Music & Audio",
-      icon: "/icons/audio-icon.svg",
+      icon: "/icons/music-audio-icon.svg",
       link: ""
     },
     {  
       title:"Business",
-      icon: "/icons/community-icon.svg",
+      icon: "/icons/business-icon.svg",
       link: ""
     },
     {  

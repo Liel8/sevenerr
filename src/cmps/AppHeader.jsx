@@ -59,6 +59,7 @@ export function AppHeader() {
 		  </header>
 		</section>
 		{isHomePage && <HeroSection />}
+		{isHomePage && <SubHeader />}
 	</>	
 	)
 }

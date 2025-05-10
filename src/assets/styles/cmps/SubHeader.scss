@@ -2,12 +2,14 @@
   // display:block;
   width: 100%;
   position: sticky;
-  top: 5.25em; // Adjust based on your AppHeader height
+  top: 4.8em; // Adjust based on your AppHeader height
   z-index: 1000;
   background-color: #fff;
   border-bottom: 1px solid #e5e5e7;
   border-block-end: 1.5px solid #e5e5e7;
   transition: transform 0.3s ease-in-out;
+  height: 40px;
+  padding-top: 10px;
   // position: fixed;
   // z-index: 10;
 
@@ -34,7 +36,7 @@
       color: #404145;
     }
 
-    .categories-container {
+    .categories-container{
       // flex-wrap: nowrap;
       // overflow-x: auto;
       width: 100%;
@@ -46,16 +48,15 @@
         flex: 0 0 auto;
 
         .category-link {
-          // padding: 12px 16px;
-          // color: #62646a;
-          // text-decoration: none;
-          // transition: 0.2s ease;
-
           max-height: 2.5rem;
           padding-block: .6875rem;
-          color: #62646a;
+          color: #62646A;
           margin-inline-end: 1.25em;
           transition: .2s color, .3s box-shadow;
+
+          a {
+            color: inherit
+          }
 
           // &:hover {
           //   color: #1dbf73;
