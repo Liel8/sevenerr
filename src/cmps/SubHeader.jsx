@@ -1,54 +1,124 @@
+// import { useEffect, useRef, useState } from 'react'
+// import { Link } from 'react-router-dom'
+
+// export function SubHeader() {
+//   const [isVisible, setIsVisible] = useState(false)
+//   const triggerRef = useRef(null)
+
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         setIsVisible(!entry.isIntersecting) // אם האלמנט יצא מהמסך – הצג את SubHeader
+//       },
+//       {
+//         root: null,
+//         rootMargin: '0px',
+//         threshold: 0,
+//       }
+//     )
+
+//     if (triggerRef.current) {
+//       observer.observe(triggerRef.current)
+//     }
+
+//     return () => {
+//       if (triggerRef.current) {
+//         observer.unobserve(triggerRef.current)
+//       }
+//     }
+//   }, [])
+
+//   return (
+//     <>
+//       {/* זה האלמנט שמשמש כטריגר ל־observer */}
+//       <div ref={triggerRef}></div>
+
+//       {isVisible && (
+//         <div className="sub-header-container main-layout full animate__animated animate__flipInX">
+//           <nav className="category-header">
+//             <ul className="categories-container">
+//               {[
+//                 "Graphics & Design",
+//                 "Programming & Tech",
+//                 "Digital Marketing",
+//                 "Video & Animation",
+//                 "Writing & Translation",
+//                 "Music & Audio",
+//                 "Business",
+//                 "Data",
+//                 "Photography"
+//               ].map((cat, idx) => (
+//                 <Link key={idx} className="category-link" to={`/gig/${encodeURIComponent(cat)}`} style={{ marginLeft: idx === 0 ? '0vh' : undefined }}>
+//                   {cat}
+//                 </Link>
+//               ))}
+//             </ul>
+//           </nav>
+//         </div>
+//       )}
+//     </>
+//   )
+// }
+
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export function SubHeader() {
-  const [isVisible, setIsVisible] = useState(false)
+  const { pathname } = useLocation()
+  const isHome = pathname === '/'          // דף הבית?
+
+  // מצב התצוגה של הסאב־הדר
+  const [isStickyVisible, setIsStickyVisible] = useState(false)
   const triggerRef = useRef(null)
 
+  // ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
+  // OBSERVER פועל רק בדף‑הבית
+  // ‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑‑
   useEffect(() => {
+    if (!isHome) return                // בדפים פנימיים אין צורך ב‑observer
+
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(!entry.isIntersecting) // אם האלמנט יצא מהמסך – הצג את SubHeader
-      },
-      {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0,
-      }
+      ([entry]) => setIsStickyVisible(!entry.isIntersecting),
+      { threshold: 0 }
     )
 
-    if (triggerRef.current) {
-      observer.observe(triggerRef.current)
-    }
+    if (triggerRef.current) observer.observe(triggerRef.current)
+    return () => observer.disconnect()
+  }, [isHome])
 
-    return () => {
-      if (triggerRef.current) {
-        observer.unobserve(triggerRef.current)
-      }
-    }
-  }, [])
+  // האם להציג כרגע?
+  const shouldShow = isHome ? isStickyVisible : true
+
+  // מחלקות עיצוב
+  const containerCls =
+    `sub-header-container main-layout full` +
+    (isHome ? ' sticky' : '')          // sticky רק בדף‑הבית
 
   return (
     <>
-      {/* זה האלמנט שמשמש כטריגר ל־observer */}
-      <div ref={triggerRef}></div>
+      {/* טריגר ל‑observer – נדרש רק בדף הבית */}
+      {isHome && <div ref={triggerRef} />}
 
-      {isVisible && (
-        <div className="sub-header-container main-layout full animate__animated animate__flipInX">
+      {shouldShow && (
+        <div className={containerCls}>
           <nav className="category-header">
             <ul className="categories-container">
               {[
-                "Graphics & Design",
-                "Programming & Tech",
-                "Digital Marketing",
-                "Video & Animation",
-                "Writing & Translation",
-                "Music & Audio",
-                "Business",
-                "Data",
-                "Photography"
-              ].map((cat, idx) => (
-                <Link key={idx} className="category-link" to={`/gig/${encodeURIComponent(cat)}`} style={{ marginLeft: idx === 0 ? '0vh' : undefined }}>
+                'Graphics & Design',
+                'Programming & Tech',
+                'Digital Marketing',
+                'Video & Animation',
+                'Writing & Translation',
+                'Music & Audio',
+                'Business',
+                'Data',
+                'Photography',
+              ].map(cat => (
+                <Link
+                  key={cat}
+                  className="category-link"
+                  to={`/gig/${encodeURIComponent(cat)}`}
+                >
                   {cat}
                 </Link>
               ))}
@@ -59,4 +129,3 @@ export function SubHeader() {
     </>
   )
 }
-

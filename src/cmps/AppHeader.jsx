@@ -25,7 +25,7 @@ export function AppHeader() {
 
 	return (
 	<>
-		<section className="main-layout full header-container">
+		<section className={`main-layout full header-container${isHomePage ? ' sticky' : ''}`}>
 		  <header className="app-header">
 			<div className="logo-container">
 			  <i className="hamburger-icon btn fa-solid fa-bars" aria-hidden="true"></i>
@@ -59,7 +59,7 @@ export function AppHeader() {
 		  </header>
 		</section>
 		{isHomePage && <HeroSection />}
-		{isHomePage && <SubHeader />}
+		<SubHeader /> 
 	</>	
 	)
 }

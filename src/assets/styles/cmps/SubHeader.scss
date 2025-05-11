@@ -1,18 +1,13 @@
 // .sub-header-container {
-//   // display:block;
 //   width: 100%;
 //   position: sticky;
-//   top: 4.8em; // Adjust based on your AppHeader height
+//   top: 4.8em;
 //   z-index: 1000;
 //   background-color: #fff;
 //   border-bottom: 1px solid #e5e5e7;
-//   border-block-end: 1.5px solid #e5e5e7;
-//   transition: transform 0.3s ease-in-out;
 //   height: 40px;
 //   padding-top: 10px;
-//   // position: fixed;
-//   // z-index: 10;
-
+//   // box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 //   &.hidden {
 //     transform: translateY(-100%);
 //   }
@@ -21,102 +16,124 @@
 //     transform: translateY(0);
 //     display: block;
 //   }
-
-//   .category-header {
-//     display: flex;
-//   //   align-items: center;
-//     position: relative;
-
-//     .nav-btn {
-//       background: transparent;
-//       border: none;
-//       font-size: 1rem;
-//       padding: 0 .625rem;
-//       cursor: pointer;
-//       color: #404145;
-//     }
-
-//     .categories-container{
-//       // flex-wrap: nowrap;
-//       // overflow-x: auto;
-//       width: 100%;
-//       display: flex;
-//       justify-content: space-between;
-//       white-space: nowrap;
-
-//       li {
-//         flex: 0 0 auto;
-
-//         .category-link {
-//           max-height: 2.5rem;
-//           padding-block: .6875rem;
-//           color: #62646A;
-//           margin-inline-end: 1.25em;
-//           transition: .2s color, .3s box-shadow;
-
-//           a {
-//             color: inherit
-//           }
-
-//           // &:hover {
-//           //   color: #1dbf73;
-//           // }
-//         }
-//       }
-//     }
-//   }
 // }
-  
 
+// .category-header {
+//   display: flex;
+//   position: relative;
+// }
+
+// .categories-container {
+//   display: flex;
+//   justify-content: space-between;
+//   white-space: nowrap;
+//   width: 100%;
+
+//   // li {
+//   // flex: 0 0 auto;
+
+//     .category-link {
+//       color: #62646A;
+//       text-decoration: none;
+//       margin-right: 2rem;
+//       transition: color 0.3s ease, transform 0.3s ease;
+//     }
+
+//     .category-link:hover {
+//       color: #1dbf73; /* light green color on hover */
+//       transform: translateY(-2px); /* slight hover effect */
+//     }
+//   // }
+// }
+
+
+
+
+/* === base === */
 .sub-header-container {
   width: 100%;
-  position: sticky;
-  top: 4.8em;
-  z-index: 1000;
   background-color: #fff;
   border-bottom: 1px solid #e5e5e7;
   height: 40px;
   padding-top: 10px;
-  // box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  &.hidden {
-    transform: translateY(-100%);
-  }
+  z-index: 1000;       // נשאר לצורך חפיפה מעל תוכן
+  transition: transform .3s ease;
 
-  &.visible{
-    transform: translateY(0);
-    display: block;
-  }
+  /* אנימציית slide‑in / slide‑out */
+  &.hidden   { transform: translateY(-100%); }
+  &.visible  { transform: translateY(0); }
 }
 
-.category-header {
-  display: flex;
-position: relative;
+/* === דביק – מתווסף רק בעמוד‑הבית === */
+.sub-header-container.sticky {
+  position: sticky;
+  top: 4.8em;          // התאמה לגובה ה‑AppHeader
 }
 
+/* מבנה הפנימי לא השתנה */
+.category-header      { display: flex; position: relative; }
 .categories-container {
   display: flex;
   justify-content: space-between;
   white-space: nowrap;
   width: 100%;
 
-  // li {
-  // flex: 0 0 auto;
+  // .category-link {
+  //   color: #62646A;
+  //   margin-right: 2rem;
+  //   text-decoration: none;
+  //   transition: color .3s ease, transform .3s ease;
 
-    .category-link {
-      color: #62646A;
-      text-decoration: none;
-      margin-right: 2rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .category-link:hover {
-      color: #1dbf73; /* light green color on hover */
-      transform: translateY(-2px); /* slight hover effect */
-    }
+  //   &:hover {
+  //     color: #1dbf73;
+  //     transform: translateY(-2px);
+  //   }
   // }
+
+  // .category-link {
+  //   position: relative;          // מאפשר ציור ::after מתחת לטקסט
+  //   color: #62646A;
+  //   margin-right: 2rem;
+  //   text-decoration: none;
+  //   transition: color .3s ease;
+  
+  //   /* פס ירוק – רוחב אפס ברירת‑מחדל */
+  //   &::after {
+  //     content: '';
+  //     position: absolute;
+  //     left: 0;
+  //     bottom: -.2em;            // מרווח קטן מהטקסט
+  //     height: 4px;
+  //     width: 0;
+  //     background-color: #1dbf73;
+  //     transition: width .3s ease;
+  //   }
+  
+  //   /* אפקט ריחוף */
+  //   &:hover,
+  //   &:focus-visible {
+  //     // color: #1dbf73;
+  
+  //     &::after {
+  //       width: 100%;            // הקו נפרש לכל רוחב הקישור
+  //     }
+  //   }
+  // }
+
+  .category-link {
+    color: #62646A;
+    margin-right: 2rem;
+    text-decoration: none;     // אין קו כברירת‑מחדל
+    transition: none;          // ביטול אפקטים
+  
+    &:hover,
+    &:focus-visible {          // גם נגישות דרך מקלדת
+      text-decoration: underline;
+      text-decoration-color: #1dbf73;   // הקו בצבע ירוק
+      text-decoration-thickness: 4px; 
+      text-underline-offset: 10px;       // מרווח קטן מהטקסט
+    }
+  }
+  
 }
-
-
-
-
 
