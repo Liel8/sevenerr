@@ -124,7 +124,8 @@
     color: #62646A;
     margin-right: 2rem;
     text-decoration: none;     // אין קו כברירת‑מחדל
-    transition: none;          // ביטול אפקטים
+    transition: none;  
+    font-size: 16px;        // ביטול אפקטים
   
     &:hover,
     &:focus-visible {          // גם נגישות דרך מקלדת

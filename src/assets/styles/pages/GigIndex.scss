@@ -1,54 +1,49 @@
 .gig-index {
-    padding-top: 32px;
     color: #404145;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   
-    .bread-crumbs {
-      font-size: 0.875rem;
-      color: #62646a;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-  
-      a {
-        /* עיצוב הקישור של הבית (הקישור עצמו) */
-        .home {
-            display: inline-flex;
-            align-items: center;
-            text-decoration: none;
-            color: #404145; /* צבע טקסט/אייקון כללי */
-            margin-right: 4px; /* מרווח לפני ה־"/" */
-        }
-        
-        /* עיצוב האייקון עצמו */
-        .home-icon {
-            width: 14px;       /* גודל האייקון */
-            height: 14px;
-            display: inline-block;
-            margin-right: 4px; /* רווח קטן בין האייקון לטקסט (אם יש) */
-            object-fit: cover; /* ממלא את המסגרת */
-        }
-    
-      }
-
     .category-header {
-       margin-bottom: 8px;
+       margin-bottom: 12px;
        font-size: 32px;
-    }
-  
-    .divider {
-      margin: 0 4px;
-      color: #000000;
+       color: #222325;
     }
 
-    .link-category {
-      color: #000000;
-      
-      &:hover {
-        text-decoration: underline;
+    .category-sub-header {
+      font-size: 16px;
+      color: #74767e;
+    }
+
+    .btns-container {
+      font-size: 1rem;
+      color: #62646a;
+      transition: color 0.2s;
+      margin-bottom: 25px;
+
+      .filter-btn {
+        border: 1px solid black;
+        font-size: 16px;
+        padding: 12px 24px;
+        border-radius: 6px;
+        color: #222325;
+        transition: all 0.3s;
+        font-weight: 700;
+        background-color: #fff;
+        border-color: #dadbdd;
+        margin-left: 0;
+        margin-right: 10px;
+
+        &:hover {
+          background-color: #f5f5f5;
+        }
+
+        svg {
+          margin-left: 5px;
+        }
       }
     }
-  }
+
+  
+  
   .top-of-gigs {
     display: flex;
     justify-content: space-between;

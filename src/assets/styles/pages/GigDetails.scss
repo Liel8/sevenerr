@@ -102,11 +102,14 @@
   font-size: 0.875rem;
   color: #62646a;
   margin-bottom: 8px;
+  margin-top: 35px;
   display: flex;
   align-items: center;
+  padding-left: 10px;
 
   a {
     color: rgb(64, 65, 69);
+
 
     &:hover {
       text-decoration: underline;
@@ -116,13 +119,13 @@
       display: inline-flex;
       align-items: center;
       text-decoration: none;
-      color: #404145;
-      margin-right: 4px;
+      margin-right: 1px;
+      // color: #404145;
     }
 
     .home-icon {
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       display: inline-block;
       margin-right: 4px;
       object-fit: cover;
@@ -130,121 +133,9 @@
   }
 
   .divider {
-    margin: 0 4px;
-    color: #000;
+    margin: 5px 8px;
+    color: #c5c6c9;
+    font-size: 20px;
   }
 }
 
-// // =================================
-// // Gig Details
-// // =================================
-
-// .gig-details {
-//   display: grid;
-//   justify-content: space-around;
-//   margin-block-end: 6.25rem;
-
-//   .owner-details-container {
-//     display: flex;
-//     margin-block-end: 1.6875em;
-
-//     .profile-container {
-//       display: flex;
-//       gap: 0.75rem;
-
-//       .owner-details {
-//         display: flex;
-//         justify-content: space-around;
-//         column-gap: 1.125rem;
-
-//         .user-container {
-//           .user-title {
-//             line-height: 1;
-//             margin: 0;
-//           }
-
-//           .username {
-//             height: 1.125rem;
-//             color: rgb(116, 118, 126);
-//             font-weight: 400;
-//           }
-//         }
-
-//         .star-wrapper {
-//           display: flex;
-//           align-items: center;
-
-//           > * {
-//             height: 100%;
-//           }
-
-//           .owner-rate {
-//             font-weight: 700;
-//           }
-
-//           .owner-number-rates {
-//             color: rgb(116, 118, 126);
-//             padding-right: 7px;
-//             text-decoration: underline;
-//           }
-
-//           .divider {
-//             color: rgb(228, 229, 231);
-//           }
-
-//           .queue {
-//             color: rgb(116, 118, 126);
-//             padding-left: 7px;
-//           }
-//         }
-//       }
-//     }
-
-//     // גרסת מובייל
-//     @media (min-width: 600px) {
-//       flex-direction: column;
-//       grid-column: 2;
-
-//       .profile-container {
-//         background-color: unset;
-//         border-bottom: unset;
-//         padding-block: unset;
-
-//         .owner-details {
-//           flex-direction: row;
-//           align-items: center;
-//           grid-column: 1 / -1;
-//         }
-//       }
-
-//       > :not(.carousel-container) {
-//         padding-inline: unset;
-//         margin-inline: unset;
-//       }
-//     }
-//   }
-
-//   > .owner-details-container > :not(.carousel-container) {
-//     margin-block-end: 0.9375em;
-//   }
-
-//   .owner-profile-img-meduim {
-//     cursor: pointer;
-//     width: 4em;
-//     border-radius: 50%;
-//   }
-// }
-
-// @media (min-width: 800px) {
-//   .gig-details {
-//     margin-block-end: 3.75rem;
-//   }
-// }
-
-// @media (min-width: 600px) {
-//   .gig-details {
-//     margin-block-start: 2.5em;
-//     grid-auto-flow: row;
-//     padding-inline: 0;
-//   }
-// }

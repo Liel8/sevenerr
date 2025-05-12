@@ -101,14 +101,14 @@ console.log('params:', category);
 
     return (
         <section className="gig-index main-layout full">
-            <article className="bread-crumbs">
+            <div className="bread-crumbs">
                 <a className="home" href="/">
                     <img className="home-icon" src="/icons/house-icon.svg" alt="Home" title="Go to homepage" />
                 </a>
                 <span className="divider">/</span>
                 <Link className='link-category' to="/gig">{filterBy.category || 'All Gigs'}</Link>
                 {/* <a title="Graphics & Design Category" href="/gig"></a> */}
-            </article>
+            </div>
 
             {/* <GigFilter filterBy={filterBy} setFilterBy={setFilterBy} /> */}
             <h1 className="category-header">{filterBy.category || 'All Gigs'}</h1>
@@ -119,19 +119,31 @@ console.log('params:', category);
                     <div className="btns-container">
                         <button className="filter-btn">
                             Options
-                            <span className="icon fa-solid angle-down" aria-hidden="true"></span>
+                            <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill">
+                                <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z">
+                                </path>
+                            </svg>
                         </button>
                         <button className="filter-btn">
                             Seller details
-                            <span className="icon fa-solid angle-down" aria-hidden="true"></span>
+                            <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill">
+                                <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z">
+                                </path>
+                            </svg>
                         </button>
                         <button className="filter-btn">
                             Budget
-                            <span className="icon fa-solid angle-down" aria-hidden="true"></span>
+                            <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill">
+                                <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z">
+                                </path>
+                            </svg>
                         </button>
                         <button className="filter-btn">
                             Delivery time
-                            <span className="icon fa-solid angle-down" aria-hidden="true"></span>
+                            <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill">
+                                <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z">
+                                </path>
+                            </svg>
                         </button>
                     </div>
                 </section>
