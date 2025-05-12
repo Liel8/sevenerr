@@ -1,7 +1,7 @@
 
 .gig-preview {
     /* כרטיס הגיג: גבול, רקע לבן, צל קל בהובר */
-    border: 1px solid #e5e5e7;
+    border: 1px solid #fff;
     border-radius: 8px;
     background-color: #fff;
     overflow: hidden;
@@ -30,7 +30,7 @@
         top: 0; left: 0;
         width: 100%;
         height: 90%;
-        object-fit: cover; /* ממלאת את השטח תוך שמירה על יחס התמונה */
+        // object-fit: cover;
       }
     }
   
@@ -38,8 +38,7 @@
     .owner-details {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      padding: 12px;
+      padding: 0 12px;
   
       /* פרטי הבעלים: תמונת פרופיל, שם, רמה וכו' */
       .owner-details-1 {
@@ -79,30 +78,40 @@
           font-size: 1rem;
           font-weight: 500;
           color: #404145;
-          margin-bottom: 4px;
+          margin-bottom: 5px;
           line-height: 1.2;
+          height: 50px;
         }
   
         /* דירוג (אפשר להוסיף אייקון כוכב ליד owner-rate אם רוצים) */
         .rate-wrapper {
           display: flex;
-          align-items: center;
           gap: 4px;
+
+          svg {
+            width: 50%;
+            margin-right: 1;
+          }
   
           .owner-rate {
-            font-size: 0.875rem;
+            font-size: 1rem;
             font-weight: 600;
-            color: #ffb33e; /* צבע כוכב/דירוג */
+            color: #222325; /* צבע כוכב/דירוג */
+          }
+
+          .reviews-count {
+            font-size: 1rem;
+            color: #62646a;
           }
         }
       }
   
       /* מחיר הגיג */
       .gig-price {
-        margin-top: auto;
-        font-size: 0.875rem;
+        margin-top: 15px;
+        font-size: 1rem;
         font-weight: 700;
-        color: #404145;
+        color: #222325;
       }
     }
   

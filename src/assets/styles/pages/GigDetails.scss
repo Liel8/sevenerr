@@ -10,16 +10,17 @@
   }
 
   .gig-main-img {
-    width: 100%;
+    width: 90%;
     border-radius: 4px;
-    margin-block: 20px;
+    // margin-block: 20px;
+    margin-bottom: 50px;
   }
 
   .gig-description {
     font-size: 1rem;
     line-height: 1.5;
     color: #404145;
-    margin-block: 20px;
+    margin-block: 40px;
   }
 }
 
@@ -28,6 +29,7 @@
   align-items: center;
   gap: 1rem;
   margin-bottom: 16px;
+  margin-top: 25px;
 
   .owner-profile-img-meduim {
     width: 56px;
