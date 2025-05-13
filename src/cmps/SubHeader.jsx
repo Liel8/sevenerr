@@ -55,7 +55,7 @@ export function SubHeader() {
                 <Link
                   key={cat}
                   className="category-link"
-                  to={`/gig/${encodeURIComponent(cat)}`}
+                  to={`/gig/${cat}`}
                 >
                   {cat}
                 </Link>

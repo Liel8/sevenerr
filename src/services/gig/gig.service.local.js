@@ -85,7 +85,7 @@ function getFilterFromParams(searchParams, category) {
     
     
     return {
-        minPrice: searchParams.get('minPrice') || 0,
+        // minPrice: searchParams.get('minPrice') || 0,
         category
 
     }
@@ -94,7 +94,7 @@ function getFilterFromParams(searchParams, category) {
 function getDefaultFilter() {
         
     return {
-        minPrice: 0,
+        // minPrice: 0,
         category: ''
 
     }

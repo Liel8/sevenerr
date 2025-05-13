@@ -28,6 +28,7 @@ console.log('params:', category);
 
 // console.log('search params:', searchParmas);
 
+
     // עדכון הפילטר בעת שינוי הפרמטר ב-URL
     // useEffect(() => {
     //     setFilterBy({ category: mapCategory(categoryName) });
@@ -35,6 +36,13 @@ console.log('params:', category);
 
     // קריאה לטעינת הגיגים עם הפילטר המעודכן
     useEffect(() => {
+        setFilterBy((prevFilter) => ({ ...prevFilter, category: category }))
+
+    }, [category])
+    
+    useEffect(() => {
+        console.log("category and filter from index:" , category, filterBy);
+        
         renderSearchParams()
         loadGigs(filterBy)
     }, [filterBy]);
@@ -43,7 +51,7 @@ console.log('params:', category);
 
     function renderSearchParams() {
         const filterForParams = {
-            minPrice: filterBy.minPrice || 0,
+            // minPrice: filterBy.minPrice || 0,
             // category: filterBy.category || ''
         }
         setSearchParams(filterForParams)
