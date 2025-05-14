@@ -73,7 +73,7 @@ export function GigPurchaseSidebar({ gig }) {
           ))}
         </ul>
 
-        <button className="btn-purchase"><Link to="/gig/payment">Continue</Link></button>
+        <Link to={`/gig/details/${gig._id}/payment`}><button className="btn-purchase">Continue</button></Link>
         <p className="compare-link">Compare packages</p>
       </div>
     </aside>

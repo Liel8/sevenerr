@@ -12,6 +12,7 @@ import { AdminIndex } from './pages/AdminIndex.jsx'
 
 import { GigDetails } from './pages/GigDetails'
 import { UserDetails } from './pages/UserDetails'
+import { UserProfile } from './pages/UserProfile.jsx'
 
 import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
@@ -35,11 +36,12 @@ export function RootCmp() {
                         <Route path="/team" element={<AboutTeam />} />
                         <Route path="/vision" element={<AboutVision />} />
                     </Route> */}
-                    <Route path="/gig/payment" element={<PaymentPage />} />
                     <Route path="/gig/:category" element={<GigIndex />} />
                     <Route path="/gig" element={<GigIndex />} />
                     <Route path="/gig/details/:gigId" element={<GigDetails />} />
+                    <Route path="/gig/details/:gigId/payment" element={<PaymentPage />} />
                     <Route path="/user/:id" element={<UserDetails />} />
+                    <Route path="/user/profile" element={<UserProfile />} />
                     {/* <Route path="/category" element={<CategoryIndex />} /> */}
                     <Route path="/review" element={<ReviewIndex />} />
                     <Route path="/chat" element={<ChatApp />} />

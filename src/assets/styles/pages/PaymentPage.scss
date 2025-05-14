@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 48px;
-  margin-bottom: 300px;
+  margin-bottom: 200px;
 
 
   .payment-container {
@@ -49,7 +49,7 @@
     .credit-card-details-wrapper {
       padding: 24px 18px 24px 40px;
       border: 1px solid $light-clr4;
-      height: 518px;
+      // height: 518px;
 
       span {
         color: #222325;
@@ -228,7 +228,7 @@
     border-radius: 4px;
     margin-right: 81px;
     font-weight: 500;
-    height: 649px;
+    // height: 649px;
 
     .order-details-container {
       display: flex;
@@ -250,7 +250,6 @@
             // height: 70px;
             border-radius: 4px;
             margin-right: 16px;
-            object-fit: fill;
           }
         }
 

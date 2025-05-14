@@ -1,8 +1,14 @@
 import React from 'react';
+import { Link } from "react-router-dom"
 
-import { useState } from "react"
+// import { useState } from "react"
 // import cards from "../assets/img/credit-cards.svg"
 // import ccIcon from "../assets/img/cc-icon.png"
+import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { loadGig } from '../store/actions/gig.actions'
+
 
 export function PaymentPage() {
     // const [radioOptions, setRadioOptions] = useState({ visa: true, paypal: false })
@@ -18,8 +24,24 @@ export function PaymentPage() {
     //     }
     // }
 
-    return (
+    const { gigId } = useParams()
+    const gig = useSelector(storeState => storeState.gigModule.gig)
 
+    useEffect(() => {
+        if (gigId) {
+            loadGig(gigId)
+            .catch(err => console.error('Failed loading gig', err))
+        }
+
+    }, [gigId])
+
+    
+    if (!gig || !gig._id) return <div>Loading…</div>
+
+    const priceWithTax = gig.price*1.18
+
+
+    return (
         <section className="payment-page">
         <section className="payment-container">
             <section className="billing-info-wrapper payment-methods-wrapper">
@@ -113,25 +135,25 @@ export function PaymentPage() {
             <span className="gig">
                 <header className="order-details-header">
                     <span className="image-container">
-                        <img className="order-image" src="https://fiverr-res.cloudinary.com/video/upload/f_auto,q_auto,so_5.634207,t_medium5/ezfmap1escxvaytcqihd.png" alt="gig image" />
+                        <img className="order-image" src={gig.imgUrl} alt="gig image" />
                     </span>
                     <div>
-                        <h3 className="order-title">I will be your professional youtube video editor for video editing</h3>
+                        <h3 className="order-title">{gig.title}</h3>
                     </div>
                 </header>
                 <article className="order-details-general">
                 <span className="order-details-general-title">SILVER</span>
                 <div className="quantity-price-container">
-                    <span className="price order-details-general-price">₪93.59</span>
+                    <span className="price order-details-general-price">₪{gig.price}</span>
                 </div>
                 </article>
                 <ul className="order-details-items-container">
                 <li className="order-details-item"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.6202 2.6083L5.4001 10.8284L2.37973 7.80805C2.23329 7.66161 1.99585 7.66161 1.84939 7.80805L0.96551 8.69193C0.819073 8.83836 0.819073 9.0758 0.96551 9.22227L5.13492 13.3917C5.28135 13.5381 5.51879 13.5381 5.66526 13.3917L15.0344 4.02252C15.1809 3.87608 15.1809 3.63865 15.0344 3.49218L14.1505 2.6083C14.0041 2.46186 13.7667 2.46186 13.6202 2.6083Z"></path></svg>
-                Up to 15 minutes of footage provided</li>
+                3 revisions</li>
                 <li className="order-details-item"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.6202 2.6083L5.4001 10.8284L2.37973 7.80805C2.23329 7.66161 1.99585 7.66161 1.84939 7.80805L0.96551 8.69193C0.819073 8.83836 0.819073 9.0758 0.96551 9.22227L5.13492 13.3917C5.28135 13.5381 5.51879 13.5381 5.66526 13.3917L15.0344 4.02252C15.1809 3.87608 15.1809 3.63865 15.0344 3.49218L14.1505 2.6083C14.0041 2.46186 13.7667 2.46186 13.6202 2.6083Z"></path></svg>
-                Up to 5 minutes running time</li>
+                Source files included</li>
                 <li className="order-details-item"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.6202 2.6083L5.4001 10.8284L2.37973 7.80805C2.23329 7.66161 1.99585 7.66161 1.84939 7.80805L0.96551 8.69193C0.819073 8.83836 0.819073 9.0758 0.96551 9.22227L5.13492 13.3917C5.28135 13.5381 5.51879 13.5381 5.66526 13.3917L15.0344 4.02252C15.1809 3.87608 15.1809 3.63865 15.0344 3.49218L14.1505 2.6083C14.0041 2.46186 13.7667 2.46186 13.6202 2.6083Z"></path></svg>
-                1 revision</li>
+                Commercial license</li>
                 </ul>
             </span>
             </section>
@@ -154,13 +176,13 @@ export function PaymentPage() {
                             <span className="row-title">VAT
                             <svg width="16" height="16" viewBox="0 0 16 16" fill= '#95979d' xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M8 1.6C4.46538 1.6 1.6 4.46538 1.6 8C1.6 11.5346 4.46538 14.4 8 14.4C11.5346 14.4 14.4 11.5346 14.4 8C14.4 4.46538 11.5346 1.6 8 1.6ZM0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8ZM7.04923 5.61744C6.86818 5.86891 6.8 6.19469 6.8 6.4H5.2C5.2 5.93865 5.33182 5.26443 5.75077 4.68256C6.19909 4.05989 6.93926 3.6 8 3.6C9.33919 3.6 10.3019 4.38025 10.6388 5.39495C10.9694 6.39102 10.6738 7.57898 9.64376 8.26564C9.07519 8.64469 8.94028 8.83688 8.88532 8.96514C8.81377 9.13208 8.8 9.34506 8.8 10H7.2C7.2 9.97079 7.19996 9.94146 7.19992 9.91203C7.19922 9.39218 7.19847 8.83935 7.41468 8.33486C7.65972 7.76312 8.12481 7.35531 8.75624 6.93436C9.13828 6.67966 9.24261 6.26763 9.12025 5.89903C9.00408 5.54907 8.66081 5.2 8 5.2C7.46074 5.2 7.20091 5.40677 7.04923 5.61744ZM8.8 10.8V12.4H7.2V10.8H8.8Z"></path></svg>
                             </span>
-                            <span className="price">₪19.77</span>
+                            <span className="price">₪{priceWithTax.toFixed(2)}</span>
                     </div>
                 </div>
                 <div className="summary-footer">
                     <div className="table-row total-price">
                         <span className="row-title">Total</span>
-                        <span className="price">₪129.75</span>
+                        <span className="price">₪{(priceWithTax+16.40).toFixed(2)}</span>
                     </div>
                     <div className="table-row delivery-date">
                         <span className="row-title">Total delivery time</span>
@@ -169,7 +191,7 @@ export function PaymentPage() {
                 </div>
 
                 <div className="pay-button-component">
-                    <button className="confirm-pay-button">Confirm & Pay</button>
+                    <Link to={`/user/profile`}><button className="confirm-pay-button">Confirm & Pay</button></Link>
                 </div>
                 <div className="secure-payment flex flex-center">
                     <span className="ssl-locker" aria-hidden="true">
