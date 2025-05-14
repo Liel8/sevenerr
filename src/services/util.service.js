@@ -51,3 +51,14 @@ export function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return data ? JSON.parse(data) : undefined
 }
+
+export function calculateVAT(price) {
+    const vatAmount = 0.18 * price
+    const formattedVAT = parseFloat(vatAmount.toFixed(2))
+    return formattedVAT
+}
+
+export function capitalizeFirstLetter(str) {
+    if (!str || str.length === 0) return str
+    return str.charAt(0).toUpperCase() + str.slice(1)
+}

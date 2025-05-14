@@ -1,0 +1,425 @@
+.payment-page {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 48px;
+  margin-bottom: 300px;
+
+
+  .payment-container {
+    width: 57%;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid $light-clr4;
+
+    /* HEADER */
+    .payment-methods-header {
+      padding: 16px;
+      margin: 0;
+      font-size: 18px;
+      border: 1px solid $light-clr4;
+    }
+
+    /* RADIO + LOGOS */
+    .payments-option {
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 64px;
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        color: #333;
+
+      }  
+
+      input {
+        width: 20px;
+        border: #dadbdd;
+      }
+     
+      
+    }
+
+    /* CREDIT CARD FORM */
+    .credit-card-details-wrapper {
+      padding: 24px 18px 24px 40px;
+      border: 1px solid $light-clr4;
+      height: 518px;
+
+      span {
+        color: #222325;
+        font-size: 16px;
+      }
+    
+
+      label {
+        font-size: 16px;
+        margin: 0;
+        color: #333;
+        width: 77%;
+      }
+
+      .credit-card-details {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        
+
+        /* Card Number Field */
+        .card-number {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+
+
+          .credit-card-input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            
+            input {
+              font-size: 16px;
+            }
+
+            .card-logo {
+              width: 24px;
+              height: 16px;
+              color: #95979d;
+            }
+
+            .locker-icon {
+              width: 24px;
+              height: 16px;
+            }
+
+            input {
+              // border: none;
+              // flex: 1;
+              // font-size: 14px;
+              // padding: 0;
+              width: 100%;
+              height: 100%;
+              margin: 0;
+              border: none;
+
+            }
+          }
+        }
+
+        /* Expiration + Security Code on one line */
+        .card:nth-of-type(2) {
+          display: flex;
+          gap: 15px;
+          width: 77%;
+
+          .expiration-date,
+          .security-code {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            label {
+              font-size: 16px;
+              margin: 0;
+              color: #333;
+
+            }
+
+            input {
+              padding: 12px;
+              font-size: 16px;
+              border: 1px solid #ccc;
+              border-radius: 8px;
+            }
+          }
+        }
+
+        /* Cardholder Name & Display Name */
+        .full-name,
+        .display-name {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          width: 77%;
+
+          label {
+            font-size: 16px;
+            margin: 0;
+            color: #333;
+
+          }
+
+          input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+          }
+        }
+
+        /* Save Card Checkbox */
+        .save-card-field {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding-top: 8px;
+
+          label {
+            font-size: 16px;
+            margin: 0;
+            color: #333;
+          }
+
+          .checkbox {
+
+            input {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    /* PayPal Option */
+    .payments-option-1 {
+      padding: 0 20px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 64px;
+
+      label {
+        display: flex;
+        // align-items: center;
+        cursor: pointer;
+        gap: 8px;
+      }
+
+      input {
+        width: 20px;
+        border: #dadbdd;
+        border-color: #222325;
+      }
+
+      .radio:checked {
+        border-width: 5px;
+        border-color: #222325;
+      }
+    }
+  }
+
+  /* RIGHT SIDEBAR */
+  .side-content {
+    width: 28%;
+    background: #fff;
+    border: 1px solid #e4e5e7;
+    border-radius: 4px;
+    margin-right: 81px;
+    font-weight: 500;
+    height: 649px;
+
+    .order-details-container {
+      display: flex;
+      background: #f9f9f9;
+      padding: 16px 24px;
+      border-radius: 8px;
+
+      .order-details-header {
+        display: flex;
+        padding-bottom: 16px;
+        
+
+
+        .image-container {
+          position: relative;
+
+          .order-image {
+            // width: 110px;
+            // height: 70px;
+            border-radius: 4px;
+            margin-right: 16px;
+            object-fit: fill;
+          }
+        }
+
+        .order-title {
+          font-size: 16px;
+          font-weight: 700;
+          margin-bottom: 4px;
+          text-align: left;
+          color: #62646a;
+          margin-left: 16px;
+
+        }
+      }
+
+
+
+      .order-details-general {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+
+        .order-details-general-title {
+          font-weight: 700;
+          font-size: 16px;
+          color: #62646a;
+        }
+
+        .order-details-general-price {
+          font-size: 16px;
+          color: #62646a;
+          margin: 0px 0px 0px 4px;
+        }
+      }
+
+      .order-details-items-container {
+        margin-top: 16px;
+
+
+        .order-details-item {
+          position: relative;
+          color: #62646a;
+          font-size: 16px;
+          margin: 0px 9px 12px 0px;
+
+          svg {
+            margin-right: 9px;
+          }
+
+          // &::before {
+          //   position: absolute;
+          //   left: 0;
+          //   top: 2px;
+          //   font-size: 12px;
+          //   color: #444;
+          // }
+        }
+      }
+    }
+
+    .promo-code {
+      padding: 16px 24px;
+      border: 1px solid  #e4e5e7;
+      font-size: 16px;
+      color: #62646a;
+
+      .promo-code-input-hidden {
+        display: flex;
+        align-items: center;
+
+        svg {
+          color: #95979d;
+          margin-left: 7px;
+        }
+
+      }
+
+    }
+
+    .summary {
+      padding: 16px 24px;
+      
+
+
+      .summary-table {
+        color: #62646a;
+
+        .table-row {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 12px;
+          
+          svg {
+            margin-left: 7px;
+          }
+
+          .tax-row {
+            padding-top: 6px;
+          }
+
+          .row-title,
+          .price {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .summary-footer {
+        border-top: 1px solid #e4e5e7;
+        margin-top: 4px;
+
+        .total-price {
+          display: flex;
+          justify-content: space-between;
+          font-size: 18px;
+          font-weight: 700;
+          color: #62646a;
+          padding: 16px 0;
+
+        }
+
+        .delivery-date {
+          display: flex;
+          justify-content: space-between;
+          font-size: 16px;
+          color: #62646a;
+        }
+      }
+    }
+
+    .pay-button-component {
+      margin-top: 16px;
+
+      .confirm-pay-button {
+        width: 100%;
+        padding: 14px;
+        background: #000;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 0;
+
+      }
+    }
+    .secure-payment {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #62646a;
+      margin-top: 8px;
+      line-height: 22px;
+
+    }
+
+    .currency-message {
+      color: #74767e;
+      margin-top: 16px;
+      font-size: 14px;
+      line-height: 21px;
+
+      .price {
+        margin-left: 4px;
+      }
+    }
+  }
+}

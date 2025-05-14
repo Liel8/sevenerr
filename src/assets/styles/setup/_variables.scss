@@ -88,3 +88,84 @@ $normal-breakpoint: 960px;
     --bs-secondary-bg-subtle: #e2e3e5;
     --bs-success-bg-subtle: #d1e7dd;
 }
+
+// Colors
+$accent-clr: #1dbf73;
+$dark-accent-clr: #19a463;
+$darkest-clr: #0e0e0f;
+$dark-clr1: #222325;
+$dark-clr: #404145;
+$dark-clr-1: #62646a;
+$dark-clr-2: lighten(#62646a, 50%);
+$dark-clr-3: #95979d;
+$dark-clr-4: #74767e;
+$smooth-light-clr: #ccc;
+$light-clr5: #c5c6c9;
+$light-clr4: #efeff0;
+$light-clr3: #fafafa;
+$light-clr2: #e4e5e7;
+$light-clr1: #f5f5f5;
+$light-clr: #fff;
+$error-clr: #a33030da;
+$pending-clr: #c37e10d7;
+$rejected-clr: darken($dark-clr-1, 10%);
+$approved-clr: #ffc82fd7;
+$fulfilled-clr: $dark-accent-clr;
+$old-fulfilled-clr: #195dc2;
+
+//Modal Colors
+$modal-underline-clr: #efeff0;
+$modal-hover-clr2: #474748;
+$modal-hover-clr: #84868b;
+$modal-filter-txt-clr: #95979d;
+$modal-filter-border-clr: #dadbdd;
+$modal-border-bottom-clr: #f4f4f4;
+
+//Homepage colors
+$home-light-clr: #f1fdf7;
+$trusted-by-clr: #b5b6ba;
+$trusted-by-bg-clr: #f5f5f5;
+$backdrop-bg-clr: #00000066;
+$hero-color-1: #0a4226;
+$hero-color-2: #5f1628;
+$hero-color-3: #a7445a;
+$hero-color-4: #0f4926;
+$hero-color-5: #ad3906;
+
+
+
+
+//User colors 
+$co-clr: #7a7d85;
+$btn-clr: #00698c;
+$selections-clr: #d5d4d2;
+$user-bgclr: #f7f7f7;
+
+
+//list colors
+$list-title-clr: #555;
+$list-subtitle-clr: #b2b2b2;
+
+
+//User msg colors
+$shadow-clr: #b2b3b681;
+
+
+//Sizes
+$arrow-btn-size: 48px;
+$arrow-btn-small-size: 33px;
+$card-carousel-height: 345px;
+$details-carousel-height: 420px;
+$details-carousel-height-mobile: 260px;
+$details-carousel-width: 700px;
+
+// Breakpoints
+$xs-mobile-breakpoint: 300px;
+$mobile-breakpoint: 600px;
+$extraNarrow-breakpoint: 700px;
+$narrow-breakpoint: 800px;
+$wideNormal-breakpoint: 1075px;
+$normal-breakpoint: 1155px;
+$large-breakpoint: 1370px;
+$xl-breakpoint: 1410px;
+$xxl-breakpoint: 1640px;

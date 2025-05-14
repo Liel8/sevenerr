@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"
 
 export function GigPurchaseSidebar({ gig }) {
   const [selectedPackage, setSelectedPackage] = useState("basic");
@@ -72,57 +73,10 @@ export function GigPurchaseSidebar({ gig }) {
           ))}
         </ul>
 
-        <button className="btn-purchase">Continue</button>
+        <button className="btn-purchase"><Link to="/gig/payment">Continue</Link></button>
         <p className="compare-link">Compare packages</p>
       </div>
     </aside>
-  // );
-
-//   <div className="gig-purchase">
-//     <div className="tabs">
-//       {["basic", "standard", "premium"].map((type) => (
-//       <button
-//         key={type}
-//         className={selectedPackage === type ? "active" : ""}
-//         onClick={() => setSelectedPackage(type)}
-//       >
-//         {type.charAt(0).toUpperCase() + type.slice(1)}
-//       </button>
-//     ))}
-//   </div>
-
-//   <div className="package-header">
-//     <h3 className="plan-name">Silver</h3>
-//     <div className="price">
-//       ₪93.31
-//       <i className="fa-regular fa-circle-info" />
-//     </div>
-//   </div>
-
-//   <p className="description">
-//     Trimming and Merging Video. Adding logo and Background Music.
-//   </p>
-
-//   <div className="delivery-info">
-//     <span className="item">
-//       <i className="fa-regular fa-clock" /> 3‑day delivery
-//     </span>
-//     <span className="item">
-//       <i className="fa-solid fa-arrow-rotate-right" /> 1 Revision
-//     </span>
-//   </div>
-
-//   <ul className="features">
-//     <li>Up to 15 minutes of footage provided</li>
-//     <li>Up to 5 minutes running time</li>
-//   </ul>
-
-//   <button className="btn-purchase">
-//     Continue <i className="fa-solid fa-arrow-right" />
-//   </button>
-
-//   <p className="compare-link">Compare packages</p>
-// </div>
 )}
 
 
