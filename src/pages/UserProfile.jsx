@@ -22,7 +22,10 @@ export function UserProfile() {
                             <ul className="user-stats with-border-top">
                                 <li className="location info-card-style flex">
                                     <span>
-                                        <span className="fa-solid fa-location-dot icon" aria-hidden="true"></span>
+                                    <span className="fa-regular fa-clock icon" aria-hidden="true"></span>
+                                    {/* <svg width="32" height="32">
+                                        <use href="/public/icons/location-sign-icon.svg" />
+                                    </svg> */}
                                         From
                                     </span>
                                     <b>Israel</b>
