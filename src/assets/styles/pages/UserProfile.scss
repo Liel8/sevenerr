@@ -159,16 +159,18 @@
     color: #404145;
   }
   .dash-btn {
-    background: #28a745;
+    background: #1dbf83;
     color: #fff;
     border: none;
     padding: 0.75rem 1.5rem;
-    border-radius: 4px;
+    border-radius: 3px;
     cursor: pointer;
     font-weight: 700;
+    font-size: 16px;
   }
   .dash-btn:hover {
-    background: #218838;
+    background: #1dbf83;
+    box-shadow: #dadbdd;
   }
   
   /* הטבלה */
@@ -184,6 +186,8 @@
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid #eee;
+    color: #7a7d85;
+    font-size: 16px;
   }
   .order-list th {
     background: #f9f9f9;
@@ -209,13 +213,13 @@
   /* סטטוס ההזמנה */
   .order-list .label {
     display: inline-block;
-    padding: 0.25rem 0.5rem;
+    padding: 2px 5px;
     border-radius: 4px;
-    font-size: 0.875rem;
+    font-size: 16px;
     font-weight: 500;
   }
   .fulfilled-label {
-    background: #28a745;
+    background: #19a463;
     color: #fff;
   }
   .rejected-label {

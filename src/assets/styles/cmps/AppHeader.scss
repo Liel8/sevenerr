@@ -28,11 +28,6 @@
       align-items: center;
       flex-shrink: 0;
 
-      /* אם אין צורך באייקון "המבורגר", אפשר להסתיר או למחוק אותו */
-      .hamburger-icon {
-        display: none; /* הסתרה */
-      }
-
       .logo {
         font-family: Macan-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight: 1000;

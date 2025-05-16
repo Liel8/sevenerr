@@ -36,26 +36,28 @@ console.log('params:', category);
 
     // קריאה לטעינת הגיגים עם הפילטר המעודכן
     useEffect(() => {
-        setFilterBy((prevFilter) => ({ ...prevFilter, category: category }))
+        const updateFilter = gigService.getFilterFromParams(searchParmas, category)
 
-    }, [category])
+        setFilterBy(updateFilter)
+
+    }, [category, searchParmas])
     
     useEffect(() => {
         console.log("category and filter from index:" , category, filterBy);
-        
-        renderSearchParams()
         loadGigs(filterBy)
+        setSearchParams(filterBy, {replace: true})
+
     }, [filterBy]);
 
 
 
-    function renderSearchParams() {
-        const filterForParams = {
-            // minPrice: filterBy.minPrice || 0,
-            // category: filterBy.category || ''
-        }
-        setSearchParams(filterForParams)
-    }
+    // function renderSearchParams() {
+    //     const filterForParams = {
+    //         // minPrice: filterBy.minPrice || 0,
+    //         // category: filterBy.category || ''
+    //     }
+    //     setSearchParams(filterForParams)
+    // }
 
 
 

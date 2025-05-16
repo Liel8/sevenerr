@@ -28,7 +28,6 @@ export function AppHeader() {
 		<section className={`main-layout full header-container${isHomePage ? ' sticky' : ''}`}>
 		  <header className="app-header">
 			<div className="logo-container">
-			  <i className="hamburger-icon btn fa-solid fa-bars" aria-hidden="true"></i>
 			  <Link className="logo" to="/">
 				sevenerr<span className="dot"></span>
 			  </Link>
@@ -63,32 +62,4 @@ export function AppHeader() {
 	</>	
 	)
 }
-	// return (
-	// 	<div>
-	// 		<section className='visible main-layout full header-container'>	
-	// 			<header className='app-header'>
-	// 				<div className='logo-container'>
-	// 				<i className="hamburger-icon btn fa-solid fa-bars" aria-hidden="true"></i>
-	// 				<Link to={'/'} className='logo'>
-	// 				severr
-	// 				<span className='dot'></span>
-	// 				</Link>
-	// 				</div>
-	// 				<div className="searchbar-container">
-	// 					<form className="search-bar-filter-form">
-	// 						<input name="txt" type="text" className="search-bar" placeholder="What service are you looking for today?" value={""}/>
-	// 						<button className="btn fa-solid search-icon size=lg" aria-hidden="true">	
-	// 						</button>
-	// 					</form>
-	// 				</div>
-	// 				<nav className='links-container'>
-	// 					<Link to={'/gig'} className='btn'>Explore</Link>
-	// 					<Link to={'/gig'} className='btn'>Sign in</Link>
-	// 					<Link to={'/gig'} className='btn'>Join</Link>
-	// 				</nav>
-	// 			</header>
-	// 		</section>
-	// 	</div>
-
-	// )
 

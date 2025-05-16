@@ -18,16 +18,36 @@
       align-items: center;
       gap: 1rem;
 
-      .severr-logo {
-        font-weight: 1000;
-        letter-spacing: -0.125rem;
-        color: #404145;
-        font-size: 1.875rem; /* ~30px */
-        cursor: default; /* כי זה לא לינק */
+      .logo-container {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+
+  
+        .logo {
+          font-family: Macan-bold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-weight: 1000;
+          font-size: 2rem;
+          letter-spacing: -0.15rem;
+          color: #404145; /* צבע טקסט כהה */
+          text-shadow: none; /* ביטול הצללה אם לא נחוצה */
+          display: inline-flex;
+          align-items: flex-end;
+          cursor: pointer;
+  
+          .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #1eb569; /* נקודה ירוקה */
+            margin-left: 2px;
+            transform: translateY(-8px); /* העלאת הנקודה מעט */
+          }
+        }
       }
 
       .empty {
-        color: #7a7d85;
+        color: #222325;
         font-size: 14px;
         margin: 0px;
       }

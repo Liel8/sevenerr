@@ -22,16 +22,18 @@
     .img-container {
       width: 100%;
       position: relative;
-      padding-top: 66%; /* ~יחס 3:2, אפשר להתאים */
+      // padding-top: 66%; /* ~יחס 3:2, אפשר להתאים */
       overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 12px;
   
       .gig-img {
-        position: absolute;
-        object-fit: cover;
+        // position: absolute;
+        // object-fit: cover;
         top: 0; left: 0;
         width: 100%;
-        height: 90%;
-        // object-fit: cover;
+        height: 190px;
+        // height: 90%;
       }
     }
   
@@ -39,7 +41,6 @@
     .owner-details {
       display: flex;
       flex-direction: column;
-      padding: 0 12px;
   
       /* פרטי הבעלים: תמונת פרופיל, שם, רמה וכו' */
       .owner-details-1 {
