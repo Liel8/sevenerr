@@ -62,7 +62,14 @@ async function logout() {
 }
 
 function getLoggedinUser() {
-    return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+    // return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
+    return {
+        id: 'u101',                // או מה שצריך
+        username: 'yaz',
+        fullname: 'Yazan Meray',
+        imgUrl: 'https://www.looper.com/img/gallery/phoebe-buffays-friends-timeline-explained/l-intro-1621661137.jpg',
+        balance: 0
+    }
 }
 
 function saveLoggedinUser(user) {

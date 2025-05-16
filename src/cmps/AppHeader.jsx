@@ -53,6 +53,7 @@ export function AppHeader() {
 			<nav className="links-container">
 			  <Link className="btn" to="/gig">Explore</Link>
 			  <Link className="btn login" to="/login">Login</Link>
+			  <Link className="profile-btn" to="/user/profile"><img src='https://www.looper.com/img/gallery/phoebe-buffays-friends-timeline-explained/l-intro-1621661137.jpg'></img></Link>
 			  <Link className="btn join" to="/signup">Join</Link>
 			</nav>
 		  </header>
