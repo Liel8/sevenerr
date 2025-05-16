@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { GigSlider } from "./GigSlider";
 
 export function GigPreview({ gig }) {
   const navigate = useNavigate()
@@ -9,10 +10,11 @@ export function GigPreview({ gig }) {
   }
 
   return (
-    <li className="gig-preview">
+    <li className="gig-preview" key={gig._id}>
       {/* לחיצה על תמונת הגיג */}
       <div className="img-container" onClick={handleNavigation} style={{ cursor: 'pointer' }}>
-        <img className="gig-img" src={gig.imgUrl} alt={gig.title} />
+        {/* <img className="gig-img" src={gig.imgUrl} alt={gig.title} /> */}
+        <GigSlider gig={gig} />
       </div>
 
       {/* פרטי הבעלים */}
@@ -48,3 +50,5 @@ export function GigPreview({ gig }) {
     </li>
   )
 }
+
+

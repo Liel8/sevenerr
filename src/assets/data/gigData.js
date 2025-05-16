@@ -14,7 +14,12 @@ export const gigs = [
     "country": "Ghana",
     "daysToMake": 26,
     "description": "Hello ! Much obliged for visiting my gig :)\nIn this gig I'm offering you an exceptionally 3 one of a kind, best and reasonable bundles.\nIn case you are thinking for giving somebody uncommon an extremely delightful, eye getting gift( hyper practical hand drawing pencil sketch picture)?\nKindly select the helpful bundle and submit your request at this moment and I'll give you an ideal picture sketch, hand drawing, practical drawing, pencil attracting high goal JPEG/PNG advanced document.\nI will give hand-drawn dark and White or hued reasonable pictures.\nSympathetically give me clear reference photograph however much as could be expected.\nThe material I utilized for Creating pencil representations are:\nDrawing materials: graphite pencil, charcoal, Bristol paper, mono eraser, brush, mixing stump, mechanical pencil, graphite powder and so on .\nYou can give me anything:\nPicture photographs\nFamily photographs\nCreature photographs\nAny item photographs\nScene photographs\nEngineering photographs\nAnything you envision\nKindly reach me prior to submitting your request! Much appreciated.\nI DO NOT DELIVER ORIGINAL PHYSICAL COPY BUT A HIGH RESOLUTION JPEG DIGITA",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/231682055/original/77cc585046a1ceb81a809218fef35ee8252bbb3b.jpg",
+    "imgUrl":[
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/231682055/original/77cc585046a1ceb81a809218fef35ee8252bbb3b.jpg",
+        "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698679480/j-2_gdh8hb.webp",
+        "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698679480/j-3_shcoe8.webp",
+
+    ], 
     "tags": [
       "pencil drawing",
       "realistic drawing",
@@ -78,7 +83,11 @@ export const gigs = [
     "country": "Bangladesh",
     "daysToMake": 24,
     "description": "Hey ! Thanks for visiting my gig :)\nIn this gig i'm offering you a very 3 unique, preferable and affordable packages.\nIf you are thinking for giving someone special a very beautiful, eye catching gift( hyper realistic hand drawing pencil sketch portrait)?\nPlease select the desirable package and place your order right now and i'll give you a perfect portrait sketch, hand drawing, realistic drawing,pencil drawing in high resolution JPEG/PNG digital file.\nI will provide hand-drawn black & White or colored realistic portraits.\nKindly provide me clear reference photo as much as possible.\nThe material I used for Creating pencil portraits are:\nDrawing materials: graphite pencil, charcoal, Bristol paper, tombomono eraser, brush, blending stump, mechanical pencil, graphite powder etc .\nYou can give me anything:\nPortrait photos\nFamily photos\nAnimal photos\nAny product photos\nLandscape photos\nArchitecture photos\nAnything you imagine\nPlease contact me before placing your order! Thanks.\nI DO NOT DELIVER ORIGINAL PHYSICAL COPY BUT A HIGH RESOLUTION JPEG DIGITAL FILE, IF YOU WANT THE ORIGINAL ONE THEN MESSAGE ME FOR DETAILS.\nFeel free to ask me anything! :)\nThank You...\nvividstore",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/197422311/original/1907136f4b9684daa164acfa5cfedc6035b771b1.jpg",
+    "imgUrl":[
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699463238/lrejrezmegq0r5tnenxj.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699459005/y9ojibob80u9zqffjf4y.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699459001/v48ejcogrrfpa7ovvdvq.jpg"
+      ],
     "tags": [
       "pencil drawing",
       "realistic drawing",
@@ -105,7 +114,11 @@ export const gigs = [
     "country": "Brazil",
     "daysToMake": 4,
     "description": "Desenho de l\u00e1pis hiperrealista da sua foto, posso adicionar detalhes de fundo e personalizar o desenho do jeito que voc\u00ea quiser.",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699458987/d6ib9epswlzatmqq2hir.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698328728/7fc3e2d2da246770dd879d232d1e946c6ad755a7_exmid7.webp"
+    ],
     "tags": [
       "pencil",
       "drawing",
@@ -169,7 +182,11 @@ export const gigs = [
     "country": "Kenya",
     "daysToMake": 28,
     "description": "Hello, welcome to my Gig, I write sociology psychology and all social sciences content\nI am an expert writer who can help you with writing essays, research projects, and articles on criminology, sociology, and psychology. I gained so much experience over the time. i can handle papers from undergraduate all the way to PHD in criminology and sociology and psychology.\nI always strive to provide best quality to my clients and provide plagiarism-free work. I am also familiar with the following reference formats: APA, MLA, HARVARD, CHICAGO\nPlease contact me before placing an order, thank you.",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207813409/original/9557f50a12d8fccb5c52fb65b35f91cc036f99c6.jpg",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698328721/178e5fac2ad62b9a85e8be65e9ad3802b2fdc4bd_zfczqg.webp",
+      "https://res.cloudinary.com/de2rdmsca/image/upload/v1698328721/178e5fac2ad62b9a85e8be65e9ad3802b2fdc4bd_zfczqg.webp"
+    ],
     "tags": [
       "technical writing"
     ],
@@ -229,7 +246,11 @@ export const gigs = [
     "country": "Bangladesh",
     "daysToMake": 9,
     "description": "Hello Sir/Ma'am,\nHave a cordial welcome to Rashin07\u2019s outstanding services on Fiverr.\nAre you searching for a trustworthy virtual assistant for your projects regarding data entry? I\u2019m here to help. I\u2019m an enthusiastic, hard-working and detail-oriented working person who has developed a mature and responsible approach to any task that I undertake. With excellent teamwork, we always try to work with dedication to achieve a certain objective on time. We are always at your service to provide budget-friendly qualitative work. Check out the following services & Order Now.\nOur Services:\nWeb Research\nCopy Paste Jobs\nData Entry\nData Scraping\nData Conversion (PDF/Image to excel)\nProduct Listing\nShopify / Woo-commerce Product Entry\nLead Generation\nMS Excel (Data Cleaning/Formatting /Chart/Macro)\nManual Typing\nAnd more!\nOur Specialties:\n24/7 customer service\nUnlimited Revisions\nOn-time delivery\nWork efficiently\nPrompt response\nNOTE \u2013 Please contact me before placing an order. Feel free to discuss the project & set the right estimations for you.\nRegards\nRashin Faria\nData Entry | Copy Paste | Web Scraping | Web Research | Product Entry",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg",
+    "imgUrl":[ 
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699459891/nayfuadma4yxforgbocm.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699462690/tpml0snkitep63diykdg.webp",
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg"
+    ],
     "tags": [
       "web research",
       "manual typing",
@@ -293,10 +314,12 @@ export const gigs = [
     "country": "Pakistan",
     "daysToMake": 10,
     "description": "Looking for an experienced data entry expert? don't waste your time, just hire me and relax.\nWe are team of qualified professionals for guaranteed high quality work to our clients\nI will provide professional data entry work, data collecting from web, table graphs and all type of internet research like research related to businesses, companies information and enter into excel within fastest possible time.\nWhether you have big project like thousands of rows entries in excel or very tiny project like minutes of work, i'm here to provide you highly satisfied experience for your project.\nHere are the services we offer:\nData Entry\nWeb Research\nLead Generation\nCopy Paste Work\nCompanies Data Research\nInternet Research\nData Conversion into Excel\nTyping in Excel\nProperty Research\nCopy Paste Work\nPDF to Excel\nFormatting of excel sheets\nWhy hire me?\nGuaranteed quality work\nAll time communication during the project within Fiverr\nQuick Turnaround\nI will give my best and 100% to the project\nI can provide sample for the satisfaction before the order\nFeel free and don't hesitate to contact us for superior work\nNote: All communication and payment should be done via the fiverr platform.",
-    "imgUrl": "https://miro.medium.com/v2/resize:fit:1358/1*PeHDhmImsjDO6Gkmog3pDQ.jpeg",
-    "imgUrl": "https://storage.googleapis.com/fastwork-static/84452153-0c0f-4098-948f-6476f4f4ab8c.jpg",
-    "imgUrl": "https://mediaonemarketing.com.sg/wp-content/uploads/2020/03/image_1-2.jpeg",
-    "imgUrl": "https://www.librawebsolutions.com/wp-content/uploads/2017/09/web-Research_01.jpg",
+    "imgUrl": [
+      "https://miro.medium.com/v2/resize:fit:1358/1*PeHDhmImsjDO6Gkmog3pDQ.jpeg",
+     "https://storage.googleapis.com/fastwork-static/84452153-0c0f-4098-948f-6476f4f4ab8c.jpg",
+     "https://mediaonemarketing.com.sg/wp-content/uploads/2020/03/image_1-2.jpeg",
+    "https://www.librawebsolutions.com/wp-content/uploads/2017/09/web-Research_01.jpg",
+  ],
     "tags": [
       "web research",
       "data entry",
@@ -360,7 +383,11 @@ export const gigs = [
     "country": "Bangladesh",
     "daysToMake": 24,
     "description": "Hi, Welcome to my Gig page on Fiverr.com!\nNote: Please contact me first before placing an order to check the availability and price estimate of your project.\nDescription:\nDo you need a perfect and professional virtual assistant for Data Entry,Excel Data Entry, Copy Paste Work, Typing Work , Data mining, Data collection using MS Excel, MS Word, Google Spreadsheet or Google doc? Yes, you are in the right place. Please check out my expertise below and the gig extras I'm offering.\nData Entry\nCopy Paste Work\nExcel Data Entry\nProduct Listing\nShopify Product listing\nCRM Data Entry\nData Scraping\nData Conversion\nPDF to Excel or Word\nJPEG to Excel or Word\nTyping in Excel or Word\nBusiness Card Entry\nWordPress Data Entry\nE-commerce Products Listing\nWeb Research and Web Scrapping\nData Collection from Linkedln/Instagram\nProperty Research, Public Record Search\nReal Estate Research and Data Entry (Name, Email, Phone, Address, etc)\nWhy trust me?\nPositive Customer Reviews\nQuick Reply.\nOn-time delivery\nQuality Customer Support\nEfficient time of working\nP.S. - We don't deal with anything outside of Fiverr. Never share your personal information. Thanks!",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/156250659/original/694e80206bfd8cebf4e950fd073d382ed0fcd20a.jpg",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/156250659/original/694e80206bfd8cebf4e950fd073d382ed0fcd20a.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699462278/xp9zzvqfbpsba4l9f28q.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699462291/vsi1d8ziqrwyie7t7cjt.jpg"
+    ],
     "tags": [
       "typing job",
       "excel data entry",
@@ -424,7 +451,11 @@ export const gigs = [
     "country": "Pakistan",
     "daysToMake": 28,
     "description": "I will do excel data entry, copy paste, and any type of data entry\nHello, Welcome to my Gig. Are you looking for a professional virtual assistant for, Excel Data Entry, Typing Work Copy Paste Work, Data Entry, Data collection, Data mining, using MS Word, MS Excel, Google doc, or Google Spreadsheet? Then, you are at the right place. Following are the services that I'm offering.\nExcel Data Entry\nCopy Paste Work\nShopify Product listing\nProduct Listing\nData Entry\nData Conversion\nData Scraping\nJPEG to Excel or Word\nPDF to Excel or Word\nTyping in Excel or Word\nWordPress Data Entry\nWeb Research and Web Scrapping\nE-commerce Products Listing\nProperty Research, Public Record Search\nData Collection from LinkedIn/Instagram\nReal Estate Research and Data Entry (Name, Email, Phone, Address, etc.)\nWhy chose me?\nExtra fast delivery\n100% Quality assurance\nlowest possible rates\nQuick Reply.\nUnlimited Revisions to make sure Maximum customer satisfaction\nData Security\nPlease contact me before placing an order and get my free consultancy about the project how to do it in the best possible way. Also If you need sample work Please feel free to demand.\nThanks & Regards,\nAbrar Hussain",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/199776653/original/b710f145db1a54491e2d777831107c0174c78565.png",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/199776653/original/b710f145db1a54491e2d777831107c0174c78565.png",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699454256/snqmmlp18v52i4ryhaqn.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699454259/mdfuuifx8ihgy1e6ub6l.webp"
+    ],
     "tags": [
       "excel data entry",
       "virtual assistant",
@@ -488,7 +519,11 @@ export const gigs = [
     "country": "India",
     "daysToMake": 16,
     "description": "Hi there ! Thanks for stopping by !!\nA Team of Talented Graphic Designer with 8+ years of experience in Graphic Industry, expertise as Logo Maker, You'll get creative & AWESOME logo design for your business.\nMy portfolio : https://www.fiverr.com/users/design_desk/portfolio/NjFiYjE4NmMwZTgwMDUwMDAxZTMzMjJh\n\u2605 Why Us? \u2605\nTalented Logo Maker Team\nFully custom made, creative, original, UNIQUE and AWESOME designs\nProfessional customer support 24/7\nHigh Quality work\n100% money back policy if not satisfied\n\u2605 WHAT DO YOU GET? \u2605\n\u2714 Highly Professional, UNIQUE & High Quality designs\n\u2714 UNLIMITED revisions until u r 100% satisfied\n\u2714 Fast turn around time 24 to 48 hours only.\n\u2714 100% original & unique vector design from Adobe Illustrator\n\u2714 Vector Source Files (scalable without any quality loss) (AI, EPS, PDF) for the final design \u2714 PROFESSIONAL Communication & Outstanding Customer Support \u2714 Guaranteed High Quality work\nIf you have any question,\nFeel free to\u2605 Contact Me! \u2605I'll be happy to help !\nLet's get started!\n-Your Logo Maker",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/044fb5914a845a4eb59fc2b69f7f7b32-1634120039750/4dbc2acb-7322-4cd0-9afb-e5190e8e8a0d.jpg",
+    "imgUrl":[ 
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699457558/inys26zytthmhilygbbb.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698674928/taylor-1_nmgnmv.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698674928/taylor-2_uqjv74.webp"
+    ],
     "tags": [
       "minimalist",
       "flat",
@@ -553,7 +588,11 @@ export const gigs = [
     "country": "Pakistan",
     "daysToMake": 2,
     "description": "Hi esteemed buyer!\nLooking for modern unique and creative 2d or 3d logo design? Yes, you're at the right place.\nHaving a vast experience with hundreds of satisfied customers across the globe, I extend my services to design modern unique and creative logo design to represent your brand idea in a befitting manner.\nWhat proves my individuality over others?\nQuick delivery, quality work and transforming your brain idea into a 3d creative unique and modern logo design are my attributes.\nMY GIG OFFERINGS ARE:\nBest customer care\nRevisions within 24 Hours\n100% satisfaction guaranteed\nModern unique and creative designing ideas\nLogically and aesthetically hypnotizing logos\n1 free revision after completion of order\nEditable and re-sizeable vector files\nFont download link included\nHigh resolution final files in zip\nNote: For Complex Illustrations and Mascots, please discuss in inbox before placing order! It is also not included in our packages.\nHave queries? Contact us in inbox anytime!\n\u2605Hearing from you would be an absolute pleasure, Go ahead and ORDER NOW!\u2605",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/a2dd1a0482bbfe54e61c6c2d6e64696e-1640431251801/943f73b5-dc43-4fe4-9728-9a58f0aafdbc.jpg",
+    "imgUrl": [
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699457795/d7i6n53pc2q3erhaloeh.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699454935/n10cm3r28ezctpx6l2e6.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699457798/wtybu9uxpfdbc39vtzgx.webp"
+    ],
     "tags": [
       "modern logo",
       "creative logo",
@@ -617,9 +656,12 @@ export const gigs = [
     "country": "India",
     "daysToMake": 11,
     "description": "ModernMarvel heartily welcomes you to Minimalist Modern Logo Design gig.\nWe are Brand Creators and professional business consultants. Each business has his own story to tell and having high recall value is prime purpose behind getting a LOGO. Thus, We believe in creating simple yet effective masterpiece which blown away your customers mind.\nYour idea of getting Modern memorable and attractive logo design is just one step away. So, Lets discuss and choose a best design for your business.\nOur recommendation BRANDING PACK @ $65 ONLY:\n5 BRANDED logos with minimal designs + vector source files\nAttractive Social media covers (FB + Twitter)\nProfessional stationery design (B card + letterhead)\nUnlimited revision rounds\nExclusive customer support\nRefund & Package selection guidelines:\nIf the designs are as per your initial shared brief, refund wont be a possible option. You can ask for revision if i missed out anything.\nMy samples are from my premium / standard package.\nWe are closed on Sunday.\nMy key skills:\nMinimalist Modern Logo Design | Minimal | Modern | Typography | Line art | Custom logo | Vintage |\nKeen to Get Started!",
-    "imgUrl": "https://1.bp.blogspot.com/-nEYTmlwHhmM/V22udwDr32I/AAAAAAAAB2A/0uuJbuY6WlMobZIpIgBBojkUaMqgPdmLACLcB/s1600/Thunder%2BMonkey_poster_pencil.jpg",
-    "imgUrl": "https://img.freepik.com/premium-photo/modernmarvel-contemporarydoghouse_882186-27274.jpg?w=996",
-    "imgUrl": "https://media.licdn.com/dms/image/D4E10AQHJLHlVm515yQ/ads-video-thumbnail_720_1280/0/1715789313643?e=2147483647&v=beta&t=jM3hzeyL8wwie_i_AYdpyvg8gedwA20cH3n43lTyKwM",
+    "imgUrl": [
+      "https://1.bp.blogspot.com/-nEYTmlwHhmM/V22udwDr32I/AAAAAAAAB2A/0uuJbuY6WlMobZIpIgBBojkUaMqgPdmLACLcB/s1600/Thunder%2BMonkey_poster_pencil.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699457802/jkintdd2eieogrzrakvk.webp",
+      "https://img.freepik.com/premium-photo/modernmarvel-contemporarydoghouse_882186-27274.jpg?w=996",
+    ],
+    
     "tags": [
       "modern logo",
       "custom logo",
@@ -684,10 +726,11 @@ export const gigs = [
     "country": "Pakistan",
     "daysToMake": 21,
     "description": "Greetings!! Welcome to Budding Solutions.\n\"Your one-stop-shop for all your graphic needs\"\nIf you are looking for a Modern and Professional Business logo design, then you are at the right place. We focus on creating simple yet effective designs that elevate your business outlook and leave an everlasting impression.\nWe stand out from our competition due to our best-in-class Customer Support and Quality Designs.\nWhy Us?\n\u2714 Combination of experience and creativity\n\u2714 Unique and original designs\n\u2714 Superior customer care and satisfaction\n\u2714 Transparent and High-resolution image types\n\u2714 Different types of source files (AI, EPS, PDF and SVG)\n\u2714 Complete Branding Guide\n\u2714 Unlimited revisions until you are 100% satisfied\n\u2714 Full Copyrights\nMASCOT DESIGNS ARE NOT INCLUDED IN BASIC OR STANDARD GIGS.\nTHE DESIGNS SHOWN ON THE PORTFOLIO ARE FROM STANDARD OR PREMIUM PACKS.\nLogo Design | Professional Logo | Modern Logo | Badge | Hand drawn | Feminine | Signature | Business Logo\nWe look forward to working with you. Please don't hesitate to reach out at any time with any questions.\nPlease review the FAQ section for further clarification.",
-    "imgUrl": "https://i.pinimg.com/736x/73/d5/5a/73d55a6c078a39085267264f5157d01e.jpg",
-    "imgUrl": "https://i.pinimg.com/originals/db/ec/69/dbec690bb6b2f331a313f2c18e696b9f.jpg",
-    "imgUrl": "https://i.pinimg.com/originals/bc/28/55/bc28555fd6b8d515721574cd397a605c.png",
-    "imgUrl": "https://i.pinimg.com/736x/26/f9/36/26f9367d32694b42bff1cb60bc0b7253.jpg",
+    "imgUrl": [
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699453466/qrrucgxhhv73cwp74bme.webp",
+      "https://i.pinimg.com/originals/bc/28/55/bc28555fd6b8d515721574cd397a605c.png",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699453471/hcz1zfqijizjkomfmnqk.webp",
+  ],
     "tags": [
       "modern logo",
       "logo",
@@ -752,7 +795,11 @@ export const gigs = [
     "country": "Jamaica",
     "daysToMake": 25,
     "description": "The FIRST thing a potential follower sees on your page is your bio.\nStand out, and build trust with a bio that informs and captivates everyone who views it. This will not only attract new people to your page, but it will keep them there!\nYou've seen those profiles on Instagram that look amazing, and you deserve that for your business too.\nGet the Instagram bio you need, and with it, more followers and clients!\nWhat you'll receive:\n\u2b50 One unique, professionally designed bio\n\u2b50 A captivating layout that engages your viewers\n\u2b50 A call to action, if required\n\u2b50 24 hour delivery\n\u2b50 100% Satisfaction Guarantee\nLet's build you a great Instagram page that is sure to bring AND KEEP followers.\nIf you BUY a gig from me always feel free to request a revision if you need any part of your order revised. Thank you.",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/157827646/original/8f14f50a81ddd1a60b4af990ea5154a26975d150.jpg",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/157827646/original/8f14f50a81ddd1a60b4af990ea5154a26975d150.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698679255/yo-1_gibkwp.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698679256/yo-2_hwqmjo.jpg"
+    ],
     "tags": [
       "bio",
       "instagram marketing",
@@ -816,7 +863,11 @@ export const gigs = [
     "country": "Hong Kong",
     "daysToMake": 21,
     "description": "Why me?\nI have worked with Fortune 500 brands such as Adidas, L\u2019Oreal, Xiaomi & Pfizer on numerous marketing and branding campaigns.\nI\u2019ve successfully delivered 4000+ hashtag strategies with over 2600+ happy clients to help them achieve organic instagram growth.\nWhy my service?\nI will strategically research, analyze & handpick best-performing hashtags tailored to your Instagram account. I will teach you:\n\u2705 How you can effectively use hashtags to rank and grow organically\n\u2705 How to avoid bad hashtags to avoid negative growth\n\u2705 Stand out from your competition and increase your sales\n\u2705 How to increase traffic and conversion organically\n\u2705 Account optimization and posting secrets to gain new Instagram followers\nWhat will you get?\n\u2705 Data-backed high-ranking hashtags tailored to your niche and brand\n\u2705 Profile optimization so you can be discovered quickly\n\u2705 Personalized hashtag strategy to help you grow and increase your followers\n\u2705 Expert video guide to teach you to find high-ranking hashtags\n\u2705 Monthly newsletter based on Instagram's newest algorithm updates\n\u2705 Masters Course 2021/2022 (Platinum or Diamond Gig)",
-    "imgUrl": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/131675239/original/e86d0feb96b897f8d9ede53a0244a7f8ae1be3ad/create-an-instagram-influencer-strategy-for-you.jpg",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/131675239/original/e86d0feb96b897f8d9ede53a0244a7f8ae1be3ad/create-an-instagram-influencer-strategy-for-you.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699455508/zs7ajvbnidyuserva16a.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699455515/fdtgsuqjvluwawrexhl1.jpg"
+    ],
     "tags": [
       "instagram hashtags",
       "instagram marketing",
@@ -879,7 +930,11 @@ export const gigs = [
     "country": "Vietnam",
     "daysToMake": 7,
     "description": "Do you want to Monitize your YouTube Channel?\ni'm the best for digital media marketing, i will help you make youtube monetization\nSafe methods we use:\n\u00b7 Web 2.0\n\u00b7 iFrame Embedding\n\u00b7 PPC advertising campaign\n\u00b7 Do SEO friendly Video optimization\n\u00b7 Will share video in Suggested & related videos\n\u00b7 Add video in Niche related playlists for more impressions\nI strictly follow YT and Fiverr TOS so it means you will get organic You Tube Promotion for your channel monetization.\nREQUIREMENT:\nChannel Link\nWhat do you get from this gig?\n\u25cf Watch time boost\n\u25cf Compliance with YT TOS\n\u25cf Fully Organic And Real Traffic\n\u25cf 100% chances of monetization\n\u25cf Naturally helps in Video Ranking\nThink that your best friend is Elon Musk, and tomorrow morning you are asking him to post a post asking people to watch your vide0, probably you will get monetized in less than an hour!\nI do the same, just without Elon Musk :)",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5db4b0cccf5a3e138a9f57542175248c-1620011414308/8d7f7d68-efe9-465e-80d2-aedcc548efdb.JPG",
+    "imgUrl": [
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699461489/nkwom8uerhpx95us1osu.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699462895/o0ei2rnqsxcfslkjwg38.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699462898/ms0u6cl0ry6ddwcvolgv.webp"
+    ],
     "tags": [
       "youtube",
       "monetization",
@@ -942,7 +997,11 @@ export const gigs = [
     "country": "United States",
     "daysToMake": 27,
     "description": "Quality content, industry-specific keywords, and a social media plan will help your business and brand soar! I am a digital marketing strategist and content creator who is ready to help build your online presence.\nWhat you will get:\nAn evaluation of your current page(s) to identify your strengths and weaknesses\nA custom strategy specific to your brand, mission, and standards\nCustom designed graphics created for your target audience\nSEO optimized keywords to use in captions and as hashtags\nAround the clock customer service and communication to help you with anything and everything you need\nI am here to take your brand to the next level! Message me with any questions you have.",
-    "imgUrl": "https://fiverr-res.cloudinary.com/video/upload/so_1.760625,t_gig_cards_web/ffupfvrslj3mos2byhrh.png",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/video/upload/so_1.760625,t_gig_cards_web/ffupfvrslj3mos2byhrh.png",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699457337/lwbgslzsoyauqz90hhix.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699457344/kwysgeophbtnpssshqyl.webp"
+    ],
     "tags": [
       "instagram marketing",
       "web marketing",
@@ -1006,7 +1065,11 @@ export const gigs = [
     "country": "United Kingdom",
     "daysToMake": 18,
     "description": "I have over 5 years of experience conducting high-quality, detailed research throughout my Master of Science by Research degree and PhD programme.\nThe training and projects I have undertaken in my degrees have given me the ability to efficiently source key information. In particular, the niche research required for academic theses has made me proficient at sourcing the most relevant details.\nFurthermore, I have learned how to synthesise a lot of information in a short period of time, incorporate it into further research, and write what I have learned into top-quality publications. This allows me to pinpoint the most important information and produce concise, detailed summaries.\nI will provide a document in whichever format you require (e.g. Word.docx, Adobe.pdf) complete with a detailed summary, references and links should you wish to conduct further research. If you would like me to conduct follow-up research based on what I have provided, please do not hesitate to get in touch for discounted rates.\n<---- PLEASE NOTE: I will not write academic articles, essays or papers. ---->\nPLEASE GET IN TOUCH BEFORE ORDERING TO DISCUSS YOUR REQUIREMENTS.",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/222820209/original/50b95e0afd209c75fa3693b835fd0db671249736.png",
+    "imgUrl": [
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698679340/t-3_jkh9ss.jpg",
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/222820209/original/50b95e0afd209c75fa3693b835fd0db671249736.png",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698679340/t-2_fskyyw.webp",
+    ],
     "tags": [
       "online research",
       "research",
@@ -1068,7 +1131,11 @@ export const gigs = [
     "country": "Kenya",
     "daysToMake": 18,
     "description": "GET CUSTOM ORDERS, QUALITY WORK, AND AN AMAZING EXPERIENCE\nIf you're looking for a professional researcher and a committed writer for all your writing needs, click on this gig because I can't wait to work with YOU.\nI am an expert writer with over 8 years' experience. I guarantee quality, original content written from scratch, plagiarism free, and delivered within the shortest time possible. My main areas of expertise are\nResearch\nEnglish\nHistory\nBusiness\nPsychology\nnursing, arts\nEducation\nCriminal justice\nSociology\nSupply chain\nLogistics\nCase studies\nMarketing\nSummary Writing\nI will offer YOU:\n100% Plagiarism free content\nTimely turnaround\nTop-notch grammar\nWell researched and referenced content\n24/7 Customer support\nKindly contact me before placing an order.\nPS: Custom orders also available upon request",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/217276086/original/6a004b8b82868ab02836bdfcb42c4a0e4b042f87.png",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/217276086/original/6a004b8b82868ab02836bdfcb42c4a0e4b042f87.png",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699456018/jvcfxjx4avxlqvdouojl.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699456032/zrjh3xjxnkv3ssqyt2wb.webp"
+    ],
     "tags": [
       "reports",
       "articles",
@@ -1131,7 +1198,11 @@ export const gigs = [
     "country": "Kenya",
     "daysToMake": 11,
     "description": "Hi, thank you for clicking my gig.\nKindly contact me before placing an order to discuss the requirements and check for availability.\nAre you looking for a professional for your essays, articles, case study, reflections, summary and research work? Then look no further, you are on the right PLACE.\nI am here to provide you with high-quality and professional services. I have been in the writing industry for over six years. As a researcher, I have a keen interest in identifying major problems and proposing better solutions/recommendations against them.\nWhat you will get from this gig?\nUnique and creative content\nOn-time delivery\nEngaging content\nWell researched and quality work\n100% plagiarism-free\nN/B: I OFFER SERVICES ACCORDING TO FIVERR TERMS OF SERVICE (TOS).",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/210082068/original/f1d222ff641f41a63cce8235a6a5128f05b477bc.jpg",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/210082068/original/f1d222ff641f41a63cce8235a6a5128f05b477bc.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699447845/gn73bvsmygf1nagothy2.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699462400/ip0fsszdrng6pbmlkv7y.webp"
+    ],
     "tags": [
       "research and summary",
       "case study",
@@ -1195,7 +1266,11 @@ export const gigs = [
     "country": "Kenya",
     "daysToMake": 4,
     "description": "Hello Fiverr Community,\nThis is Layee, A professional Business Consultant.\nBefore venturing in to any field in the business sector, it\u2019s important to carry out a prior study, and carry out market research on that particular business.\nI will carry out a comprehensive market research for you, and come up with a detailed market research report.\nThe Market Research Report will cover the following areas depending on the package & availability of information: -\n\u00b7 Market Research\n\u00b7 Competitor analysis\n\u00b7 Industry analysis\n\u00b7 Product Research\n\u00b7 Market Segmentation\n\u00b7 Porter's Five Forces Analysis\n\u00b7 Pestle Analysis\n\u00b7 Market Trends\n\u00b7 Market Drivers\n\u00b7 Marketing Mix\n\u00b7 Market Size\n\u00b7 Total Available Market (TAM)\n\u00b7 Demographics\n\u00b7 SWOT Analysis\n\u00b7 Market Growth\n\u00b7 Marketing Options\n\u00b7 Marketing Strategies\n\u00b7 Future Markets\n\u00b7 Web Research\n\u00b7 Business Plan (Gig Extra)\nAnd Many More\u2026.\nThe success of your business is my primary objective/priority, and will offer all these services so that you are able to achieve your business objectives easily, and on time (or",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/232972469/original/679ec7f5d8e49604c2290664620969803d96f7c7.jpg",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/232972469/original/679ec7f5d8e49604c2290664620969803d96f7c7.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699460341/glqwioi51t1uglb7awdd.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699460361/vxxawyv9zse5zdgzshnm.webp"
+    ],
     "tags": [
       "competitive analysis",
       "business research",
@@ -1259,7 +1334,11 @@ export const gigs = [
     "country": "Israel",
     "daysToMake": 28,
     "description": "Hello and welcome to my gig!\nI am Shiran and I have 3 years of experience in translations and 6 years of writing experience (Hebrew and English). I make a high-quality, accurate translations from Hebrew to English and English to Hebrew. I DO NOT USE GOOGLE TRANSLATE.\nI can translate any topic and many types of content. I will translate almost any text, article, book, social media posts, subtitle and even websites.\nNo technical or legal translation or transcription.",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/232298461/original/e2872bd49bcb0a344ca35cae4e6a858dbf794fb7.png",
+    "imgUrl": [
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698679340/t-1_ozhsab.webp",
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/232298461/original/e2872bd49bcb0a344ca35cae4e6a858dbf794fb7.png",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699461821/i1le0lhipwpiu2ffukbq.webp"
+    ],
     "tags": [
       "hebrew to english",
       "accurate translation",
@@ -1323,10 +1402,12 @@ export const gigs = [
     "country": "Russia",
     "daysToMake": 15,
     "description": "**The one and only Top Rated Seller with flawless Russian as the mother tongue (34+ years in Moscow)**\nOn this page, you can order professional and flawless Russian to English translation and English to Russian translation by a native and experienced Russian and English translator.\nI work in the field of Russian to English and English to Russian translation since 2009 and have successfully received a diploma with honors and a Master of Arts degree in Spanish and English.\nIn case if you are looking for perfect quality at the best price, I am your best choice!\nI offer the following:\n- An individual approach for every customer\n- My goal is quality, and I will never make something average just to finish it as fast as I can\n- Free correction after implementation is offered for all the orders\n- Flexible rules and ultimate solutions for my customers\n- I research translated topics, reading articles and related websites in order to get the context\nI have vast experience in Russian and English translation of\n- religious documents\n- whitepapers (ICOs)\n- software\n- games\n- websites\n- CMS\n- agreements\n- manuals\n- subtitles\nand other materials\nOrder Russian and English translation",
-    "imgUrl": "https://play-lh.googleusercontent.com/LUSas0cNMhwGp8ht67absNx0Npxht9-4RJje5pVl0x2zCESnlNO_Z9mpxYFP9asDTLw",
-    "imgUrl": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/300625842/original/66b7d6a91c556c9d41e2682f4945a3722178818a/translate-your-documents-from-english-to-chechen.png",
-    "imgUrl": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/268179356/original/c3ffb9a0f8ad3a05195097d2185328376a19de39/translate-english-to-ukrainian-russian-and-vice-versa.png",
-    "imgUrl": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/301509042/original/ef943eaf1b1cb213513ab5ab6ab858ad05ac7e57/accurate-and-professional-russian-to-english-translation.png",
+    "imgUrl": [
+      "https://play-lh.googleusercontent.com/LUSas0cNMhwGp8ht67absNx0Npxht9-4RJje5pVl0x2zCESnlNO_Z9mpxYFP9asDTLw",
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/300625842/original/66b7d6a91c556c9d41e2682f4945a3722178818a/translate-your-documents-from-english-to-chechen.png",
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/268179356/original/c3ffb9a0f8ad3a05195097d2185328376a19de39/translate-english-to-ukrainian-russian-and-vice-versa.png",
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/301509042/original/ef943eaf1b1cb213513ab5ab6ab858ad05ac7e57/accurate-and-professional-russian-to-english-translation.png",
+    ],
     "tags": [
       "english to russian",
       "russian to english",
@@ -1390,10 +1471,12 @@ export const gigs = [
     "country": "France",
     "daysToMake": 6,
     "description": "Who am I?\nI'm a French native translator (copywriter) born in Paris working as a freelancer since 2008 for well-known clients and agencies (KAYAK, L'EXPRESS, Expedia). If you've been looking for a French translator that'll actually make your translation accurate (english to french translation & french to english), you've just found him.\nI will :\nTranslate from English to French and French to English\nMake it sound natural (localization)\nFor resumes, documents, PDFs, and Amazon listing please message me first.\nWhy should you choose me?\n\"We highly recommend Alexis. He read the guidelines carefully and provided a top-quality output. And now he is working on another project with us.\" L'EXPRESS (Black Friday content)\n\"Alexis was very willing to take on new work, responded fast to messages, and finished the work ahead of schedule. He is open to changes and very flexible. I recommend him for any French translation work.\" KAYAK\nI've written and translated content into French / English for small businesses, entrepreneurs at all levels, Fortune 100 and tech giants, as well as celebrities and bestselling authors.",
-    "imgUrl": "https://images.wondershare.com/filmora/article-images/french-english-newadd.png",
-    "imgUrl": "https://play-lh.googleusercontent.com/o6bGetag7I-picBwDZCkV7yVli0w434HydiofxE_DtDMTIqvcPwn8ZRtGsh2PZRJ350",
-    "imgUrl": "https://www.wisdomtech.uk/wp-content/uploads/2021/02/transulation.png",
-    "imgUrl": "https://www.upwork.com/catalog-images-resized/e52a81c175ec782d88fb2bc65cdd40c7/large",
+    "imgUrl": [
+      "https://images.wondershare.com/filmora/article-images/french-english-newadd.png",
+     "https://play-lh.googleusercontent.com/o6bGetag7I-picBwDZCkV7yVli0w434HydiofxE_DtDMTIqvcPwn8ZRtGsh2PZRJ350",
+     "https://www.wisdomtech.uk/wp-content/uploads/2021/02/transulation.png",
+     "https://www.upwork.com/catalog-images-resized/e52a81c175ec782d88fb2bc65cdd40c7/large",
+    ],
     "tags": [
       "french to english",
       "translate french",
@@ -1456,7 +1539,11 @@ export const gigs = [
     "country": "United Kingdom",
     "daysToMake": 16,
     "description": "I will translate all translations sent to me within 12 hours. I can translate French to English and English to French.\nTranslations completed by a Bilingual French & English speaker and an experienced translator. I have extensive experience translation all kinds of projects.\nIf you have any questions, please send a message am I will get back to you ass soon as possible. If you have a larger project to do, don't hesitate to get in contact and we can find a solution that works for you.\nPlease send a message so I can send you a custom order.",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/217112898/original/2857822ef954d4d7305529500a3b9ab3eee33a0c.png",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/217112898/original/2857822ef954d4d7305529500a3b9ab3eee33a0c.png",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698663092/defaultGigImg_vjtk9e.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698914668/default-img-3_afl2mb.webp"
+    ],
     "tags": [
       "french to english",
       "english translation",
@@ -1519,10 +1606,11 @@ export const gigs = [
     "country": "Germany",
     "daysToMake": 7,
     "description": "Kindly contact me for orders above 90 seconds.\nWhat does my package include?\nMotion whiteboard video\nScriptwriting (Additional $50 per 150 words)\nVoice over; Male & Female(English and German)\nBackground music & imagery\nHD Video\nColored whiteboard\nCommercial Rights (Additional $20)\nBroadcast Rights (Additional $50)\nNote: Voice-over is available in German, US English, and UK English.\n.\n.\n.\nBitte kontaktieren Sie mich f\u00fcr Bestellungen \u00fcber 90 Sekunden.\nWas beinhaltet mein Paket?\nMotion Whiteboard Video\nDrehbuchschreiben (Zus\u00e4tzliche \u20ac50 pro 150 W\u00f6rter)\nVoice-over; M\u00e4nnlich & Weiblich (Englisch und Deutsch)\nHintergrundmusik und Bilder\nHD-Video\nFarbiges Whiteboard\nKommerzielle Rechte (Zus\u00e4tzliche \u20ac20)\n\u00dcbertragungsrechte (Zus\u00e4tzliche \u20ac50)\nHinweis: Voice-Over ist in Deutsch, US-Englisch und UK-Englisch verf\u00fcgbar.",
-    "imgUrl": "https://i.ytimg.com/vi/mLpZ_gFMn0c/maxresdefault.jpg",
-    "imgUrl": "https://www.123gif.de/gifs/danke/danke-0029.gif",
-    "imgUrl": "https://i.ytimg.com/vi/_MC3XuMvsDI/0.jpg",
-    "imgUrl": "https://usagif.com/wp-content/uploads/Alles-Gute-zum-Geburtstag-73.gif",
+    "imgUrl": [
+      "https://i.ytimg.com/vi/_MC3XuMvsDI/0.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699463447/tnnptevhnresleyhefp0.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699463442/ruofraflblpdbei018tr.webp",
+    ],
     "tags": [
       "whiteboard video",
       "explainer video",
@@ -1584,7 +1672,11 @@ export const gigs = [
     "country": "Pakistan",
     "daysToMake": 17,
     "description": "Are You Looking For A 2d Animation Explainer Video For Your Website, Product Or Service?\nWe Offer High Quality Video With Quick Turnaround Time Which Ensures Your Business Gets The Engaging Audience And Profit Turn Around.\nNeed Explainer Animation In Spanish (Espa\u00f1ol) ? German (Deutsch)? Italian (Italiano) ? No Problem! We Understand All Languages.\nWhat You Will Get And Each Package?\n\u2022 Fantastic 2d Animation\n\u2022 Full Hd 1080p\n\u2022 Background Imagery\n\u2022 Background Music\n\u2022 Professional Voice-over\n\u2022 Unlimited Revisions\nScript Writing Services Are Also Provided.\nIf You Have Any Custom Work Or Do You Have Any Storyboard Please Contact Me Before The Order For Custom Order\nBest Regards\nAMA",
-    "imgUrl": "https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/efora4o9znelgccz7fkq.png",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/video/upload/t_gig_cards_web/efora4o9znelgccz7fkq.png",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699463860/bmfb60sjt4suqhkyomhm.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699463860/bmfb60sjt4suqhkyomhm.webp"
+    ],
     "tags": [
       "explainer video",
       "2d animation",
@@ -1648,10 +1740,12 @@ export const gigs = [
     "country": "Nigeria",
     "daysToMake": 12,
     "description": "Hii, Welcome to my Whiteboard Animation Video Gig!\nIn this gig, I'll Create the Most EYE-CATCHING whiteboard animation videos tailored to fit your needs.\nThese unique whiteboard Explainer videos for your brand Or business will help to increase your sales and it will definitely create a unique impression on your clients by making them engaging.\nyou'll Get:\n1. The most Unique Explainer Videos compared to other normal whiteboard videos\n2. Fully Colored Videos\n3. Unlimited Revisions Until you're Satisfied\n4. High-Quality Delivery\n5. Fast Communication\n6. All Niche Available\n7. 100% Satisfaction Guaranty\n8. Moneyback Guaranty\n**************\nIf you need custom drawings please check my other gig! or Feel Free to Ping me We'll discuss it : )\nI'm also providing Voiceover and Script Writing Services Please check the extras for the same...\nKindly ensure all required information is readily available before ordering.\nStill, Have Questions?\nFeel Free to contact me Anytime I'm Always here to help you : )\nLooking forward to receiving your Order...\nRegards\nArnold",
-    "imgUrl": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/275867817/original/0a240732ed25017a4bc58b5d2df3c88dcdb1f34b/create-a-professional-whiteboard-animation-explainer-video.png",
-    "imgUrl": "https://conversion-uplift.co.uk/wp-content/uploads/2018/09/Whiteboard-animation-video-e1681896959616.jpg",
-    "imgUrl": "https://i.pinimg.com/736x/8a/89/87/8a898719051f837f4a6d916546dfd968.jpg",
-    "imgUrl": "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/305083569/original/9dcf1af063d91cbcf4c38df1aef9fd9c91ae9b98/design-eye-catching-whiteboard-animation-explainer-video.jpg",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/275867817/original/0a240732ed25017a4bc58b5d2df3c88dcdb1f34b/create-a-professional-whiteboard-animation-explainer-video.png",
+      "https://conversion-uplift.co.uk/wp-content/uploads/2018/09/Whiteboard-animation-video-e1681896959616.jpg",
+      "https://i.pinimg.com/736x/8a/89/87/8a898719051f837f4a6d916546dfd968.jpg",
+      "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/305083569/original/9dcf1af063d91cbcf4c38df1aef9fd9c91ae9b98/design-eye-catching-whiteboard-animation-explainer-video.jpg",
+    ],
     "tags": [
       "whiteboard video",
       "explainer video",
@@ -1715,10 +1809,11 @@ export const gigs = [
     "country": "Argentina",
     "daysToMake": 12,
     "description": "ENGAGE YOUR AUDIENCE!!!\nwith your own whiteboard animated doodle video\nULTRA FAST 48 Hours turn-around available\nPUT YOUR VIDEO MARKETING ON STEROIDS\nWe`ll create a fantastic speed-draw or whiteboard animation of any logo, picture, script or text\nWhat you get for $35:\n30-second video with voice over recording\nImages from our Exclusive Hand Drawn Library + 2 Custom Drawings\nBackground Music\nYou must Provide the Script for the video - Up to 75 words\n1080p Video in MP4 or any video format you need\nExtras Available\nFull HD 1920x1080 Delivery\nFast Delivery\nScript Writing\nWatermark\nColor\nSubtitles\nIf you have other requirements just contact us and we\u00b4ll reply soon.\n100% Satisfaction Guaranteed\nYour satisfaction is important to us.\nORDER NOW!\nATTENTION - Projects of 300+ words, contact me for a quote and timeframe first.",
-    "imgUrl": "https://cdn.domestika.org/c_fit,dpr_auto,f_auto,t_base_params,w_820/v1668193771/content-items/012/624/943/B8475C4B-6CDC-4685-8D97-274378EC40A7-original.jpeg?1668193771",
-    "imgUrl": "https://www.greatbigdigitalagency.com/wp-content/uploads/2020/07/ExplainerBlog-featured-1.jpg",
-    "imgUrl": "https://png.pngtree.com/png-clipart/20230613/original/pngtree-two-girls-are-holding-hands-in-each-other-coloring-pages-outline-png-image_9185702.png",
-    "imgUrl": "https://jvesign.com/wp-content/uploads/2019/07/WhiteBoard-Animation-Prod-Image.jpg",
+    "imgUrl": [
+      "https://png.pngtree.com/png-clipart/20230613/original/pngtree-two-girls-are-holding-hands-in-each-other-coloring-pages-outline-png-image_9185702.png",
+      "https://jvesign.com/wp-content/uploads/2019/07/WhiteBoard-Animation-Prod-Image.jpg",
+      "https://www.greatbigdigitalagency.com/wp-content/uploads/2020/07/ExplainerBlog-featured-1.jpg",
+    ],
     "tags": [
       "explainer video",
       "doodle",
@@ -1781,7 +1876,11 @@ export const gigs = [
     "country": "United States",
     "daysToMake": 17,
     "description": "You've got one chance to make a first impression.\nYour LinkedIn profile is that chance. Are you leaving potential employers with the best impression you can?\nAre you hire-able?\nI'm here to make sure your LinkedIn profile is branded and optimized to it's full potential! I will spend time analyzing, researching and rebranding your profile to help you get noticed.\nI'm back on Fiverr and ready to bring my expertise to help you reach your goals. I was one of the Original Top-Rated Sellers and my ratings speak for themselves. Over 8k gigs completed, and most all of my completed reviews are 5 star!\nI have 3 packages to choose from depending on the level of help you need.\nI hold a Bachelor's Degree in Communication from University of Southern California and have been writing in a professional capacity for over 10 years. I have extensive SEO knowledge and I am a trained copy writer, creative writer and content creation master. Let me help market you for your dream job!",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/161720033/original/b710f4f32dea2048e662276a241c9d5dfe638106.jpeg",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/161720033/original/b710f4f32dea2048e662276a241c9d5dfe638106.jpeg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698706621/KarenM-1_gqoziy.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698706621/Karen-m-3_jwo4p8.webp"
+    ],
     "tags": [
       "resume writer",
       "linked in",
@@ -1845,10 +1944,12 @@ export const gigs = [
     "country": "United States",
     "daysToMake": 22,
     "description": "This gig is designed to maximize the full range of LinkedIn's networking and recruiting power through using accomplishment-based, optimized content with LinkedIn's internal search algorithms to ensure you appear on the radar of headhunters and recruiters.\nThis service is for clients seeking work with a company, not to promote a business.\nThe Process:\n1) Send in your fully current resume of 1-2 pages max. and the URL (link) to your LinkedIn page.\n2) I will create a full professional summary (the 'about' section) in Word.doc.\n3) I will also fully upgrade your job descriptions, which will be done on the same Word.doc as #2.\n4) Once you transfer this content into your LinkedIn profile, I will complete the full multi-point inspection of your entire public profile to ensure all areas of the profile are fully optimized.\nThe Results:\nMy clients typically see a 300% increase in LinkedIn traffic.\n* To couple a LinkedIn service with a resume/cover letter, please visit this gig:\nhttps://www.fiverr.com/harvardcv/create-edit-and-design-your-cv-cover-letter-and-linkedin-profile",
-    "imgUrl": "https://i.etsystatic.com/21141292/r/il/4b0d53/3063633529/il_fullxfull.3063633529_hm15.jpg",
-    "imgUrl": "https://devinkandelhard.de/wp-content/uploads/2022/08/LinkedIn-Profil-Slogan.png",
-    "imgUrl": "https://resumefort.com/wp-content/uploads/2023/04/thebestresumewritingservices.png",
-    "imgUrl": "https://howdoihomeschool.com/wp-content/uploads/2023/03/Resume-Writing-Tips-Instagram-Post-Square-1024x1024.jpg",
+    "imgUrl": [
+      "https://i.etsystatic.com/21141292/r/il/4b0d53/3063633529/il_fullxfull.3063633529_hm15.jpg",
+      "https://devinkandelhard.de/wp-content/uploads/2022/08/LinkedIn-Profil-Slogan.png",
+      "https://resumefort.com/wp-content/uploads/2023/04/thebestresumewritingservices.png",
+      "https://howdoihomeschool.com/wp-content/uploads/2023/03/Resume-Writing-Tips-Instagram-Post-Square-1024x1024.jpg",
+    ],
     "tags": [
       "linkedin profile",
       "linkedin",
@@ -1912,7 +2013,9 @@ export const gigs = [
     "country": "Pakistan",
     "daysToMake": 28,
     "description": "Are you want to make your LinkedIn profile, resume, and cover letter attractive so that the right employers can find you? I am here to assist you.\nI will revamp, create, and optimize your LinkedIn profile with the right choice of keywords. I know the importance of an attractive and professional Linkedin profile and summary that can help you get the job of your dreams.\nWhat you will get?\nEye-catching Headline title that will make you stand out\nKiller bio/summary to grab attention\nEducation, Certifications & Awards\nProfessional Experience\nLinkedIn profile optimization\nHighlight your skills\n100% satisfaction guarantee\nAts resume writing and cover letter\nNote: If you have any questions or special requirements, send me a message. I will be happy to assist you.\nBest Regards!\nHina",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/200950826/original/08090f735021ad8441f30fe2f38542ce95a2ead9.png",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/200950826/original/08090f735021ad8441f30fe2f38542ce95a2ead9.png",
+    ],
     "tags": [
       "profile optimization",
       "linkedin profile",
@@ -1976,7 +2079,11 @@ export const gigs = [
     "country": "Pakistan",
     "daysToMake": 14,
     "description": "\u272a LinkedIn Writing and Optimization Services \u272a\nDo you want to stand out and take your career or business to the next level?\nI help Entrepreneurs, Change Makers & Big Dreamers stand out and take direction so they can make a great digital first impression!\nMy extensive experience in International Recruitment and Resume Writing has allowed me to gain an in-depth knowledge of industry-specific requirements across a vast range of disciplines. I can make your LinkedIn profile stand out from the crowd!\nChoose one of the packages outlined below or request a custom offer to improve your personal LinkedIn success.\nPackages:\nBasic (Entry-Level Profile): Review and optimization of your LinkedIn Headline and Bio with keywords.\nStandard (Professional Profile): Full LinkedIn profile optimization, including Headline, Bio, and career history rewrite, skill suggestions, and industry-tailored recommendations.\nPremium (Profile Creation): Creation of a full profile from scratch, optimized to meet your career preferences.\nBusiness Profiles ( Message Me To Discuss)\nNow is the time to start moving your career or business to the next level!",
-    "imgUrl": "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/159966352/original/1a65840f4a6b0333d7bd37ea876663dc54b9aeaf.jpg",
+    "imgUrl": [
+      "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/159966352/original/1a65840f4a6b0333d7bd37ea876663dc54b9aeaf.jpg",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698706621/Karen-M-2_jj1paf.webp",
+      "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698706621/KarenM-1_gqoziy.jpg"
+    ],
     "tags": [
       "bio",
       "linkedin profile",
@@ -2043,10 +2150,12 @@ export const gigs = [
     "country": "Canada",
     "daysToMake": 21,
     "description": "I'm a passionate photo editor with years of experience in enhancing and retouching photos to make them perfect for Instagram, Facebook, and more.",
-    "imgUrl": "https://blog.ggmgastro.com/de/wp-content/uploads/2020/09/hauptbild-service.jpg",
-    "imgUrl": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/photography-service-template-design-0e2a953ae67059a94a346e736e3141d6_screen.jpg?ts=1662954820",
-    "imgUrl": "https://1.bp.blogspot.com/-pmjZu-IPtbA/WZF-waf4nPI/AAAAAAAAbnM/mcX1-xwZBKYcMkUmq5bx_DPDtc7fae61QCK4BGAYYCw/s1600/Photography%2BBusiness%2BCards%2BFriesen%2BBusiness%2BCard%2BWith%2BA%2BCreative%2B...-789728.jpg",
-    "imgUrl": "https://c8.alamy.com/comp/G4RAJN/british-postal-service-post-woman-london-G4RAJN.jpg",
+    "imgUrl": [
+      "https://blog.ggmgastro.com/de/wp-content/uploads/2020/09/hauptbild-service.jpg",
+      "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/photography-service-template-design-0e2a953ae67059a94a346e736e3141d6_screen.jpg?ts=1662954820",
+      "https://1.bp.blogspot.com/-pmjZu-IPtbA/WZF-waf4nPI/AAAAAAAAbnM/mcX1-xwZBKYcMkUmq5bx_DPDtc7fae61QCK4BGAYYCw/s1600/Photography%2BBusiness%2BCards%2BFriesen%2BBusiness%2BCard%2BWith%2BA%2BCreative%2B...-789728.jpg",
+      "https://c8.alamy.com/comp/G4RAJN/british-postal-service-post-woman-london-G4RAJN.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2094,10 +2203,12 @@ export const gigs = [
     "country": "United States",
     "daysToMake": 10,
     "description": "Professional product photographer with a studio setup. Offering sharp and clear images for your ecommerce business.",
-    "imgUrl": "https://www.omnieventos.com/wp-content/uploads/2021/05/EUA-1.jpg",
-    "imgUrl": "https://images.indianexpress.com/2023/02/Kailasa-representatives-in-UN.jpg",
-    "imgUrl": "https://i.ytimg.com/vi/rDCenNxYVQM/maxresdefault.jpg",
-    "imgUrl": "https://i.pinimg.com/originals/62/15/5c/62155c2e81a69b9f9c18b9092ebd989e.jpg",
+    "imgUrl": [
+      "https://www.omnieventos.com/wp-content/uploads/2021/05/EUA-1.jpg",
+      "https://images.indianexpress.com/2023/02/Kailasa-representatives-in-UN.jpg",
+      "https://i.ytimg.com/vi/rDCenNxYVQM/maxresdefault.jpg",
+      "https://i.pinimg.com/originals/62/15/5c/62155c2e81a69b9f9c18b9092ebd989e.jpg",
+  ],
     "tags": [
       "service",
       "freelance",
@@ -2145,10 +2256,12 @@ export const gigs = [
     "country": "Canada",
     "daysToMake": 30,
     "description": "I specialize in high-end beauty retouching and portrait photography. Let’s make your photos stand out.",
-    "imgUrl": "https://i.pinimg.com/originals/30/67/93/3067937663fbf74b170c4921b07df371.jpg",
-    "imgUrl": "https://i.pinimg.com/originals/6c/14/24/6c1424ed69b1d00b1e0ebb4ed47e0b10.jpg",
-    "imgUrl": "https://yaffa-cdn.s3.amazonaws.com/yaffadsp/images/yafPhotoCompetitionEntry/imageHero/o_1fsqgr2fk1stok611nt4crl6jia-Zooper-Dooper-Summer-time-1.jpg",
-    "imgUrl": "https://i.pinimg.com/736x/40/0c/62/400c627cba2e270192c4420bc4f11d53.jpg",
+    "imgUrl": [
+      "https://i.pinimg.com/originals/30/67/93/3067937663fbf74b170c4921b07df371.jpg",
+      "https://i.pinimg.com/originals/6c/14/24/6c1424ed69b1d00b1e0ebb4ed47e0b10.jpg",
+      "https://yaffa-cdn.s3.amazonaws.com/yaffadsp/images/yafPhotoCompetitionEntry/imageHero/o_1fsqgr2fk1stok611nt4crl6jia-Zooper-Dooper-Summer-time-1.jpg",
+      "https://i.pinimg.com/736x/40/0c/62/400c627cba2e270192c4420bc4f11d53.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2196,10 +2309,12 @@ export const gigs = [
     "country": "India",
     "daysToMake": 17,
     "description": "Turn your favorite moments into a cinematic slideshow with transitions, effects, and background music.",
-    "imgUrl": "https://ap-verlag.de/clickandbuilds/WordPress/MyCMS4/wp-content/uploads/2019/01/foto-cc0-pixabay-3dman_eu-service.jpg",
-    "imgUrl": "https://de.eas-mag.digital/wp-content/uploads/2018/10/mark-804938_1920.jpg",
-    "imgUrl": "https://assets.entrepreneur.com/content/3x2/2000/20151117183622-small-business-woman-desk-office.jpeg",
-    "imgUrl": "https://d1dlh1v05qf6d3.cloudfront.net/information/uploads/2014/07/creative.jpg",
+    "imgUrl": [
+      "https://ap-verlag.de/clickandbuilds/WordPress/MyCMS4/wp-content/uploads/2019/01/foto-cc0-pixabay-3dman_eu-service.jpg",
+      "https://de.eas-mag.digital/wp-content/uploads/2018/10/mark-804938_1920.jpg",
+      "https://assets.entrepreneur.com/content/3x2/2000/20151117183622-small-business-woman-desk-office.jpeg",
+      "https://d1dlh1v05qf6d3.cloudfront.net/information/uploads/2014/07/creative.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2247,10 +2362,12 @@ export const gigs = [
     "country": "India",
     "daysToMake": 16,
     "description": "Preserve your memories. I specialize in restoring and colorizing old damaged photographs.",
-    "imgUrl": "https://amazingsky.net/wp-content/uploads/2023/06/book-cover-2k.jpg?w=1200",
-    "imgUrl": "https://balloonstodrones.com/wp-content/uploads/2023/04/810pj1pyuxl._ac_uf10001000_ql80_.jpg?w=700",
-    "imgUrl": "https://amazingsky.net/wp-content/uploads/2023/06/book-cover-2k.jpg?w=1200",
-    "imgUrl": "https://i.pinimg.com/originals/ca/bd/23/cabd23bf75ca6eab4f159707482fa17b.jpg",
+    "imgUrl": [
+      "https://amazingsky.net/wp-content/uploads/2023/06/book-cover-2k.jpg?w=1200",
+      "https://balloonstodrones.com/wp-content/uploads/2023/04/810pj1pyuxl._ac_uf10001000_ql80_.jpg?w=700",
+      "https://amazingsky.net/wp-content/uploads/2023/06/book-cover-2k.jpg?w=1200",
+      "https://i.pinimg.com/originals/ca/bd/23/cabd23bf75ca6eab4f159707482fa17b.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2298,10 +2415,12 @@ export const gigs = [
     "country": "Canada",
     "daysToMake": 22,
     "description": "MBA graduate with 5+ years of experience crafting investor-ready business plans for startups and SMEs.",
-    "imgUrl": "https://www.dailymaverick.co.za/wp-content/uploads/2023/05/istockphoto-1407488334-170667a.jpeg?w=720",
-    "imgUrl": "https://cdn.inc42.com/wp-content/uploads/2023/06/Glossary-Batch-1-ftr-socials_CVC-Funding_feature-.jpg",
-    "imgUrl": "https://academyes.com/wp-content/uploads/2023/03/social-responsibility-of-business-social-responsibility-in-business-meaning-types-examples-and-criticism.jpg",
-    "imgUrl": "https://fullscale.io/wp-content/uploads/2023/01/business-funding-options.png",
+    "imgUrl": [
+      "https://www.dailymaverick.co.za/wp-content/uploads/2023/05/istockphoto-1407488334-170667a.jpeg?w=720",
+      "https://cdn.inc42.com/wp-content/uploads/2023/06/Glossary-Batch-1-ftr-socials_CVC-Funding_feature-.jpg",
+      "https://academyes.com/wp-content/uploads/2023/03/social-responsibility-of-business-social-responsibility-in-business-meaning-types-examples-and-criticism.jpg",
+      "https://fullscale.io/wp-content/uploads/2023/01/business-funding-options.png",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2349,10 +2468,12 @@ export const gigs = [
     "country": "Germany",
     "daysToMake": 29,
     "description": "In-depth market research and SWOT analysis to help you better understand your competition and opportunities.",
-    "imgUrl": "https://www.askedithaboutbizplans.com/wp-content/uploads/2018/05/market-research-.jpg",
-    "imgUrl": "https://markezine.jp/static/images/article/42624/42624_fb.png",
-    "imgUrl": "https://s11242.pcdn.co/wp-content/uploads/2017/08/FEATURED-IMAGE-How-to-Measure-Workfow-ROI.jpg",
-    "imgUrl": "https://i.pinimg.com/736x/e8/11/3a/e8113a36e640109ff29072067e6b8f23.jpg",
+    "imgUrl": [
+      "https://www.askedithaboutbizplans.com/wp-content/uploads/2018/05/market-research-.jpg",
+      "https://markezine.jp/static/images/article/42624/42624_fb.png",
+      "https://s11242.pcdn.co/wp-content/uploads/2017/08/FEATURED-IMAGE-How-to-Measure-Workfow-ROI.jpg",
+      "https://i.pinimg.com/736x/e8/11/3a/e8113a36e640109ff29072067e6b8f23.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2400,10 +2521,12 @@ export const gigs = [
     "country": "Germany",
     "daysToMake": 28,
     "description": "Stunning pitch decks designed for startups seeking investment. Includes research, design, and copy.",
-    "imgUrl": "https://myexeed.com/wp-content/uploads/2023/12/2.webp",
-    "imgUrl": "https://peraltadesign.com/wp-content/uploads/2022/10/PD-Blog-Cover-Newsletter-Banner-6.png",
-    "imgUrl": "https://media.licdn.com/dms/image/C4E12AQFStwVVVoxcZg/article-cover_image-shrink_600_2000/0/1601538255332?e=2147483647&v=beta&t=6-wPrx7vQgYTwjUWSEmcueva32iXHPzGyHz2LbwoZ2E",
-    "imgUrl": "https://static.vecteezy.com/system/resources/previews/003/622/046/original/market-research-and-analysis-vector.jpg",
+    "imgUrl": [
+      "https://myexeed.com/wp-content/uploads/2023/12/2.webp",
+      "https://peraltadesign.com/wp-content/uploads/2022/10/PD-Blog-Cover-Newsletter-Banner-6.png",
+      "https://media.licdn.com/dms/image/C4E12AQFStwVVVoxcZg/article-cover_image-shrink_600_2000/0/1601538255332?e=2147483647&v=beta&t=6-wPrx7vQgYTwjUWSEmcueva32iXHPzGyHz2LbwoZ2E",
+      "https://static.vecteezy.com/system/resources/previews/003/622/046/original/market-research-and-analysis-vector.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2451,10 +2574,12 @@ export const gigs = [
     "country": "Germany",
     "daysToMake": 20,
     "description": "Experienced virtual assistant ready to handle your admin tasks, scheduling, emails, and more.",
-    "imgUrl": "https://www.thebluediamondgallery.com/handwriting/images/business-research.jpg",
-    "imgUrl": "https://troudigital.com/wp-content/uploads/2017/02/business-research-1.jpg",
-    "imgUrl": "https://www.bairdscmc.com/sms/wp-content/uploads/2016/02/500xResearch-pictogram.jpg",
-    "imgUrl": "https://www.weetechsolution.com/wp-content/uploads/2023/01/research-graphics-1024x731-1.jpg",
+    "imgUrl": [
+      "https://www.thebluediamondgallery.com/handwriting/images/business-research.jpg",
+      "https://troudigital.com/wp-content/uploads/2017/02/business-research-1.jpg",
+      "https://www.bairdscmc.com/sms/wp-content/uploads/2016/02/500xResearch-pictogram.jpg",
+      "https://www.weetechsolution.com/wp-content/uploads/2023/01/research-graphics-1024x731-1.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2502,10 +2627,12 @@ export const gigs = [
     "country": "India",
     "daysToMake": 14,
     "description": "Professional business writer delivering custom proposals, emails, and documents tailored to your goals.",
-    "imgUrl": "https://scispace.com/resources/content/images/2022/08/Research-Methodology-Everything-You-need-to-Know.jpg",
-    "imgUrl": "https://imagescdn.gettyimagesbank.com/500/201610/a10551456.jpg",
-    "imgUrl": "https://ux247.com/wp-content/uploads/2013/07/benefits-online-customer-research-1024x600.png",
-    "imgUrl": "https://thumbs.dreamstime.com/b/text-sign-showing-research-analysis-word-strategic-thinking-decision-making-existing-new-conceptual-caption-photo-255419421.jpg",
+    "imgUrl": [
+      "https://scispace.com/resources/content/images/2022/08/Research-Methodology-Everything-You-need-to-Know.jpg",
+      "https://imagescdn.gettyimagesbank.com/500/201610/a10551456.jpg",
+      "https://ux247.com/wp-content/uploads/2013/07/benefits-online-customer-research-1024x600.png",
+      "https://thumbs.dreamstime.com/b/text-sign-showing-research-analysis-word-strategic-thinking-decision-making-existing-new-conceptual-caption-photo-255419421.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2553,10 +2680,12 @@ export const gigs = [
     "country": "Canada",
     "daysToMake": 15,
     "description": "Certified audio engineer with studio-grade tools to mix and master your tracks to industry standards.",
-    "imgUrl": "https://png.pngtree.com/background/20230610/original/pngtree-woman-in-colorful-music-sound-wallpaper-picture-image_3106447.jpg",
-    "imgUrl": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd12dc8c-45ac-43c8-8618-998375a1f429/d2mgasv-342e4e71-831e-43f9-92f7-4cff585dfa15.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi9jZDEyZGM4Yy00NWFjLTQzYzgtODYxOC05OTgzNzVhMWY0MjkvZDJtZ2Fzdi0zNDJlNGU3MS04MzFlLTQzZjktOTJmNy00Y2ZmNTg1ZGZhMTUuanBnIn1dXX0.NpFGqtzx18dOYJar2TfCQA-pBuVSQff8nsPqgyMNbt0",
-    "imgUrl": "https://www.slashgear.com/img/gallery/the-easiest-ways-to-turn-your-wired-speakers-wireless/intro-1682551529.jpg",
-    "imgUrl": "https://dorekau.com/wp-content/uploads/2019/02/speaker-cable-1024x645.jpg",
+    "imgUrl": [
+      "https://png.pngtree.com/background/20230610/original/pngtree-woman-in-colorful-music-sound-wallpaper-picture-image_3106447.jpg",
+      "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd12dc8c-45ac-43c8-8618-998375a1f429/d2mgasv-342e4e71-831e-43f9-92f7-4cff585dfa15.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi9jZDEyZGM4Yy00NWFjLTQzYzgtODYxOC05OTgzNzVhMWY0MjkvZDJtZ2Fzdi0zNDJlNGU3MS04MzFlLTQzZjktOTJmNy00Y2ZmNTg1ZGZhMTUuanBnIn1dXX0.NpFGqtzx18dOYJar2TfCQA-pBuVSQff8nsPqgyMNbt0",
+      "https://www.slashgear.com/img/gallery/the-easiest-ways-to-turn-your-wired-speakers-wireless/intro-1682551529.jpg",
+      "https://dorekau.com/wp-content/uploads/2019/02/speaker-cable-1024x645.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2604,10 +2733,12 @@ export const gigs = [
     "country": "Germany",
     "daysToMake": 19,
     "description": "Original music composed for your film, podcast, or video game. Various styles and moods available.",
-    "imgUrl":"https://i.ytimg.com/vi/HWLOLuvznRQ/maxresdefault.jpg",
-    "imgUrl": "https://cdn.wallpapersafari.com/47/88/5ZkOTQ.png",
-    "imgUrl": "https://img95.699pic.com/photo/30334/2781.jpg_wh860.jpg",
-    "imgUrl": "https://images.all-free-download.com/images/graphiclarge/abstract_speakers_bright_background_colorful_wave_music_notes_vector_illustration_6817363.jpg",
+    "imgUrl": [
+      "https://i.ytimg.com/vi/HWLOLuvznRQ/maxresdefault.jpg",
+      "https://cdn.wallpapersafari.com/47/88/5ZkOTQ.png",
+      "https://img95.699pic.com/photo/30334/2781.jpg_wh860.jpg",
+      "https://images.all-free-download.com/images/graphiclarge/abstract_speakers_bright_background_colorful_wave_music_notes_vector_illustration_6817363.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2655,10 +2786,12 @@ export const gigs = [
     "country": "United Kingdom",
     "daysToMake": 26,
     "description": "Native English voice over artist delivering clear and engaging narration for commercials, explainer videos, and more.",
-    "imgUrl": "https://predictabledesigns.com/wp-content/uploads/2020/02/a-picture-containing-electronics-description-auto.jpeg",
-    "imgUrl": "https://img.freepik.com/premium-photo/music-listening-concept-vintage-cassette-tape-audio-player-headphones_627494-365.jpg",
-    "imgUrl": "https://www.shutterstock.com/th/blog/wp-content/uploads/sites/16/2019/12/music-shorts-loops-blog-header-1.jpg?resize=625",
-    "imgUrl": "https://static.vecteezy.com/system/resources/thumbnails/013/445/151/small_2x/bright-luminous-blue-digital-digital-neon-sign-for-a-store-or-workshop-service-center-beautiful-shiny-with-a-music-audio-column-on-a-black-background-illustration-vector.jpg",
+    "imgUrl": [
+      "https://predictabledesigns.com/wp-content/uploads/2020/02/a-picture-containing-electronics-description-auto.jpeg",
+      "https://img.freepik.com/premium-photo/music-listening-concept-vintage-cassette-tape-audio-player-headphones_627494-365.jpg",
+      "https://www.shutterstock.com/th/blog/wp-content/uploads/sites/16/2019/12/music-shorts-loops-blog-header-1.jpg?resize=625",
+      "https://static.vecteezy.com/system/resources/thumbnails/013/445/151/small_2x/bright-luminous-blue-digital-digital-neon-sign-for-a-store-or-workshop-service-center-beautiful-shiny-with-a-music-audio-column-on-a-black-background-illustration-vector.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2706,10 +2839,12 @@ export const gigs = [
     "country": "United Kingdom",
     "daysToMake": 7,
     "description": "Get a memorable and catchy jingle that boosts brand recognition and drives customer engagement.",
-    "imgUrl": "https://coyotepr.uk/wp-content/uploads/2018/04/SOUND-OF-MUSIC-1-sheet_70mm_emailable.jpg",
-    "imgUrl": "https://beinglol.com/media/facebook-cover/All-Music-Is-Beautiful-facebook-covers-2566.jpeg",
-    "imgUrl": "https://www.palaisberg.at/assets/regiepult_palais-berg.jpg",
-    "imgUrl": "https://s.studiobinder.com/wp-content/uploads/2020/09/What-is-a-Soundstage-Definition-History-and-Function-Explained-Featured.jpg",
+    "imgUrl": [
+      "https://coyotepr.uk/wp-content/uploads/2018/04/SOUND-OF-MUSIC-1-sheet_70mm_emailable.jpg",
+      "https://beinglol.com/media/facebook-cover/All-Music-Is-Beautiful-facebook-covers-2566.jpeg",
+      "https://www.palaisberg.at/assets/regiepult_palais-berg.jpg",
+     "https://s.studiobinder.com/wp-content/uploads/2020/09/What-is-a-Soundstage-Definition-History-and-Function-Explained-Featured.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2757,10 +2892,12 @@ export const gigs = [
     "country": "Germany",
     "daysToMake": 16,
     "description": "Remove background noise, equalize levels, and master your podcast to sound professional and clean.",
-    "imgUrl": "https://musicset.ir/wp-content/uploads/2021/05/10.jpg",
-    "imgUrl": "https://watermark.lovepik.com/photo/40014/0821.jpg_wh1200.jpg",
-    "imgUrl": "https://i.pinimg.com/736x/55/f9/54/55f954f6c28b3ba9a5bede62f365e57f.jpg",
-    "imgUrl": "https://www.lookslikefilm.com/wp-content/uploads/2019/02/Emily-Kaar1.jpg",
+    "imgUrl": [
+      "https://musicset.ir/wp-content/uploads/2021/05/10.jpg",
+      "https://watermark.lovepik.com/photo/40014/0821.jpg_wh1200.jpg",
+      "https://i.pinimg.com/736x/55/f9/54/55f954f6c28b3ba9a5bede62f365e57f.jpg",
+      "https://www.lookslikefilm.com/wp-content/uploads/2019/02/Emily-Kaar1.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2808,10 +2945,12 @@ export const gigs = [
     "country": "United States",
     "daysToMake": 22,
     "description": "Frontend web developer creating modern, responsive websites optimized for performance and SEO.",
-    "imgUrl": "https://www.e-xtreme.co.jp/wp-content/uploads/2024/06/01-1.jpg",
-    "imgUrl": "https://1.bp.blogspot.com/-wm7CqoodvOc/XIiNmh8rlzI/AAAAAAAABRU/eewt9CNX4S8H-rfXt5fHYBRppx6gyOTxACLcBGAs/s1600/PROG.jpg",
-    "imgUrl": "https://image.freepik.com/vektoren-kostenlos/programmierer-konzept-mit-flachem-design_23-2147851381.jpg",
-    "imgUrl": "https://static.vecteezy.com/system/resources/thumbnails/022/328/336/original/isometric-desktop-computer-coding-programming-technology-programming-concept-technology-animation-transparent-background-with-alpha-channel-free-video.jpg",
+    "imgUrl": [
+      "https://www.e-xtreme.co.jp/wp-content/uploads/2024/06/01-1.jpg",
+      "https://1.bp.blogspot.com/-wm7CqoodvOc/XIiNmh8rlzI/AAAAAAAABRU/eewt9CNX4S8H-rfXt5fHYBRppx6gyOTxACLcBGAs/s1600/PROG.jpg",
+      "https://image.freepik.com/vektoren-kostenlos/programmierer-konzept-mit-flachem-design_23-2147851381.jpg",
+      "https://static.vecteezy.com/system/resources/thumbnails/022/328/336/original/isometric-desktop-computer-coding-programming-technology-programming-concept-technology-animation-transparent-background-with-alpha-channel-free-video.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2859,10 +2998,12 @@ export const gigs = [
     "country": "United States",
     "daysToMake": 23,
     "description": "Experienced full-stack developer available to debug and optimize your existing projects quickly.",
-    "imgUrl": "https://img.freepik.com/premium-photo/futuristic-robot-artificial-intelligence-huminoid-ai-programming-coding_31965-48962.jpg?w=2000",
-    "imgUrl": "https://www.repercom.org/media/chat-jasper.jpg",
-    "imgUrl": "https://synergist.technology/cdn/shop/articles/DALL_E_2024-03-13_15.12.11_-_An_image_symbolizing_the_fairness_and_ethical_considerations_in_artificial_intelligence_blending_modern_technology_themes_with_classical_justice_imag.webp?v=1710357150",
-    "imgUrl": "https://cdn.wallpapersafari.com/86/65/nqENxl.jpg",
+    "imgUrl": [
+      "https://img.freepik.com/premium-photo/futuristic-robot-artificial-intelligence-huminoid-ai-programming-coding_31965-48962.jpg?w=2000",
+      "https://www.repercom.org/media/chat-jasper.jpg",
+      "https://synergist.technology/cdn/shop/articles/DALL_E_2024-03-13_15.12.11_-_An_image_symbolizing_the_fairness_and_ethical_considerations_in_artificial_intelligence_blending_modern_technology_themes_with_classical_justice_imag.webp?v=1710357150",
+      "https://cdn.wallpapersafari.com/86/65/nqENxl.jpg",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2910,10 +3051,12 @@ export const gigs = [
     "country": "India",
     "daysToMake": 4,
     "description": "Need a scalable backend? I will create secure RESTful APIs with complete documentation.",
-    "imgUrl": "https://img1.wsimg.com/isteam/ip/2ea30648-5025-4014-a38c-5d56afe658a5/computers.png",
-    "imgUrl": "https://networkencyclopedia.com/wp-content/uploads/2023/11/category-software-and-programming.webp",
-    "imgUrl": "https://tracefiber.com/wp-content/uploads/2022/10/FIBER-OPTIC-PIC.jpeg",
-    "imgUrl": "https://wallpapercave.com/wp/wp12461001.png",
+    "imgUrl": [
+      "https://img1.wsimg.com/isteam/ip/2ea30648-5025-4014-a38c-5d56afe658a5/computers.png",
+      "https://networkencyclopedia.com/wp-content/uploads/2023/11/category-software-and-programming.webp",
+      "https://tracefiber.com/wp-content/uploads/2022/10/FIBER-OPTIC-PIC.jpeg",
+      "https://wallpapercave.com/wp/wp12461001.png",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -2961,10 +3104,12 @@ export const gigs = [
     "country": "United Kingdom",
     "daysToMake": 21,
     "description": "Specializing in modern full-stack apps using MongoDB, Express, React, and Node.js.",
-    "imgUrl": "https://uploads-ssl.webflow.com/61d6943d6b59241863c825d6/62fbab4c75cb9d84d48016c5_620b3da95622048338fa70b6_Screenshot%202022-02-15%20at%201.43.58%20PM-p-1080.webp",
-    "imgUrl": "https://miro.medium.com/v2/resize:fit:512/1*raayDuOblKJcodY4TlFfZw.png",
-    "imgUrl": "https://www.entcengg.com/wp-content/uploads/2017/06/system-programming-696x464.jpg",
-    "imgUrl": "https://hack-le.com/wp-content/uploads/2021/08/56237040ef6f2d38f5a3e73321c47eb7.webp",
+    "imgUrl": [
+      "https://uploads-ssl.webflow.com/61d6943d6b59241863c825d6/62fbab4c75cb9d84d48016c5_620b3da95622048338fa70b6_Screenshot%202022-02-15%20at%201.43.58%20PM-p-1080.webp",
+      "https://miro.medium.com/v2/resize:fit:512/1*raayDuOblKJcodY4TlFfZw.png",
+      "https://www.entcengg.com/wp-content/uploads/2017/06/system-programming-696x464.jpg",
+      "https://hack-le.com/wp-content/uploads/2021/08/56237040ef6f2d38f5a3e73321c47eb7.webp",
+    ],
     "tags": [
       "service",
       "freelance",
@@ -3012,10 +3157,12 @@ export const gigs = [
     "country": "United States",
     "daysToMake": 8,
     "description": "Python developer building efficient scripts for data scraping, file processing, and automation.",
-    "imgUrl": "https://images3.alphacoders.com/813/813087.jpg",
-    "imgUrl": "https://mediaeducationlab.com/sites/default/files/2023-11/mediaed-club-code.png",
-    "imgUrl": "https://www.towardsanalytic.com/wp-content/uploads/Integrating-APIs-with-Python-for-Data-Analysis-770x400.png",
-    "imgUrl": "https://mespotesgeek.fr/wp-content/uploads/2024/02/ffbbe9cee92cf52abd3202a37b5acf56c541c8fd.png",
+    "imgUrl": [
+      "https://images3.alphacoders.com/813/813087.jpg",
+      "https://mediaeducationlab.com/sites/default/files/2023-11/mediaed-club-code.png",
+      "https://www.towardsanalytic.com/wp-content/uploads/Integrating-APIs-with-Python-for-Data-Analysis-770x400.png",
+      "https://mespotesgeek.fr/wp-content/uploads/2024/02/ffbbe9cee92cf52abd3202a37b5acf56c541c8fd.png",
+    ],
     "tags": [
       "service",
       "freelance",

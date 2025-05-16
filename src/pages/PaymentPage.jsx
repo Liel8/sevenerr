@@ -135,7 +135,7 @@ export function PaymentPage() {
             <span className="gig">
                 <header className="order-details-header">
                     <span className="image-container">
-                        <img className="order-image" src={gig.imgUrl} alt="gig image" />
+                        <img className="order-image" src={gig.imgUrl && gig.imgUrl.length > 0 ? gig.imgUrl[0] : '/path/to/default-image.jpg'}alt="gig image" />
                     </span>
                     <div>
                         <h3 className="order-title">{gig.title}</h3>
