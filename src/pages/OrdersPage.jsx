@@ -8,8 +8,8 @@ export function OrdersPage() {
   const [filter, setFilter] = useState('ALL');
 
   useEffect(() => {
-    if (user && user.id) {
-      loadOrders(user.id);
+    if (user && user._id) {
+      loadOrders(user._id);
     }
   }, [user]);
 
@@ -33,7 +33,7 @@ export function OrdersPage() {
       case 'CANCELLED': return order.status === 'cancelled';
       default: return true;
     }
-  });
+  })
 
   return (
     <section className="orders-page main-layout">

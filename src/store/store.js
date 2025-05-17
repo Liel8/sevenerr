@@ -8,21 +8,52 @@ import { reviewReducer }   from './reducers/review.reducer'
 import { systemReducer }   from './reducers/system.reducer'
 import { ordersReducer }   from './reducers/orders.reducer'    // ← ייבוא של ה-orders
 
+
+
+// ← ייבוא הפונקציה שמחזירה את היוזר הקבוע מ-localStorage או מ-user.constant
+import { userService } from '../services/user/user.service.local'
+
 const rootReducer = combineReducers({
   gigModule:      gigReducer,
-  userModule:     userReducer,
-  orderModule:    ordersReducer,   // ← הוספה של מודול ORDERS
-  systemModule:   systemReducer,
-  reviewModule:   reviewReducer,
   categoryModule: categoryReducer,
+  userModule:     userReducer,
+  reviewModule:   reviewReducer,
+  systemModule:   systemReducer,
+  orderModule:    ordersReducer,
 })
 
-// Redux DevTools enhancer (אין thunk כאן)
-const devToolsEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__() 
-  : undefined
+// כאן אנחנו מאתחלים את ה-Redux state של ה-userModule עם היוזר שקוראים לו דרך getLoggedinUser()
+const preloadedState = {
+  userModule: {
+    user: userService.getLoggedinUser()
+  }
+}
 
-export const store = createStore(rootReducer, devToolsEnhancer)
+// יצירת ה-store עם preloadedState ו-Redux DevTools
+export const store = createStore(
+  rootReducer,
+  preloadedState,
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__?.()
+)
+
+
+
+
+// const rootReducer = combineReducers({
+//   gigModule:      gigReducer,
+//   userModule:     userReducer,
+//   orderModule:    ordersReducer,   // ← הוספה של מודול ORDERS
+//   systemModule:   systemReducer,
+//   reviewModule:   reviewReducer,
+//   categoryModule: categoryReducer,
+// })
+
+// // Redux DevTools enhancer (אין thunk כאן)
+// const devToolsEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+//   ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__() 
+//   : undefined
+
+// export const store = createStore(rootReducer, devToolsEnhancer)
 
 // // Debugging:
 // store.subscribe(() => {

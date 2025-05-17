@@ -8,7 +8,7 @@ export function PaymentPage() {
   // Hooks must be at the top level
   const { gigId } = useParams();
   const gig       = useSelector(state => state.gigModule.gig);
-  const user = useSelector(state => state.userModule.user) || { id: 'u101' }
+  const user = useSelector(state => state.userModule.user) || { _id: 'u101' }
   const navigate  = useNavigate();
 
   // Load gig details once
@@ -33,7 +33,7 @@ export function PaymentPage() {
   async function onConfirmPay() {
     const newOrder = {
       _id:        Date.now().toString(),
-      userId:     user.id,
+      userId:     user._id,
       gig: {
         _id:    gig._id,
         title:  gig.title,
