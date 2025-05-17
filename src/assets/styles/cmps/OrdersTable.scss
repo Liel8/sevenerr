@@ -1,0 +1,27 @@
+.order-list {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #dadbdd;
+    overflow: hidden;
+  
+    th, td {
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #404145;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+      vertical-align: middle;
+    }
+  
+    th {
+      background: #f9f9f9;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  
+    tbody tr:hover {
+      background: #fafafa;
+    }
+  }

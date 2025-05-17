@@ -24,6 +24,7 @@
 @import "pages/LoginSignup";
 @import "pages/PaymentPage.scss";
 @import "pages/UserProfile.scss";
+@import "pages/OrdersPage.scss";
 
 // Components
 // @import "cmps/list";
@@ -34,6 +35,9 @@
 @import "cmps/HeroSection.scss";
 @import "cmps/AppFooter";
 @import "cmps/UserMsg";
+@import "cmps/OrdersTable.scss";
+@import "cmps/OrderPreview.scss";
+
 
 @import "cmps/CarFilter";
 @import "cmps/ReviewEdit";

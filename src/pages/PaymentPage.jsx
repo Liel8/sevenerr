@@ -23,27 +23,27 @@ export function PaymentPage() {
   if (!gig || !gig._id) return <div>Loading…</div>;
 
   // Compute pricing and order details
-  const basePrice     = gig.price;
-  const priceWithTax  = +(basePrice * 1.18).toFixed(2);
-  const packageName   = 'Silver';  // or derive from gig or sidebar state
-  const packagePrice  = priceWithTax;
-  const daysToMake    = gig.daysToMake || 3;
+  const basePrice = gig.price;
+  const priceWithTax = +(basePrice * 1.18).toFixed(2);
+  const packageName = 'Silver';  // or derive from gig or sidebar state
+  const packagePrice = +(priceWithTax + 16.40);
+  const daysToMake = gig.daysToMake || 3;
 
   // Handle confirm and create order
   async function onConfirmPay() {
     const newOrder = {
-      _id:        Date.now().toString(),
-      userId:     user._id,
+      _id: Date.now().toString(),
+      userId: user._id,
       gig: {
-        _id:    gig._id,
-        title:  gig.title,
+        _id: gig._id,
+        title: gig.title,
         imgUrl: Array.isArray(gig.imgUrl) ? gig.imgUrl[0] : gig.imgUrl
       },
       packageName,
       packagePrice,
       daysToMake,
       createdAt:  Date.now(),
-      status:     'pending'
+      status: 'accepted'
     };
 
     try {

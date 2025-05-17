@@ -12,7 +12,8 @@ const STORAGE_KEY = 'orderDB'
 
 export const ordersService = {
   query,
-  addOrder
+  addOrder,
+  updateOrder,
 }
 
 // מחזיר את כל ההזמנות של המשתמש
@@ -26,6 +27,14 @@ function query(userId) {
 function addOrder(order) {
   const all = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
   all.push(order)
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(all))
+  return Promise.resolve(order)
+}
+
+function updateOrder(order) {
+  const all = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
+  const idx = all.findIndex(o => o._id === order._id)
+  if (idx !== -1) all[idx] = order
   localStorage.setItem(STORAGE_KEY, JSON.stringify(all))
   return Promise.resolve(order)
 }

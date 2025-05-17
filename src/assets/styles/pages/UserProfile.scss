@@ -1,229 +1,572 @@
-/* container ראשי: mobile first */
+
 .details-container {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 1rem 75px;
-    margin-top: 2.125rem;
-  }
-  
-  /* ברגע שעוברים לרוחב גדול יותר: שני טורים */
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 1rem 75px;
+  margin-top: 2.125rem;
+
   @media (min-width: 990px) {
-    .details-container {
-      flex-direction: row;
-      align-items: flex-start;
-    }
+    flex-direction: row;
+    align-items: flex-start;
   }
-  
-  /* —— Left column —— */
+
   .user-details {
     flex: 0 0 350px;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-  }
-  
-  /* הכרטיס העליון */
-  .user-card {
-    border: 1px solid #e1e1e1;
-    background: #fff;
-    padding: 30px 30px 10px 30px;
-    // border-radius: 3px;
+
+    .user-card,
+    .desc-card {
+      border: 1px solid #e1e1e1;
+      background: #fff;
+      padding: 30px;
+    }
+
+    .user-profile-img {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
 
     .user-profile-label {
-        border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #eee;
     }
-  }
-  .user-profile-img {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 1rem;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-  .user-profile-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .username-info {
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-align: center;
-    color: #0e0e0f;
-  }
-  .secondary-name {
-    font-size: 1rem;
-    color: #777;
-    text-align: center;
-    margin-bottom: 24px;
-  }
-  
-  /* סטטיסטיקות מתחת */
-  .user-stats {
-    list-style: none;
-    padding: 0;
-    font-size: 14px;
-    color: #62646a;
-    margin-top: 20px;
 
-    .user-data {
+    .username-info {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-align: center;
+      color: #0e0e0f;
+    }
+
+    .secondary-name {
+      font-size: 1rem;
+      color: #777;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .user-stats {
+      list-style: none;
+      padding: 0;
+      font-size: 14px;
+      color: #62646a;
+      margin-top: 20px;
+
+      .user-data {
         border-bottom: 1px solid #eee;
 
         .header {
-            color: #0e0e0f;
+          color: #0e0e0f;
         }
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+      }
+
+      li:first-child {
+        border-top: none;
+      }
+
+      .icon {
+        margin-right: 0.5rem;
+      }
+    }
+
+    .desc-card {
+      .user-profile-desc {
+        h3 {
+          font-size: 1rem;
+          font-weight: 700;
+          margin-bottom: 12px;
+          margin-top: 20px;
+          color: #0e0e0f;
+        }
+
+        p {
+          line-height: 1.5;
+          margin-bottom: 45px;
+        }
+      }
+
+      .user-lang,
+      .user-linked,
+      .user-education {
+        &.with-border-top {
+          border-top: 1px solid #eee;
+          padding-top: 20px;
+        }
+
+        .header h3 {
+          font-size: 1rem;
+          font-weight: 700;
+          margin: 0 0 8px;
+          color: #0e0e0f;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0.5rem 0;
+        }
+
+        li {
+          margin-bottom: 0.5rem;
+        }
+
+        .title {
+          font-weight: 600;
+        }
+
+        .sub-title {
+          color: #555;
+        }
+
+        .logo {
+          margin-right: 0.5rem;
+        }
+      }
+
+      .user-skills {
+        &.with-border-top {
+          border-top: 1px solid #eee;
+          padding-top: 20px;
+        }
+
+        .pill {
+          display: inline-block;
+          margin: 0 0.5rem 0.5rem 0;
+          padding: 0.25rem 0.75rem;
+          border: 1px solid #ddd;
+          border-radius: 15px;
+          font-size: 0.875rem;
+        }
+      }
     }
   }
-  .user-stats li {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    // border-top: 1px solid #eee;
-  }
-  .user-stats li:first-child {
-    border-top: none;
-  }
-  .user-stats .icon {
-    margin-right: 0.5rem;
-  }
-  
-  /* הכרטיס התחתון */
-  .desc-card {
-    border: 1px solid #e1e1e1;
-    background: #fff;
-    padding: 30px;
-    // border-radius: 4px;
-  }
-  .user-profile-desc h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    margin-top: 20px;
-    color: #0e0e0f;
-  }
-  .user-profile-desc p {
-    line-height: 1.5;
-    margin-bottom: 45px;
-  }
-  
-  /* רשימות (Languages, Linked, Education) */
-  .user-lang ul,
-  .user-linked ul,
-  .user-education ul {
-    list-style: none;
-    padding: 0;
-    margin: 0.5rem 0;
-  }
-  .user-lang li,
-  .user-linked li,
-  .user-education li {
-    margin-bottom: 0.5rem;
-  }
-  .user-lang .title {
-    font-weight: 600;
-  }
-  .user-lang .sub-title {
-    color: #555;
-  }
-  .user-linked .logo {
-    margin-right: 0.5rem;
-  }
-  .user-skills .pill {
-    display: inline-block;
-    margin: 0 0.5rem 0.5rem 0;
-    padding: 0.25rem 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    font-size: 0.875rem;
-  }
-  
-  /* —— Right column —— */
+
   .orders-column {
     flex: 1;
     display: flex;
     flex-direction: column;
 
+    .order-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 14px;
+
+      h1 {
+        margin: 0;
+        font-size: 18px;
+        color: #404145;
+      }
+
+      .dash-btn {
+        background: #1dbf83;
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 3px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 16px;
+
+        &:hover {
+          box-shadow: #dadbdd;
+        }
+      }
+    }
   }
-  
-  /* כותרת וטווח כפתור */
-  .order-header {
+}
+// File: src/styles/orders.scss
+
+.orders-page {
+  .orders-column {
     display: flex;
-    justify-content: space-between;
-    // align-items: baseline;
-    margin-bottom: 14px;
+    flex-direction: column;
+
+    .order-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 16px;
+
+      h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 400;
+        color: #404145;
+      }
+    }
+
+    .orders-tabs {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 24px;
+
+      button {
+        background: none;
+        border: none;
+        padding: 8px 0;
+        font-size: 14px;
+        color: #62646a;
+        position: relative;
+        cursor: pointer;
+
+        &:hover {
+          color: #404145;
+        }
+
+        &.active {
+          color: #404145;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #1dbf73;
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+
+    .order-list {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid #dadbdd;
+
+      th,
+      td {
+        padding: 12px 16px;
+        font-size: 14px;
+        color: #404145;
+        border-bottom: 1px solid #eee;
+        text-align: left;
+        vertical-align: middle;
+      }
+
+      th {
+        background: #f9f9f9;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      tbody tr:hover {
+        background: #fafafa;
+      }
+    }
+
+    .order-item {
+      display: flex;
+      align-items: center;
+
+      .order-thumb {
+        width: 48px;
+        height: 48px;
+        border-radius: 4px;
+        object-fit: cover;
+        margin-right: 12px;
+      }
+
+      .order-title {
+        font-size: 14px;
+        color: #0e0e0f;
+      }
+    }
+
+    .label {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+
+      &.fulfilled-label {
+        background: #19a463;
+        color: #fff;
+      }
+
+      &.rejected-label {
+        background: #6c757d;
+        color: #fff;
+      }
+
+      &.pending-label {
+        background: #f0b90b;
+        color: #fff;
+      }
+    }
+
+    .order-again-btn {
+      background-color: #1dbf73;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: darken(#1dbf73, 5%);
+      }
+
+      &:disabled {
+        background: #dadbdd;
+        cursor: default;
+      }
+    }
   }
-  .order-header h1 {
-    margin: 0;
-    font-size: 18px;
-    color: #404145;
-  }
-  .dash-btn {
-    background: #1dbf83;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 3px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 16px;
-  }
-  .dash-btn:hover {
-    background: #1dbf83;
-    box-shadow: #dadbdd;
-  }
+}
+
+
+
+// /* container ראשי: mobile first */
+// .details-container {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 50px;
+//     padding: 1rem 75px;
+//     margin-top: 2.125rem;
+//   }
   
-  /* הטבלה */
-  .order-list {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    border: 1px solid #dadbdd;
-    overflow: hidden;
-  }
-  .order-list th,
-  .order-list td {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-    color: #7a7d85;
-    font-size: 16px;
-  }
-  .order-list th {
-    background: #f9f9f9;
-    font-weight: 600;
-  }
-  .order-list tbody tr:hover {
-    background: #fafafa;
-  }
+//   /* ברגע שעוברים לרוחב גדול יותר: שני טורים */
+//   @media (min-width: 990px) {
+//     .details-container {
+//       flex-direction: row;
+//       align-items: flex-start;
+//     }
+//   }
   
-  /* פרטי משתמש עם תמונה בשורה */
-  .user-with-img {
-    display: flex;
-    align-items: center;
-  }
-  .user-with-img img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    margin-right: 0.5rem;
-    object-fit: cover;
-  }
+//   /* —— Left column —— */
+//   .user-details {
+//     flex: 0 0 350px;
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1.5rem;
+//   }
   
-  /* סטטוס ההזמנה */
-  .order-list .label {
-    display: inline-block;
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 500;
-  }
-  .fulfilled-label {
-    background: #19a463;
-    color: #fff;
-  }
-  .rejected-label {
-    background: #6c757d;
-    color: #fff;
-  }
+//   /* הכרטיס העליון */
+//   .user-card {
+//     border: 1px solid #e1e1e1;
+//     background: #fff;
+//     padding: 30px 30px 10px 30px;
+//     // border-radius: 3px;
+
+//     .user-profile-label {
+//         border-bottom: 1px solid #eee;
+//     }
+//   }
+//   .user-profile-img {
+//     width: 150px;
+//     height: 150px;
+//     margin: 0 auto 1rem;
+//     border-radius: 50%;
+//     overflow: hidden;
+//   }
+//   .user-profile-img img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+//   .username-info {
+//     font-size: 1.25rem;
+//     font-weight: 700;
+//     text-align: center;
+//     color: #0e0e0f;
+//   }
+//   .secondary-name {
+//     font-size: 1rem;
+//     color: #777;
+//     text-align: center;
+//     margin-bottom: 24px;
+//   }
+  
+//   /* סטטיסטיקות מתחת */
+//   .user-stats {
+//     list-style: none;
+//     padding: 0;
+//     font-size: 14px;
+//     color: #62646a;
+//     margin-top: 20px;
+
+//     .user-data {
+//         border-bottom: 1px solid #eee;
+
+//         .header {
+//             color: #0e0e0f;
+//         }
+//     }
+//   }
+//   .user-stats li {
+//     display: flex;
+//     justify-content: space-between;
+//     padding-bottom: 20px;
+//     // border-top: 1px solid #eee;
+//   }
+//   .user-stats li:first-child {
+//     border-top: none;
+//   }
+//   .user-stats .icon {
+//     margin-right: 0.5rem;
+//   }
+  
+//   /* הכרטיס התחתון */
+//   .desc-card {
+//     border: 1px solid #e1e1e1;
+//     background: #fff;
+//     padding: 30px;
+//     // border-radius: 4px;
+//   }
+//   .user-profile-desc h3 {
+//     font-size: 1rem;
+//     font-weight: 700;
+//     margin-bottom: 12px;
+//     margin-top: 20px;
+//     color: #0e0e0f;
+//   }
+//   .user-profile-desc p {
+//     line-height: 1.5;
+//     margin-bottom: 45px;
+//   }
+  
+//   /* רשימות (Languages, Linked, Education) */
+//   .user-lang ul,
+//   .user-linked ul,
+//   .user-education ul {
+//     list-style: none;
+//     padding: 0;
+//     margin: 0.5rem 0;
+//   }
+//   .user-lang li,
+//   .user-linked li,
+//   .user-education li {
+//     margin-bottom: 0.5rem;
+//   }
+//   .user-lang .title {
+//     font-weight: 600;
+//   }
+//   .user-lang .sub-title {
+//     color: #555;
+//   }
+//   .user-linked .logo {
+//     margin-right: 0.5rem;
+//   }
+//   .user-skills .pill {
+//     display: inline-block;
+//     margin: 0 0.5rem 0.5rem 0;
+//     padding: 0.25rem 0.75rem;
+//     border: 1px solid #ddd;
+//     border-radius: 15px;
+//     font-size: 0.875rem;
+//   }
+  
+//   /* —— Right column —— */
+//   .orders-column {
+//     flex: 1;
+//     display: flex;
+//     flex-direction: column;
+
+//   }
+  
+//   /* כותרת וטווח כפתור */
+//   .order-header {
+//     display: flex;
+//     justify-content: space-between;
+//     // align-items: baseline;
+//     margin-bottom: 14px;
+//   }
+//   .order-header h1 {
+//     margin: 0;
+//     font-size: 18px;
+//     color: #404145;
+//   }
+//   .dash-btn {
+//     background: #1dbf83;
+//     color: #fff;
+//     border: none;
+//     padding: 0.75rem 1.5rem;
+//     border-radius: 3px;
+//     cursor: pointer;
+//     font-weight: 700;
+//     font-size: 16px;
+//   }
+//   .dash-btn:hover {
+//     background: #1dbf83;
+//     box-shadow: #dadbdd;
+//   }
+  
+//   /* הטבלה */
+//   .order-list {
+//     width: 100%;
+//     border-collapse: collapse;
+//     background: #fff;
+//     border: 1px solid #dadbdd;
+//     overflow: hidden;
+//   }
+//   .order-list th,
+//   .order-list td {
+//     padding: 1rem;
+//     text-align: left;
+//     border-bottom: 1px solid #eee;
+//     color: #7a7d85;
+//     font-size: 16px;
+//   }
+//   .order-list th {
+//     background: #f9f9f9;
+//     font-weight: 600;
+//   }
+//   .order-list tbody tr:hover {
+//     background: #fafafa;
+//   }
+  
+//   /* פרטי משתמש עם תמונה בשורה */
+//   .user-with-img {
+//     display: flex;
+//     align-items: center;
+//   }
+//   .user-with-img img {
+//     width: 32px;
+//     height: 32px;
+//     border-radius: 50%;
+//     margin-right: 0.5rem;
+//     object-fit: cover;
+//   }
+  
+//   /* סטטוס ההזמנה */
+//   .order-list .label {
+//     display: inline-block;
+//     padding: 2px 5px;
+//     border-radius: 4px;
+//     font-size: 16px;
+//     font-weight: 500;
+//   }
+//   .fulfilled-label {
+//     background: #19a463;
+//     color: #fff;
+//   }
+//   .rejected-label {
+//     background: #6c757d;
+//     color: #fff;
+//   }
   
