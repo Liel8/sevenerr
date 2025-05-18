@@ -176,7 +176,7 @@ console.log('params:', category);
                 />
             </section>
 
-            <ul className="pagination flex">
+            {/* <ul className="pagination flex">
                 <li className="pagination-arrows first-page disabled">
                     <i className="fa-solid fa-arrow-left" aria-hidden="true"></i>
                 </li>
@@ -189,7 +189,7 @@ console.log('params:', category);
                 <li className="pagination-arrows last-page">
                     <i className="fa-solid fa-arrow-right" aria-hidden="true"></i>
                 </li>
-            </ul>
+            </ul> */}
         </section>
     );
 }

@@ -69,20 +69,23 @@
         .header {
           color: #0e0e0f;
         }
+        
       }
 
       li {
         display: flex;
         justify-content: space-between;
         padding-bottom: 20px;
+
+        
+      svg {
+        margin-right: 8px;
+      }
+
       }
 
       li:first-child {
         border-top: none;
-      }
-
-      .icon {
-        margin-right: 0.5rem;
       }
     }
 
@@ -337,6 +340,13 @@
       }
     }
   }
+}
+
+.add-gig-btn {
+  margin-top: 80px;
+  width: 180px;
+  background-color: #1dbf73;
+
 }
 
 

@@ -6,7 +6,7 @@ export function OrdersTable({ orders, mode, onAction }) {
     <table className="order-list">
       <thead>
         <tr>
-          <th>Item</th>
+          <th></th>
           <th>Order Date</th>
           <th>Due On</th>
           <th>Total</th>
