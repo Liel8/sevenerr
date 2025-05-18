@@ -137,12 +137,18 @@
         }
       }
 
-      .profile-btn img {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        object-fit: cover;
+      .profile-btn {
+        margin-right: 1.5em;
+
+        img {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
       }
+      
+
     }
   }
 }

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { loadOrders, updateOrder } from '../store/actions/orders.actions'
 import { OrdersTable } from '../cmps/OrdersTable'
 
@@ -8,6 +9,8 @@ export function UserProfile() {
   const user   = useSelector(state => state.userModule.user)
   // Orders fetched into Redux
   const orders = useSelector(state => state.orderModule.orders)
+
+  const navigate = useNavigate()
 
   // Load orders on mount
   useEffect(() => {
@@ -171,6 +174,10 @@ export function UserProfile() {
           onAction={handleStatusChange}
         />
       </section>
+      <button onClick={() => navigate('/gig/add')} className="btn">
+        + Add New Gig
+      </button>
+
     </section>
   )
 }
