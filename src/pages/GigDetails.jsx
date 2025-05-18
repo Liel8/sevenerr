@@ -101,9 +101,10 @@ export function GigDetails() {
   // המערך imgUrl מגיע ישר מה-data שלכם
   const images = Array.isArray(gig.imgUrl) && gig.imgUrl.length > 0
     ? gig.imgUrl
-    : ['/path/to/default-image.jpg']
-  const defaultImg = '/path/to/default-image.jpg'
+    : ['https://www.looper.com/img/gallery/phoebe-buffays-friends-timeline-explained/l-intro-1621661137.jpg']
+  const defaultImg = 'https://www.looper.com/img/gallery/phoebe-buffays-friends-timeline-explained/l-intro-1621661137.jpg'
 
+  console.log("####", gig)
   return (
     <section className="gig-details main-layout">
       <article className="bread-crumbs full">
