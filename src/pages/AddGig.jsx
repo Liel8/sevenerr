@@ -134,13 +134,14 @@ export function AddGig() {
           </div>
 
           <div className="form-group">
-            <label>Price ($)</label>
+            <label>Price (₪)</label>
             <input
               type="number"
               name="price"
               value={gigData.price}
               onChange={handleChange}
               placeholder="0"
+              min="0"
             />
           </div>
 
@@ -152,6 +153,7 @@ export function AddGig() {
               value={gigData.daysToMake}
               onChange={handleChange}
               placeholder="7"
+               min="0"
             />
           </div>
 

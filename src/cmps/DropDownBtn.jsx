@@ -108,6 +108,14 @@ export function DropdownBtn({ icon, selectedBtn, setSelectedBtn, onLogout }) {
       {isOpen && (
         <div className="dropdown-menu">
           <NavLink className="link highlight" to={`/user/profile`}>Profile</NavLink>
+          <span className="link logout" onClick={onLogout}>Logout</span>
+        </div>
+      )}
+    </div>
+  )
+}
+
+
           {/* <NavLink className="link" to="#">Post a project brief</NavLink>
           <NavLink className="link" to="#">Your briefs</NavLink>
           <NavLink className="link highlight" to="#">Refer a friend</NavLink> */}
@@ -131,9 +139,3 @@ export function DropdownBtn({ icon, selectedBtn, setSelectedBtn, onLogout }) {
           <span className="link">Help & support</span>
 
           <hr /> */}
-          <span className="link logout" onClick={onLogout}>Logout</span>
-        </div>
-      )}
-    </div>
-  )
-}
