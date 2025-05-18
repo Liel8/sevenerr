@@ -152,7 +152,7 @@ export function GigDetails() {
             </div>
           </div>
 
-          {/* הקרוסלה */}
+          
           <div className="carousel-container">
         <Carousel
           infiniteLoop
@@ -175,10 +175,10 @@ export function GigDetails() {
           }
         >
           {images.map((src, idx) => (
-            <img
+            <img className='carousel-row-images'
               key={idx}
               src={src}
-              alt={`${gig.title} – תמונה ${idx + 1}`}
+              alt={`${gig.title}${idx + 1}`}
               onError={e => { e.currentTarget.src = defaultImg }}
             />
           ))}

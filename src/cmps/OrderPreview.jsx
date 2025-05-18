@@ -37,26 +37,27 @@ export function OrderPreview({ order, mode, onAction }) {
           switch (order.status) {
             case 'fulfilled':
               return (
-                <select disabled defaultValue="fulfilled">
+                <select value="fulfilled" disabled>
                   <option value="fulfilled">Completed</option>
                 </select>
               )
             case 'cancelled':
               return (
-                <select disabled defaultValue="cancelled">
+                <select value="cancelled" disabled>
                   <option value="cancelled">Rejected</option>
                 </select>
               )
             case 'pending':
               return (
                 <select
-                  defaultValue="pending"
+                value={order.status}
                   onChange={e => onAction({ ...order, status: e.target.value })}
                 >
                   <option value="pending" disabled>
                     In Process
                   </option>
                   <option value="fulfilled">Completed</option>
+                  <option value="cancelled">Rejected</option>
                 </select>
               )
             case 'accepted':
@@ -66,7 +67,7 @@ export function OrderPreview({ order, mode, onAction }) {
                   defaultValue=""
                   onChange={e => onAction({ ...order, status: e.target.value })}
                 >
-                  <option value="" disabled>
+                  <option value="accepted" disabled>
                     Select…
                   </option>
                   <option value="pending">In Process</option>

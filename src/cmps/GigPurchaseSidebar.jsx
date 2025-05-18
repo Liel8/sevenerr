@@ -3,14 +3,14 @@ import { Link } from "react-router-dom"
 
 export function GigPurchaseSidebar({ gig }) {
   const [selectedPackage, setSelectedPackage] = useState("basic");
-
+  const basePrice = gig.price || 10;
   const packages = {
     basic: {
       title: "SILVER",
       description: "1 logo design, High Quality Mock-up, Logo Transparency",
       delivery: "4 Days Delivery",
       features: ["1 concept included", "Logo transparency"],
-      price: 10,
+      price: basePrice,
     },
     standard: {
       title: "GOLD",
@@ -22,7 +22,7 @@ export function GigPurchaseSidebar({ gig }) {
         "Printable file",
         "Include 3D mockup",
       ],
-      price: 25,
+      price: Math.round(basePrice*1.3),
     },
     premium: {
       title: "PLATINUM (Recommended)",
@@ -35,7 +35,7 @@ export function GigPurchaseSidebar({ gig }) {
         "Social media kit",
         "Include 3D mockup",
       ],
-      price: 45,
+      price: Math.round(basePrice * 1.3 * 1.5),
     },
   };
 
@@ -58,13 +58,15 @@ export function GigPurchaseSidebar({ gig }) {
       <div className="package-options">
         <div className="title-price">         
           <h3>{current.title}</h3>
-          <h2>${current.price}</h2>
+          <h2>₪{current.price}</h2>
         </div>
 
         <p className="description">{current.description}</p>
 
-        <div className="delivery">
-          <span>🕒</span> <strong>{current.delivery}</strong>
+        <div className="delivery-wrapper">
+        <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#62646a">
+        <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path><path d="M9 4H7v5h5V7H9V4z"></path></svg>
+         <b className="delivery">{current.delivery}</b>
         </div>
 
         <ul className="features">

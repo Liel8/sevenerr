@@ -39,21 +39,24 @@ export function UserProfile() {
         <ul className="user-stats with-border-top">
           <li className="location info-card-style flex">
             <span>
-              <span className="fa-regular fa-clock icon" aria-hidden="true"></span>
+            <svg width="16" height="16" viewBox="0 0 13 16" xmlns="http://www.w3.org/2000/svg" fill="var(--s5gl5m1l)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.692 1.75A4.383 4.383 0 0 0 2.31 6.133c0 1.837 1.146 3.883 2.414 5.555a23.416 23.416 0 0 0 1.97 2.266l.26-.267a23.416 23.416 0 0 0 1.709-1.999c1.268-1.672 2.414-3.718 2.414-5.555A4.383 4.383 0 0 0 6.692 1.75Zm0 13.25-.504.555-.002-.002-.004-.003-.013-.012-.047-.044-.172-.164a24.896 24.896 0 0 1-2.422-2.735C2.23 10.884.81 8.496.81 6.133a5.883 5.883 0 0 1 11.767 0c0 2.363-1.421 4.75-2.72 6.462a24.896 24.896 0 0 1-2.593 2.899l-.047.044-.013.012-.004.003-.001.001s-.001.001-.506-.554Zm0 0 .506.554a.751.751 0 0 1-1.01 0L6.692 15Zm0-10.45a1.583 1.583 0 1 0 0 3.167 1.583 1.583 0 0 0 0-3.167ZM3.61 6.133a3.083 3.083 0 1 1 6.167 0 3.083 3.083 0 0 1-6.167 0Z"></path></svg>
               From
             </span>
             <b>Israel</b>
           </li>
           <li className="member-since info-card-style flex">
             <span>
-              <span className="fa-solid fa-user icon" aria-hidden="true"></span>
+            <svg width="16" height="16" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" fill="var(--s5gl5m1l)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 1.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM2.041 12c.165-.466.98-2 4.96-2 3.978 0 4.793 1.534 4.958 2H2.04Zm4.96-3.5C1.546 8.5.5 11.243.5 12.123c0 .879.71 1.377 1.374 1.377h10.252c.663 0 1.374-.498 1.374-1.377 0-.88-1.047-3.623-6.5-3.623Z"></path></svg>
               Member since
             </span>
             <b>Oct 2023</b>
           </li>
           <li className="member-res-time info-card-style flex">
             <span>
-              <span className="fa-regular fa-clock icon" aria-hidden="true"></span>
+            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="var(--s5gl5m1l)">
+            <path d="M8 .25A7.749 7.749 0 0 0 .25 8 7.749 7.749 0 0 0 8 15.75 7.749 7.749 0 0 0 15.75 8 7.749 7.749 0 0 0 8 .25Zm0 14A6.248 6.248 0 0 1 1.75 8 6.248 6.248 0 0 1 8 1.75 6.248 6.248 0 0 1 14.25 8 6.248 6.248 0 0 1 8 14.25Zm1.931-3.262L7.278 9.059a.377.377 0 0 1-.153-.303V3.625c0-.206.169-.375.375-.375h1c.206 0 .375.169.375.375v4.428l2.088 1.519a.375.375 0 0 1 .08.525l-.587.81a.378.378 0 0 1-.525.08Z"></path></svg>
               Avg. Response Time
             </span>
             <b>1 hour</b>

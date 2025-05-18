@@ -1,13 +1,16 @@
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
+import { useState } from "react";
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { logout } from '../store/actions/user.actions'
 import { SubHeader } from './SubHeader'
 import { HeroSection } from './HeroSection'
+import { DropdownBtn } from "./DropDownBtn";
 
 
 export function AppHeader() {
+	const [selectedDropDownBtn, setSelectedDropDownBtn] = useState(null);
 	const user = useSelector(storeState => storeState.userModule.user)
 	const navigate = useNavigate()
 	const location = useLocation()
@@ -51,10 +54,36 @@ export function AppHeader() {
 			  </form>
 			</div>
 			<nav className="links-container">
-			  <Link className="btn" to="/gig">Explore</Link>
-			  <Link className="btn login" to="/login">Login</Link>
-			  <Link className="profile-btn" to="/user/profile"><img src='https://www.looper.com/img/gallery/phoebe-buffays-friends-timeline-explained/l-intro-1621661137.jpg'></img></Link>
-			  <Link className="btn join" to="/signup">Join</Link>
+			<Link className="btn" to="/gig">Explore</Link>
+			<Link className="btn login" to="/login">Login</Link>
+
+			<span className="user-info">
+				<DropdownBtn
+				selectedBtn={selectedDropDownBtn}
+				setSelectedBtn={setSelectedDropDownBtn}
+				icon={
+					<img
+					className="profile-btn"
+					src={user.imgUrl || 'https://www.looper.com/img/gallery/phoebe-buffays-friends-timeline-explained/l-intro-1621661137.jpg'}
+					onError={e => e.currentTarget.src = defaultUserImg}
+					/>
+				}
+				>
+				<NavLink to={`user/${user._id}`}>
+					Profile
+				</NavLink>
+
+				{user.isSeller ? (
+					<NavLink to="/gig/add">Add a gig</NavLink>
+				) : (
+					<NavLink to={`user/${user._id}`}>Become a seller</NavLink>
+				)}
+
+				<span onClick={onLogout}>Logout</span>
+				</DropdownBtn>
+			</span>
+
+			<Link className="btn join" to="/signup">Join</Link>
 			</nav>
 		  </header>
 		</section>
