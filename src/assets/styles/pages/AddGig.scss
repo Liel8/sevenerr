@@ -1,0 +1,157 @@
+$primary-green: #1dbf73;
+$light-grey: #f6f7f8;
+$border-grey: #e4e5e7;
+$text-grey: #6b6b6b;
+
+.gig-add {
+  padding: 2rem;
+  h2 {
+    color: $primary-green;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .subheading {
+    color: $text-grey;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .gig-add-content {
+    display: flex;
+    gap: 2rem;
+
+    // Form Section
+    .gig-add-form {
+      flex: 1;
+
+      .upload-images {
+        margin-bottom: 1.5rem;
+
+        .upload-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: $light-grey;
+          border: none;
+          padding: 0.75rem 1rem;
+          border-radius: 4px;
+          font-size: 1rem;
+          cursor: pointer;
+          svg {
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+
+        label {
+          display: block;
+          color: #333;
+          font-weight: 500;
+          margin-bottom: 0.5rem;
+          font-size: 0.875rem;
+        }
+
+        input,
+        textarea,
+        select {
+          width: 100%;
+          padding: 0.75rem;
+          border: 1px solid $border-grey;
+          border-radius: 4px;
+          font-size: 1rem;
+          font-family: inherit;
+
+          &:focus {
+            outline: none;
+            border-color: $primary-green;
+            box-shadow: 0 0 0 2px rgba($primary-green, 0.2);
+          }
+        }
+
+        textarea {
+          min-height: 150px;
+          resize: vertical;
+        }
+      }
+
+      .btn-submit {
+        background-color: $primary-green;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken($primary-green, 5%);
+        }
+      }
+    }
+
+    // Preview Card Section
+    .preview-card {
+      flex: 1;
+      max-width: 400px;
+      background: #fff;
+      border: 1px solid $border-grey;
+      border-radius: 8px;
+      overflow: hidden;
+
+      .image-container {
+        width: 100%;
+        height: 200px;
+        background-color: $light-grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .card-body {
+        padding: 1rem;
+
+        .card-title {
+          font-size: 1.25rem;
+          margin-bottom: 0.5rem;
+          color: #333;
+          font-weight: 600;
+        }
+
+        .card-description {
+          font-size: 0.875rem;
+          color: $text-grey;
+          margin-bottom: 1rem;
+        }
+
+        .card-meta {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.875rem;
+
+          .days,
+          .price {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+          }
+
+          .price span {
+            color: $primary-green;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

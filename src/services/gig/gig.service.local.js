@@ -47,13 +47,12 @@ async function query(filterBy = { txt: '', maxPrice: Infinity, sortField: 'title
 }
 
 function _createGigs() {
-    var gigsList = loadFromStorage(STORAGE_KEY)
-
+    const gigsList = loadFromStorage(STORAGE_KEY)
+    // רק אם אין עדיין data ב־localStorage, שומרים את ברירת המחדל
     if (!gigsList || !gigsList.length) {
-        gigsList = gigs
-        }
-        saveToStorage(STORAGE_KEY, gigs)
+      saveToStorage(STORAGE_KEY, gigs)
     }
+}
 
 function getFilterFromParams(searchParams, category) {
     console.log('<><><><><>');
