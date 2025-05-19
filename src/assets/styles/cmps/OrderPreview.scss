@@ -20,21 +20,23 @@
   .label {
     display: inline-block;
     padding: 4px 8px;
-    border-radius: 4px;
+    border-radius: 2px;
     font-size: 12px;
     font-weight: 500;
   
     &.fulfilled-label {
-      background: #19a463;
+      background: #1dbf73;
       color: #fff;
     }
     &.rejected-label {
-      background: #6c757d;
+      background: #74767e;
       color: #fff;
     }
     &.pending-label {
-      background: #f0b90b;
-      color: #fff;
+      // background: #e1d967;
+      font-size: 13px;
+      padding: 4px 0;
+      color: #222325;
     }
   }
   
@@ -42,9 +44,9 @@
     background-color: #1dbf73;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 2px;
     padding: 8px 12px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.2s;
