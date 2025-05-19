@@ -67,7 +67,7 @@ function getLoggedinUser() {
         _id: 'u101',                // או מה שצריך
         username: 'yaz',
         fullname: 'Yazan Meray',
-        imgUrl: '/img/yazanprofile.jpg',
+        imgUrl: 'https://www.looper.com/img/gallery/phoebe-buffays-friends-timeline-explained/l-intro-1621661137.jpg',
         balance: 0
         
     }
