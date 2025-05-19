@@ -60,3 +60,79 @@
 //   .dot.active {
 //     background-color: white;
 //   }
+
+.slider {
+    position: relative;
+    overflow: hidden;
+  
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 16px 16px;
+      opacity: 0;
+      cursor: pointer;
+      transition: opacity 0.2s;
+  
+      &.prev {
+        left: 12px;
+        background-image: url('https://fiverr-res.cloudinary.com/npm-assets/@fiverr/gig_page_perseus/basic-carousel-arrows.dfd3090.svg');
+      }
+  
+      &.next {
+        right: 12px;
+        background-image: url('https://fiverr-res.cloudinary.com/npm-assets/@fiverr/gig_page_perseus/basic-carousel-arrows.dfd3090.svg');
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  
+    &:hover .arrow {
+      opacity: 1;
+    }
+  
+    .slides.preview {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      .slide-item {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+  
+        img.box-image-ratio {
+          width: 100%;
+          height: auto;
+          border-radius: 4px;
+          object-fit: cover;
+        }
+      }
+    }
+  
+    .slider-indicator {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      list-style: none;
+      padding: 0;
+  
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #c5c6c9;
+        margin: 0 3px;
+        transition: background-color 0.3s ease;
+  
+        &.active {
+          background-color: #62646a;
+        }
+      }
+    }
+  }
+  
