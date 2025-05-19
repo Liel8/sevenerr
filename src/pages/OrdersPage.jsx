@@ -13,12 +13,18 @@ export function OrdersPage() {
   }, [user])
 
   const filtered = orders.filter(order => {
+    const raw = (order.status || '').toString().toLowerCase()
+    const currentStatus = (raw === 'accepted' || raw === '') ? 'pending' : raw
+
     switch (filter) {
-      case 'ACTIVE': return order.status === 'pending'
-      case 'DELIVERED': return order.status === 'delivered'
-      case 'COMPLETED': return ['fulfilled','approved'].includes(order.status)
-      case 'CANCELLED': return order.status === 'cancelled'
-      default: return true
+      case 'ACTIVE':
+        return currentStatus === 'pending'
+      case 'COMPLETED':
+        return ['fulfilled', 'approved'].includes(currentStatus)
+      case 'CANCELLED':
+        return currentStatus === 'cancelled'
+      default:
+        return true
     }
   })
 
@@ -31,13 +37,10 @@ export function OrdersPage() {
       packagePrice: order.packagePrice,
       daysToMake: order.daysToMake,
       createdAt: Date.now(),
-      status: 'accepted'
+      status: 'pending'
     }
     addOrder(newOrder)
-      .then(() => {
-        // אופציונלי: תציגי toast או אתחול סינון
-        setFilter('ALL')
-      })
+      .then(() => setFilter('ALL'))
       .catch(err => console.error('Cannot reorder', err))
   }
 
@@ -49,13 +52,14 @@ export function OrdersPage() {
         </div>
 
         <nav className="orders-tabs">
-          {['ALL','ACTIVE','DELIVERED','COMPLETED','CANCELLED']
-            .map(key => (
-              <button
-                key={key}
-                className={filter===key? 'active':''}
-                onClick={()=>setFilter(key)}
-              >{key}</button>
+          {['ALL','ACTIVE','COMPLETED','CANCELLED'].map(key => (
+            <button
+              key={key}
+              className={filter===key ? 'active' : ''}
+              onClick={() => setFilter(key)}
+            >
+              {key}
+            </button>
           ))}
         </nav>
 
@@ -68,4 +72,5 @@ export function OrdersPage() {
     </section>
   )
 }
+
 

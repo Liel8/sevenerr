@@ -1,5 +1,3 @@
-// src/styles/user-profile.scss
-
 .details-container {
   display: flex;
   flex-direction: column;
@@ -69,6 +67,10 @@
 
         .header {
           color: #0e0e0f;
+           
+          h3 {
+            
+          }
         }        
       }
 
@@ -175,61 +177,42 @@
       }
     }
 
-    /* My Gigs styling */
     .my-gigs {
       margin-top: 40px;
 
       h2 {
         font-size: 20px;
-        margin-bottom: 16px;
+        margin-bottom: 25px;
+        margin-left: 5px;
       }
 
       .gigs-list {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
         gap: 16px;
-      }
 
-      .gig-card {
-        background: #fff;
-        border: 1px solid #e1e1e1;
-        border-radius: 8px;
-        overflow: hidden;
-        cursor: pointer;
-        transition: box-shadow 0.2s;
-
-        &:hover {
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .img-wrap {
-          position: relative;
-          width: 100%;
-          padding-top: 56.25%; /* 16:9 ratio */
-          overflow: hidden;
+        .my-gig-btn {
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+          color: #62646a;
+          padding: 0;
+          height: 240px;
 
           .gig-img {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            position: relative;
             width: 100%;
-            height: 100%;
+            height: 160px;
             object-fit: cover;
+            border-radius: 4px;
           }
 
-          .fav-icon {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background: rgba(255,255,255,0.8);
-            border-radius: 50%;
-            padding: 4px;
-
-            i {
-              font-size: 16px;
-              color: #333;
-            }
+          h4 {
+            margin-top: 5px;
           }
+
         }
+      }
 
         .gig-title {
           padding: 12px;
@@ -241,364 +224,16 @@
       }
     }
   }
-}
 
-/* Add Gig button styling */
 .add-gig-btn {
   margin-top: 80px;
-  width: 180px;
+  margin-bottom: 40px;
+  font-size: 20px;
+  width: 250px;
+  height: 50px;
+  border-radius: 2px;
   background-color: #1dbf73;
 }
 
 
 
-// .details-container {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 50px;
-//   padding: 1rem 75px;
-//   margin-top: 2.125rem;
-
-//   @media (min-width: 990px) {
-//     flex-direction: row;
-//     align-items: flex-start;
-//   }
-
-//   .user-details {
-//     flex: 0 0 350px;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 1.5rem;
-
-//     .user-card,
-//     .desc-card {
-//       border: 1px solid #e1e1e1;
-//       background: #fff;
-//       padding: 30px;
-//     }
-
-//     .user-profile-img {
-//       width: 150px;
-//       height: 150px;
-//       margin: 0 auto 1rem;
-//       border-radius: 50%;
-//       overflow: hidden;
-
-//       img {
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-//       }
-//     }
-
-//     .user-profile-label {
-//       border-bottom: 1px solid #eee;
-//     }
-
-//     .username-info {
-//       font-size: 1.25rem;
-//       font-weight: 700;
-//       text-align: center;
-//       color: #0e0e0f;
-//     }
-
-//     .secondary-name {
-//       font-size: 1rem;
-//       color: #777;
-//       text-align: center;
-//       margin-bottom: 24px;
-//     }
-
-//     .user-stats {
-//       list-style: none;
-//       padding: 0;
-//       font-size: 14px;
-//       color: #62646a;
-//       margin-top: 20px;
-
-//       .user-data {
-//         border-bottom: 1px solid #eee;
-
-//         .header {
-//           color: #0e0e0f;
-//         }
-        
-//       }
-
-//       li {
-//         display: flex;
-//         justify-content: space-between;
-//         padding-bottom: 20px;
-
-        
-//       svg {
-//         margin-right: 8px;
-//       }
-
-//       }
-
-//       li:first-child {
-//         border-top: none;
-//       }
-//     }
-
-//     .desc-card {
-//       .user-profile-desc {
-//         h3 {
-//           font-size: 1rem;
-//           font-weight: 700;
-//           margin-bottom: 12px;
-//           margin-top: 20px;
-//           color: #0e0e0f;
-//         }
-
-//         p {
-//           line-height: 1.5;
-//           margin-bottom: 45px;
-//         }
-//       }
-
-//       .user-lang,
-//       .user-linked,
-//       .user-education {
-//         &.with-border-top {
-//           border-top: 1px solid #eee;
-//           padding-top: 20px;
-//         }
-
-//         .header h3 {
-//           font-size: 1rem;
-//           font-weight: 700;
-//           margin: 0 0 8px;
-//           color: #0e0e0f;
-//         }
-
-//         ul {
-//           list-style: none;
-//           padding: 0;
-//           margin: 0.5rem 0;
-//         }
-
-//         li {
-//           margin-bottom: 0.5rem;
-//         }
-
-//         .title {
-//           font-weight: 600;
-//         }
-
-//         .sub-title {
-//           color: #555;
-//         }
-
-//         .logo {
-//           margin-right: 0.5rem;
-//         }
-//       }
-
-//       .user-skills {
-//         &.with-border-top {
-//           border-top: 1px solid #eee;
-//           padding-top: 20px;
-//         }
-
-//         .pill {
-//           display: inline-block;
-//           margin: 0 0.5rem 0.5rem 0;
-//           padding: 0.25rem 0.75rem;
-//           border: 1px solid #ddd;
-//           border-radius: 15px;
-//           font-size: 0.875rem;
-//         }
-//       }
-//     }
-//   }
-
-//   .orders-column {
-//     flex: 1;
-//     display: flex;
-//     flex-direction: column;
-
-//     .order-header {
-//       display: flex;
-//       justify-content: space-between;
-//       margin-bottom: 14px;
-
-//       h1 {
-//         margin: 0;
-//         font-size: 18px;
-//         color: #404145;
-//       }
-
-//       .dash-btn {
-//         background: #1dbf83;
-//         color: #fff;
-//         border: none;
-//         padding: 0.75rem 1.5rem;
-//         border-radius: 3px;
-//         cursor: pointer;
-//         font-weight: 700;
-//         font-size: 16px;
-
-//         &:hover {
-//           box-shadow: #dadbdd;
-//         }
-//       }
-//     }
-//   }
-// }
-// // File: src/styles/orders.scss
-
-// .orders-page {
-//   .orders-column {
-//     display: flex;
-//     flex-direction: column;
-
-//     .order-header {
-//       display: flex;
-//       justify-content: space-between;
-//       align-items: baseline;
-//       margin-bottom: 16px;
-
-//       h1 {
-//         margin: 0;
-//         font-size: 24px;
-//         font-weight: 400;
-//         color: #404145;
-//       }
-//     }
-
-//     .orders-tabs {
-//       display: flex;
-//       gap: 24px;
-//       margin-bottom: 24px;
-
-//       button {
-//         background: none;
-//         border: none;
-//         padding: 8px 0;
-//         font-size: 14px;
-//         color: #62646a;
-//         position: relative;
-//         cursor: pointer;
-
-//         &:hover {
-//           color: #404145;
-//         }
-
-//         &.active {
-//           color: #404145;
-
-//           &::after {
-//             content: '';
-//             position: absolute;
-//             bottom: -2px;
-//             left: 0;
-//             right: 0;
-//             height: 2px;
-//             background-color: #1dbf73;
-//             border-radius: 2px;
-//           }
-//         }
-//       }
-//     }
-
-//     .order-list {
-//       width: 100%;
-//       border-collapse: collapse;
-//       background: #fff;
-//       border: 1px solid #dadbdd;
-
-//       th,
-//       td {
-//         padding: 12px 16px;
-//         font-size: 14px;
-//         color: #404145;
-//         border-bottom: 1px solid #eee;
-//         text-align: left;
-//         vertical-align: middle;
-//       }
-
-//       th {
-//         background: #f9f9f9;
-//         font-weight: 600;
-//         text-transform: uppercase;
-//         letter-spacing: 0.5px;
-//       }
-
-//       tbody tr:hover {
-//         background: #fafafa;
-//       }
-//     }
-
-//     .order-item {
-//       display: flex;
-//       align-items: center;
-
-//       .order-thumb {
-//         width: 48px;
-//         height: 48px;
-//         border-radius: 4px;
-//         object-fit: cover;
-//         margin-right: 12px;
-//       }
-
-//       .order-title {
-//         font-size: 14px;
-//         color: #0e0e0f;
-//       }
-//     }
-
-//     .label {
-//       display: inline-block;
-//       padding: 4px 8px;
-//       border-radius: 4px;
-//       font-size: 12px;
-//       font-weight: 500;
-
-//       &.fulfilled-label {
-//         background: #19a463;
-//         color: #fff;
-//       }
-
-//       &.rejected-label {
-//         background: #6c757d;
-//         color: #fff;
-//       }
-
-//       &.pending-label {
-//         background: #f0b90b;
-//         color: #fff;
-//       }
-//     }
-
-//     .order-again-btn {
-//       background-color: #1dbf73;
-//       color: #fff;
-//       border: none;
-//       border-radius: 4px;
-//       padding: 8px 12px;
-//       font-size: 14px;
-//       font-weight: 500;
-//       cursor: pointer;
-//       transition: background-color 0.2s;
-
-//       &:hover {
-//         background-color: darken(#1dbf73, 5%);
-//       }
-
-//       &:disabled {
-//         background: #dadbdd;
-//         cursor: default;
-//       }
-//     }
-//   }
-// }
-
-// .add-gig-btn {
-//   margin-top: 80px;
-//   width: 180px;
-//   background-color: #1dbf73;
-
-// }
-  
