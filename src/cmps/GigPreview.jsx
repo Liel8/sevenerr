@@ -13,6 +13,7 @@ export function GigPreview({ gig }) {
     <li className="gig-preview" key={gig._id}>
       {/* לחיצה על תמונת הגיג */}
       <div className="img-container" onClick={handleNavigation} style={{ cursor: 'pointer' }}>
+      <button className="like-btn" aria-label="Save to favorites"></button>
         {/* <img className="gig-img" src={gig.imgUrl} alt={gig.title} /> */}
         <GigSlider gig={gig} />
       </div>

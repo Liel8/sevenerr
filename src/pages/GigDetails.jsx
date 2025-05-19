@@ -1,6 +1,6 @@
 
 
-import React from 'react'
+import React, { useState, useRef  } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { GigPurchaseSidebar } from '../cmps/GigPurchaseSidebar'
@@ -21,6 +21,29 @@ export function GigDetails() {
     : ['https://www.looper.com/img/gallery/phoebe-buffays-friends-timeline-explained/l-intro-1621661137.jpg']
   const defaultImg = 'https://www.looper.com/img/gallery/phoebe-buffays-friends-timeline-explained/l-intro-1621661137.jpg'
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+  
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const thumbsRef = useRef(null);
+
+  // const scrollLeft = () => {
+  //   if (thumbsRef.current) {
+  //     thumbsRef.current.scrollBy({ left: -100, behavior: 'smooth' });
+  //   }
+  // };
+
+  // const scrollRight = () => {
+  //   if (thumbsRef.current) {
+  //     thumbsRef.current.scrollBy({ left: 100, behavior: 'smooth' });
+  //   }
+  // };
   console.log("####", gig)
   return (
     <section className="gig-details main-layout">
@@ -71,37 +94,36 @@ export function GigDetails() {
           </div>
 
           
-          <div className="carousel-container">
-        <Carousel
-          infiniteLoop
-          showIndicators={false}
-          thumbWidth={100}
-          showStatus={false}
-          renderArrowNext={(onClick, hasNext) =>
-            hasNext && (
-              <button className="next-btn arrow" onClick={onClick}>
-                <i className="fa-solid fa-chevron-right"></i>
-              </button>
-            )
-          }
-          renderArrowPrev={(onClick, hasPrev) =>
-            hasPrev && (
-              <button className="prev-btn arrow" onClick={onClick}>
-                <i className="fa-solid fa-chevron-left"></i>
-              </button>
-            )
-          }
-        >
-          {images.map((src, idx) => (
-            <img className='carousel-row-images'
-              key={idx}
-              src={src}
-              alt={`${gig.title}${idx + 1}`}
-              onError={e => { e.currentTarget.src = defaultImg }}
-            />
-          ))}
-        </Carousel>
-      </div>
+          <section className="gig-gallery-component">
+            <div className="gallery-slideshow">
+              <button className="nav-prev" onClick={handlePrev}></button>
+              <button className="nav-next" onClick={handleNext}></button>
+
+              <div className="swipe-events-wrapper">
+                <div className="slideshow-component">
+                  <div className="slideshow-slide current">
+                    <figure className="thumbnail">
+                      <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="gallery-thumbnails">
+              <div className="thumbs-container" ref={thumbsRef}>
+                {images.map((img, idx) => (
+                  <button
+                    key={idx}
+                    className={`thumbnail ${idx === currentIndex ? 'active' : ''}`}
+                    onClick={() => setCurrentIndex(idx)}
+                  >
+                    <img src={img} alt={`Thumbnail ${idx + 1}`} />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+          </section>
 
           <h3>About this gig</h3>
           <p className="gig-description">{gig.description}</p>

@@ -11,6 +11,7 @@
     transition: box-shadow 0.2s;
     height: 100%;
     min-width: 245px;
+    margin-bottom: 40px;
     // max-width: 316px;
   
     // &:hover {
@@ -22,34 +23,53 @@
     .img-container {
       width: 100%;
       position: relative;
-      padding-top: 66%; /* ~יחס 3:2, אפשר להתאים */
+      aspect-ratio: 3 / 2;
       overflow: hidden;
       border-radius: 8px;
-      margin-bottom: 12px;
-      
-  
-      // .gig-img {
-      //   position: absolute;
-      //   object-fit: cover;
-      //   top: 0; left: 0;
-      //   width: 100%;
-      //   height: 90%;
-      //   // object-fit: cover;
-      // }
+
+      .like-btn {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 32px;
+        height: 32px;
+        border: none;
+        background-color: rgba(0, 0, 0, 0); 
+        transition: background-color 0.2s ease;
+        border-radius: 50%;
+        background-image: url("data:image/svg+xml,%3Csvg width='34' height='36' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 17.27L8.55 16.03C4.4 12.36 2 10.28 2 7.5C2 5.5 3.5 4 5.5 4C6.74 4 7.92 4.61 8.54 5.53C9.16 4.61 10.34 4 11.58 4C13.58 4 15.08 5.5 15.08 7.5C15.08 10.28 12.68 12.36 8.55 16.04L10 17.27Z' stroke='%23ffffff' stroke-width='1.5' fill='%23'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        // background-size: 20px 20px;
+        box-shadow: none; 
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        // z-index: 15;
+
+
+      }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.06);
+        // transform: scale(1.08);
+
+        .arrow{
+          opacity: 1;
+        }
+      }
 
       .slider {
-        position: absolute; /* השתמש ב-relative כדי להניח את החיצים בתוך התמונה */
         width: 100%;
         height: 90%;
+        overflow: hidden;
+        // object-fit: cover;
         top: 0;
         left: 0;
-        overflow: hidden;
-        object-fit: cover;
       }
       
       .slides {
         display: flex;
         transition: transform 0.5s ease;
+        height: 100%;
       }
       
       .slide-item {
@@ -65,6 +85,9 @@
         height: 100%;
         object-fit: cover;
         border-radius: 8px;
+        display: block;
+        margin: 0;
+        padding: 0;
       }
       
       .arrow {
@@ -82,7 +105,7 @@
         transition: opacity 0.3s ease;
       
         // תמונת החץ ממורכזת בתוך העיגול
-        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='black' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='%2362646a' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
 
         background-repeat: no-repeat;
         background-position: center ;
@@ -113,8 +136,8 @@
       }
       
       .dot {
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         background-color: rgba(255, 255, 255, 0.5);
         border-radius: 50%;
         cursor: pointer;
@@ -131,7 +154,6 @@
     .owner-details {
       display: flex;
       flex-direction: column;
-  
       /* פרטי הבעלים: תמונת פרופיל, שם, רמה וכו' */
       .owner-details-1 {
         display: flex;
@@ -139,8 +161,8 @@
         gap: 8px;
   
         .owner-profile-img {
-          width: 32px;
-          height: 32px;
+          width: 24px;
+          height: 24px;
           border-radius: 50%;
           object-fit: cover;
         }
@@ -162,19 +184,23 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin-top: 4px;
+        // margin-top: 4px;
   
         /* כותרת הגיג */
         .owner-gig-title {
           margin: 0;
-          font-size: 1rem;
+          font-size: 16px;
           font-weight: 500;
           color: #404145;
           margin-bottom: 5px;
-          line-height: 1.2;
+          line-height: 24px;
           height: 50px;
+
+
+          &:hover{
+            text-decoration: underline;
+          }
         }
-  
         /* דירוג (אפשר להוסיף אייקון כוכב ליד owner-rate אם רוצים) */
         .rate-wrapper {
           display: flex;
