@@ -35,16 +35,14 @@
         height: 32px;
         border: none;
         background-color: rgba(0, 0, 0, 0); 
-        transition: background-color 0.2s ease;
         border-radius: 50%;
-        background-image: url("data:image/svg+xml,%3Csvg width='34' height='36' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 17.27L8.55 16.03C4.4 12.36 2 10.28 2 7.5C2 5.5 3.5 4 5.5 4C6.74 4 7.92 4.61 8.54 5.53C9.16 4.61 10.34 4 11.58 4C13.58 4 15.08 5.5 15.08 7.5C15.08 10.28 12.68 12.36 8.55 16.04L10 17.27Z' stroke='%23ffffff' stroke-width='1.5' fill='%23'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 17.27L8.55 16.03C4.4 12.36 2 10.28 2 7.5C2 5.5 3.5 4 5.5 4C6.74 4 7.92 4.61 8.54 5.53C9.16 4.61 10.34 4 11.58 4C13.58 4 15.08 5.5 15.08 7.5C15.08 10.28 12.68 12.36 8.55 16.04L10 17.27Z' stroke='%23ffffff' stroke-width='1.5' fill='%23000000' fill-opacity='0.2'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: center;
-        // background-size: 20px 20px;
         box-shadow: none; 
         cursor: pointer;
         transition: transform 0.2s ease;
-        // z-index: 15;
+        
 
 
       }
@@ -59,9 +57,8 @@
 
       .slider {
         width: 100%;
-        height: 90%;
+        height: 100%;
         overflow: hidden;
-        // object-fit: cover;
         top: 0;
         left: 0;
       }
@@ -69,7 +66,8 @@
       .slides {
         display: flex;
         transition: transform 0.5s ease;
-        height: 100%;
+        height: auto;
+        width: 100%;
       }
       
       .slide-item {
@@ -152,6 +150,7 @@
   
     /* אזור פרטי המוכר, דירוג, כותרת הגיג ומחיר */
     .owner-details {
+      margin-top: 13px;
       display: flex;
       flex-direction: column;
       /* פרטי הבעלים: תמונת פרופיל, שם, רמה וכו' */
