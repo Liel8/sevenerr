@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { loadGig } from '../store/actions/gig.actions';
 import { addOrder } from '../store/actions/orders.actions';
+import { useLocation } from "react-router-dom"
 
 export function PaymentPage() {
   // Hooks must be at the top level
@@ -10,6 +11,9 @@ export function PaymentPage() {
   const gig       = useSelector(state => state.gigModule.gig);
   const user = useSelector(state => state.userModule.user) || { _id: 'u101' }
   const navigate  = useNavigate();
+
+  const location = useLocation()
+  const selectedPackage = location.state?.selectedPackage
 
   // Load gig details once
   useEffect(() => {
@@ -23,11 +27,13 @@ export function PaymentPage() {
   if (!gig || !gig._id) return <div>Loading…</div>;
 
   // Compute pricing and order details
-  const basePrice = gig.price;
+  const basePrice = selectedPackage?.price || gig.price;
   const priceWithTax = +(basePrice * 1.18).toFixed(2);
-  const packageName = 'Silver';  // or derive from gig or sidebar state
-  const packagePrice = +(priceWithTax + 16.40);
-  const daysToMake = gig.daysToMake || 3;
+  const packageName = selectedPackage?.title || 'Basic';
+  const packagePrice = +(priceWithTax + 16.40).toFixed(2);
+  const daysToMake = selectedPackage?.delivery
+  ? parseInt(selectedPackage.delivery.match(/\d+/)?.[0])
+  : gig.daysToMake || 3;
 
   // Handle confirm and create order
   async function onConfirmPay() {
@@ -156,18 +162,20 @@ export function PaymentPage() {
                     </div>
                 </header>
                 <article className="order-details-general">
-                <span className="order-details-general-title">SILVER</span>
-                <div className="quantity-price-container">
-                    <span className="price order-details-general-price">₪{gig.price}</span>
-                </div>
+                    <span className="order-details-general-title">{selectedPackage?.title || 'Basic'}</span>
+                    <div className="quantity-price-container">
+                        <span className="price order-details-general-price">₪{selectedPackage?.price || gig.price}</span>
+                    </div>
                 </article>
                 <ul className="order-details-items-container">
-                <li className="order-details-item"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.6202 2.6083L5.4001 10.8284L2.37973 7.80805C2.23329 7.66161 1.99585 7.66161 1.84939 7.80805L0.96551 8.69193C0.819073 8.83836 0.819073 9.0758 0.96551 9.22227L5.13492 13.3917C5.28135 13.5381 5.51879 13.5381 5.66526 13.3917L15.0344 4.02252C15.1809 3.87608 15.1809 3.63865 15.0344 3.49218L14.1505 2.6083C14.0041 2.46186 13.7667 2.46186 13.6202 2.6083Z"></path></svg>
-                3 revisions</li>
-                <li className="order-details-item"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.6202 2.6083L5.4001 10.8284L2.37973 7.80805C2.23329 7.66161 1.99585 7.66161 1.84939 7.80805L0.96551 8.69193C0.819073 8.83836 0.819073 9.0758 0.96551 9.22227L5.13492 13.3917C5.28135 13.5381 5.51879 13.5381 5.66526 13.3917L15.0344 4.02252C15.1809 3.87608 15.1809 3.63865 15.0344 3.49218L14.1505 2.6083C14.0041 2.46186 13.7667 2.46186 13.6202 2.6083Z"></path></svg>
-                Source files included</li>
-                <li className="order-details-item"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M13.6202 2.6083L5.4001 10.8284L2.37973 7.80805C2.23329 7.66161 1.99585 7.66161 1.84939 7.80805L0.96551 8.69193C0.819073 8.83836 0.819073 9.0758 0.96551 9.22227L5.13492 13.3917C5.28135 13.5381 5.51879 13.5381 5.66526 13.3917L15.0344 4.02252C15.1809 3.87608 15.1809 3.63865 15.0344 3.49218L14.1505 2.6083C14.0041 2.46186 13.7667 2.46186 13.6202 2.6083Z"></path></svg>
-                Commercial license</li>
+                    {selectedPackage?.features?.map((feature, i) => (
+                        <li className="order-details-item" key={i}>
+                        <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.6202 2.6083L5.4001 10.8284L2.37973 7.80805C2.23329 7.66161 1.99585 7.66161 1.84939 7.80805L0.96551 8.69193C0.819073 8.83836 0.819073 9.0758 0.96551 9.22227L5.13492 13.3917C5.28135 13.5381 5.51879 13.5381 5.66526 13.3917L15.0344 4.02252C15.1809 3.87608 15.1809 3.63865 15.0344 3.49218L14.1505 2.6083C14.0041 2.46186 13.7667 2.46186 13.6202 2.6083Z"></path>
+                        </svg>
+                        {feature}
+                        </li>
+                    ))}
                 </ul>
             </span>
             </section>
@@ -200,7 +208,7 @@ export function PaymentPage() {
                     </div>
                     <div className="table-row delivery-date">
                         <span className="row-title">Total delivery time</span>
-                        <span className="date">3 days</span>
+                        <span className="date">{daysToMake} days</span>
                     </div>
                 </div>
 
@@ -220,8 +228,8 @@ export function PaymentPage() {
                 <section className="" role="region">
                     <section className="currency-section">
                         <div className="currency-message tbody-6">You will be charged
-                            <span className="price">₪129.58</span>
-                            . Total amount includes currency conversion fees.
+                            <span className="price">₪{packagePrice} </span>
+                              Total amount includes currency conversion fees.
                         </div>
                     </section>
                 </section>
