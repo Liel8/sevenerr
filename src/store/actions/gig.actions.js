@@ -4,8 +4,7 @@ import { ADD_GIG, REMOVE_GIG, SET_GIGS, SET_GIG, UPDATE_GIG, ADD_GIG_MSG } from 
 
 export async function loadGigs(filterBy) {
    console.log(filterBy);
-   
-    
+      
     try {
         const gigs = await gigService.query(filterBy)
         store.dispatch(getCmdSetGigs(gigs))

@@ -1,76 +1,21 @@
-// .sub-header-container {
-//   width: 100%;
-//   position: sticky;
-//   top: 4.8em;
-//   z-index: 1000;
-//   background-color: #fff;
-//   border-bottom: 1px solid #e5e5e7;
-//   height: 40px;
-//   padding-top: 10px;
-//   // box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-//   &.hidden {
-//     transform: translateY(-100%);
-//   }
-
-//   &.visible{
-//     transform: translateY(0);
-//     display: block;
-//   }
-// }
-
-// .category-header {
-//   display: flex;
-//   position: relative;
-// }
-
-// .categories-container {
-//   display: flex;
-//   justify-content: space-between;
-//   white-space: nowrap;
-//   width: 100%;
-
-//   // li {
-//   // flex: 0 0 auto;
-
-//     .category-link {
-//       color: #62646A;
-//       text-decoration: none;
-//       margin-right: 2rem;
-//       transition: color 0.3s ease, transform 0.3s ease;
-//     }
-
-//     .category-link:hover {
-//       color: #1dbf73; /* light green color on hover */
-//       transform: translateY(-2px); /* slight hover effect */
-//     }
-//   // }
-// }
-
-
-
-
-/* === base === */
 .sub-header-container {
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid #e5e5e7;
   height: 40px;
   padding-top: 10px;
-  z-index: 1000;       // נשאר לצורך חפיפה מעל תוכן
+  z-index: 1000;       
   transition: transform .3s ease;
 
-  /* אנימציית slide‑in / slide‑out */
   &.hidden   { transform: translateY(-100%); }
   &.visible  { transform: translateY(0); }
 }
 
-/* === דביק – מתווסף רק בעמוד‑הבית === */
 .sub-header-container.sticky {
   position: sticky;
-  top: 4.8em;          // התאמה לגובה ה‑AppHeader
+  top: 4.8em;        
 }
 
-/* מבנה הפנימי לא השתנה */
 .category-header      { display: flex; position: relative; }
 .categories-container {
   display: flex;
@@ -78,61 +23,19 @@
   white-space: nowrap;
   width: 100%;
 
-  // .category-link {
-  //   color: #62646A;
-  //   margin-right: 2rem;
-  //   text-decoration: none;
-  //   transition: color .3s ease, transform .3s ease;
-
-  //   &:hover {
-  //     color: #1dbf73;
-  //     transform: translateY(-2px);
-  //   }
-  // }
-
-  // .category-link {
-  //   position: relative;          // מאפשר ציור ::after מתחת לטקסט
-  //   color: #62646A;
-  //   margin-right: 2rem;
-  //   text-decoration: none;
-  //   transition: color .3s ease;
-  
-  //   /* פס ירוק – רוחב אפס ברירת‑מחדל */
-  //   &::after {
-  //     content: '';
-  //     position: absolute;
-  //     left: 0;
-  //     bottom: -.2em;            // מרווח קטן מהטקסט
-  //     height: 4px;
-  //     width: 0;
-  //     background-color: #1dbf73;
-  //     transition: width .3s ease;
-  //   }
-  
-  //   /* אפקט ריחוף */
-  //   &:hover,
-  //   &:focus-visible {
-  //     // color: #1dbf73;
-  
-  //     &::after {
-  //       width: 100%;            // הקו נפרש לכל רוחב הקישור
-  //     }
-  //   }
-  // }
-
   .category-link {
     color: #62646A;
-    margin-right: 2rem;
-    text-decoration: none;     // אין קו כברירת‑מחדל
+    // margin-right: 2rem;
+    text-decoration: none;     
     transition: none;  
-    font-size: 16px;        // ביטול אפקטים
+    font-size: 16px;     
   
     &:hover,
-    &:focus-visible {          // גם נגישות דרך מקלדת
+    &:focus-visible {          
       text-decoration: underline;
-      text-decoration-color: #1dbf73;   // הקו בצבע ירוק
+      text-decoration-color: #1dbf73;   
       text-decoration-thickness: 4px; 
-      text-underline-offset: 10px;       // מרווח קטן מהטקסט
+      text-underline-offset: 10px;       
     }
   }
   

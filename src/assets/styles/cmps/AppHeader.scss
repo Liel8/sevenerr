@@ -53,20 +53,17 @@
     /* אזור החיפוש */
     .searchbar-container {
       /* מאפשר לשורת החיפוש לגדול ולתפוס מקום מרכזי */
-      // flex: 1;
       display: flex; 
       /* ריווח אופציונלי בין הלוגו לחיפוש */
       margin-inline: 2em;
       width: 100%;
       max-width: 550px; /* רוחב מקסימלי לשורת החיפוש */
-      // align-items: center;
-      // justify-content: flex-start;
-      // margin-left: -20em;
-      
+      position: relative; /* בשביל למקם את ה-dropdown */
+    
       .search-bar-filter-form {
         display: flex;
         width: min(100%, 34.375em);
-
+    
         /* שדה החיפוש */
         .search-bar {
           font-size: 1rem;
@@ -77,9 +74,8 @@
           border-top-left-radius: 4px;
           border-bottom-left-radius: 4px;
           outline: 0;
-          /* צבע טקסט וכו' ניתן להגדיר כאן לפי הצורך */
         }
-
+    
         /* כפתור החיפוש (שחור עם אייקון או טקסט) */
         .search-icon {
           width: 48px;
@@ -93,13 +89,41 @@
           display: flex;
           align-items: center;
           justify-content: center;
-
+    
           &:hover {
             background-color: #444;
           }
         }
       }
+    
+      /* ה-dropdown של ההצעות */
+      .search-suggestions {
+        position: absolute;
+        top: 100%;        /* מתחת לפרופורציה של הפורם */
+        left: 0;
+        right: 0;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-top: none; /* בלי קו עליון כדי להתחבר לשדה */
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 50;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    
+        li {
+          padding: 8px 12px;
+          cursor: pointer;
+          white-space: nowrap;
+    
+          &:hover {
+            background-color: #f0f0f0;
+          }
+        }
+      }
     }
+    
 
     /* קישורי ניווט מימין */
     .links-container {
@@ -138,7 +162,7 @@
       }
 
       .profile-btn {
-        margin-right: 1.5em;
+        // margin-right: 1.5em;
 
         img {
           width: 32px;
