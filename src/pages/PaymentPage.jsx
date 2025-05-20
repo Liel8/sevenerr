@@ -16,6 +16,10 @@ export function PaymentPage() {
   const location = useLocation()
   const selectedPackage = location.state?.selectedPackage
 
+//   useEffect(() => {
+//     window.scrollTo(0, 0)
+// }, [])
+
   // Load gig details once
   useEffect(() => {
     if (gigId) {

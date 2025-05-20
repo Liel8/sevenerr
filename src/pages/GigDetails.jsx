@@ -1,6 +1,6 @@
 
 
-import React, { useState, useRef  } from 'react'
+import React, { useState, useRef, useEffect  } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { GigPurchaseSidebar } from '../cmps/GigPurchaseSidebar'
@@ -14,6 +14,10 @@ export function GigDetails() {
   const { state } = useLocation()
   const gig = state?.gig
   if (!gig) return <div>אין נתוני gig להצגה</div>
+
+  // useEffect(() => {
+  //   window.scrollTo(0, 0)
+  // }, [])
 
   // המערך imgUrl מגיע ישר מה-data שלכם
   const images = Array.isArray(gig.imgUrl) && gig.imgUrl.length > 0
@@ -44,6 +48,8 @@ export function GigDetails() {
   //     thumbsRef.current.scrollBy({ left: 100, behavior: 'smooth' });
   //   }
   // };
+
+
   console.log("####", gig)
   return (
     <section className="gig-details main-layout">

@@ -19,10 +19,12 @@ import { AddGig } from './pages/AddGig.jsx'
 import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
 import { UserMsg }   from './cmps/UserMsg.jsx'
+import { ScrollToTop } from './cmps/ScrollToTop.JSX'
 
 export function RootCmp() {
     return (
         <div className='app-container'>
+            <ScrollToTop />
             <AppHeader />
             <UserMsg />
             <main className="main-layout full">
