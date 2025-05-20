@@ -1,6 +1,13 @@
 import { FaInstagram, FaFacebookF, FaTiktok, FaLinkedinIn, FaXTwitter, FaPinterestP } from 'react-icons/fa6'
+import { useLocation } from "react-router-dom"
+import { PaymentFooter } from './PaymentFooter'
 
 export function AppFooter() {
+  const location = useLocation()
+
+  const isPaymentPage = location.pathname.includes('/payment')
+  if (isPaymentPage) return <PaymentFooter />
+
   return (
     <footer className="app-footer-container main-layout">
       <section className="app-footer with-border-top flex">

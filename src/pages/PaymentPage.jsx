@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { loadGig } from '../store/actions/gig.actions';
 import { addOrder } from '../store/actions/orders.actions';
 import { useLocation } from "react-router-dom"
+import { PaymentHeader } from '../cmps/PaymentHeader'
 
 export function PaymentPage() {
   // Hooks must be at the top level
@@ -62,6 +63,8 @@ export function PaymentPage() {
 
   {/* Rest of layout here... */}
     return (
+    <>
+        {/* <PaymentHeader /> */}
         <section className="payment-page">
         <section className="payment-container">
             <section className="billing-info-wrapper payment-methods-wrapper">
@@ -97,7 +100,7 @@ export function PaymentPage() {
                     <label>
                     <span>Expiration date</span>
                     </label>
-                    <input type="text" className="input" placeholder="MM/YY" />
+                    <input type="text" className="input" placeholder="12/32" />
                 </div>
                 <div className="security-code">
                     <label>
@@ -113,7 +116,7 @@ export function PaymentPage() {
                     <label>
                         <span>Cardholder's name</span>
                     </label>
-                    <input type="text" className="input" placeholder="" />
+                    <input type="text" className="input" placeholder="YAZAN MERAY" />
                     </div>
                 </div>
 
@@ -237,6 +240,7 @@ export function PaymentPage() {
 
         </div>
         </section>
+        </>    
     )
 }
 

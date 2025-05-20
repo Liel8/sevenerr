@@ -7,7 +7,10 @@ import { logout } from '../store/actions/user.actions'
 import { SubHeader } from './SubHeader'
 import { HeroSection } from './HeroSection'
 import { DropdownBtn } from './DropDownBtn'
+import { PaymentHeader } from './PaymentHeader'
 import { gigService } from '../services/gig/gig.service.local'
+
+
 
 export function AppHeader() {
   const [selectedDropDownBtn, setSelectedDropDownBtn] = useState(null)
@@ -16,6 +19,8 @@ export function AppHeader() {
   const navigate = useNavigate()
   const location = useLocation()
   const isHomePage = location.pathname === '/'
+  const isPaymentPage = location.pathname.includes('/payment')
+  
 
   const [localGigs, setLocalGigs] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
@@ -55,7 +60,8 @@ export function AppHeader() {
       showErrorMsg('Cannot logout')
     }
   }
-
+  if (isPaymentPage) return <PaymentHeader />
+  
   return (
     <>
       <section className={`main-layout full header-container${isHomePage ? ' sticky' : ''}`}>
