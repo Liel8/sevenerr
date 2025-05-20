@@ -1,5 +1,3 @@
-// src/cmps/AppHeader.jsx
-
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
@@ -19,22 +17,18 @@ export function AppHeader() {
   const location = useLocation()
   const isHomePage = location.pathname === '/'
 
-  // state for full list (autocomplete) and suggestions
   const [localGigs, setLocalGigs] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [suggestions, setSuggestions] = useState([])
 
-  // load gigs into redux for results list
   useEffect(() => {
     loadGigs({})
   }, [])
 
-  // load gigs locally for autocomplete
   useEffect(() => {
     gigService.query({}).then(gigs => setLocalGigs(gigs))
   }, [])
 
-  // update suggestions on typing
   useEffect(() => {
     const txt = searchTerm.trim().toLowerCase()
     if (!txt) return setSuggestions([])
@@ -44,7 +38,6 @@ export function AppHeader() {
     setSuggestions(filtered)
   }, [searchTerm, localGigs])
 
-  // submit search
   function onSearch(ev) {
     ev.preventDefault()
     const qs = searchTerm.trim() ? { txt: searchTerm.trim() } : {}
@@ -100,7 +93,6 @@ export function AppHeader() {
                   <li
                     key={gig._id}
                     onClick={() => {
-                      // navigate directly to GigDetails page by ID
                       navigate(`/gig/details/${gig._id}`, { state: { gig } })
                       setSearchTerm('')
                       setSuggestions([])

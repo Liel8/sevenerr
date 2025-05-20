@@ -189,7 +189,7 @@
       .gigs-list {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 16px;
+        gap: 24px;
 
         .my-gig-btn {
           display: flex;
@@ -198,6 +198,11 @@
           color: #62646a;
           padding: 0;
           height: 240px;
+
+          &:hover {
+            text-decoration: underline;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+          }
 
           .gig-img {
             position: relative;
@@ -209,6 +214,8 @@
 
           h4 {
             margin-top: 5px;
+            font-size: 16px;
+
           }
 
         }
