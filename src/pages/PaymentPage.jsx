@@ -4,12 +4,12 @@ import { useSelector } from 'react-redux';
 import { loadGig } from '../store/actions/gig.actions';
 import { addOrder } from '../store/actions/orders.actions';
 import { useLocation } from "react-router-dom"
-import { PaymentHeader } from '../cmps/PaymentHeader'
+
 
 export function PaymentPage() {
   // Hooks must be at the top level
   const { gigId } = useParams();
-  const gig       = useSelector(state => state.gigModule.gig);
+  const gig= useSelector(state => state.gigModule.gig);
   const user = useSelector(state => state.userModule.user) || { _id: 'u101' }
   const navigate  = useNavigate();
 
