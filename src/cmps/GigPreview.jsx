@@ -45,7 +45,7 @@ export function GigPreview({ gig }) {
 
         {/* לחיצה על המחיר */}
         <div className="gig-price" onClick={handleNavigation} style={{ cursor: 'pointer' }}>
-          From ${gig.price}
+          From ₪{gig.price}
         </div>
       </div>
     </li>
