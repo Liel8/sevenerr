@@ -1,11 +1,13 @@
 import { CategoryList } from "../cmps/CategoryList"
+import { PopularServices } from '../cmps/PopularServices'
 
 
 export function HomePage() {
     return (
-        <section >
-            <CategoryList />
-        </section >
+        <section>
+        <CategoryList />
+        <PopularServices />
+      </section>
     )
 }
 
