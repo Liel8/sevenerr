@@ -4,45 +4,45 @@ import { useNavigate } from 'react-router-dom'
 const popularServices = [
   {
     title: 'Website Development',
-    slug: 'website-development',
-    moveTo: '',
+    moveTo: 'Website',
     category: 'programming-tech',
     img: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_188,dpr_1.0/v1/attachments/generic_asset/asset/798403f5b92b1b5af997acc704a3d21c-1702465156477/website-development.png'
   },
   {
     title: 'Video Editing',
-    slug: 'video-editing',
-    moveTo: '',
+    moveTo: 'Video',
     category: 'video-animation',
     img: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_188,dpr_1.0/v1/attachments/generic_asset/asset/798403f5b92b1b5af997acc704a3d21c-1702465156494/video-editing.png'
   },
   {
-    title: 'Software Development',
-    slug: 'software-development',
-    moveTo: '',
-    category: 'programming-tech',
+    title: 'Data Entry',
+    moveTo: 'data entry',
+    category: 'Data',
     img: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_188,dpr_1.0/v1/attachments/generic_asset/asset/798403f5b92b1b5af997acc704a3d21c-1702465156476/software-development.png'
   },
   {
-    title: 'SEO',
-    slug: 'seo-services',
-    moveTo: '',
-    category: 'online-marketing',
-    img: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_188,dpr_1.0/v1/attachments/generic_asset/asset/798403f5b92b1b5af997acc704a3d21c-1702465156488/seo.png'
+    title: 'Logo Desing',
+    moveTo: 'logo',
+    category: 'Graphics & Design',
+    img: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_188,dpr_1.0/v1/attachments/generic_asset/asset/798403f5b92b1b5af997acc704a3d21c-1702465156494/logo-design.png'
   },
   {
-    title: 'Architecture & Interior Design',
-    slug: 'architectural-design-services',
-    moveTo: '',
-    category: 'graphics-design',
-    img: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_188,dpr_1.0/v1/attachments/generic_asset/asset/798403f5b92b1b5af997acc704a3d21c-1702465156473/architecture-design.png'
+    title: 'Voice Over',
+    moveTo: 'voice',
+    category: 'Music & Audio',
+    img: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_188,dpr_2.0/v1/attachments/generic_asset/asset/798403f5b92b1b5af997acc704a3d21c-1702465156479/voice-over.png'
   },
   {
-    title: 'Book Design',
-    slug: 'book-design',
-    moveTo: '', 
-    category: 'graphics-design',
+    title: 'Translate service',
+    moveTo: 'translate', 
+    category: 'Writing & Translation',
     img: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_188,dpr_1.0/v1/attachments/generic_asset/asset/af48c6702af221956ea7adf0055854e6-1745826082297/Book%20Design.png'
+  },
+  {
+    title: 'Social Media Marketing',
+    moveTo: '',
+    category: 'Digital Marketing',
+    img: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_188,dpr_1.0/v1/attachments/generic_asset/asset/798403f5b92b1b5af997acc704a3d21c-1702465156476/social-media-marketing.png',
   }
 ]
 
@@ -55,8 +55,8 @@ export function PopularServices() {
   const goToCategory = item => {
     navigate({
       pathname: '/gig/',
-    //   search: `?category=${item.category}&txt=${item.moveTo}`
-    search: `${item.category}?category=${item.category}`
+      search: `?category=${item.category}&txt=${item.moveTo}`
+    // search: `${item.category}?category=${item.category}`
     })
   }
 
