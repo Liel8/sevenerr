@@ -174,25 +174,25 @@ export function UserProfile() {
           mode="seller"
           onAction={handleStatusChange}
         />
-        <button
-          onClick={() => navigate('/gig/add')}
-          className="btn add-gig-btn">
-          + Add New Gig
-        </button>
-
         <section className="my-gigs">
-          <h2>My Gigs</h2>
+          <div className="my-gigs-header">
+            <h2>My Gigs</h2>
+            <button
+              onClick={() => navigate('/gig/add')}
+              className="btn add-gig-btn"
+            >
+              Create New Gig
+            </button>
+          </div>
+
           <div className="gigs-list">
             {userGigs.map(gig => (
               <button
                 key={gig._id}
                 className="my-gig-btn"
-                onClick={() => navigate(`/gig/details/${gig._id}`, { state: { gig } } )}>
-                <img
-                  src={gig.imgUrl[0]}
-                  alt={gig.title}
-                  className="gig-img"
-                />
+                onClick={() => navigate(`/gig/details/${gig._id}`, { state: { gig } })}
+              >
+                <img src={gig.imgUrl[0]} alt={gig.title} className="gig-img" />
                 <h4>{gig.title}</h4>
               </button>
             ))}
