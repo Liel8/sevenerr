@@ -111,14 +111,26 @@
         list-style: none;
         margin: 0;
         padding: 0;
+
+        scrollbar-width: none;       // ל־Firefox
+        -ms-overflow-style: none;    // ל־IE
+        &::-webkit-scrollbar {       // ל־Chrome/Safari
+          display: none;
+        }
     
         li {
           padding: 8px 12px;
           cursor: pointer;
           white-space: nowrap;
+          color: #222325;
     
           &:hover {
             background-color: #f0f0f0;
+          }
+
+          .highlight {
+            color: #62646a;
+            font-weight: 600;
           }
         }
       }

@@ -61,11 +61,17 @@ export function AppHeader() {
   useEffect(() => {
     const txt = searchTerm.trim().toLowerCase()
     if (!txt) return setSuggestions([])
+  
     const filtered = localGigs
-      .filter(gig => gig.title.toLowerCase().includes(txt))
+      .filter(gig => {
+        const words = gig.title.toLowerCase().split(' ')
+        return words.some(word => word.includes(txt))
+      })
       .slice(0, 5)
+  
     setSuggestions(filtered)
   }, [searchTerm, localGigs])
+  
 
   function onSearch(ev) {
     ev.preventDefault()
@@ -120,7 +126,24 @@ export function AppHeader() {
 
               {suggestions.length > 0 && (
                 <ul className="search-suggestions">
-                  {suggestions.map(gig => (
+                {suggestions.map(gig => {
+                  const txt = searchTerm.toLowerCase()
+                  const words = gig.title.split(' ')
+                  let highlightedTitle = gig.title
+
+                  for (let word of words) {
+                    const index = word.toLowerCase().indexOf(txt)
+                    if (index !== -1) {
+                      const match = word.slice(index, index + txt.length)
+                      const before = word.slice(0, index)
+                      const after = word.slice(index + txt.length)
+                      const highlightedWord = `${before}<span class="highlight">${match}</span>${after}`
+                      highlightedTitle = gig.title.replace(word, highlightedWord)
+                      break
+                    }
+                  }
+
+                  return (
                     <li
                       key={gig._id}
                       onClick={() => {
@@ -128,10 +151,11 @@ export function AppHeader() {
                         setSearchTerm('')
                         setSuggestions([])
                       }}
-                    >
-                      {gig.title}
-                    </li>
-                  ))}
+                      dangerouslySetInnerHTML={{ __html: highlightedTitle }}
+                    />
+                  )
+                })}
+
                 </ul>
               )}
             </div>
