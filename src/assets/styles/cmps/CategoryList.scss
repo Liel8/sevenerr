@@ -1,7 +1,7 @@
 .category-list-wrapper {
   background-color: #fff;
   z-index: 100;
-  padding: 12px 10px;
+  padding: 28px 10px;
   display: flex;
   justify-content: center;
 }
@@ -26,14 +26,15 @@
   height: 129px;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 14px;
-  transition: box-shadow 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   text-align: left;
 
   &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: radial-gradient(63.44% 63.44% at 50% 50%, #c2ffe2 0, #fff 100%), #fff;
+    // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 
   img {
