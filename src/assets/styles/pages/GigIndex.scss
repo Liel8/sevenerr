@@ -14,11 +14,20 @@
       color: #74767e;
     }
 
+    // .filter-btns-container {
+    //   // display: flex;
+    //   // // justify-content: flex-start;
+    //   // margin-block: 20px;
+    // }
+
     .btns-container {
       font-size: 1rem;
       color: #62646a;
       transition: color 0.2s;
       margin-bottom: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      // gap: 12px;
 
       .filter-btn-wrapper {
         position: relative; // חובה שה־.budget-popup יישב נכון

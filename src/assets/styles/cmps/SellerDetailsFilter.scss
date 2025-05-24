@@ -1,0 +1,55 @@
+.filter-popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  width: 240px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  z-index: 300;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    padding: 8px 0;
+    color: #404145;
+    cursor: pointer;
+    
+    input {
+      accent-color: #222325; 
+      width: 20px;
+      height: 20px;
+      
+    }
+  }
+
+  .popup-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    button {
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+
+      &:first-of-type {
+        background: none;
+        color: #62646a;
+      }
+
+      &:last-of-type {
+        background:#222325;
+        color: white;
+        font-weight: 600;
+      }
+    }
+  }
+}
