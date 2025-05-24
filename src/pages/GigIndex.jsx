@@ -7,8 +7,12 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service';
 import { removeGig, addGig, updateGig, loadGigs } from '../store/actions/gig.actions';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { Link } from "react-router-dom"
+import { BudgetFilter } from "../cmps/BudgetFilter"
+import { DeliveryTimeFilter } from "../cmps/DeliveryTimeFilter";
 
 export function GigIndex() {
+    const [isBudgetOpen, setIsBudgetOpen] = useState(false)
+    const [isDeliveryOpen, setIsDeliveryOpen] = useState(false)
     const gigs = useSelector(storeState => storeState.gigModule.gigs);
     const {category} = useParams()
 console.log('params:', category);
@@ -24,7 +28,8 @@ console.log('params:', category);
 
     // state עבור הפילטר – מעדכנים את הקטגוריה הממופה
     const [searchParmas, setSearchParams] = useSearchParams()
-    const [filterBy, setFilterBy] = useState(gigService.getFilterFromParams(searchParmas, category));
+    const [filterBy, setFilterBy] = useState({...gigService.getFilterFromParams(searchParmas, category), sortBy: 'Recommended' });
+    const [isSortOpen, setIsSortOpen] = useState(false);
 
 // console.log('search params:', searchParmas);
 
@@ -36,11 +41,9 @@ console.log('params:', category);
 
     // קריאה לטעינת הגיגים עם הפילטר המעודכן
     useEffect(() => {
-        const updateFilter = gigService.getFilterFromParams(searchParmas, category)
-
-        setFilterBy(updateFilter)
-
-    }, [category, searchParmas])
+    const updateFilter = gigService.getFilterFromParams(searchParmas, category);
+    setFilterBy(prev => ({ ...prev, ...updateFilter }));
+    }, [category, searchParmas]);
     
     useEffect(() => {
         console.log("category and filter from index:" , category, filterBy);
@@ -106,8 +109,54 @@ console.log('params:', category);
         }
     }
 
-    console.log('Redux store gigs:', gigs);
-    console.log('🔍 Calling loadGigs with:', filterBy);
+    let sortedGigs = [...gigs];
+
+    if (filterBy.minPrice || filterBy.maxPrice) {
+        const min = Number(filterBy.minPrice) || 0
+        const max = Number(filterBy.maxPrice) || Infinity
+        sortedGigs = sortedGigs.filter(gig => {
+            const price = Number(gig.price)
+            return price >= min && price <= max
+        })
+    }
+
+    if (filterBy.deliveryTime) {
+        const maxDays = {
+            '24h': 1,
+            '3d': 3,
+            '7d': 7,
+            'any': Infinity
+        }[filterBy.deliveryTime] || Infinity
+
+        sortedGigs = sortedGigs.filter(gig => {
+            return Number(gig.daysToMake || Infinity) <= maxDays
+        })
+        }
+
+    if (filterBy.sortBy === 'recommended') {
+    sortedGigs.sort((a, b) => {
+        const aScore = (a.owner?.rate || 0) * ((a.reviews?.length || 0) + 1);
+        const bScore = (b.owner?.rate || 0) * ((b.reviews?.length || 0) + 1);
+        return bScore - aScore;
+    });
+    } else if (filterBy.sortBy === 'price-low') {
+    sortedGigs.sort((a, b) => Number(a.price ?? Infinity) - Number(b.price ?? Infinity));
+    } else if (filterBy.sortBy === 'price-high') {
+    sortedGigs.sort((a, b) => Number(b.price ?? -Infinity) - Number(a.price ?? -Infinity));
+    }
+    // console.log('🔍 Prices sorted:', sortedGigs.map(g => g.price));
+    // console.log('Raw prices:', gigs.map(g => g.price));
+    // console.log('Redux store gigs:', gigs);
+    // console.log('🔍 Calling loadGigs with:', filterBy);
+
+    const displayMap = {
+        'recommended': 'Recommended',
+        'price-high': 'High Price',
+        'price-low': 'Low Price'
+    };
+    useEffect(() => {
+        console.log('filterBy updated:', filterBy)
+    }, [filterBy])
 
     return (
         <section className="gig-index main-layout full">
@@ -141,35 +190,109 @@ console.log('params:', category);
                                 </path>
                             </svg>
                         </button>
-                        <button className="filter-btn">
-                            Budget
-                            <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill">
-                                <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z">
-                                </path>
-                            </svg>
-                        </button>
-                        <button className="filter-btn">
-                            Delivery time
-                            <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill">
-                                <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z">
-                                </path>
-                            </svg>
-                        </button>
+                        <div className="filter-btn-wrapper">
+                            <button className="filter-btn" onClick={() => setIsBudgetOpen(prev => !prev)}>
+                                Budget
+                                <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                                <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
+                                </svg>
+                            </button>
+
+                            {isBudgetOpen && (
+                                <BudgetFilter
+                                onSetBudget={({ min, max }) => {
+                                    setFilterBy(prev => ({
+                                    ...prev,
+                                    minPrice: min,
+                                    maxPrice: max
+                                    }))
+                                    setIsBudgetOpen(false)
+                                }}
+                                onClose={() => setIsBudgetOpen(false)}
+                                />
+                            )}
+                        </div>
+                        <div className="filter-btn-wrapper">
+                            <button className="filter-btn" onClick={() => setIsDeliveryOpen(prev => !prev)}>
+                                Delivery time
+                                <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                                <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
+                                </svg>
+                            </button>
+
+                            {isDeliveryOpen && (
+                                <DeliveryTimeFilter
+                                onSetDeliveryTime={(value) => {
+                                    setFilterBy(prev => ({
+                                    ...prev,
+                                    deliveryTime: value
+                                    }))
+                                    setIsDeliveryOpen(false)
+                                }}
+                                onClose={() => setIsDeliveryOpen(false)}
+                                />
+                            )}
+                        </div>
                     </div>
                 </section>
             </section>
 
             <div className="top-of-gigs">
                 <div className="number-of-results">{gigs.length} services available</div>
-                <label className="sort-container">
+
+                <div className="sort-container">
                     <span className="sort-title">Sort by:</span>
-                    <span className="drop-down-btn">Recommended</span>
-                </label>
+
+                    <div className="sort-dropdown">
+                    <div
+                        className="sort-toggle"
+                        onClick={() => setIsSortOpen(prev => !prev)}
+                    >
+                        <span className="sort-selected">
+                        {displayMap[filterBy.sortBy] || filterBy.sortBy}
+                        </span>
+                        <span className="chevron-icon">
+                        <svg width="12" height="12" viewBox="0 0 11 7" fill="currentColor">
+                            <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
+                        </svg>
+                        </span>
+                    </div>
+
+                    {isSortOpen && (
+                        <ul className="sort-options">
+                        {Object.entries(displayMap).map(([value, label]) => {
+                            const isSelected = filterBy.sortBy === value;
+
+                            return (
+                            <li
+                                key={value}
+                                className={isSelected ? 'selected' : ''}
+                                onClick={() => {
+                                setFilterBy(prev => ({ ...prev, sortBy: value }));
+                                setIsSortOpen(false);
+                                }}
+                            >
+                                {isSelected && (
+                                <span className="check-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M14.53 4.53 7 12.06 2.47 7.53l1.06-1.06L7 9.94l6.47-6.47z" />
+                                    </svg>
+                                </span>
+                                )}
+                                {label}
+                            </li>
+                            );
+                        })}
+                        </ul>
+                    )}
+                    </div>
+                </div>
             </div>
+
 
             <section className="gig-list-wrapper">
                 <GigList 
-                    gigs={gigs} 
+                    gigs={sortedGigs} 
                     onRemoveGig={onRemoveGig} 
                     onAddGig={onAddGig} 
                     onUpdateGig={onUpdateGig} 
