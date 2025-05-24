@@ -303,9 +303,20 @@
           color: #62646a;
           font-size: 16px;
           margin: 0px 9px 12px 0px;
-
+          &
           svg {
             margin-right: 9px;
+            
+          }
+          &.disabled {
+            // color: #b5b6ba;
+            color: #999;
+            
+              svg {
+                // color: #d4d5d9;
+                fill: #ccc;
+              }
+            
           }
         }
       }

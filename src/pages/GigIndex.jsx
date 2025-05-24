@@ -12,9 +12,8 @@ import { DeliveryTimeFilter } from "../cmps/DeliveryTimeFilter";
 import { SellerDetailsFilter } from "../cmps/SellerDetailsFilter"
 
 export function GigIndex() {
-    const [isBudgetOpen, setIsBudgetOpen] = useState(false)
-    const [isDeliveryOpen, setIsDeliveryOpen] = useState(false)
-    const [isSellerOpen, setIsSellerOpen] = useState(false)
+const [openFilter, setOpenFilter] = useState(null) // 'options' | 'seller' | 'budget' | 'delivery' | null
+
     const gigs = useSelector(storeState => storeState.gigModule.gigs);
     const {category} = useParams()
 console.log('params:', category);
@@ -191,7 +190,9 @@ console.log('params:', category);
 
                     {/* OPTIONS */}
                     <div className="filter-btn-wrapper">
-                        <button className="filter-btn">
+                        <button className={`filter-btn ${openFilter === 'options' ? 'open' : ''}`}
+                            onClick={() => setOpenFilter(prev => (prev === 'options' ? null : 'options'))}
+                        >
                         Options
                         <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill">
                             <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
@@ -202,14 +203,16 @@ console.log('params:', category);
 
                     {/* SELLER DETAILS */}
                     <div className="filter-btn-wrapper">
-                        <button className="filter-btn" onClick={() => setIsSellerOpen(prev => !prev)}>
+                        <button className={`filter-btn ${openFilter === 'seller' ? 'open' : ''}`}
+                             onClick={() => setOpenFilter(prev => (prev === 'seller' ? null : 'seller'))}
+                         >
                         Seller details
                         <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                             <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
                         </svg>
                         </button>
 
-                        {isSellerOpen && (
+                        {openFilter === 'seller' && (
                         <SellerDetailsFilter
                             onSetRateFilter={(value) => {
                             setFilterBy(prev => ({
@@ -225,14 +228,16 @@ console.log('params:', category);
 
                     {/* BUDGET */}
                     <div className="filter-btn-wrapper">
-                        <button className="filter-btn" onClick={() => setIsBudgetOpen(prev => !prev)}>
+                        <button className={`filter-btn ${openFilter === 'budget' ? 'open' : ''}`}
+                            onClick={() => setOpenFilter(prev => (prev === 'budget' ? null : 'budget'))}
+                         >
                         Budget
                         <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                             <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
                         </svg>
                         </button>
 
-                        {isBudgetOpen && (
+                        {openFilter === 'budget' && (
                         <BudgetFilter
                             onSetBudget={({ min, max }) => {
                             setFilterBy(prev => ({
@@ -249,14 +254,16 @@ console.log('params:', category);
 
                     {/* DELIVERY TIME */}
                     <div className="filter-btn-wrapper">
-                        <button className="filter-btn" onClick={() => setIsDeliveryOpen(prev => !prev)}>
+                        <button className={`filter-btn ${openFilter === 'delivery' ? 'open' : ''}`}
+                            onClick={() => setOpenFilter(prev => (prev === 'delivery' ? null : 'delivery'))}
+                        >
                         Delivery time
                         <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
                             <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
                         </svg>
                         </button>
 
-                        {isDeliveryOpen && (
+                        {openFilter === 'delivery' && (
                         <DeliveryTimeFilter
                             onSetDeliveryTime={(value) => {
                             setFilterBy(prev => ({

@@ -32,7 +32,7 @@ export function BudgetFilter({ onSetBudget, onClose }) {
   }
 
   return (
-    <div className="budget-popup">
+    <div className="filter-popup">
       {Object.entries(options).map(([key, val]) => (
         <label key={key}>
           <input

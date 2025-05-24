@@ -20,7 +20,7 @@ export function DeliveryTimeFilter({ onSetDeliveryTime, onClose }) {
   }
 
   return (
-    <div className="delivery-popup">
+    <div className="filter-popup">
       {Object.entries(options).map(([key, label]) => (
         <label key={key}>
           <input
