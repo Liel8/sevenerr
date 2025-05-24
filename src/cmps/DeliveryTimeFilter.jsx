@@ -12,11 +12,13 @@ export function DeliveryTimeFilter({ onSetDeliveryTime, onClose }) {
 
   const onApply = () => {
     onSetDeliveryTime(selected)
+    onClose()
   }
 
   const onClear = () => {
     setSelected('')
     onSetDeliveryTime('')
+    onClose()
   }
 
   return (

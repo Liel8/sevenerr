@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { GigList } from '../cmps/GigList';
 import { GigFilter } from '../cmps/GigFilter';
@@ -12,11 +12,33 @@ import { DeliveryTimeFilter } from "../cmps/DeliveryTimeFilter";
 import { SellerDetailsFilter } from "../cmps/SellerDetailsFilter"
 
 export function GigIndex() {
-const [openFilter, setOpenFilter] = useState(null) // 'options' | 'seller' | 'budget' | 'delivery' | null
+    const [openFilter, setOpenFilter] = useState(null) // 'options' | 'seller' | 'budget' | 'delivery' | 'sort' | null
+    const filterRef = useRef(null)     // עוטף את כל הפילטרים
+    const sortRef = useRef(null)
 
     const gigs = useSelector(storeState => storeState.gigModule.gigs);
     const {category} = useParams()
-console.log('params:', category);
+    console.log('params:', category);
+
+    useEffect(() => {
+    function handleClickOutside(event) {
+        if (
+        filterRef.current &&
+        !filterRef.current.contains(event.target) &&
+        sortRef.current &&
+        !sortRef.current.contains(event.target)
+        ) {
+        setOpenFilter(null)
+        setIsSortOpen(false)
+        }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+    }
+    }, [])
+
 
     // פונקציה להמרת הקטגוריה מה-URL לערך שמתאים ל-data
     // function mapCategory(urlCategory) {
@@ -185,7 +207,7 @@ console.log('params:', category);
             <p className="category-sub-header">Your brand's visual identity elevated to perfection.</p>
 
             <section className="filter-btns-container full main-layout">
-                <section className="filter-btns">
+                <section className="filter-btns" ref={filterRef} > 
                     <div className="btns-container">
 
                     {/* OPTIONS */}
@@ -219,9 +241,9 @@ console.log('params:', category);
                                 ...prev,
                                 sellerRateFilter: value
                             }))
-                            setIsSellerOpen(false)
+                            setOpenFilter(null)
                             }}
-                            onClose={() => setIsSellerOpen(false)}
+                            onClose={() => setOpenFilter(null)}
                         />
                         )}
                     </div>
@@ -245,9 +267,9 @@ console.log('params:', category);
                                 minPrice: min,
                                 maxPrice: max
                             }))
-                            setIsBudgetOpen(false)
+                            setOpenFilter(null)
                             }}
-                            onClose={() => setIsBudgetOpen(false)}
+                            onClose={() => setOpenFilter(null)}
                         />
                         )}
                     </div>
@@ -270,9 +292,9 @@ console.log('params:', category);
                                 ...prev,
                                 deliveryTime: value
                             }))
-                            setIsDeliveryOpen(false)
+                            setOpenFilter(null)
                             }}
-                            onClose={() => setIsDeliveryOpen(false)}
+                            onClose={() => setOpenFilter(null)}
                         />
                         )}
                     </div>
@@ -285,14 +307,16 @@ console.log('params:', category);
             <div className="top-of-gigs">
                 <div className="number-of-results">{gigs.length} services available</div>
 
-                <div className="sort-container">
+                <div className="sort-container"  ref={sortRef}>
                     <span className="sort-title">Sort by:</span>
 
                     <div className="sort-dropdown">
                     <div
                         className="sort-toggle"
-                        onClick={() => setIsSortOpen(prev => !prev)}
-                    >
+                        onClick={() =>
+                            setOpenFilter(prev => (prev === 'sort' ? null : 'sort'))
+                        }
+                        >
                         <span className="sort-selected">
                         {displayMap[filterBy.sortBy] || filterBy.sortBy}
                         </span>
@@ -303,31 +327,30 @@ console.log('params:', category);
                         </span>
                     </div>
 
-                    {isSortOpen && (
+                    {openFilter === 'sort' && (
                         <ul className="sort-options">
-                        {Object.entries(displayMap).map(([value, label]) => {
+                            {Object.entries(displayMap).map(([value, label]) => {
                             const isSelected = filterBy.sortBy === value;
-
                             return (
-                            <li
+                                <li
                                 key={value}
                                 className={isSelected ? 'selected' : ''}
                                 onClick={() => {
-                                setFilterBy(prev => ({ ...prev, sortBy: value }));
-                                setIsSortOpen(false);
+                                    setFilterBy(prev => ({ ...prev, sortBy: value }))
+                                    setOpenFilter(null)
                                 }}
-                            >
+                                >
                                 {isSelected && (
-                                <span className="check-icon">
+                                    <span className="check-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M14.53 4.53 7 12.06 2.47 7.53l1.06-1.06L7 9.94l6.47-6.47z" />
+                                        <path d="M14.53 4.53 7 12.06 2.47 7.53l1.06-1.06L7 9.94l6.47-6.47z" />
                                     </svg>
-                                </span>
+                                    </span>
                                 )}
                                 {label}
-                            </li>
-                            );
-                        })}
+                                </li>
+                            )
+                            })}
                         </ul>
                     )}
                     </div>
