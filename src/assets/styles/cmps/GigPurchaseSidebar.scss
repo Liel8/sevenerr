@@ -62,7 +62,11 @@
   padding: 24px;
 
 .delivery-wrapper {
-  margin-bottom: 4px;
+  margin-bottom: 14px;
+
+  .delivery {
+    font-weight: 600;
+  }
 }  
 }
 .title-price {
@@ -84,9 +88,9 @@
     gap: 6px;
 
     h2 {
-      font-size: 20px;
-      color: #222325;
-      font-weight: 400;
+      font-size: 24px;
+      color: #404145;
+      font-weight: 700;
     }
 
     svg {
@@ -168,7 +172,7 @@
   background-color: #000;
   color: #fff;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;

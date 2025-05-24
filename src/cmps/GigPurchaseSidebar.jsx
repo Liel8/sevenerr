@@ -8,14 +8,14 @@ export function GigPurchaseSidebar({ gig }) {
     basic: {
       title: "SILVER",
       description: "1 logo design, High Quality Mock-up, Logo Transparency",
-      delivery: "4 Days Delivery",
+      delivery: "4-Day Delivery",
       features: ["1 concept included", "Logo transparency"],
       price: basePrice,
     },
     standard: {
       title: "GOLD",
       description: "2 HQ logo concepts + 3D Mock up + Logo Transparency + Printable Resolution file",
-      delivery: "5 Days Delivery",
+      delivery: "5-Day Delivery",
       features: [
         "2 concept included",
         "Logo transparency",
@@ -27,7 +27,7 @@ export function GigPurchaseSidebar({ gig }) {
     premium: {
       title: "PLATINUM",
       description: "3 logo concepts + Source File + Social Media Kit + 3D Mockup",
-      delivery: "6 Days Delivery",
+      delivery: "6-Day Delivery",
       features: [
         "3 concept included",
         "Logo transparency",
@@ -71,10 +71,10 @@ export function GigPurchaseSidebar({ gig }) {
 
       <div className="package-options">
         <div className="title-price">         
-          <h3>{current.title}</h3>
+          {/* <h3>{current.title}</h3> */}
           <div className="price-with-icon">
             <h2>₪{current.price}</h2>
-            <svg
+            {/* <svg
               width="16"
               height="16"
               viewBox="0 0 14 15"
@@ -89,7 +89,7 @@ export function GigPurchaseSidebar({ gig }) {
                   <path transform="translate(0 .5)" d="M0 0h14v14H0z" />
                 </clipPath>
               </defs>
-            </svg>
+            </svg> */}
           </div>
         </div>
 
