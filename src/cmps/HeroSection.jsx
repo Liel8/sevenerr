@@ -10,7 +10,8 @@ export function HeroSection() {
 
   // טוען את כל הגיגים ל-autocomplete
   useEffect(() => {
-    gigService.query({}).then(gigs => setLocalGigs(gigs))
+    gigService.query({}).then(gigs => 
+      setLocalGigs(gigs))
   }, [])
 
   // מחשב את ההצעות בכל שינוי ב־searchTerm
@@ -61,7 +62,7 @@ export function HeroSection() {
             will take it from here
           </h1>
 
-          <form className="search-form" onSubmit={onSearch}>
+          <form className="search-form" onSubmit={onSearch} >
             <input
               type="text"
               placeholder="Search for any service..."
@@ -79,21 +80,37 @@ export function HeroSection() {
 
             {suggestions.length > 0 && (
               <ul className="search-suggestions">
-                {suggestions.map(gig => (
-                  <li
-                    key={gig._id}
-                    onClick={() => {
-                      // ניווט מיידי לעמוד הפרטים של הגיג
-                      navigate(`/gig/details/${gig._id}`, { state: { gig } })
-                      setSearchTerm('')
-                      setSuggestions([])
-                    }}
-                  >
-                    {gig.title}
-                  </li>
-                ))}
+                {suggestions.map(gig => {
+                  const txt = searchTerm.trim().toLowerCase()
+                  const title = gig.title
+
+                  const index = title.toLowerCase().indexOf(txt)
+
+                  let highlightedTitle = title
+
+                  if (index !== -1) {
+                    const before = title.slice(0, index)
+                    const match = title.slice(index, index + txt.length)
+                    const after = title.slice(index + txt.length)
+
+                    highlightedTitle = `${before}<span class="highlight">${match}</span>${after}`
+                  }
+
+                  return (
+                    <li
+                      key={gig._id}
+                      onClick={() => {
+                        navigate(`/gig/details/${gig._id}`, { state: { gig } })
+                        setSearchTerm('')
+                        setSuggestions([])
+                      }}
+                      dangerouslySetInnerHTML={{ __html: highlightedTitle }}
+                    />
+                  )
+                })}
               </ul>
             )}
+
           </form>
 
           <div className="hero-tags">

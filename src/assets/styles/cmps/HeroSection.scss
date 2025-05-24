@@ -43,10 +43,11 @@
         align-items: center;
         background-color: #fff;
         border-radius: 8px;
-        overflow: hidden;
+        overflow: visible;
         max-width: 1200px;
         margin-bottom: 28px;
         height: 60px;
+        z-index: 10;
 
         input[type="text"] {
           flex: 1;
@@ -102,14 +103,25 @@
           margin: 0;
           padding: 0;
 
+          scrollbar-width: none;       
+          -ms-overflow-style: none;    
+          &::-webkit-scrollbar {      
+            display: none;
+          }
+
           li {
             padding: 8px 12px;
             cursor: pointer;
             white-space: nowrap;
+            color: #222325;
 
             &:hover {
               background-color: #f0f0f0;
             }
+          }
+          .highlight {
+            color: #62646a;
+            font-weight: 600;
           }
         }
       }
