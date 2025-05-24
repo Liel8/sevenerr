@@ -9,10 +9,12 @@ import { useParams, useSearchParams } from 'react-router-dom';
 import { Link } from "react-router-dom"
 import { BudgetFilter } from "../cmps/BudgetFilter"
 import { DeliveryTimeFilter } from "../cmps/DeliveryTimeFilter";
+import { SellerDetailsFilter } from "../cmps/SellerDetailsFilter"
 
 export function GigIndex() {
     const [isBudgetOpen, setIsBudgetOpen] = useState(false)
     const [isDeliveryOpen, setIsDeliveryOpen] = useState(false)
+    const [isSellerOpen, setIsSellerOpen] = useState(false)
     const gigs = useSelector(storeState => storeState.gigModule.gigs);
     const {category} = useParams()
 console.log('params:', category);
@@ -111,6 +113,16 @@ console.log('params:', category);
 
     let sortedGigs = [...gigs];
 
+    if (filterBy.sellerRateFilter) {
+        sortedGigs = sortedGigs.filter(gig => {
+            const rate = Number(gig.owner?.rate || 0)
+            if (filterBy.sellerRateFilter === 'below-3') return rate < 3
+            if (filterBy.sellerRateFilter === 'above-3') return rate > 3
+            if (filterBy.sellerRateFilter === 'exact-5') return rate === 5
+            return true
+        })
+    }
+
     if (filterBy.minPrice || filterBy.maxPrice) {
         const min = Number(filterBy.minPrice) || 0
         const max = Number(filterBy.maxPrice) || Infinity
@@ -176,66 +188,92 @@ console.log('params:', category);
             <section className="filter-btns-container full main-layout">
                 <section className="filter-btns">
                     <div className="btns-container">
-                        <button className="filter-btn">
-                            Options
-                            <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill">
-                                <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z">
-                                </path>
-                            </svg>
-                        </button>
-                        <button className="filter-btn">
-                            Seller details
-                            <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill">
-                                <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z">
-                                </path>
-                            </svg>
-                        </button>
-                        <div className="filter-btn-wrapper">
-                            <button className="filter-btn" onClick={() => setIsBudgetOpen(prev => !prev)}>
-                                Budget
-                                <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                                <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
-                                </svg>
-                            </button>
 
-                            {isBudgetOpen && (
-                                <BudgetFilter
-                                onSetBudget={({ min, max }) => {
-                                    setFilterBy(prev => ({
-                                    ...prev,
-                                    minPrice: min,
-                                    maxPrice: max
-                                    }))
-                                    setIsBudgetOpen(false)
-                                }}
-                                onClose={() => setIsBudgetOpen(false)}
-                                />
-                            )}
-                        </div>
-                        <div className="filter-btn-wrapper">
-                            <button className="filter-btn" onClick={() => setIsDeliveryOpen(prev => !prev)}>
-                                Delivery time
-                                <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                                <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
-                                </svg>
-                            </button>
+                    {/* OPTIONS */}
+                    <div className="filter-btn-wrapper">
+                        <button className="filter-btn">
+                        Options
+                        <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentFill">
+                            <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
+                        </svg>
+                        </button>
+                        {/* בעתיד נוסיף כאן את OptionsFilter */}
+                    </div>
 
-                            {isDeliveryOpen && (
-                                <DeliveryTimeFilter
-                                onSetDeliveryTime={(value) => {
-                                    setFilterBy(prev => ({
-                                    ...prev,
-                                    deliveryTime: value
-                                    }))
-                                    setIsDeliveryOpen(false)
-                                }}
-                                onClose={() => setIsDeliveryOpen(false)}
-                                />
-                            )}
-                        </div>
+                    {/* SELLER DETAILS */}
+                    <div className="filter-btn-wrapper">
+                        <button className="filter-btn" onClick={() => setIsSellerOpen(prev => !prev)}>
+                        Seller details
+                        <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
+                        </svg>
+                        </button>
+
+                        {isSellerOpen && (
+                        <SellerDetailsFilter
+                            onSetRateFilter={(value) => {
+                            setFilterBy(prev => ({
+                                ...prev,
+                                sellerRateFilter: value
+                            }))
+                            setIsSellerOpen(false)
+                            }}
+                            onClose={() => setIsSellerOpen(false)}
+                        />
+                        )}
+                    </div>
+
+                    {/* BUDGET */}
+                    <div className="filter-btn-wrapper">
+                        <button className="filter-btn" onClick={() => setIsBudgetOpen(prev => !prev)}>
+                        Budget
+                        <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
+                        </svg>
+                        </button>
+
+                        {isBudgetOpen && (
+                        <BudgetFilter
+                            onSetBudget={({ min, max }) => {
+                            setFilterBy(prev => ({
+                                ...prev,
+                                minPrice: min,
+                                maxPrice: max
+                            }))
+                            setIsBudgetOpen(false)
+                            }}
+                            onClose={() => setIsBudgetOpen(false)}
+                        />
+                        )}
+                    </div>
+
+                    {/* DELIVERY TIME */}
+                    <div className="filter-btn-wrapper">
+                        <button className="filter-btn" onClick={() => setIsDeliveryOpen(prev => !prev)}>
+                        Delivery time
+                        <svg width="12" height="12" viewBox="0 0 11 7" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
+                        </svg>
+                        </button>
+
+                        {isDeliveryOpen && (
+                        <DeliveryTimeFilter
+                            onSetDeliveryTime={(value) => {
+                            setFilterBy(prev => ({
+                                ...prev,
+                                deliveryTime: value
+                            }))
+                            setIsDeliveryOpen(false)
+                            }}
+                            onClose={() => setIsDeliveryOpen(false)}
+                        />
+                        )}
+                    </div>
+
                     </div>
                 </section>
             </section>
+
 
             <div className="top-of-gigs">
                 <div className="number-of-results">{gigs.length} services available</div>
