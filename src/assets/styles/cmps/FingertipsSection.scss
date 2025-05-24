@@ -1,0 +1,45 @@
+.fingertips-section {
+    width: 100%;
+    padding-top: 38px;
+    padding-bottom: 48px;
+    margin-top: 76px;
+    margin-bottom: 100px;
+    background-color: #501d2c;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: -0.15cap;
+  }
+  
+  .fingertips-content {
+    text-align: center;
+  }
+  
+  .fingertips-title {
+    font-size: 64px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+  
+    em {
+      font-style: normal;
+      color: #ff5a1f;
+    }
+  }
+  
+  .fingertips-button {
+    margin-top: 24px;
+    padding: 8px 16px 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #ffffff;
+    color: #141414;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  
+    &:hover {
+      opacity: 0.9;
+    }
+  }
