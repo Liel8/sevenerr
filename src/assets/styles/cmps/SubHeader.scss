@@ -3,7 +3,7 @@
   background-color: #fff;
   border-bottom: 1px solid #e5e5e7;
   height: 40px;
-  padding-top: 10px;
+  padding-top: 8px;
   z-index: 1000;       
   transition: transform .3s ease;
 
@@ -28,7 +28,8 @@
     // margin-right: 2rem;
     text-decoration: none;     
     transition: none;  
-    font-size: 16px;     
+    font-size: 17px;  
+  
   
     &:hover,
     &:focus-visible {          

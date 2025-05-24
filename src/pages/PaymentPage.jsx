@@ -7,40 +7,31 @@ import { useLocation } from "react-router-dom"
 
 
 export function PaymentPage() {
-  // Hooks must be at the top level
-  const { gigId } = useParams();
-  const gig= useSelector(state => state.gigModule.gig);
+
+  const { gigId } = useParams()
+  const gig= useSelector(state => state.gigModule.gig)
   const user = useSelector(state => state.userModule.user) || { _id: 'u101' }
-  const navigate  = useNavigate();
+  const navigate  = useNavigate()
 
   const location = useLocation()
   const selectedPackage = location.state?.selectedPackage
 
-//   useEffect(() => {
-//     window.scrollTo(0, 0)
-// }, [])
-
-  // Load gig details once
   useEffect(() => {
     if (gigId) {
       loadGig(gigId)
-        .catch(err => console.error('Failed loading gig', err));
-    }
-  }, [gigId]);
+        .catch(err => console.error('Failed loading gig', err))}
+  }, [gigId])
 
-  // Early return if not loaded
-  if (!gig || !gig._id) return <div>Loading…</div>;
+  if (!gig || !gig._id) return <div><img className="loading-gif" src="/icons/loading.gif" alt="Loading..." /></div>
 
-  // Compute pricing and order details
-  const basePrice = selectedPackage?.price || gig.price;
-  const priceWithTax = +(basePrice * 1.18).toFixed(2);
-  const packageName = selectedPackage?.title || 'Basic';
-  const packagePrice = +(priceWithTax + 16.40).toFixed(2);
+  const basePrice = selectedPackage?.price || gig.price
+  const priceWithTax = +(basePrice * 1.18).toFixed(2)
+  const packageName = selectedPackage?.title || 'Basic'
+  const packagePrice = +(priceWithTax + 16.40).toFixed(2)
   const daysToMake = selectedPackage?.delivery
   ? parseInt(selectedPackage.delivery.match(/\d+/)?.[0])
-  : gig.daysToMake || 3;
+  : gig.daysToMake || 3
 
-  // Handle confirm and create order
   async function onConfirmPay() {
     const newOrder = {
       _id: Date.now().toString(),
@@ -58,10 +49,10 @@ export function PaymentPage() {
     };
 
     try {
-      await addOrder(newOrder);
-      navigate('/orders');
+      await addOrder(newOrder)
+      navigate('/orders')
     } catch (err) {
-      console.error('Could not place order', err);
+      console.error('Could not place order', err)
     }
   }
 
@@ -75,8 +66,6 @@ export function PaymentPage() {
 
             <section className="payments-option">
                 <label>
-                {/* <input className="form-check-input radio" type="radio" name="credit-cards" id="flexRadioDefault1" /> */}
-                    {/* <span className="radio"></span> */}
                     <span>Credit & Debit Cards</span>
                     <img src="/public/img/credit-cards.jpg" alt="credit-cards" />
                 </label>

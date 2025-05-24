@@ -1,11 +1,7 @@
-
-
 import React, { useState, useRef, useEffect  } from 'react'
 import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import { GigPurchaseSidebar } from '../cmps/GigPurchaseSidebar'
 import { ReviewIndex } from './ReviewIndex'
-import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { useLocation } from 'react-router-dom'
 
@@ -13,13 +9,8 @@ export function GigDetails() {
   const { gigId } = useParams()
   const { state } = useLocation()
   const gig = state?.gig
-  if (!gig) return <div>אין נתוני gig להצגה</div>
+  if (!gig) return <div>There are no gigs to show</div>
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0)
-  // }, [])
-
-  // המערך imgUrl מגיע ישר מה-data שלכם
   const images = Array.isArray(gig.imgUrl) && gig.imgUrl.length > 0
     ? gig.imgUrl
     : ['https://www.looper.com/img/gallery/phoebe-buffays-friends-timeline-explained/l-intro-1621661137.jpg']
@@ -37,20 +28,6 @@ export function GigDetails() {
 
   const thumbsRef = useRef(null);
 
-  // const scrollLeft = () => {
-  //   if (thumbsRef.current) {
-  //     thumbsRef.current.scrollBy({ left: -100, behavior: 'smooth' });
-  //   }
-  // };
-
-  // const scrollRight = () => {
-  //   if (thumbsRef.current) {
-  //     thumbsRef.current.scrollBy({ left: 100, behavior: 'smooth' });
-  //   }
-  // };
-
-
-  console.log("####", gig)
   return (
     <section className="gig-details main-layout">
       <article className="bread-crumbs full">
