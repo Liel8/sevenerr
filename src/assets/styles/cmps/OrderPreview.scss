@@ -27,16 +27,21 @@
     &.fulfilled-label {
       background: #1dbf73;
       color: #fff;
+      width: 90px;
     }
     &.rejected-label {
       background: #74767e;
       color: #fff;
+      width: 90px;
+      text-align: center;
     }
     &.pending-label {
       // background: #e1d967;
-      font-size: 13px;
+      font-size: 14px;
       padding: 4px 0;
       color: #222325;
+      letter-spacing: 0.3cap;
+      
     }
   }
   
@@ -64,3 +69,10 @@
     background: #3498db;
     color: #fff;
   }
+
+  .status-cell {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  

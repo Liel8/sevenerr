@@ -10,7 +10,7 @@ export function OrdersTable({ orders, mode, onAction }) {
           <th>Order Date</th>
           <th>Due On</th>
           <th>Total</th>
-          <th>Status</th>
+          <th className='th-status'>Status</th>
           {mode === 'buyer' && <th></th>}
         </tr>
       </thead>
