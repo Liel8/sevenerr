@@ -147,7 +147,7 @@ export function AppHeader() {
                     <li
                       key={gig._id}
                       onClick={() => {
-                        navigate(`/gig/details/${gig._id}`, { state: { gig } })
+                        navigate(`/gig/${gig._id}`, { state: { gig } })
                         setSearchTerm('')
                         setSuggestions([])
                       }}
@@ -181,7 +181,7 @@ export function AppHeader() {
               >
                 <NavLink to={`user/${user._id}`}>Profile</NavLink>
                 {user.isSeller ? (
-                  <NavLink to="/gig/add">Add a gig</NavLink>
+                  <NavLink to="/gigs/add">Add a gig</NavLink>
                 ) : (
                   <NavLink to={`user/${user._id}`}>Become a seller</NavLink>
                 )}

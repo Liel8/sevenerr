@@ -6,7 +6,7 @@ export function GigPreview({ gig }) {
 
   // פונקציה שמנווטת לדף פרטי הגיג ומעבירה את הנתונים במידת הצורך
   const handleNavigation = () => {
-    navigate(`/gig/details/${gig._id}`, { state: { gig } })
+    navigate(`/gig/${gig._id}`, { state: { gig } })
   }
 
   return (

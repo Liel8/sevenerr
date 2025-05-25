@@ -298,7 +298,7 @@ export function GigPurchaseSidebar({ gig }) {
           ))}
         </ul>
 
-        <Link to={`/gig/details/${gig._id}/payment`} state={{ selectedPackage: current }}>
+        <Link to={`/gig/${gig._id}/payment`} state={{ selectedPackage: current }}>
           <button className="btn-purchase">
             Continue
             <span className="arrow-icon" aria-hidden="true">

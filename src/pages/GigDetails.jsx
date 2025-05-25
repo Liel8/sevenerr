@@ -40,7 +40,7 @@ export function GigDetails() {
           />
         </a>
         <span className="divider">/</span>
-        <a title="Category" href="/gig">
+        <a title="Category" href={`/gigs/${gig.category}`}>
           {gig.category}
         </a>
       </article>
@@ -170,8 +170,6 @@ export function GigDetails() {
               </article>
             </div>
           </div>
-
-          <ReviewIndex reviews={gig.reviews || []} />
 
           <ReviewIndex reviews={gig.reviews || []} />
         </div>

@@ -55,7 +55,7 @@ export function SubHeader() {
                 <Link
                   key={cat}
                   className="category-link"
-                  to={`/gig/${cat}`}
+                  to={`/gigs/${cat}`}
                 >
                   {cat}
                 </Link>

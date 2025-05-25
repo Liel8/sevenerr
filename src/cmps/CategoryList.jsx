@@ -8,7 +8,7 @@ export function CategoryList() {
         <ul>
           {categories.map((category) => (
             <li key={category.title}>
-              <Link to={`/gig/${category.title}`}>
+              <Link to={`/gigs/${category.title}`}>
                 <img src={category.icon} alt={category.title} />
                 <h3>{category.title}</h3>
               </Link>

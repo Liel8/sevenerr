@@ -51,7 +51,7 @@ export function GigIndex() {
 
     // state עבור הפילטר – מעדכנים את הקטגוריה הממופה
     const [searchParmas, setSearchParams] = useSearchParams()
-    const [filterBy, setFilterBy] = useState({...gigService.getFilterFromParams(searchParmas, category), sortBy: 'Recommended' });
+    const [filterBy, setFilterBy] = useState({...gigService.getFilterFromParams(searchParmas, category), sortBy: 'recommended' });
     const [isSortOpen, setIsSortOpen] = useState(false);
 
 // console.log('search params:', searchParmas);
@@ -69,11 +69,13 @@ export function GigIndex() {
     }, [category, searchParmas]);
     
     useEffect(() => {
-        console.log("category and filter from index:" , category, filterBy);
         loadGigs(filterBy)
-        setSearchParams(filterBy, {replace: true})
-
-    }, [filterBy]);
+      
+        // נמחק את ה-category מהאובייקט שנשלח ל־URL
+        const { category: _omit, ...params } = filterBy
+        setSearchParams(params, { replace: true })
+      }, [filterBy])
+      
 
 
 
@@ -198,8 +200,8 @@ export function GigIndex() {
                     <img className="home-icon" src="/icons/house-icon.svg" alt="Home" title="Go to homepage" />
                 </a>
                 <span className="divider">/</span>
-                <Link className='link-category' to="/gig">{filterBy.category || 'All Gigs'}</Link>
-                {/* <a title="Graphics & Design Category" href="/gig"></a> */}
+                <Link className='link-category' to={`/gigs/${filterBy.category}`}>{filterBy.category || 'All Gigs'}</Link>
+                {/* <a title="Graphics & Design Category" href="/gigs"></a> */}
             </div>
 
             {/* <GigFilter filterBy={filterBy} setFilterBy={setFilterBy} /> */}
