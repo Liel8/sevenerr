@@ -48,7 +48,6 @@ export function GigDetails() {
       <section className="top-details container full main-layout">
         <div className="owner-details-container-main">
           <h1>{gig.title}</h1>
-          {/* פרטי המוכר */}
           <div className="profile-container">
             <img
               src={gig.owner.imgUrl}
@@ -58,20 +57,29 @@ export function GigDetails() {
             <div className="owner-details">
               <div className="user-container">
                 <h3 className="user-title">{gig.owner.fullname}</h3>
-                <span className="username">@{gig.owner.fullname}_10</span>
+                {/* <span className="username">@{gig.owner.fullname}_10</span> */}
+                <p className="queue">10 Orders in Queue</p>
               </div>
               <div className="star-wrapper">
-                <span className="star-svg">
+                {/* <span className="star-svg">
                   <img
                     src="/icons/star-icon.svg"
                     alt="star"
                     className="star"
                   />
-                </span>
+                </span> */}
+                {Array(Math.round(gig.owner.rate))
+                  .fill(null)
+                  .map((_, i) => (
+                    <img
+                      key={i}
+                      src="/icons/star-icon.svg"
+                      alt="star"
+                      className="star"/>
+                  ))}
                 <span className="owner-rate">{gig.owner.rate}</span>
-                <span className="owner-number-rates">(224)</span>
-                <span className="divider">|</span>
-                <span className="queue">10 Orders in Queue</span>
+                <span className="owner-number-rates">({gig.reviews.length} reviews)</span>
+                {/* <span className="divider">|</span> */}
               </div>
             </div>
           </div>
@@ -111,32 +119,60 @@ export function GigDetails() {
           <h3>About this gig</h3>
           <p className="gig-description">{gig.description}</p>
 
-          <h3>About the seller</h3>
-          <div className="profile-container">
-            <img
-              src={gig.owner.imgUrl}
-              alt="owner-img"
-              className="owner-profile-img-meduim"
-            />
-            <div className="owner-details">
-              <div className="user-container">
-                <h3 className="user-title">{gig.owner.fullname}</h3>
-                <span className="username">@{gig.owner.fullname}_10</span>
-              </div>
-              <div className="star-wrapper">
-                <p>Happy to work with you</p>
-                <span className="star-svg">
+          <h3>Get to know {gig.owner.fullname}</h3>
+
+          <div className="below-the-fold-experiential-seller-card-order">
+            <div className="seller-card">
+              <div className="seller-header">
+                <div className="user-profile-image">
                   <img
-                    src="/icons/star-icon.svg"
-                    alt="star"
-                    className="star"
+                    src={gig.owner.imgUrl}
+                    alt={gig.owner.fullname}
+                    className="profile-pict-img"
                   />
-                </span>
-                <span className="owner-rate">{gig.owner.rate}</span>
-                <span className="owner-number-rates">(224)</span>
-              </div>
+                </div>
+                <div className="seller-info-container">
+                  <div className="seller-info">
+                    <h4 className="seller-name">{gig.owner.fullname}</h4>
+                    {/* show “Fiverr’s Choice” if they’re a premium seller */}
+                    {gig.owner.level?.includes("premium") && (
+                      <span className="seller-badge">sevenerr’s Choice</span>
+                    )}
+                  </div>
+                  <div className="seller-rating">
+                    <div className="stars">
+                      <img src="/icons/star-icon.svg" alt="star" className="star"/>
+                    </div>
+                      <strong className="rating-score">{gig.owner.rate}</strong>
+                      <span className="ratings-count">({gig.reviews.length})</span>
+                    </div>
+                </div>
+            </div>
+
+              <button className="contact-btn">Contact me</button>
+
+              <ul className="user-stats">
+                <li>From <strong>{gig.country}</strong></li>
+                <li>Member since <strong>Jan 2021</strong></li>
+                <li>Avg. response time <strong>1 hour</strong></li>
+                <li>Last delivery <strong>about 6 hours</strong></li>
+                <li>Languages <strong>English</strong></li>
+              </ul>
+
+              <article className="seller-desc">
+                <div className="inner">
+                  Hi everyone. My name is {gig.owner.fullname} and I am an experienced
+                  graphics designer having more than 8 years of experience in design almost
+                  every sort of brand. I always focus on quality rather than quantity.
+                  My expertise in Logo designing helps me design modern, unique and amazing
+                  logos.
+                </div>
+              </article>
             </div>
           </div>
+
+          <ReviewIndex reviews={gig.reviews || []} />
+
           <ReviewIndex reviews={gig.reviews || []} />
         </div>
         <GigPurchaseSidebar gig={gig} />
