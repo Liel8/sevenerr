@@ -1,7 +1,11 @@
+.gig-details {
+  padding: 0px 0px 100px 48px;
+}
+
 .owner-details-container-main {
   flex: 1;
   max-width: 750px;
-  padding-bottom: 100px;
+  
 
   h1 {
     font-size: 28px;
@@ -182,45 +186,47 @@
     gap: 4px;
 
     .user-container {
+      display: flex;
+      align-items: baseline;
+
       .user-title {
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 600;
         margin: 0;
+        margin-right: 24px;
       }
 
-      .username {
-        font-size: 14px;
+      .queue {
         color: #74767e;
+        font-size: 16px;
+        margin: 0;
+        // text-align: end;
       }
     }
 
     .star-wrapper {
       display: flex;
-      // align-items: center;
-      gap: 6px;
+      align-items: center;
+      // gap: 6px;
       font-size: 14px;
       color: #404145;
+
+      .owner-rate {
+        margin: 0 6px;
+        font-size: 16px;
+        font-weight: 600;
+
+      }
 
       .owner-number-rates {
         color: #74767e;
         text-decoration: underline;
-      }
-
-      .divider {
-        color: #e4e5e7;
-      }
-
-      .queue {
-        color: #74767e;
+        font-size: 16px;
       }
 
       .star {
-        width: 14px;
-        height: 14px;
-      }
-
-      p {
-        // margin: 5%;
+        width: 24px;
+        height: 24px;
       }
     }
   }
@@ -230,6 +236,7 @@
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  margin-right: 48px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -278,4 +285,142 @@
     font-size: 20px;
   }
 }
+.below-the-fold-experiential-seller-card-order {
+  margin-top: 32px;
 
+  .seller-card {
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 8px;
+    padding: 24px;
+    max-width: 600px;
+
+    .seller-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+
+      .user-profile-image {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        .profile-pict-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .seller-info-container {
+        display: flex;
+        flex-direction: column;
+
+        .seller-info {
+          margin-left: 16px;
+          display: flex;
+  
+          .seller-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            padding-right: 20px;
+          }
+  
+          .seller-badge {
+            display: inline-block;
+            margin-top: 4px;
+            background: #0e1f4a;
+            color: #1dbf73;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 4px;
+          }
+        }
+  
+}
+
+}
+
+.seller-rating {
+display: flex;
+align-items: center;
+gap: 8px;
+margin-bottom: 16px;
+margin-left: 16px;
+
+.stars {
+  display: flex;
+  gap: 4px;
+}
+
+.rating-score {
+  font-size: 16px;
+  font-weight: 600;
+  color: #404145;
+}
+
+.ratings-count {
+  font-size: 16px;
+  color: #74767e;
+  text-decoration: underline;
+}
+}
+
+.contact-btn {
+display: inline-block;
+padding: 8px 16px;
+font-size: 14px;
+color: #000;
+border: 1px solid #000;
+border-radius: 4px;
+background: #fff;
+cursor: pointer;
+margin-bottom: 24px;
+}
+
+.user-stats {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+gap: 20px 80px;
+list-style: none;
+padding: 0;
+margin: 0 0 24px;
+
+li {
+  font-size: 16px;
+  color: #62646a;
+
+  strong {
+    display: block;
+    font-weight: 600;
+    color: #404145;
+    margin-top: 4px;
+  }
+}
+}
+
+.seller-desc {
+border-top: 1px solid #ececec;
+padding-top: 16px;
+
+.inner {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #404145;
+  margin-bottom: 8px;
+}
+
+.read-more {
+  font-size: 14px;
+  background: none;
+  border: none;
+  color: #1dbf73;
+  cursor: pointer;
+}
+}
+}
+}
+    
