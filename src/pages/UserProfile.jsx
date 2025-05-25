@@ -178,7 +178,7 @@ export function UserProfile() {
           <div className="my-gigs-header">
             <h2>My Gigs</h2>
             <button
-              onClick={() => navigate('/gig/add')}
+              onClick={() => navigate('/gigs/add')}
               className="btn add-gig-btn"
             >
               Create New Gig
@@ -190,7 +190,7 @@ export function UserProfile() {
               <button
                 key={gig._id}
                 className="my-gig-btn"
-                onClick={() => navigate(`/gig/details/${gig._id}`, { state: { gig } })}
+                onClick={() => navigate(`/gig/${gig._id}`, { state: { gig } })}
               >
                 <img src={gig.imgUrl[0]} alt={gig.title} className="gig-img" />
                 <h4>{gig.title}</h4>

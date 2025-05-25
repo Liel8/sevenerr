@@ -38,7 +38,7 @@ export function HeroSection() {
     ev.preventDefault()
     const qs = searchTerm.trim() ? { txt: searchTerm.trim() } : {}
     navigate({
-      pathname: '/gig',
+      pathname: '/gigs',
       search: new URLSearchParams(qs).toString()
     })
     setSearchTerm('')
@@ -47,7 +47,7 @@ export function HeroSection() {
 
   const goToTag = item => {
     navigate({
-      pathname: '/gig',
+      pathname: '/gigs',
       search: `?category=${item.category}&txt=${encodeURIComponent(item.txt)}`
     })
   }
@@ -113,7 +113,7 @@ export function HeroSection() {
                     <li
                       key={gig._id}
                       onClick={() => {
-                        navigate(`/gig/details/${gig._id}`, { state: { gig } })
+                        navigate(`/gig/${gig._id}`, { state: { gig } })
                         setSearchTerm('')
                         setSuggestions([])
                       }}

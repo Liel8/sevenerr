@@ -54,7 +54,7 @@ export function PopularServices() {
 
   const goToCategory = item => {
     navigate({
-      pathname: '/gig/',
+      pathname: '/gigs/',
       search: `?category=${item.category}&txt=${item.moveTo}`
     // search: `${item.category}?category=${item.category}`
     })

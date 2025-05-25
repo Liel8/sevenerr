@@ -107,12 +107,12 @@
         opacity: 0;
         transition: opacity 0.3s ease;
       
-        // תמונת החץ ממורכזת בתוך העיגול
+
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='%2362646a' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z'/%3E%3C/svg%3E");
 
         background-repeat: no-repeat;
         background-position: center ;
-        background-size: 24px 24px; // תואם למקור ב־Fiverr
+        background-size: 24px 24px; 
       
         &.prev {
           left: 15px;
@@ -120,11 +120,10 @@
       
         &.next {
           right: 15px;
-          transform: translateY(-50%) rotate(180deg); // סיבוב החץ הימני
+          transform: translateY(-50%) rotate(180deg);
         }
       }
       
-      // מופיעים רק כשמרחפים על הקרוסלה
       .slider:hover .arrow {
         opacity: 1;
       }
@@ -153,12 +152,12 @@
     
     }
   
-    /* אזור פרטי המוכר, דירוג, כותרת הגיג ומחיר */
+
     .owner-details {
       margin-top: 13px;
       display: flex;
       flex-direction: column;
-      /* פרטי הבעלים: תמונת פרופיל, שם, רמה וכו' */
+
       .owner-details-1 {
         display: flex;
         align-items: center;
@@ -172,25 +171,23 @@
         }
   
         .owner-fullname {
-          font-size: 0.875rem; /* ~14px */
+          font-size: 0.875rem; 
           font-weight: 600;
           color: #404145;
         }
   
         .level-number {
-          font-size: 0.75rem; /* ~12px */
+          font-size: 0.75rem; 
           color: #62646a;
         }
       }
   
-      /* כאן נמצאת גם כותרת הגיג וגם הדירוג (rate-wrapper) */
       .rating-price {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         // margin-top: 4px;
   
-        /* כותרת הגיג */
         .owner-gig-title {
           margin: 0;
           font-size: 16px;
@@ -205,20 +202,21 @@
           //   text-decoration: underline;
           // }
         }
-        /* דירוג (אפשר להוסיף אייקון כוכב ליד owner-rate אם רוצים) */
+
         .rate-wrapper {
           display: flex;
           gap: 4px;
+          align-items: baseline;
 
           svg {
             width: 50%;
-            margin-right: 1;
+            margin-right: 1px;
           }
   
           .owner-rate {
             font-size: 1rem;
             font-weight: 600;
-            color: #222325; /* צבע כוכב/דירוג */
+            color: #222325; 
           }
 
           .reviews-count {

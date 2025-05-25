@@ -1273,7 +1273,7 @@ export const gigs = [
   {
     "_id": "f5c06397-2843-4fe2-96de-15e03543f469",
     "category": "Business",
-    "title": "I will do market research, business research, swot analysis, and competitive analysis",
+    "title": "I will do market and business research, swot analysis, competitive analysis",
     "about": "Hi, my name is Lay. I'm a professional writer in Microsoft word, excel, PowerPoint expert with years of experience. Through my time of work, I have been able to manage tasks such as document formatting & editing, designing, cleanup, and typing of documents for both individual firms and local governments, having worked that long I'm proficient and have the capacity in executing tasks involved in different fields requested by the client. Welcome, let us work together. regards, Troyeb84.",
     "price": 72,
     "owner": {
