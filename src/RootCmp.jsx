@@ -20,6 +20,7 @@ import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
 import { UserMsg }   from './cmps/UserMsg.jsx'
 import { ScrollToTop } from './cmps/ScrollToTop.JSX'
+import { SignupForm } from './pages/SignupForm.jsx'
 
 export function RootCmp() {
     return (
@@ -50,6 +51,11 @@ export function RootCmp() {
                     <Route path="login" element={<LoginSignup />}>
                         <Route index element={<Login />} />
                         <Route path="signup" element={<Signup />} />
+                    </Route>
+
+                    <Route path="join" element={<LoginSignup />}>
+                        <Route index element={<SignupForm />} />
+                        <Route path="signup" element={<SignupForm />} />
                     </Route>
                 </Routes>
             </main>

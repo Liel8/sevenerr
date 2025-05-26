@@ -189,7 +189,7 @@ export function AppHeader() {
               </DropdownBtn>
             </span>
 
-            {/* <Link className="btn join" to="/signup">Join</Link> */}
+            <Link className="btn join" to="/join">Join</Link>
           </nav>
         </header>
       </section>
