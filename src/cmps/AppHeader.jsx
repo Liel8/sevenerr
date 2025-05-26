@@ -76,7 +76,7 @@ export function AppHeader() {
   function onSearch(ev) {
     ev.preventDefault()
     const qs = searchTerm.trim() ? { txt: searchTerm.trim() } : {}
-    navigate({ pathname: '/gig', search: new URLSearchParams(qs).toString() })
+    navigate({ pathname: '/gigs', search: new URLSearchParams(qs).toString() })
     setSearchTerm('')
     setSuggestions([])
   }
@@ -147,7 +147,7 @@ export function AppHeader() {
                     <li
                       key={gig._id}
                       onClick={() => {
-                        navigate(`/gig/${gig._id}`, { state: { gig } })
+                        navigate(`/gigs/${gig._id}`, { state: { gig } })
                         setSearchTerm('')
                         setSuggestions([])
                       }}
@@ -163,7 +163,7 @@ export function AppHeader() {
 
 
           <nav className="links-container">
-            <Link className="btn" to="/gig">Explore</Link>
+            <Link className="btn" to="/gigs">Explore</Link>
             <Link className="btn login" to="/login">Login</Link>
 
             <span className="user-info">
