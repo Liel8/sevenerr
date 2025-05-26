@@ -11,7 +11,7 @@ export function FingertipsSection() {
             Freelance services at your <em>fingertips</em>
             </h2>
             <button className="fingertips-button" onClick={() => navigate('/login')}>
-            Join Fiverr
+            Join Sevenerr
             </button>
         </div>
         </section>
