@@ -62,18 +62,18 @@ export function OrdersPage() {
             </button>
           ))}
         </nav>
-{/* 
+
         <OrdersTable
           orders={filtered}
           mode="buyer"
           onAction={handleReorder}
-        /> */}
-        {filtered.length === 0 ? (<p className="no-orders-message">There are no orders in this status</p>)
+        />
+        {/* {filtered.length === 0 ? (<p className="no-orders-message">There are no orders in this status</p>)
           : (<OrdersTable
               orders={filtered}
               mode="buyer"
               onAction={handleReorder}/>)
-        }
+        } */}
       </div>
     </section>
   )
