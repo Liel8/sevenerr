@@ -136,7 +136,14 @@ export function GigIndex() {
 
     let sortedGigs = [...gigs];
 
+    const rateLabels = {
+        'below-3': 'Below 3',
+        'above-3': 'Above 3',
+        'exact-5': 'Exactly 5'
+    }
+
     if (filterBy.sellerRateFilter) {
+
         sortedGigs = sortedGigs.filter(gig => {
             const rate = Number(gig.owner?.rate || 0)
             if (filterBy.sellerRateFilter === 'below-3') return rate < 3
@@ -227,7 +234,7 @@ export function GigIndex() {
 
                     {/* SELLER DETAILS */}
                     <div className="filter-btn-wrapper">
-                        <button className={`filter-btn ${openFilter === 'seller' ? 'open' : ''}`}
+                        <button className={`filter-btn ${openFilter === 'seller' ? 'open' : ''} ${filterBy.sellerRateFilter ? 'active' : ''}`}
                              onClick={() => setOpenFilter(prev => (prev === 'seller' ? null : 'seller'))}
                          >
                         Seller details
@@ -238,6 +245,7 @@ export function GigIndex() {
 
                         {openFilter === 'seller' && (
                         <SellerDetailsFilter
+                            selected={filterBy.sellerRateFilter}
                             onSetRateFilter={(value) => {
                             setFilterBy(prev => ({
                                 ...prev,
@@ -252,7 +260,7 @@ export function GigIndex() {
 
                     {/* BUDGET */}
                     <div className="filter-btn-wrapper">
-                        <button className={`filter-btn ${openFilter === 'budget' ? 'open' : ''}`}
+                        <button className={`filter-btn ${openFilter === 'budget' ? 'open' : ''} ${filterBy.budgetSelected  ? 'active' : ''}`}
                             onClick={() => setOpenFilter(prev => (prev === 'budget' ? null : 'budget'))}
                          >
                         Budget
@@ -263,22 +271,26 @@ export function GigIndex() {
 
                         {openFilter === 'budget' && (
                         <BudgetFilter
-                            onSetBudget={({ min, max }) => {
+                            selectedBudget={filterBy.budgetSelected}
+                            onSetBudget={({ min, max, label, key }) => {
                             setFilterBy(prev => ({
                                 ...prev,
                                 minPrice: min,
-                                maxPrice: max
+                                maxPrice: max,
+                                budgetLabel: label,
+                                budgetSelected: key
                             }))
                             setOpenFilter(null)
                             }}
-                            onClose={() => setOpenFilter(null)}
+                        onClose={() => setOpenFilter(null)}
                         />
+
                         )}
                     </div>
 
                     {/* DELIVERY TIME */}
                     <div className="filter-btn-wrapper">
-                        <button className={`filter-btn ${openFilter === 'delivery' ? 'open' : ''}`}
+                        <button className={`filter-btn ${openFilter === 'delivery' ? 'open' : ''} ${filterBy.deliveryTime ? 'active' : ''}`}
                             onClick={() => setOpenFilter(prev => (prev === 'delivery' ? null : 'delivery'))}
                         >
                         Delivery time
@@ -289,10 +301,12 @@ export function GigIndex() {
 
                         {openFilter === 'delivery' && (
                         <DeliveryTimeFilter
-                            onSetDeliveryTime={(value) => {
+                            selected={filterBy.deliveryTime}
+                            onSetDeliveryTime={(value, label) => {
                             setFilterBy(prev => ({
                                 ...prev,
-                                deliveryTime: value
+                                deliveryTime: value,
+                                deliveryTimeLabel: label
                             }))
                             setOpenFilter(null)
                             }}
@@ -305,6 +319,69 @@ export function GigIndex() {
                 </section>
             </section>
 
+            {(filterBy.minPrice || filterBy.maxPrice || filterBy.sellerRateFilter || filterBy.deliveryTime) && (
+                <div className="selected-filters-wrapper layout-row">
+                    <div className="selected-filters">
+                    {filterBy.maxPrice && filterBy.budgetLabel && (
+                        <span className="filter-tag">
+                            {filterBy.budgetLabel}
+                            <span
+                            className="remove-icon"
+                            onClick={() =>
+                                setFilterBy(prev => ({
+                                ...prev,
+                                minPrice: null,
+                                maxPrice: null,
+                                budgetLabel: '',
+                                budgetSelected: '' 
+                                }))
+                            }
+                        >
+                        <svg width="12" height="12" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <path d="m8.485 7 4.487-4.487.926-.925a.35.35 0 0 0 0-.495l-.99-.99a.35.35 0 0 0-.495 0L7 5.515 1.588.102a.35.35 0 0 0-.495 0l-.99.99a.35.35 0 0 0 0 .495L5.514 7 .102 12.413a.35.35 0 0 0 0 .495l.99.99a.35.35 0 0 0 .495 0L7 8.485l4.487 4.487.926.926a.35.35 0 0 0 .495 0l.99-.99a.35.35 0 0 0 0-.495L8.485 7Z"/>
+                        </svg>
+                        </span>
+                    </span>
+                    )}
+
+                    {filterBy.sellerRateFilter && (
+                    <span className="filter-tag">
+                        {rateLabels[filterBy.sellerRateFilter] || filterBy.sellerRateFilter}
+                        <span
+                        className="remove-icon"
+                        onClick={() =>
+                            setFilterBy(prev => ({ ...prev, sellerRateFilter: null }))
+                        }
+                        >
+                        <svg width="12" height="12" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                            <path d="m8.485 7 4.487-4.487.926-.925a.35.35 0 0 0 0-.495l-.99-.99a.35.35 0 0 0-.495 0L7 5.515 1.588.102a.35.35 0 0 0-.495 0l-.99.99a.35.35 0 0 0 0 .495L5.514 7 .102 12.413a.35.35 0 0 0 0 .495l.99.99a.35.35 0 0 0 .495 0L7 8.485l4.487 4.487.926.926a.35.35 0 0 0 .495 0l.99-.99a.35.35 0 0 0 0-.495L8.485 7Z"/>
+                        </svg>
+                        </span>
+                    </span>
+                    )}
+
+                    {filterBy.deliveryTime && (
+                        <span className="filter-tag">
+                            {filterBy.deliveryTimeLabel || `Delivery: ${filterBy.deliveryTime}`}
+                            <span
+                                className="remove-icon"
+                                onClick={() =>
+                                    setFilterBy(prev => ({
+                                    ...prev,
+                                    deliveryTime: null,
+                                    deliveryTimeLabel: null
+                                    }))
+                                }
+                            >
+                            <svg width="12" height="12" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                                <path d="m8.485 7 4.487-4.487.926-.925a.35.35 0 0 0 0-.495l-.99-.99a.35.35 0 0 0-.495 0L7 5.515 1.588.102a.35.35 0 0 0-.495 0l-.99.99a.35.35 0 0 0 0 .495L5.514 7 .102 12.413a.35.35 0 0 0 0 .495l.99.99a.35.35 0 0 0 .495 0L7 8.485l4.487 4.487.926.926a.35.35 0 0 0 .495 0l.99-.99a.35.35 0 0 0 0-.495L8.485 7Z"/>
+                            </svg>
+                            </span>
+                        </span>
+                    )}
+                    </div>
+                </div>
+                )}
 
             <div className="top-of-gigs">
                 <div className="number-of-results">{gigs.length} services available</div>

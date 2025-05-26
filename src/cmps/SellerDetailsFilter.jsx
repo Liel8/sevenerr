@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export function SellerDetailsFilter({ onSetRateFilter, onClose }) {
-  const [selected, setSelected] = useState('')
+export function SellerDetailsFilter({ selected, onSetRateFilter, onClose }) {
+  const [localSelected, setLocalSelected] = useState(selected || '')
+
+  useEffect(() => {
+    setLocalSelected(selected || '')
+  }, [selected])
 
   const options = {
     'below-3': 'Below 3',
@@ -10,24 +14,26 @@ export function SellerDetailsFilter({ onSetRateFilter, onClose }) {
   }
 
   const onApply = () => {
-    onSetRateFilter(selected)
+    onSetRateFilter(localSelected)
+    onClose()
   }
 
   const onClear = () => {
-    setSelected('')
+    setLocalSelected('')
     onSetRateFilter('')
+    onClose()
   }
 
   return (
     <div className="filter-popup">
       {Object.entries(options).map(([key, label]) => (
-        <label key={key}>
+        <label key={key} className={localSelected === key ? 'active' : ''}>
           <input
             type="radio"
             name="rate"
             value={key}
-            checked={selected === key}
-            onChange={() => setSelected(key)}
+            checked={localSelected === key}
+            onChange={() => setLocalSelected(key)}
           />
           {label}
         </label>
