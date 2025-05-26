@@ -17,7 +17,7 @@ export function AppFooter() {
               sevenerr<span className="dot"></span>
             </span>
           </div>
-          <p className="empty">© severr International Ltd. 2025</p>
+          <p className="empty">© Sevnerr International Ltd. 2025</p>
         </div>
 
         <div className="right flex">
