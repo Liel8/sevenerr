@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export function DeliveryTimeFilter({ onSetDeliveryTime, onClose }) {
-  const [selected, setSelected] = useState('')
+export function DeliveryTimeFilter({ selected, onSetDeliveryTime, onClose }) {
+  const [localSelected, setLocalSelected] = useState(selected || '')
+
+  useEffect(() => {
+    setLocalSelected(selected || '')
+  }, [selected])
 
   const options = {
     '24h': '24 Hours',
@@ -11,13 +15,13 @@ export function DeliveryTimeFilter({ onSetDeliveryTime, onClose }) {
   }
 
   const onApply = () => {
-    onSetDeliveryTime(selected)
+    onSetDeliveryTime(localSelected, options[localSelected])
     onClose()
   }
 
   const onClear = () => {
-    setSelected('')
-    onSetDeliveryTime('')
+    setLocalSelected('')
+    onSetDeliveryTime('', '')
     onClose()
   }
 
@@ -29,8 +33,8 @@ export function DeliveryTimeFilter({ onSetDeliveryTime, onClose }) {
             type="radio"
             name="delivery"
             value={key}
-            checked={selected === key}
-            onChange={() => setSelected(key)}
+            checked={localSelected === key}
+            onChange={() => setLocalSelected(key)}
           />
           {label}
         </label>
