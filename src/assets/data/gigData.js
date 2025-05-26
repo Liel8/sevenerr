@@ -9,8 +9,8 @@ export const gigs = [
       "_id": "u101",
       "fullname": "frederickkessie",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4abf6f5b58e4d78cfb7c410cf8d7a9ac-1626111679444/4a04b77c-22ee-4ce8-b4be-747fd059e9ff.jpg",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 1,
+      "rate": 4.5
     },
     "country": "Ghana",
     "daysToMake": 26,
@@ -79,7 +79,7 @@ export const gigs = [
       "_id": "u101",
       "fullname": "vividstore",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/83cc7c97f9873bdb052590a94d32f84c-1576419363871/ed47443e-0f9b-42ab-beaf-ec0a0acccfe8.jpeg",
-      "level": "basic/premium",
+      "level": 2,
       "rate": 4
     },
     "country": "Bangladesh",
@@ -120,7 +120,7 @@ export const gigs = [
       "_id": "u102",
       "fullname": "andreacarvalho_",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5344c10fd4820db3626c4fc24968783d-1588608774469/1e4a3bd9-b71d-48ce-8ac0-0ff6d667caf4.jpeg",
-      "level": "basic/premium",
+      "level": 2,
       "rate": 5
     },
     "country": "Brazil",
@@ -189,8 +189,8 @@ export const gigs = [
       "_id": "u103",
       "fullname": "winny_writer",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/e34531bf0bbed9d144dba7384f6473b6-1621577835789/60307055-cde9-4dc2-9e9e-4daa421991d3.jpg",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 2,
+      "rate": 4.8
     },
     "country": "Kenya",
     "daysToMake": 28,
@@ -254,7 +254,7 @@ export const gigs = [
       "_id": "u101",
       "fullname": "rashin07",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/1fe02234f0b300905f098d1c2eef2599-1621414093019/30dd09bd-748a-49c0-b3bc-ee3071bdfadb.jpg",
-      "level": "basic/premium",
+      "level": 3,
       "rate": 5
     },
     "country": "Bangladesh",
@@ -323,8 +323,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "waqarcreatives",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/7928a9bdb9e68c7dcc870f7dac91d92b-768025031598387384699/JPEG_20200826_012943_1616096493516260103.jpg",
-      "level": "basic/premium",
-      "rate": 4
+      "level": 3,
+      "rate": 4.7
     },
     "country": "Pakistan",
     "daysToMake": 10,
@@ -393,8 +393,8 @@ export const gigs = [
       "_id": "u101",
       "fullname": "masum245",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/8a1623fd3276ad7297d7647a8727bdf0-1589096119095/6c637953-9dc0-4c9c-b04d-c13c947fdc43.jpg",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 1,
+      "rate": 4.9
     },
     "country": "Bangladesh",
     "daysToMake": 24,
@@ -462,8 +462,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "abrar_029",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/798a61194492b92313c2f5b27d5397bb-1615924783131/a6a1c7f0-0cc0-4c50-95e1-2693d183ee1c.jpg",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 2,
+      "rate": 4.5
     },
     "country": "Pakistan",
     "daysToMake": 28,
@@ -531,8 +531,8 @@ export const gigs = [
       "_id": "u103",
       "fullname": "design_desk",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/044fb5914a845a4eb59fc2b69f7f7b32-1634120039750/4dbc2acb-7322-4cd0-9afb-e5190e8e8a0d.jpg",
-      "level": "basic/premium",
-      "rate": 3
+      "level": 1,
+      "rate": 3.9
     },
     "country": "India",
     "daysToMake": 16,
@@ -601,8 +601,8 @@ export const gigs = [
       "_id": "u103",
       "fullname": "soduzai_gfx1",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/a2dd1a0482bbfe54e61c6c2d6e64696e-1640431251801/943f73b5-dc43-4fe4-9728-9a58f0aafdbc.jpg",
-      "level": "basic/premium",
-      "rate": 3
+      "level": 1,
+      "rate": 4.6
     },
     "country": "Pakistan",
     "daysToMake": 2,
@@ -670,8 +670,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "modernmarvel",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d366617946e54cbc9aa114f27259e3ef-1552848300306/3c155f72-15c9-47d0-8f68-b75a519a7999.jpg",
-      "level": "basic/premium",
-      "rate": 4
+      "level": 2,
+      "rate": 4.9
     },
     "country": "India",
     "daysToMake": 11,
@@ -741,7 +741,7 @@ export const gigs = [
       "_id": "u101",
       "fullname": "shailene_george",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/3ec0d56f436079ef157dbcc1d21c4c62-1625030446037/1c926a30-7aa5-4de8-9a3b-6565be7ddd5b.jpg",
-      "level": "basic/premium",
+      "level": 3,
       "rate": 5
     },
     "country": "Pakistan",
@@ -811,8 +811,8 @@ export const gigs = [
       "_id": "u101",
       "fullname": "bellavida123",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/9e2d7f453419c08e138fbfe9e65347df-696051281638594671.588431/DD8E6DDC-C231-47D3-B61A-97274452D3BF",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 1,
+      "rate": 4.7
     },
     "country": "Jamaica",
     "daysToMake": 25,
@@ -880,8 +880,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "tommysiu",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/429c1a9395f66cd8a36b38028ff35aa6-1550219507580/db25059c-6725-4e49-bf82-fa4d2af0a780.jpg",
-      "level": "basic/premium",
-      "rate": 4
+      "level": 2,
+      "rate": 4.8
     },
     "country": "Hong Kong",
     "daysToMake": 21,
@@ -948,7 +948,7 @@ export const gigs = [
       "_id": "u103",
       "fullname": "farah_youtube",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5db4b0cccf5a3e138a9f57542175248c-1620011414308/8d7f7d68-efe9-465e-80d2-aedcc548efdb.JPG",
-      "level": "basic/premium",
+      "level": 3,
       "rate": 5
     },
     "country": "Vietnam",
@@ -1016,8 +1016,8 @@ export const gigs = [
       "_id": "u101",
       "fullname": "mariarotunda",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d098c50d82476b11568f3a50111a8a89-1636128369729/ef737ebd-6908-47bc-be50-963dabe16d0e.jpg",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 2,
+      "rate": 4.7
     },
     "country": "United States",
     "daysToMake": 27,
@@ -1085,8 +1085,8 @@ export const gigs = [
       "_id": "u101",
       "fullname": "struhenderson",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/eb6eef20969192eca1d8b1301e91cb4f-1630440851285/60f03cc4-71f2-437b-a241-f9423b6e2728.jpg",
-      "level": "basic/premium",
-      "rate": 3
+      "level": 2,
+      "rate": 3.9
     },
     "country": "United Kingdom",
     "daysToMake": 18,
@@ -1152,8 +1152,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "victoriaeva610",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/34a47e49caa09a703d81ef0621ad0ac1-1626197544385/3cb9eb7a-2163-4722-a1b0-0ddb9eb04d4e.png",
-      "level": "basic/premium",
-      "rate": 4
+      "level": 2,
+      "rate": 4.8
     },
     "country": "Kenya",
     "daysToMake": 18,
@@ -1220,8 +1220,8 @@ export const gigs = [
       "_id": "u103",
       "fullname": "angela_637",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/03e667c26a63c20863e016917c423eb0-1622910916319/85930fed-bb45-4b01-b117-3913f19b77d7.PNG",
-      "level": "basic/premium",
-      "rate": 4
+      "level": 2,
+      "rate": 4.4
     },
     "country": "Kenya",
     "daysToMake": 11,
@@ -1289,8 +1289,8 @@ export const gigs = [
       "_id": "u101",
       "fullname": "layee84",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/b398d51589f16ed08ca0510c2c5edbe2-1636020659427/ecb5ae5e-d22a-47bc-bd9f-e7b2f99c0994.jpg",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 3,
+      "rate": 4.6
     },
     "country": "Kenya",
     "daysToMake": 4,
@@ -1358,8 +1358,8 @@ export const gigs = [
       "_id": "u103",
       "fullname": "shiranmor17",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/2077b8d6eeb98061673b868ec51a9267-1636915857681/b31b149f-5e31-46bd-9a2e-27e94cc3e5e2.jpeg",
-      "level": "basic/premium",
-      "rate": 4
+      "level": 3,
+      "rate": 4.9
     },
     "country": "Israel",
     "daysToMake": 28,
@@ -1427,8 +1427,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "vovkaslovesnyy",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/3232052/original/1484208202021_Profile.png",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 2,
+      "rate": 4.5
     },
     "country": "Russia",
     "daysToMake": 15,
@@ -1497,7 +1497,7 @@ export const gigs = [
       "_id": "u102",
       "fullname": "quantz75",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/aeb50869a3c9aa4f4d01a4a5076780d8-1597753670171/66b99c65-4308-4b81-a088-b0610d5d75b6.jpg",
-      "level": "basic/premium",
+      "level": 3,
       "rate": 5
     },
     "country": "France",
@@ -1566,7 +1566,7 @@ export const gigs = [
       "_id": "u103",
       "fullname": "moremarks",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c7335c7b5aa8d880333495ef8f4bbee5-1617624531791/a2fc714b-c261-490d-b93a-af081a385234.png",
-      "level": "basic/premium",
+      "level": 2,
       "rate": 4
     },
     "country": "United Kingdom",
@@ -1634,7 +1634,7 @@ export const gigs = [
       "_id": "u101",
       "fullname": "allesanimation",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/ba950f423b857c85340d9e0f22e57bce-1624271979495/ce05a5ca-dcd2-406a-8a20-e41bcb0a429c.jpg",
-      "level": "basic/premium",
+      "level": 2,
       "rate": 5
     },
     "country": "Germany",
@@ -1701,8 +1701,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "ama_studio1",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/18ecf7c17fc8aa50d64b8a89c500a5ad-1612199164491/1963fa7b-062c-4c52-a26d-30473a2d3fad.png",
-      "level": "basic/premium",
-      "rate": 5
+      "level": 3,
+      "rate": 4.8
     },
     "country": "Pakistan",
     "daysToMake": 17,
@@ -1770,8 +1770,8 @@ export const gigs = [
       "_id": "u103",
       "fullname": "encrypt99",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/aa1d8903ba72305648ba75fc6e81d9b7-1633524346738/5f95f4e0-24ca-4a86-8860-d01d81fd7c4a.jpg",
-      "level": "basic/premium",
-      "rate": 3
+      "level": 1,
+      "rate": 4.2
     },
     "country": "Nigeria",
     "daysToMake": 12,
@@ -1840,8 +1840,8 @@ export const gigs = [
       "_id": "u101",
       "fullname": "bnn_marketing",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/ee46166ba8c4ab29d551cb80bf88815e-1600882516719/10098270-e9f3-4ee8-b9f4-2c70cc457dd9.JPG",
-      "level": "basic/premium",
-      "rate": 4
+      "level": 2,
+      "rate": 4.6
     },
     "country": "Argentina",
     "daysToMake": 12,
@@ -1908,8 +1908,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "mediagirl",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/e3f2db9a69a2cc7b69c653d3185b6ba9-1592756841572/fbdf1383-4893-4f94-a3c9-a324c68aca4f.jpg",
-      "level": "basic/premium",
-      "rate": 4
+      "level": 3,
+      "rate": 4.9
     },
     "country": "United States",
     "daysToMake": 17,
@@ -1977,8 +1977,8 @@ export const gigs = [
       "_id": "u103",
       "fullname": "harvardcv",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/profile/photos/3844073/original/IMG_7304.jpg",
-      "level": "basic/premium",
-      "rate": 3
+      "level": 1,
+      "rate": 4.7
     },
     "country": "United States",
     "daysToMake": 22,
@@ -2047,8 +2047,8 @@ export const gigs = [
       "_id": "u101",
       "fullname": "haniwritertech",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/079e914e9f28e8269dee6bb109ef85a1-1570850131880/40fbde37-316f-4de2-9ca5-07b1300360d2.jpg",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 1,
+      "rate": 4.5
     },
     "country": "Pakistan",
     "daysToMake": 28,
@@ -2114,7 +2114,7 @@ export const gigs = [
       "_id": "u102",
       "fullname": "muzamilbutt401",
       "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/eb5d29b35cb0f6bd47e3a2f1fb8a55db-1595779512175/3d984139-fd41-42b2-a94c-fca974593c8a.jpg",
-      "level": "basic/premium",
+      "level": 3,
       "rate": 5
     },
     "country": "Pakistan",
@@ -2186,7 +2186,7 @@ export const gigs = [
       "_id": "u101",
       "fullname": "PixelKing",
       "imgUrl": "https://atlanticbusinessmagazine.ca/wp-content/uploads/2023/04/Top50-2023_Albert_Joel_500x500.jpg",
-      "level": "basic/premium",
+      "level": 3,
       "rate": 5
     },
     "country": "Canada",
@@ -2240,8 +2240,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "CyberRon",
       "imgUrl": "https://i.ytimg.com/vi/oC4QJe6Qqjg/maxresdefault.jpg",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 2,
+      "rate": 4.7
     },
     "country": "United States",
     "daysToMake": 10,
@@ -2294,8 +2294,8 @@ export const gigs = [
       "_id": "u103",
       "fullname": "AvaBrown",
       "imgUrl": "https://vignette.wikia.nocookie.net/voiceacting/images/1/1e/Emily_Neves.jpg/revision/latest?cb=20130120105905",
-      "level": "basic/premium",
-      "rate": 3
+      "level": 2,
+      "rate": 4.4
     },
     "country": "Canada",
     "daysToMake": 30,
@@ -2348,7 +2348,7 @@ export const gigs = [
       "_id": "u102",
       "fullname": "MiaJohnson",
       "imgUrl": "https://cdn.openart.ai/uploads/image_1677397282492_1024.jpg",
-      "level": "basic/premium",
+      "level": 1,
       "rate": 5
     },
     "country": "India",
@@ -2402,8 +2402,8 @@ export const gigs = [
       "_id": "u103",
       "fullname": "TechNova",
       "imgUrl": "https://www.kleinreport.ch/media/images/2020/08/04/Oliver-Spring-Data-insight-Argus-Klein-Report.jpg",
-      "level": "basic/premium",
-      "rate": 3
+      "level": 3,
+      "rate": 4.9
     },
     "country": "India",
     "daysToMake": 16,
@@ -2456,8 +2456,8 @@ export const gigs = [
       "_id": "u101",
       "fullname": "liambon",
       "imgUrl": "https://www.superprof.fr/images/annonces/professeur-home-anthony-coach-sportif-diplome-perigueux-alentours-beneficiez-reduction-credit-impot-services.jpg",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 2,
+      "rate": 4.3
     },
     "country": "Canada",
     "daysToMake": 22,
@@ -2510,8 +2510,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "Tinaleader",
       "imgUrl": "https://domani.shogakukan.co.jp/wp-content/uploads/2021/07/shutterstock_103977011.jpg",
-      "level": "basic/premium",
-      "rate": 1
+      "level": 2,
+      "rate": 4.7
     },
     "country": "Germany",
     "daysToMake": 29,
@@ -2564,8 +2564,8 @@ export const gigs = [
       "_id": "u103",
       "fullname": "agustinaDe",
       "imgUrl": "https://cdn.buymeacoffee.com/uploads/profile_pictures/2022/04/2ff69e75009e704faa14d3ad4b193fed.jpg@300w_0e.jpg",
-      "level": "basic/premium",
-      "rate": 1
+      "level": 1,
+      "rate": 4.8
     },
     "country": "Germany",
     "daysToMake": 28,
@@ -2618,8 +2618,8 @@ export const gigs = [
       "_id": "u103",
       "fullname": "allison99",
       "imgUrl": "https://media.licdn.com/dms/image/C5603AQFkwWhkG_NSNg/profile-displayphoto-shrink_800_800/0/1612170604118?e=2147483647&v=beta&t=EtfKIbSMJbAHcgHI4YCmbTwZEhDa5ZfzSct10lRc1pI",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 2,
+      "rate": 4.6
     },
     "country": "Germany",
     "daysToMake": 20,
@@ -2672,7 +2672,7 @@ export const gigs = [
       "_id": "u103",
       "fullname": "jonascristian",
       "imgUrl": "https://static.cinemagia.ro/img/db/movie/25/17/399/midway-814817l.jpg",
-      "level": "basic/premium",
+      "level": 1,
       "rate": 5
     },
     "country": "India",
@@ -2726,8 +2726,8 @@ export const gigs = [
       "_id": "u101",
       "fullname": "artbat",
       "imgUrl": "https://i.ytimg.com/vi/DCDHlk7Z1-g/maxresdefault.jpg",
-      "level": "basic/premium",
-      "rate": 1
+      "level": 2,
+      "rate": 4.8
     },
     "country": "Canada",
     "daysToMake": 15,
@@ -2780,8 +2780,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "jimvedio",
       "imgUrl": "https://www.drinkmagazine.asia/wp-content/uploads/2023/01/Abhishek-C-George-scaled-e1673418412742.jpg",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 1,
+      "rate": 4.7
     },
     "country": "Germany",
     "daysToMake": 19,
@@ -2834,8 +2834,8 @@ export const gigs = [
       "_id": "u103",
       "fullname": "ronaldodon",
       "imgUrl": "https://i.ytimg.com/vi/qLpoCp4le60/maxresdefault.jpg",
-      "level": "basic/premium",
-      "rate": 2
+      "level": 2,
+      "rate": 4.9
     },
     "country": "United Kingdom",
     "daysToMake": 26,
@@ -2888,8 +2888,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "miradion",
       "imgUrl": "https://ucesy-sk.happyhair.sk/celebrity_img/dion1n309.jpg",
-      "level": "basic/premium",
-      "rate": 1
+      "level": 1,
+      "rate": 4.8
     },
     "country": "United Kingdom",
     "daysToMake": 7,
@@ -2942,7 +2942,7 @@ export const gigs = [
       "_id": "u102",
       "fullname": "elzahana",
       "imgUrl": "https://www.shefinds.com/files/2020/05/rihanna-top-photo-3.jpg",
-      "level": "basic/premium",
+      "level": 3,
       "rate": 5
     },
     "country": "Germany",
@@ -2996,8 +2996,8 @@ export const gigs = [
       "_id": "u101",
       "fullname": "rollo",
       "imgUrl": "https://i.pinimg.com/originals/d6/d3/3b/d6d33b32d6fa0af3b2b87b901db7a29a.jpg",
-      "level": "basic/premium",
-      "rate": 1
+      "level": 1,
+      "rate": 4.9
     },
     "country": "United States",
     "daysToMake": 22,
@@ -3050,8 +3050,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "phebe",
       "imgUrl": "https://www.looper.com/img/gallery/phoebe-buffays-friends-timeline-explained/l-intro-1621661137.jpg",
-      "level": "basic/premium",
-      "rate": 3
+      "level": 3,
+      "rate": 4.7
     },
     "country": "United States",
     "daysToMake": 23,
@@ -3104,7 +3104,7 @@ export const gigs = [
       "_id": "u103",
       "fullname": "floki_be",
       "imgUrl": "https://oyster.ignimgs.com/wordpress/stg.ign.com/2016/02/v4_floki_05252015_jh_04412.jpg",
-      "level": "basic/premium",
+      "level": 1,
       "rate": 4
     },
     "country": "India",
@@ -3158,7 +3158,7 @@ export const gigs = [
       "_id": "u103",
       "fullname": "lagrta_vik",
       "imgUrl": "https://wallpapercave.com/wp/wp10917808.jpg",
-      "level": "basic/premium",
+      "level": 2,
       "rate": 5
     },
     "country": "United Kingdom",
@@ -3212,8 +3212,8 @@ export const gigs = [
       "_id": "u102",
       "fullname": "tommy_shelby",
       "imgUrl": "https://i.pinimg.com/originals/e7/2e/2b/e72e2bc9c75c53a239dfb925b20a5cfd.jpg",
-      "level": "basic/premium",
-      "rate": 3
+      "level": 3,
+      "rate": 4.8
     },
     "country": "United States",
     "daysToMake": 8,
