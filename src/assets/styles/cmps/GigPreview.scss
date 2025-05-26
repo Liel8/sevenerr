@@ -162,6 +162,7 @@
         display: flex;
         align-items: center;
         gap: 8px;
+        justify-content: space-between;
   
         .owner-profile-img {
           width: 24px;
@@ -171,14 +172,38 @@
         }
   
         .owner-fullname {
-          font-size: 0.875rem; 
+          font-size: 16px; 
           font-weight: 600;
-          color: #404145;
+          color: #222325;
         }
   
-        .level-number {
-          font-size: 0.75rem; 
-          color: #62646a;
+        .owner-info {                     
+          display: flex;
+          gap: 14px;                     
+        }
+
+        .level-container {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+
+        .level-label {
+          margin: 0;
+          font-size: 14px;
+          font-weight: 600;
+          color: #222325;
+        }
+
+        .level-diamonds {
+          display: flex;
+          gap: 2px;
+
+          svg {
+            width: 10px;
+            height: 10px;
+            color: currentColor;
+          }
         }
       }
   

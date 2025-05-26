@@ -9,28 +9,46 @@ export function GigPreview({ gig }) {
     navigate(`/gig/${gig._id}`, { state: { gig } })
   }
 
+  const level = Number(gig.owner?.level) || 0
+
   return (
     <li className="gig-preview" key={gig._id}>
-      {/* לחיצה על תמונת הגיג */}
       <div className="img-container" onClick={handleNavigation} style={{ cursor: 'pointer' }}>
       <button className="like-btn" aria-label="Save to favorites"></button>
         {/* <img className="gig-img" src={gig.imgUrl} alt={gig.title} /> */}
         <GigSlider gig={gig} />
       </div>
 
-      {/* פרטי הבעלים */}
       <div className="flex owner-details">
         <div className="flex owner-details-1">
-          <img
-            className="owner-profile-img"
-            src={gig.owner?.imgUrl || 'https://example.com/default-profile.jpg'}
-            alt={gig.owner?.fullname || 'Unknown'}
-          />
-          <span className="owner-fullname">{gig.owner?.fullname || 'Unknown'}</span>
-          {/* <span className="level-number">{gig.owner?.level || 'N/A'}</span> */}
+          <div className="owner-info">
+            <img
+              className="owner-profile-img"
+              src={gig.owner?.imgUrl || 'https://example.com/default-profile.jpg'}
+              alt={gig.owner?.fullname || 'Unknown'}
+            />
+            <span className="owner-fullname">{gig.owner?.fullname || 'Unknown'}</span>
+          </div>
+          <div className="level-container">
+            <p className="level-label">Level {level}</p>
+            <div className="level-diamonds">
+              { [1,2,3].map(n => (
+                  <svg
+                    key={n}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 10 10"
+                    width="10"
+                    height="10"
+                    fill={n <= level ? 'currentColor' : '#E4E5E7'}
+                  >
+                    <path d="M4.839.22a.2.2 0 0 1 .322 0l1.942 2.636a.2.2 0 0 0 .043.043L9.782 4.84a.2.2 0 0 1 0 .322L7.146 7.105a.2.2 0 0 0-.043.043L5.161 9.784a.2.2 0 0 1-.322 0L2.897 7.148a.2.2 0 0 0-.043-.043L.218 5.163a.2.2 0 0 1 0-.322l2.636-1.942a.2.2 0 0 0 .043-.043L4.839.221Z"/>
+                  </svg>
+                ))
+              }
+            </div>
+          </div>
         </div>
 
-        {/* דירוג ומחיר */}
         <div className="rating-price">
           <h3 className="owner-gig-title"  onClick={handleNavigation} style={{ cursor: 'pointer' }}>{gig.title}</h3>
           <div className="flex rate-wrapper">
