@@ -184,31 +184,15 @@
         .sort-options {
           position: absolute;
           top: calc(100% + 8px); // פותח מתחת לכפתור
-          right: 0;
           background-color: #fff;
           border-radius: 6px;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-          min-width: 200px;
+          min-width: 240px;
           max-height: 214px;
           padding: 6px 0;
           list-style: none;
           z-index: 100;
-          overflow-y: auto;
-          scrollbar-width: auto; // Firefox
-          direction: ltr; 
-
-          &::-webkit-scrollbar {
-            width: 8px;
-          }
-
-          &::-webkit-scrollbar-thumb {
-            background-color: #ccc;
-            border-radius: 4px;
-          }
-
-          &::-webkit-scrollbar-track {
-            background: transparent;
-          }
+          overflow-y: scroll;
 
           li {
             display: flex;
