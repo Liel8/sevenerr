@@ -99,6 +99,15 @@ export const gigs = [
     ],
     "likedByUsers": [
       "mini-user"
+    ],
+    "reviews": [
+            {
+        "name": "stevekaszycki",
+        "country": "United States",
+        "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+        "review": "very nice portrait, very good quality.",
+        "reviewedAt": "Published 2 weeks ago"
+      }
     ]
   },
   {
