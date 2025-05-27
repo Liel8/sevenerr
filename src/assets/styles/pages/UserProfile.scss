@@ -20,7 +20,7 @@
     .desc-card {
       border: 1px solid #e1e1e1;
       background: #fff;
-      padding: 30px;
+      padding: 0px 30px;
     }
 
     .user-profile-img {
@@ -68,9 +68,6 @@
         .header {
           color: #0e0e0f;
            
-          h3 {
-            
-          }
         }        
       }
 
@@ -102,7 +99,8 @@
 
         p {
           line-height: 1.5;
-          margin-bottom: 45px;
+          margin-bottom: 20px;
+          
         }
       }
 
@@ -147,7 +145,8 @@
       .user-skills {
         &.with-border-top {
           border-top: 1px solid #eee;
-          padding-top: 20px;
+          padding-top: 10px;
+          
         }
 
         .pill {
