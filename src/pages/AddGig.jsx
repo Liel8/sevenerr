@@ -19,7 +19,7 @@ export function AddGig() {
     price: '',
     daysToMake: '',
     description: '',
-    imgUrl: '',
+    imgUrls: [],
     tags: ''
   })
 
@@ -31,24 +31,25 @@ export function AddGig() {
   }
 
     const handleFileChange = async ({ target }) => {
-    const file = target.files[0]
-    if (!file) return
+    const files = Array.from(target.files)
+    if (!files.length) return
     setImageUploading(true)
     try {
-      const formData = new FormData()
-      formData.append('file', file)
-      formData.append('upload_preset', UPLOAD_PRESET)
-
-      const res = await fetch(UPLOAD_URL, { method: 'POST', body: formData })
-      const data = await res.json()
-      if (data.secure_url) {
-        // **CHANGED**: Set uploaded image URL into gigData
-        setGigData(prev => ({ ...prev, imgUrl: data.secure_url }))
-      } else {
-        console.error('Upload failed', data)
-      }
+      const uploads = await Promise.all(files.map(async file => {
+        const formData = new FormData()
+        formData.append('file', file)
+        formData.append('upload_preset', UPLOAD_PRESET)
+        const res = await fetch(UPLOAD_URL, { method: 'POST', body: formData })
+        const data = await res.json()
+        return data.secure_url
+      }))
+      // צוברים את כל ה־URLs במערך
+      setGigData(prev => ({
+        ...prev,
+        imgUrls: [...prev.imgUrls, ...uploads.filter(url => url)]
+      }))
     } catch (err) {
-      console.error('Error uploading image', err)
+      console.error('Error uploading images', err)
     } finally {
       setImageUploading(false)
     }
@@ -76,8 +77,8 @@ export function AddGig() {
       price: gigData.price ? +gigData.price : 0,
       daysToMake: gigData.daysToMake ? +gigData.daysToMake : 7,
       description: gigData.description || 'No description provided.',
-      imgUrl: gigData.imgUrl
-        ? [gigData.imgUrl]
+      imgUrl: gigData.imgUrls.length
+        ? gigData.imgUrls
         : ['https://www.looper.com/img/gallery/phoebe-buffays-friends-timeline-explained/l-intro-1621661137.jpg'],
       tags: gigData.tags
         ? gigData.tags.split(',').map(t => t.trim()).filter(t => t)
@@ -209,18 +210,23 @@ export function AddGig() {
                 id="file"
                 type="file"
                 accept="image/*"
+                multiple
                 onChange={handleFileChange}
               />
             </label>
-            {imageUploading && <p>Uploading image...</p>}
-            {gigData.imgUrl && (
+            {imageUploading && <p>Uploading images...</p>}
+            {gigData.imgUrls.length > 0 && (
               <div className="preview">
-                <img
-                  src={gigData.imgUrl}
-                  alt="Gig preview"
-                  style={{ maxWidth: '200px', marginTop: '10px' }}
-                />
+                {gigData.imgUrls.map((url, idx) => (
+                  <img
+                    key={idx}
+                    src={url}
+                    alt={`Gig preview ${idx + 1}`}
+                    style={{ maxWidth: '150px', margin: '5px' }}
+                  />
+                ))}
               </div>
+
             )}
           </div>
 
