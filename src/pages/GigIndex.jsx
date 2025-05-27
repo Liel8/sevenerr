@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { GigList } from '../cmps/GigList';
 import { GigFilter } from '../cmps/GigFilter';
@@ -10,6 +10,7 @@ import { Link } from "react-router-dom"
 import { BudgetFilter } from "../cmps/BudgetFilter"
 import { DeliveryTimeFilter } from "../cmps/DeliveryTimeFilter";
 import { SellerDetailsFilter } from "../cmps/SellerDetailsFilter"
+import { OptionsFilter } from '../cmps/OptionFilter';
 
 export function GigIndex() {
     const [openFilter, setOpenFilter] = useState(null) // 'options' | 'seller' | 'budget' | 'delivery' | 'sort' | null
@@ -50,11 +51,11 @@ export function GigIndex() {
     // }
 
     // state עבור הפילטר – מעדכנים את הקטגוריה הממופה
-    const [searchParmas, setSearchParams] = useSearchParams()
-    const [filterBy, setFilterBy] = useState({...gigService.getFilterFromParams(searchParmas, category), sortBy: 'recommended' });
+    const [searchParams, setSearchParams] = useSearchParams()
+    const [filterBy, setFilterBy] = useState({...gigService.getFilterFromParams(searchParams, category), sortBy: 'recommended' });
     const [isSortOpen, setIsSortOpen] = useState(false);
 
-// console.log('search params:', searchParmas);
+// console.log('search params:', searchParams);
 
 
     // עדכון הפילטר בעת שינוי הפרמטר ב-URL
@@ -64,9 +65,24 @@ export function GigIndex() {
 
     // קריאה לטעינת הגיגים עם הפילטר המעודכן
     useEffect(() => {
-    const updateFilter = gigService.getFilterFromParams(searchParmas, category);
-    setFilterBy(prev => ({ ...prev, ...updateFilter }));
-    }, [category, searchParmas]);
+        setFilterBy({
+            category,
+            sortBy: 'recommended',
+            tagFilter: '',
+            sellerRateFilter: '',
+            minPrice: null,
+            maxPrice: null,
+            budgetLabel: '',
+            budgetSelected: '',
+            deliveryTime: '',
+            deliveryTimeLabel: ''
+        });
+    }, [category]);
+
+    useEffect(() => {
+        const params = gigService.getFilterFromParams(searchParams, category);
+        setFilterBy(prev => ({ ...prev, ...params }));
+    }, [searchParams]);
     
     useEffect(() => {
         loadGigs(filterBy)
@@ -136,6 +152,13 @@ export function GigIndex() {
 
     let sortedGigs = [...gigs];
 
+    if (filterBy.tagFilter) {
+        const ft = filterBy.tagFilter.toLowerCase();
+        sortedGigs = sortedGigs.filter(g =>
+            g.tags?.some(tag => tag.toLowerCase().includes(ft))
+        );
+    }
+
     const rateLabels = {
         'level-1': 'Level 1',
         'level-2': 'Level 2',
@@ -200,6 +223,11 @@ export function GigIndex() {
         console.log('filterBy updated:', filterBy)
     }, [filterBy])
 
+    const availableTags = useMemo(
+        () => Array.from(new Set(gigs.flatMap(g => g.tags || []))),
+        [gigs]
+    );
+
     return (
         <section className="gig-index main-layout full">
             <div className="bread-crumbs">
@@ -221,7 +249,7 @@ export function GigIndex() {
 
                     {/* OPTIONS */}
                     <div className="filter-btn-wrapper">
-                        <button className={`filter-btn ${openFilter === 'options' ? 'open' : ''}`}
+                        <button className={`filter-btn ${openFilter === 'options' ? 'open' : ''} ${filterBy.tagFilter ? 'active' : ''}`}
                             onClick={() => setOpenFilter(prev => (prev === 'options' ? null : 'options'))}
                         >
                         Options
@@ -229,7 +257,14 @@ export function GigIndex() {
                             <path d="M5.464 6.389.839 1.769a.38.38 0 0 1 0-.535l.619-.623a.373.373 0 0 1 .531 0l3.74 3.73L9.47.61a.373.373 0 0 1 .531 0l.619.623a.38.38 0 0 1 0 .535l-4.624 4.62a.373.373 0 0 1-.531 0Z" />
                         </svg>
                         </button>
-                        {/* בעתיד נוסיף כאן את OptionsFilter */}
+                        {openFilter === 'options' && (
+                            <OptionsFilter
+                                availableOptions={availableTags}
+                                initialSelected={filterBy.tagFilter}
+                                onSetOption={tag => setFilterBy(prev => ({ ...prev, tagFilter: tag }))}
+                                onClose={() => setOpenFilter(null)}
+                            />
+                        )}
                     </div>
 
                     {/* SELLER DETAILS */}
@@ -318,10 +353,16 @@ export function GigIndex() {
                     </div>
                 </section>
             </section>
-
-            {(filterBy.minPrice || filterBy.maxPrice || filterBy.sellerRateFilter || filterBy.deliveryTime) && (
+            
+            {(filterBy.tagFilter || filterBy.sellerRateFilter || filterBy.minPrice || filterBy.maxPrice || filterBy.deliveryTime) && (
                 <div className="selected-filters-wrapper layout-row">
                     <div className="selected-filters">
+                        {filterBy.tagFilter && (
+                            <span className="filter-tag">
+                                {filterBy.tagFilter}
+                                <span className="remove-icon" onClick={() => setFilterBy(prev => ({ ...prev, tagFilter: '' }))}>&times;</span>
+                            </span>
+                        )}    
                     {filterBy.maxPrice && filterBy.budgetLabel && (
                         <span className="filter-tag">
                             {filterBy.budgetLabel}
@@ -384,8 +425,8 @@ export function GigIndex() {
                 )}
 
             <div className="top-of-gigs">
-                <div className="number-of-results">{gigs.length} services available</div>
-
+                {/* <div className="number-of-results">{gigs.length} services available</div> */}
+                    <div className="number-of-results">{sortedGigs.length} services available</div>
                 <div className="sort-container"  ref={sortRef}>
                     <span className="sort-title">Sort by:</span>
 

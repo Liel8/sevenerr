@@ -26,7 +26,8 @@ export const gigs = [
       "realistic drawing",
       "hand drawing",
       "portrait drawing",
-      "pencil sketch"
+      "pencil sketch",
+      "logo design"
     ],
     "likedByUsers": [
       "mini-user"
@@ -94,8 +95,9 @@ export const gigs = [
       "pencil drawing",
       "realistic drawing",
       "pencil portrait",
-      "sketch",
-      "pencil sketch"
+      "icon design",
+      "pencil sketch",
+      "poster design"
     ],
     "likedByUsers": [
       "mini-user"
@@ -133,9 +135,9 @@ export const gigs = [
     ],
     "tags": [
       "pencil",
-      "drawing",
-      "portrait",
-      "realistic",
+      "icon design",
+      "packaging design",
+      "realistic drawing",
       "painting"
     ],
     "likedByUsers": [
@@ -201,7 +203,10 @@ export const gigs = [
       "https://res.cloudinary.com/de2rdmsca/image/upload/v1698328721/178e5fac2ad62b9a85e8be65e9ad3802b2fdc4bd_zfczqg.webp"
     ],
     "tags": [
-      "technical writing"
+      "technical writing",
+      "creative writing",
+      "copywriting",
+      "blog writing"
     ],
     "likedByUsers": [
       "mini-user"
@@ -266,11 +271,12 @@ export const gigs = [
       "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/207580502/original/6d05bb9cde191b9423733c6b49d0e11892e35ee0.jpg"
     ],
     "tags": [
-      "web research",
-      "manual typing",
       "data entry",
       "copy paste",
-      "product listing"
+      "web research",
+      "virtual assistant",
+      "data processing",
+      "Excel data entry"
     ],
     "likedByUsers": [
       "mini-user"
@@ -339,8 +345,8 @@ export const gigs = [
       "web research",
       "data entry",
       "lead generation",
-      "data entry excel",
-      "data entry typing"
+      "Excel spreadsheets",
+      "Excel data entry",
     ],
     "likedByUsers": [
       "mini-user"
@@ -405,11 +411,12 @@ export const gigs = [
       "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699462291/vsi1d8ziqrwyie7t7cjt.jpg"
     ],
     "tags": [
-      "typing job",
+      "data cleaning",
       "excel data entry",
       "virtual assistant",
       "data entry",
-      "copy paste"
+      "data cleaning",
+      "Google Sheets"
     ],
     "likedByUsers": [
       "mini-user"
@@ -474,11 +481,13 @@ export const gigs = [
       "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699454259/mdfuuifx8ihgy1e6ub6l.webp"
     ],
     "tags": [
-      "excel data entry",
+      "Excel data entry",
       "virtual assistant",
-      "data entry",
-      "copy paste",
-      "typing jobs"
+      "Excel spreadsheets",
+      "Google Sheets",
+      "data scraping",
+      "data cleaning",
+      "data processing"
     ],
     "likedByUsers": [
       "mini-user"
@@ -548,7 +557,8 @@ export const gigs = [
       "logo design",
       "modern",
       "unique",
-      "logo maker"
+      "logo maker",
+      "3D modeling"
     ],
     "likedByUsers": [
       "mini-user"
@@ -617,7 +627,8 @@ export const gigs = [
       "creative logo",
       "logo design",
       "unique logo",
-      "logo maker"
+      "logo maker",
+      "icon design"
     ],
     "likedByUsers": [
       "mini-user"
@@ -754,9 +765,9 @@ export const gigs = [
   ],
     "tags": [
       "modern logo",
-      "logo",
+      "digital painting",
       "custom logo",
-      "creative logo",
+      "social media graphics",
       "professional logo",
       "logo maker"
     ],
@@ -892,9 +903,9 @@ export const gigs = [
       "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699455515/fdtgsuqjvluwawrexhl1.jpg"
     ],
     "tags": [
-      "instagram hashtags",
-      "instagram marketing",
-      "instagram",
+      "inkedIn marketing",
+      "social media marketing",
+      "content marketing",
       "instagram growth"
     ],
     "likedByUsers": [
@@ -960,10 +971,11 @@ export const gigs = [
       "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699462898/ms0u6cl0ry6ddwcvolgv.webp"
     ],
     "tags": [
-      "youtube",
-      "monetization",
+      "youtube marketing",
+      "conversion rate optimization",
       "youtube channel",
-      "youtube promotion"
+      "youtube promotion",
+      "Google Ads"
     ],
     "likedByUsers": [
       "mini-user"
@@ -1031,8 +1043,9 @@ export const gigs = [
       "instagram marketing",
       "web marketing",
       "social media manager",
-      "social marketers",
-      "seo marketing"
+      "video marketing",
+      "seo marketing",
+      "mobile marketing"
     ],
     "likedByUsers": [
       "mini-user"
@@ -1098,8 +1111,11 @@ export const gigs = [
     ],
     "tags": [
       "online research",
-      "research",
-      "internet researcher"
+      "scriptwriting",
+      "internet researcher",
+      "resume writing",
+      "academic research",
+      "research papers"
     ],
     "likedByUsers": [
       "mini-user"
@@ -1164,10 +1180,11 @@ export const gigs = [
       "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699456032/zrjh3xjxnkv3ssqyt2wb.webp"
     ],
     "tags": [
-      "reports",
-      "articles",
+      "academic research",
+     "report writing",
       "internet researcher",
-      "summaries"
+      "proofreading & editing",
+      "topic summaries"
     ],
     "likedByUsers": [
       "mini-user"
@@ -1233,10 +1250,11 @@ export const gigs = [
     ],
     "tags": [
       "research and summary",
-      "case study",
-      "research",
+      "academic research",
+     "research papers",
       "summary",
-      "articles"
+      "TL;DR summaries",
+       "speech writing",
     ],
     "likedByUsers": [
       "mini-user"
@@ -1304,7 +1322,7 @@ export const gigs = [
       "competitive analysis",
       "business research",
       "market research",
-      "reports",
+      "executive summaries",
       "swot analysis"
     ],
     "likedByUsers": [
@@ -1370,11 +1388,11 @@ export const gigs = [
       "https://res.cloudinary.com/dgsfbxsed/image/upload/v1699461821/i1le0lhipwpiu2ffukbq.webp"
     ],
     "tags": [
-      "hebrew to english",
+      "hebrew to english translation",
       "accurate translation",
-      "english to hebrew",
-      "hebrew",
-      "translation"
+      "english to hebrew translation",
+      "academic writing",
+      "speech writing"
     ],
     "likedByUsers": [
       "mini-user"
@@ -1440,11 +1458,12 @@ export const gigs = [
       "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/301509042/original/ef943eaf1b1cb213513ab5ab6ab858ad05ac7e57/accurate-and-professional-russian-to-english-translation.png",
     ],
     "tags": [
-      "english to russian",
-      "russian to english",
-      "translate",
+      "english to russian translation",
+      "russian to english translation",
+      "document translation",
       "translation",
-      "russian"
+      "speech writing",
+      "technical translation",
     ],
     "likedByUsers": [
       "mini-user"
@@ -1510,10 +1529,11 @@ export const gigs = [
      "https://www.upwork.com/catalog-images-resized/e52a81c175ec782d88fb2bc65cdd40c7/large",
     ],
     "tags": [
-      "french to english",
-      "translate french",
-      "english to french",
-      "french translation"
+      "french to english translation",
+      "document translation",
+      "english to french translation",
+      "legal translation",
+      "website translation",
     ],
     "likedByUsers": [
       "mini-user"
@@ -1578,10 +1598,11 @@ export const gigs = [
       "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698914668/default-img-3_afl2mb.webp"
     ],
     "tags": [
-      "french to english",
-      "english translation",
-      "translation",
-      "french translation"
+      "french to english translation",
+      "english to french translation",
+       "certified translation",
+      "document translation",
+      "localization",
     ],
     "likedByUsers": [
       "mini-user"
@@ -1648,7 +1669,7 @@ export const gigs = [
     "tags": [
       "whiteboard video",
       "explainer video",
-      "explain"
+      "whiteboard explainer"
     ],
     "likedByUsers": [
       "mini-user"
@@ -1920,11 +1941,12 @@ export const gigs = [
       "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698706621/Karen-m-3_jwo4p8.webp"
     ],
     "tags": [
-      "resume writer",
-      "linked in",
-      "linkedin",
-      "job hunting",
-      "resume writing"
+      "resume writing",
+      "LinkedIn profile writing",
+      "profile redesign",
+      "profile editing",
+      "SEO LinkedIn",
+      "profile editing"
     ],
     "likedByUsers": [
       "mini-user"
@@ -1990,10 +2012,10 @@ export const gigs = [
       "https://howdoihomeschool.com/wp-content/uploads/2023/03/Resume-Writing-Tips-Instagram-Post-Square-1024x1024.jpg",
     ],
     "tags": [
-      "linkedin profile",
-      "linkedin",
+      "LinkedIn profile optimization",
+      "LinkedIn makeover",
       "resume writing",
-      "linkedin banner",
+      "professional summary",
       "linkedin business"
     ],
     "likedByUsers": [
@@ -2058,10 +2080,10 @@ export const gigs = [
     ],
     "tags": [
       "profile optimization",
-      "linkedin profile",
-      "linkedin summary",
+      "proofreading & editing",
+      "LinkedIn optimization",
       "resume writing",
-      "linkedin bio"
+      "LinkedIn profile revamp",
     ],
     "likedByUsers": [
       "mini-user"
@@ -2126,10 +2148,10 @@ export const gigs = [
       "https://res.cloudinary.com/dgsfbxsed/image/upload/v1698706621/KarenM-1_gqoziy.jpg"
     ],
     "tags": [
-      "bio",
+      "PowerPoint presentations",
       "linkedin profile",
-      "linkedin optimize",
-      "linkedin",
+      "LinkedIn optimization",
+      "LinkedIn profile revamp",
       "resume writing"
     ],
     "likedByUsers": [
@@ -2199,9 +2221,11 @@ export const gigs = [
       "https://c8.alamy.com/comp/G4RAJN/british-postal-service-post-woman-london-G4RAJN.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "photo retouching",
+      "color correction",
+      "background removal",
+      "image enhancement",
+      "social media editing",
     ],
     "likedByUsers": [
       "mini-user"
@@ -2253,9 +2277,12 @@ export const gigs = [
       "https://i.pinimg.com/originals/62/15/5c/62155c2e81a69b9f9c18b9092ebd989e.jpg",
   ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "image enhancement",
+      "social media editing",
+      "Instagram photo edit",
+      "Facebook photo edit",
+      "portrait retouching",
+
     ],
     "likedByUsers": [
       "mini-user"
@@ -2307,9 +2334,12 @@ export const gigs = [
       "https://i.pinimg.com/736x/40/0c/62/400c627cba2e270192c4420bc4f11d53.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "portrait photography",
+      "skin retouching",
+      "beauty retouching",
+      "high-end retouching",
+      "model photography",
+      "studio portrait",
     ],
     "likedByUsers": [
       "mini-user"
@@ -2361,9 +2391,12 @@ export const gigs = [
       "https://d1dlh1v05qf6d3.cloudfront.net/information/uploads/2014/07/creative.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "cinematic photo slideshow",
+      "photo slideshow",
+      "video slideshow",
+      "slideshows with music",
+      "photo montage",
+      "slideshow transitions"
     ],
     "likedByUsers": [
       "mini-user"
@@ -2415,9 +2448,12 @@ export const gigs = [
       "https://i.pinimg.com/originals/ca/bd/23/cabd23bf75ca6eab4f159707482fa17b.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "photo restoration",
+      "photo repair",
+      "vintage photo restoration",
+      "damaged photo repair",
+      "scratch removal",
+      "colorization",
     ],
     "likedByUsers": [
       "mini-user"
@@ -2469,9 +2505,11 @@ export const gigs = [
       "https://fullscale.io/wp-content/uploads/2023/01/business-funding-options.png",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "business plan writing",
+      "market analysis",
+      "financial projections",
+      "SWOT analysis",
+      "investor pitch"
     ],
     "likedByUsers": [
       "mini-user"
@@ -2523,9 +2561,12 @@ export const gigs = [
       "https://i.pinimg.com/736x/e8/11/3a/e8113a36e640109ff29072067e6b8f23.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "business intelligence",
+      "strategic recommendations",
+      "risk analysis",
+      "growth opportunities",
+      "data-driven insights",
+      "investment analysis"
     ],
     "likedByUsers": [
       "mini-user"
@@ -2577,9 +2618,12 @@ export const gigs = [
       "https://static.vecteezy.com/system/resources/previews/003/622/046/original/market-research-and-analysis-vector.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "market segmentation",
+      "trend analysis",
+      "business intelligence",
+      "strategic recommendations",
+      "risk analysis",
+      "growth opportunities",
     ],
     "likedByUsers": [
       "mini-user"
@@ -2631,9 +2675,11 @@ export const gigs = [
       "https://www.weetechsolution.com/wp-content/uploads/2023/01/research-graphics-1024x731-1.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "competitor benchmarking",
+      "customer insights",
+      "market segmentation",
+      "trend analysis",
+      "business intelligence"
     ],
     "likedByUsers": [
       "mini-user"
@@ -2685,9 +2731,12 @@ export const gigs = [
       "https://thumbs.dreamstime.com/b/text-sign-showing-research-analysis-word-strategic-thinking-decision-making-existing-new-conceptual-caption-photo-255419421.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "business proposal writing",
+      "proposal document",
+      "letter writing",
+      "email drafting",
+      "professional correspondence",
+      "sales proposals"
     ],
     "likedByUsers": [
       "mini-user"
@@ -2739,9 +2788,11 @@ export const gigs = [
       "https://dorekau.com/wp-content/uploads/2019/02/speaker-cable-1024x645.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "mixing and mastering",
+      "audio mixing",
+      "audio mastering",
+      "stem mixing",
+      "stem mastering"
     ],
     "likedByUsers": [
       "mini-user"
@@ -2793,9 +2844,11 @@ export const gigs = [
       "https://images.all-free-download.com/images/graphiclarge/abstract_speakers_bright_background_colorful_wave_music_notes_vector_illustration_6817363.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "audio mastering",
+      "stem mixing",
+      "stem mastering",
+      "professional mixing",
+      "professional mastering",
     ],
     "likedByUsers": [
       "mini-user"
@@ -2847,9 +2900,11 @@ export const gigs = [
       "https://static.vecteezy.com/system/resources/thumbnails/013/445/151/small_2x/bright-luminous-blue-digital-digital-neon-sign-for-a-store-or-workshop-service-center-beautiful-shiny-with-a-music-audio-column-on-a-black-background-illustration-vector.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "professional mastering",
+      "music production",
+      "studio mastering",
+      "song mixing",
+      "track mastering",
     ],
     "likedByUsers": [
       "mini-user"
@@ -2901,9 +2956,12 @@ export const gigs = [
      "https://s.studiobinder.com/wp-content/uploads/2020/09/What-is-a-Soundstage-Definition-History-and-Function-Explained-Featured.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "commercial jingle",
+      "brand jingle",
+      "audio branding",
+      "music composition",
+      "melody creation",
+      "catchy jingle"
     ],
     "likedByUsers": [
       "mini-user"
@@ -2955,9 +3013,12 @@ export const gigs = [
       "https://www.lookslikefilm.com/wp-content/uploads/2019/02/Emily-Kaar1.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "melody creation",
+      "catchy jingle",
+      "audio composition",
+      "advertising music",
+      "radio jingle",
+      "tv jingle"
     ],
     "likedByUsers": [
       "mini-user"
@@ -3009,9 +3070,12 @@ export const gigs = [
       "https://static.vecteezy.com/system/resources/thumbnails/022/328/336/original/isometric-desktop-computer-coding-programming-technology-programming-concept-technology-animation-transparent-background-with-alpha-channel-free-video.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "responsive web design",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "mobile-friendly website",
+      "cross-browser compatibility"
     ],
     "likedByUsers": [
       "mini-user"
@@ -3063,9 +3127,15 @@ export const gigs = [
       "https://cdn.wallpapersafari.com/86/65/nqENxl.jpg",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "JavaScript",
+      "mobile-friendly website",
+      "cross-browser compatibility",
+      "SEO optimization",
+      "performance optimization",
+      "front-end development",
+      "web development",
+      "adaptive design",
+      "UI/UX design"
     ],
     "likedByUsers": [
       "mini-user"
@@ -3117,9 +3187,13 @@ export const gigs = [
       "https://wallpapercave.com/wp/wp12461001.png",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "REST API development",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "API testing",
+      "unit testing",
+      "backend development"
     ],
     "likedByUsers": [
       "mini-user"
@@ -3171,9 +3245,15 @@ export const gigs = [
       "https://hack-le.com/wp-content/uploads/2021/08/56237040ef6f2d38f5a3e73321c47eb7.webp",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "database integration",
+      "MongoDB",
+      "PostgreSQL",
+      "API testing",
+      "unit testing",
+      "error handling",
+      "CORS configuration",
+      "performance optimization",
+      "deployment"
     ],
     "likedByUsers": [
       "mini-user"
@@ -3225,9 +3305,12 @@ export const gigs = [
       "https://mespotesgeek.fr/wp-content/uploads/2024/02/ffbbe9cee92cf52abd3202a37b5acf56c541c8fd.png",
     ],
     "tags": [
-      "service",
-      "freelance",
-      "creative"
+      "Python scripting",
+      "task automation",
+      "automation scripts",
+      "data scraping",
+      "web scraping",
+      "file processing"
     ],
     "likedByUsers": [
       "mini-user"

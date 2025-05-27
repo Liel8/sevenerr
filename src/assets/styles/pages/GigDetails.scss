@@ -81,6 +81,7 @@
         .user-container {
           display: flex;
           align-items: baseline;
+         
 
           .user-title {
             font-size: 18px;
@@ -100,14 +101,15 @@
 
             .level-diamonds {
               display: flex;
-              align-items: center;
+              align-items:center;
+              padding-bottom: 10px;
             }
           }
 
           .queue {
             color: #74767e;
             font-size: 16px;
-            margin: 0;
+            margin-left: 5px;
           }
         }
 

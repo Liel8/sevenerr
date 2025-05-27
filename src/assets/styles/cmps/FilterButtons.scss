@@ -2,14 +2,22 @@
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 8px;
   width: 240px;
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: 8px;
+  padding: 16px 16px 0 16px;
   z-index: 300;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  max-height: 300px; 
+  overflow: hidden;
+
+  .options-list {
+    flex: 1;               // תופס את כל השטח מעל הכפתורים
+    overflow-y: auto;      // גלילה אנכית כשיש יותר מדי
+  }
 
   label {
     display: flex;
@@ -24,21 +32,26 @@
       accent-color: #222325; 
       width: 20px;
       height: 20px;
-      
     }
   }
 
   .popup-actions {
+    position: sticky;      
+    background: white;   
+    padding: 6px;  
+    margin: 0;
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    border-top: 1px solid #eee; 
+    z-index: 1; 
 
     button {
       font-size: 14px;
-      padding: 10px 20px;
+      padding: 6px 16px 10px 16px;
       border-radius: 6px;
       cursor: pointer;
-      border: none;
+      border: 1px solid #222325;
+      font-weight: 600;
 
       &:first-of-type {
         background: none;
