@@ -8,9 +8,9 @@ export function SellerDetailsFilter({ selected, onSetRateFilter, onClose }) {
   }, [selected])
 
   const options = {
-    'below-3': 'Below 3',
-    'above-3': 'Above 3',
-    'exact-5': 'Exactly 5'
+    'level-1': 'Level 1',
+    'level-2': 'Level 2',
+    'level-3': 'Level 3',
   }
 
   const onApply = () => {
@@ -30,7 +30,7 @@ export function SellerDetailsFilter({ selected, onSetRateFilter, onClose }) {
         <label key={key} className={localSelected === key ? 'active' : ''}>
           <input
             type="radio"
-            name="rate"
+            name="level"
             value={key}
             checked={localSelected === key}
             onChange={() => setLocalSelected(key)}

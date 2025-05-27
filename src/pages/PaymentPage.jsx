@@ -22,7 +22,13 @@ export function PaymentPage() {
         .catch(err => console.error('Failed loading gig', err))}
   }, [gigId])
 
-  if (!gig || !gig._id) return <div><img className="loading-gif" src="/icons/loading.gif" alt="Loading..." /></div>
+  
+if (!gig || !gig._id) return (
+  <div className="loading-wrapper">
+    <img className="loading-gif" src="/icons/loading.gif" alt="Loading..." />
+  </div>
+)
+
 
   const basePrice = selectedPackage?.price || gig.price
   const priceWithTax = +(basePrice * 1.18).toFixed(2)
@@ -80,7 +86,7 @@ export function PaymentPage() {
                     </label>
                     <label className="credit-card-input-wrapper">
                         <img src="/public/icons/credit-card-icon.svg" alt="credit-card-icon" className="card-logo" fill= '#95979d' />
-                        <input className="input" type="text" placeholder="5326 1000 2000 3000" />
+                        <input className="input" type="text" defaultValue="5326 1000 2000 3000" />
                         <img src="/public/icons/locker-icon.svg" alt="locker icon" className="locker-icon" />
                     </label>
                 </div>
@@ -90,14 +96,14 @@ export function PaymentPage() {
                     <label>
                     <span>Expiration date</span>
                     </label>
-                    <input type="text" className="input" placeholder="12/32" />
+                    <input type="text" className="input" defaultValue="12/30" />
                 </div>
                 <div className="security-code">
                     <label>
                     <span>Security code </span>
                     {/* <svg width="16" height="16" viewBox="0 0 16 16" fill= '#95979d' xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M8 1.6C4.46538 1.6 1.6 4.46538 1.6 8C1.6 11.5346 4.46538 14.4 8 14.4C11.5346 14.4 14.4 11.5346 14.4 8C14.4 4.46538 11.5346 1.6 8 1.6ZM0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8ZM7.04923 5.61744C6.86818 5.86891 6.8 6.19469 6.8 6.4H5.2C5.2 5.93865 5.33182 5.26443 5.75077 4.68256C6.19909 4.05989 6.93926 3.6 8 3.6C9.33919 3.6 10.3019 4.38025 10.6388 5.39495C10.9694 6.39102 10.6738 7.57898 9.64376 8.26564C9.07519 8.64469 8.94028 8.83688 8.88532 8.96514C8.81377 9.13208 8.8 9.34506 8.8 10H7.2C7.2 9.97079 7.19996 9.94146 7.19992 9.91203C7.19922 9.39218 7.19847 8.83935 7.41468 8.33486C7.65972 7.76312 8.12481 7.35531 8.75624 6.93436C9.13828 6.67966 9.24261 6.26763 9.12025 5.89903C9.00408 5.54907 8.66081 5.2 8 5.2C7.46074 5.2 7.20091 5.40677 7.04923 5.61744ZM8.8 10.8V12.4H7.2V10.8H8.8Z"></path></svg> */}
                     </label>
-                    <input type="text" className="input" placeholder="123" />
+                    <input type="text" className="input" defaultValue="123" />
                 </div>
                 </div>
 
@@ -106,7 +112,7 @@ export function PaymentPage() {
                     <label>
                         <span>Cardholder's name</span>
                     </label>
-                    <input type="text" className="input" placeholder="YAZAN MERAY" />
+                    <input type="text" className="input" defaultValue="Yazan Meray" />
                     </div>
                 </div>
 
@@ -120,16 +126,16 @@ export function PaymentPage() {
                 </div>
 
                 <div className="save-card-field">
-                    <span className="checkbox-row">
-                    <label className="checkbox">
-                        <input type="checkbox" defaultChecked readOnly />
-                        <span className="checkmark"></span>
+                    <label className="checkbox-row">
+                        <input
+                        type="checkbox"
+                        defaultChecked
+                        readOnly
+                        />
+                        <span className="checkbox-message">
+                        Save this card for future payments
+                        </span>
                     </label>
-                    <span className="checkbox-label save_default">
-                        <label className="checkbox-message"> Save this card for future payments </label>
-                        {/* <svg width="16" height="16" viewBox="0 0 16 16" fill= '#95979d' xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M8 1.6C4.46538 1.6 1.6 4.46538 1.6 8C1.6 11.5346 4.46538 14.4 8 14.4C11.5346 14.4 14.4 11.5346 14.4 8C14.4 4.46538 11.5346 1.6 8 1.6ZM0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8ZM7.04923 5.61744C6.86818 5.86891 6.8 6.19469 6.8 6.4H5.2C5.2 5.93865 5.33182 5.26443 5.75077 4.68256C6.19909 4.05989 6.93926 3.6 8 3.6C9.33919 3.6 10.3019 4.38025 10.6388 5.39495C10.9694 6.39102 10.6738 7.57898 9.64376 8.26564C9.07519 8.64469 8.94028 8.83688 8.88532 8.96514C8.81377 9.13208 8.8 9.34506 8.8 10H7.2C7.2 9.97079 7.19996 9.94146 7.19992 9.91203C7.19922 9.39218 7.19847 8.83935 7.41468 8.33486C7.65972 7.76312 8.12481 7.35531 8.75624 6.93436C9.13828 6.67966 9.24261 6.26763 9.12025 5.89903C9.00408 5.54907 8.66081 5.2 8 5.2C7.46074 5.2 7.20091 5.40677 7.04923 5.61744ZM8.8 10.8V12.4H7.2V10.8H8.8Z"></path></svg> */}
-                    </span>
-                    </span>
                 </div>
                 </article>
             </form>

@@ -183,12 +183,13 @@
 
         .sort-options {
           position: absolute;
-          top: calc(100% + 8px); // פותח מתחת לכפתור
+          top: calc(100% + 10px); // פותח מתחת לכפתור
+          left: 0;
           background-color: #fff;
           border-radius: 6px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
           min-width: 240px;
-          max-height: 214px;
+          max-height: 260px;
           padding: 6px 0;
           list-style: none;
           z-index: 100;
@@ -220,6 +221,42 @@
           }
         }
       }
+    }
+  }
+    .bread-crumbs {
+    font-size: 0.875rem;
+    color: #62646a;
+    margin: 35px 0 8px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+
+    a {
+      color: #404145;
+      text-decoration: none;
+
+      &.home {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 1px;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      .home-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+        object-fit: cover;
+      }
+    }
+
+    .divider {
+      margin: 5px 8px;
+      color: #c5c6c9;
+      font-size: 20px;
     }
   }
 }

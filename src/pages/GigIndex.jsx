@@ -111,8 +111,8 @@ export function GigIndex() {
         gig.owner = {
             fullname: prompt('Owner name?') || 'Unknown',
             imgUrl: 'https://example.com/default-img.jpg',
-            level: 'basic',
-            rate: 0
+            level: 1,
+            rate: 1
         };
         try {
             const savedGig = await addGig(gig);
@@ -137,18 +137,18 @@ export function GigIndex() {
     let sortedGigs = [...gigs];
 
     const rateLabels = {
-        'below-3': 'Below 3',
-        'above-3': 'Above 3',
-        'exact-5': 'Exactly 5'
+        'level-1': 'Level 1',
+        'level-2': 'Level 2',
+        'level-3': 'Level 3',
     }
 
     if (filterBy.sellerRateFilter) {
 
         sortedGigs = sortedGigs.filter(gig => {
-            const rate = Number(gig.owner?.rate || 0)
-            if (filterBy.sellerRateFilter === 'below-3') return rate < 3
-            if (filterBy.sellerRateFilter === 'above-3') return rate > 3
-            if (filterBy.sellerRateFilter === 'exact-5') return rate === 5
+            const rate = Number(gig.owner?.level || 0)
+            if (filterBy.sellerRateFilter === 'level-1') return rate === 1
+            if (filterBy.sellerRateFilter === 'level-2') return rate === 2
+            if (filterBy.sellerRateFilter === 'level-3') return rate === 3
             return true
         })
     }

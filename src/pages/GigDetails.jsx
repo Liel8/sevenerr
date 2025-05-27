@@ -28,6 +28,8 @@ export function GigDetails() {
 
   const thumbsRef = useRef(null);
 
+  const level = Number(gig.owner.level) || 0
+
   return (
     <section className="gig-details main-layout">
       <article className="bread-crumbs full">
@@ -57,8 +59,21 @@ export function GigDetails() {
             <div className="owner-details">
               <div className="user-container">
                 <h3 className="user-title">{gig.owner.fullname}</h3>
-                {/* <span className="username">@{gig.owner.fullname}_10</span> */}
-                <p className="queue">10 Orders in Queue</p>
+                <div className="level-container">
+                  <p className="level-label">Level {level}</p>
+                  <div className="level-diamonds">
+                    {[1,2,3].map(n => (
+                      <svg key={n}
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 10 10"
+                            width="10" height="10"
+                            fill={n <= level ? 'currentColor' : '#E4E5E7'}>
+                        <path d="M4.839.22a.2.2 0 0 1 .322 0l1.942 2.636a.2.2 0 0 0 .043.043L9.782 4.84a.2.2 0 0 1 0 .322L7.146 7.105a.2.2 0 0 0-.043.043L5.161 9.784a.2.2 0 0 1-.322 0L2.897 7.148a.2.2 0 0 0-.043-.043L.218 5.163a.2.2 0 0 1 0-.322l2.636-1.942a.2.2 0 0 0 .043-.043L4.839.221Z"/>
+                      </svg>
+                    ))}
+                  </div>
+                </div>
+                <p className="queue">10 orders in queue</p>
               </div>
               <div className="star-wrapper">
                 {/* <span className="star-svg">
@@ -122,8 +137,7 @@ export function GigDetails() {
           <h3>Get to know {gig.owner.fullname}</h3>
 
           <div className="below-the-fold-experiential-seller-card-order">
-            <div className="seller-card">
-              <div className="seller-header">
+            <div className="seller-header">
                 <div className="user-profile-image">
                   <img
                     src={gig.owner.imgUrl}
@@ -135,9 +149,9 @@ export function GigDetails() {
                   <div className="seller-info">
                     <h4 className="seller-name">{gig.owner.fullname}</h4>
                     {/* show “Fiverr’s Choice” if they’re a premium seller */}
-                    {gig.owner.level?.includes("premium") && (
+                    {/* {gig.owner.level?.includes("premium") && (
                       <span className="seller-badge">sevenerr’s Choice</span>
-                    )}
+                    )} */}
                   </div>
                   <div className="seller-rating">
                     <div className="stars">
@@ -145,11 +159,27 @@ export function GigDetails() {
                     </div>
                       <strong className="rating-score">{gig.owner.rate}</strong>
                       <span className="ratings-count">({gig.reviews.length})</span>
+                      <span class="divider">|</span>
+                      <div className="level-container">
+                        <p className="level-label">Level  {level}</p>
+                        <div className="level-diamonds">
+                          {[1,2,3].map(n => (
+                            <svg key={n}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 10 10"
+                                  width="10" height="10"
+                                  fill={n <= level ? 'currentColor' : '#E4E5E7'}>
+                              <path d="M4.839.22a.2.2 0 0 1 .322 0l1.942 2.636a.2.2 0 0 0 .043.043L9.782 4.84a.2.2 0 0 1 0 .322L7.146 7.105a.2.2 0 0 0-.043.043L5.161 9.784a.2.2 0 0 1-.322 0L2.897 7.148a.2.2 0 0 0-.043-.043L.218 5.163a.2.2 0 0 1 0-.322l2.636-1.942a.2.2 0 0 0 .043-.043L4.839.221Z"/>
+                            </svg>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>
 
               <button className="contact-btn">Contact me</button>
+            <div className="seller-card">
 
               <ul className="user-stats">
                 <li>From <strong>{gig.country}</strong></li>

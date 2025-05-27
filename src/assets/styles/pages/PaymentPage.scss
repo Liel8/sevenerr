@@ -160,12 +160,12 @@
           gap: 8px;
           width: 77%;
 
-          label {
-            font-size: 16px;
-            margin: 0;
-            color: #333;
+          // label {
+          //   font-size: 16px;
+          //   margin: 0;
+          //   color: #333;
 
-          }
+          // }
 
           input {
             width: 100%;
@@ -178,23 +178,30 @@
 
         /* Save Card Checkbox */
         .save-card-field {
-          display: flex;
-          align-items: center;
-          gap: 8px;
           padding-top: 8px;
+        }
 
-          label {
-            font-size: 16px;
-            margin: 0;
-            color: #333;
-          }
+        .checkbox-row {
+          display: flex;
+          align-items: baseline; 
+          gap: 8px;
+          cursor: pointer;       
+        }
 
-          .checkbox {
+        input[type="checkbox"] {
+          margin: 0;
+          height: 12px;
+        }
 
-            input {
-              color: #fff;
-            }
-          }
+        .checkmark {
+          width: 16px;
+          height: 16px;
+        }
+
+        .checkbox-message {
+          margin: 0;
+          font-size: 16px;
+          color: #333;
         }
       }
     }
@@ -434,8 +441,22 @@
   }
 }
 
+
+.loading-wrapper {
+  height: 100vh;          
+  display: flex;
+  align-items: center;     
+  justify-content: center; 
+}
+
 .loading-gif {
-  margin-top: 30px;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+  margin-top: 0;
+}
+
+
+.input:focus {
+  outline: none;
+  box-shadow: none;
 }
