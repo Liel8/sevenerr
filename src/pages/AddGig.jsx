@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { gigService } from '../services/gig/gig.service.local'
 
+const CLOUD_NAME = 'vanilla-test-images'
+const UPLOAD_PRESET = 'stavs_preset'
+const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
+
 export function AddGig() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -19,9 +23,35 @@ export function AddGig() {
     tags: ''
   })
 
+  const [imageUploading, setImageUploading] = useState(false)
+
   const handleChange = ({ target }) => {
     const { name, value } = target
     setGigData(prev => ({ ...prev, [name]: value }))
+  }
+
+    const handleFileChange = async ({ target }) => {
+    const file = target.files[0]
+    if (!file) return
+    setImageUploading(true)
+    try {
+      const formData = new FormData()
+      formData.append('file', file)
+      formData.append('upload_preset', UPLOAD_PRESET)
+
+      const res = await fetch(UPLOAD_URL, { method: 'POST', body: formData })
+      const data = await res.json()
+      if (data.secure_url) {
+        // **CHANGED**: Set uploaded image URL into gigData
+        setGigData(prev => ({ ...prev, imgUrl: data.secure_url }))
+      } else {
+        console.error('Upload failed', data)
+      }
+    } catch (err) {
+      console.error('Error uploading image', err)
+    } finally {
+      setImageUploading(false)
+    }
   }
 
   const handleSubmit = async ev => {
@@ -36,8 +66,8 @@ export function AddGig() {
       _id: currentUser._id,
       fullname: currentUser.fullname,
       imgUrl: currentUser.imgUrl,
-      level: currentUser.level || 'basic',
-      rate: currentUser.rate || 0
+      level: currentUser.level || '2',
+      rate: currentUser.rate || 4
     }
 
     const newGig = {
@@ -151,6 +181,7 @@ export function AddGig() {
               value={gigData.price}
               onChange={handleChange}
               min="0"
+              placeholder="0"
               required
             />
           </div>
@@ -168,19 +199,34 @@ export function AddGig() {
             />
           </div> */}
 
-          <div className="form-group">
-            <label htmlFor="imgUrl">Image URL</label>
-            <input
-              id="imgUrl"
-              type="url"
-              name="imgUrl"
-              value={gigData.imgUrl}
-              onChange={handleChange}
-              placeholder="https://..."
-            />
+          <div className="form-group file-upload">
+            <label className="upload-label" htmlFor="file">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+                <path d="M12 5v14M5 12h14" stroke="#62646A" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+              <span>Click or drag to upload</span>
+              <input
+                id="file"
+                type="file"
+                accept="image/*"
+                onChange={handleFileChange}
+              />
+            </label>
+            {imageUploading && <p>Uploading image...</p>}
+            {gigData.imgUrl && (
+              <div className="preview">
+                <img
+                  src={gigData.imgUrl}
+                  alt="Gig preview"
+                  style={{ maxWidth: '200px', marginTop: '10px' }}
+                />
+              </div>
+            )}
           </div>
 
-          <button type="submit" className="btn-submit">Save Gig</button>
+          <button type="submit" className="btn-submit" disabled={imageUploading}>
+            {imageUploading ? 'Please wait...' : 'Save Gig'}
+          </button>
         </form>
       </div>
     </section>
