@@ -3075,7 +3075,8 @@ export const gigs = [
       "CSS3",
       "JavaScript",
       "mobile-friendly website",
-      "cross-browser compatibility"
+      "cross-browser compatibility",
+      "website development"
     ],
     "likedByUsers": [
       "mini-user"
@@ -3135,7 +3136,8 @@ export const gigs = [
       "front-end development",
       "web development",
       "adaptive design",
-      "UI/UX design"
+      "UI/UX design",
+      "website development"
     ],
     "likedByUsers": [
       "mini-user"
@@ -3193,7 +3195,8 @@ export const gigs = [
       "PostgreSQL",
       "API testing",
       "unit testing",
-      "backend development"
+      "backend development",
+      "website development"
     ],
     "likedByUsers": [
       "mini-user"
@@ -3253,7 +3256,7 @@ export const gigs = [
       "error handling",
       "CORS configuration",
       "performance optimization",
-      "deployment"
+      "website development"
     ],
     "likedByUsers": [
       "mini-user"
@@ -3310,7 +3313,8 @@ export const gigs = [
       "automation scripts",
       "data scraping",
       "web scraping",
-      "file processing"
+      "file processing",
+      "website development"
     ],
     "likedByUsers": [
       "mini-user"

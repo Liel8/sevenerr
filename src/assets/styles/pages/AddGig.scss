@@ -1,29 +1,14 @@
 .gig-add {
-  // background-color: #f4f5f7;
   padding: 30px 15px;
   max-width: 720px;
-  margin: 0 auto;
-  margin-bottom: 50px;
+  margin: 0 auto 50px;
 
   h2 {
     font-size: 24px;
   }
-
   .subheading {
     font-size: 16px;
     color: #62646a;
-  }
-  .gig-add-title {
-    font-size: 28px;
-    font-weight: 600;
-    color: #404145;
-    margin-bottom: 6px;
-  }
-
-  .gig-add-subheading {
-    font-size: 16px;
-    color: #62646a;
-    margin-bottom: 20px;
   }
 
   .gig-add-content {
@@ -38,19 +23,9 @@
     flex-direction: column;
     gap: 16px;
 
-    .form-row {
-      display: flex;
-      gap: 12px;
-
-      .form-group {
-        flex: 1;
-      }
-    }
-
     .form-group {
       display: flex;
       flex-direction: column;
-      margin: 0;
 
       label {
         font-size: 14px;
@@ -73,18 +48,9 @@
           border-color: #1dbf73;
         }
       }
-      textarea { min-height: 100px; resize: vertical; }
+    }
 
-      select {
-        appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%2362646A' stroke-width='1.5'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 10px center;
-        background-size: 12px;
-        cursor: pointer;
-      }
-
-      &.file-upload,
+    .file-upload,
     label.upload-label {
       position: relative;
       display: flex;
@@ -92,7 +58,6 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
-      // height: 150px;
       border: 2px dashed #d7d9db;
       border-radius: 6px;
       background-color: #fafafb;
@@ -100,14 +65,8 @@
       cursor: pointer;
       transition: border-color 0.3s, background-color 0.3s;
 
-      svg {
-        margin-bottom: 8px;
-        stroke: #62646a;
-      }
-
-      span {
-        font-size: 14px;
-      }
+      svg { margin-bottom: 8px; stroke: #62646a; }
+      span { font-size: 14px; }
 
       &:hover {
         border-color: #1dbf73;
@@ -119,9 +78,9 @@
         width: 100%;
         height: 100%;
         opacity: 0;
-        cursor: pointer;
         top: 0;
         left: 0;
+        cursor: pointer;
       }
     }
 
@@ -131,19 +90,42 @@
       flex-wrap: wrap;
       gap: 8px;
 
-      img {
-        width: 100%;
-        max-width: 200px;
-        border-radius: 4px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      .image-wrapper {
+        position: relative;
+        width: 150px;
+
+        img {
+          width: 100%;
+          border-radius: 4px;
+          box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+          display: block;
+        }
+
+.remove-image-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+
+  display: flex;            /* הוסף */
+  align-items: center;      /* הוסף */
+  justify-content: center;  /* הוסף */
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
       }
-    }
-  
     }
 
     .btn-submit {
       align-self: flex-start;
-      padding: 8px 16px 10px 16px;
+      padding: 8px 16px;
       background-color: #1dbf73;
       color: #fff;
       font-size: 16px;
@@ -155,4 +137,3 @@
     }
   }
 }
-

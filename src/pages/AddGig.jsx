@@ -10,7 +10,6 @@ const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
 export function AddGig() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
   const currentUser = useSelector(state => state.userModule.user)
 
   const [gigData, setGigData] = useState({
@@ -22,7 +21,6 @@ export function AddGig() {
     imgUrls: [],
     tags: ''
   })
-
   const [imageUploading, setImageUploading] = useState(false)
 
   const handleChange = ({ target }) => {
@@ -30,7 +28,15 @@ export function AddGig() {
     setGigData(prev => ({ ...prev, [name]: value }))
   }
 
-    const handleFileChange = async ({ target }) => {
+  // Remove an uploaded image by index
+  const handleRemoveImage = idx => {
+    setGigData(prev => ({
+      ...prev,
+      imgUrls: prev.imgUrls.filter((_, i) => i !== idx)
+    }))
+  }
+
+  const handleFileChange = async ({ target }) => {
     const files = Array.from(target.files)
     if (!files.length) return
     setImageUploading(true)
@@ -43,7 +49,6 @@ export function AddGig() {
         const data = await res.json()
         return data.secure_url
       }))
-      // צוברים את כל ה־URLs במערך
       setGigData(prev => ({
         ...prev,
         imgUrls: [...prev.imgUrls, ...uploads.filter(url => url)]
@@ -57,7 +62,6 @@ export function AddGig() {
 
   const handleSubmit = async ev => {
     ev.preventDefault()
-
     if (!currentUser || !currentUser._id) {
       console.error('No user logged in')
       return
@@ -90,12 +94,7 @@ export function AddGig() {
     }
 
     try {
-      console.log('▶️ newGig before save:', newGig)
-
       const savedGig = await gigService.save(newGig)
-
-      console.log('▶️ savedGig after save:', savedGig)
-
       dispatch({ type: 'ADD_GIG', gig: savedGig })
       alert('Gig added successfully!')
       navigate('/user/profile')
@@ -200,7 +199,7 @@ export function AddGig() {
             />
           </div> */}
 
-          <div className="form-group file-upload">
+           <div className="form-group file-upload">
             <label className="upload-label" htmlFor="file">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
                 <path d="M12 5v14M5 12h14" stroke="#62646A" strokeWidth="2" strokeLinecap="round"/>
@@ -218,15 +217,21 @@ export function AddGig() {
             {gigData.imgUrls.length > 0 && (
               <div className="preview">
                 {gigData.imgUrls.map((url, idx) => (
-                  <img
-                    key={idx}
-                    src={url}
-                    alt={`Gig preview ${idx + 1}`}
-                    style={{ maxWidth: '150px', margin: '5px' }}
-                  />
+                  <div key={idx} className="image-wrapper">
+                    <img
+                      src={url}
+                      alt={`Gig preview ${idx + 1}`}
+                    />
+                    <button
+                      type="button"
+                      className="remove-image-btn"
+                      onClick={() => handleRemoveImage(idx)}
+                    >
+                      ×
+                    </button>
+                  </div>
                 ))}
               </div>
-
             )}
           </div>
 
