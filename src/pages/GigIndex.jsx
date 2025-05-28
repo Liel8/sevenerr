@@ -89,7 +89,12 @@ export function GigIndex() {
       
         // נמחק את ה-category מהאובייקט שנשלח ל־URL
         const { category: _omit, ...params } = filterBy
-        setSearchParams(params, { replace: true })
+
+        const cleanParams = Object.entries(params)
+        .filter(([_, val]) => val !== null && val !== undefined && val !== '')
+        .reduce((acc, [key, val]) => ({ ...acc, [key]: val }), {})
+
+        setSearchParams(cleanParams, { replace: true })
       }, [filterBy])
       
 
