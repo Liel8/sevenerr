@@ -9,9 +9,9 @@ export function HeroSection() {
   const [localGigs, setLocalGigs] = useState([])
 
   const heroTags = [
-    { label: 'website development',           category: 'programming-tech',           txt: 'Website Development' },
-    { label: 'logo design',                    category: 'graphics-design',            txt: 'Logo Design' },
-    { label: 'video editing',                  category: 'video-animation',            txt: 'Video Editing' },
+    { label: 'website development',category: 'programming-tech',txt: 'Website Development' },
+    { label: 'logo design',category: 'graphics-design',txt: 'Logo Design' },
+    { label: 'video editing',category: 'video-animation',txt: 'Video Editing' },
     { label: 'architecture & interior design', category: 'architecture-interior-design', txt: 'Architecture & Interior Design' },
   ]
   // טוען את כל הגיגים ל-autocomplete
@@ -74,86 +74,93 @@ export function HeroSection() {
             Our freelancers <br />
             will take it from here
           </h1>
+          <div className='hero-flex-group'>
+            <div className="tags-group">
+              <form className="search-form" onSubmit={onSearch} >
+                <input
+                  type="text"
+                  placeholder="Search for any service..."
+                  autoComplete="off"
+                  value={searchTerm}
+                  onChange={ev => setSearchTerm(ev.target.value)}
+                />
+                <button type="submit">
+                  {/* <div className="submit-button-icon"> */}
+                    <svg width="18" height="18" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="white">
+                      <path d="m15.89 14.653-3.793-3.794a.37.37 0 0 0-.266-.109h-.412A6.499 6.499 0 0 0 6.5 0C2.91 0 0 2.91 0 6.5a6.499 6.499 0 0 0 10.75 4.919v.412c0 .1.04.194.11.266l3.793 3.794a.375.375 0 0 0 .531 0l.707-.707a.375.375 0 0 0 0-.53ZM6.5 11.5c-2.763 0-5-2.238-5-5 0-2.763 2.237-5 5-5 2.762 0 5 2.237 5 5 0 2.762-2.238 5-5 5Z" />
+                    </svg>
+                  {/* </div> */}
+                </button>
 
-          <form className="search-form" onSubmit={onSearch} >
-            <input
-              type="text"
-              placeholder="Search for any service..."
-              autoComplete="off"
-              value={searchTerm}
-              onChange={ev => setSearchTerm(ev.target.value)}
-            />
-            <button type="submit">
-              {/* <div className="submit-button-icon"> */}
-                <svg width="18" height="18" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="white">
-                  <path d="m15.89 14.653-3.793-3.794a.37.37 0 0 0-.266-.109h-.412A6.499 6.499 0 0 0 6.5 0C2.91 0 0 2.91 0 6.5a6.499 6.499 0 0 0 10.75 4.919v.412c0 .1.04.194.11.266l3.793 3.794a.375.375 0 0 0 .531 0l.707-.707a.375.375 0 0 0 0-.53ZM6.5 11.5c-2.763 0-5-2.238-5-5 0-2.763 2.237-5 5-5 2.762 0 5 2.237 5 5 0 2.762-2.238 5-5 5Z" />
-                </svg>
-              {/* </div> */}
-            </button>
+                {suggestions.length > 0 && (
+                  <ul className="search-suggestions">
+                    {suggestions.map(gig => {
+                      const txt = searchTerm.trim().toLowerCase()
+                      const title = gig.title
+                      
+                      const lowerTitle = title.toLowerCase()
+                      const words = title.split(' ')
+                      const lowerWords = lowerTitle.split(' ')
 
-            {suggestions.length > 0 && (
-              <ul className="search-suggestions">
-                {suggestions.map(gig => {
-                  const txt = searchTerm.trim().toLowerCase()
-                  const title = gig.title
+                      let matchIndex = lowerWords.findIndex(word => word.includes(txt))
 
-                  const index = title.toLowerCase().indexOf(txt)
+                      let highlightedTitle = title
 
-                  let highlightedTitle = title
+                      if (matchIndex !== -1) {
+                        const start = Math.max(0, matchIndex - 3)
+                        const end = Math.min(words.length, matchIndex + 4)
+                        const snippetWords = words.slice(start, end)
 
-                  if (index !== -1) {
-                    const before = title.slice(0, index)
-                    const match = title.slice(index, index + txt.length)
-                    const after = title.slice(index + txt.length)
+                        const matchWord = snippetWords.find(word => word.toLowerCase().includes(txt))
 
-                    highlightedTitle = `${before}<span class="highlight">${match}</span>${after}`
-                  }
+                        const highlightedSnippet = snippetWords
+                          .map(word => {
+                            if (word.toLowerCase().includes(txt)) {
+                              return word.replace(
+                                new RegExp(txt, 'i'),
+                                '<span class="highlight">$&</span>'
+                              )
+                            }
+                            return word
+                          })
+                          .join(' ')
 
-                  return (
-                    <li
-                      key={gig._id}
-                      onClick={() => {
-                        navigate(`/gig/${gig._id}`, { state: { gig } })
-                        setSearchTerm('')
-                        setSuggestions([])
-                      }}
-                      dangerouslySetInnerHTML={{ __html: highlightedTitle }}
-                    />
-                  )
-                })}
-              </ul>
-            )}
+                        highlightedTitle = highlightedSnippet
+                      }
 
-          </form>
 
-          {/* <div className="hero-tags">
-              <button>
-                <p>website development</p> 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 15 11"><path d="M9.923.969a.7.7 0 0 0-1.031 0 .8.8 0 0 0 0 1.089l2.804 2.961H1.486c-.403 0-.73.345-.73.77s.327.77.73.77h10.358L8.892 9.678a.8.8 0 0 0 0 1.09c.285.3.746.3 1.031 0l4.123-4.355a.8.8 0 0 0 0-1.09l-.07-.072-.009-.01z"></path></svg></button>
-              <button>
-                <p>logo design</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 15 11"><path d="M9.923.969a.7.7 0 0 0-1.031 0 .8.8 0 0 0 0 1.089l2.804 2.961H1.486c-.403 0-.73.345-.73.77s.327.77.73.77h10.358L8.892 9.678a.8.8 0 0 0 0 1.09c.285.3.746.3 1.031 0l4.123-4.355a.8.8 0 0 0 0-1.09l-.07-.072-.009-.01z"></path></svg></button>
-              <button>
-                <p>video editing</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 15 11"><path d="M9.923.969a.7.7 0 0 0-1.031 0 .8.8 0 0 0 0 1.089l2.804 2.961H1.486c-.403 0-.73.345-.73.77s.327.77.73.77h10.358L8.892 9.678a.8.8 0 0 0 0 1.09c.285.3.746.3 1.031 0l4.123-4.355a.8.8 0 0 0 0-1.09l-.07-.072-.009-.01z"></path></svg></button>
-              <button>
-                <p>architecture & interior design</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 15 11"><path d="M9.923.969a.7.7 0 0 0-1.031 0 .8.8 0 0 0 0 1.089l2.804 2.961H1.486c-.403 0-.73.345-.73.77s.327.77.73.77h10.358L8.892 9.678a.8.8 0 0 0 0 1.09c.285.3.746.3 1.031 0l4.123-4.355a.8.8 0 0 0 0-1.09l-.07-.072-.009-.01z"></path></svg></button>
-            </div> */}
+                      return (
+                        <li
+                          key={gig._id}
+                          onClick={() => {
+                            navigate(`/gig/${gig._id}`, { state: { gig } })
+                            setSearchTerm('')
+                            setSuggestions([])
+                          }}
+                          dangerouslySetInnerHTML={{ __html: highlightedTitle }}
+                        />
+                      )
+                    })}
+                  </ul>
+                )}
 
-          <div className="hero-tags">
-            {heroTags.map(item => (
-              <button
-                key={item.label}
-                onClick={() => goToTag(item)}
-                className="hero-tag-btn"
-              >
-                <p>{item.label}</p>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 15 11"><path d="M9.923.969a.7.7 0 0 0-1.031 0 .8.8 0 0 0 0 1.089l2.804 2.961H1.486c-.403 0-.73.345-.73.77s.327.77.73.77h10.358L8.892 9.678a.8.8 0 0 0 0 1.09c.285.3.746.3 1.031 0l4.123-4.355a.8.8 0 0 0 0-1.09l-.07-.072-.009-.01z"></path></svg>
-              </button>
-            ))}
-          </div>
-  
+              </form>
+
+              <div className="hero-tags">
+                {heroTags.map(item => (
+                  <button
+                    key={item.label}
+                    onClick={() => goToTag(item)}
+                    className="hero-tag-btn"
+                  >
+                    <p>{item.label}</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 15 11">
+                    <path d="M9.923.969a.7.7 0 0 0-1.031 0 .8.8 0 0 0 0 1.089l2.804 2.961H1.486c-.403 0-.73.345-.73.77s.327.77.73.77h10.358L8.892 9.678a.8.8 0 0 0 0 1.09c.285.3.746.3 1.031 0l4.123-4.355a.8.8 0 0 0 0-1.09l-.07-.072-.009-.01z"></path>
+                    </svg>
+                  </button>
+                ))}
+              </div>
+            </div>  
             <div className="trusted-by">
               <span>Trusted by:</span>
               <div className="logos">
@@ -165,6 +172,7 @@ export function HeroSection() {
                 <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/payoneer.7c1170d.svg" alt="Payoneer" />
               </div>
             </div>
+          </div>
         </div>
       </div>
     </section>

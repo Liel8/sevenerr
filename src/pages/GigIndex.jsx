@@ -2,7 +2,8 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { GigList } from '../cmps/GigList';
 import { GigFilter } from '../cmps/GigFilter';
-import { gigService } from '../services/gig/gig.service.local';
+// import { gigService } from '../services/gig/gig.service.local';
+import { gigService } from "../services/gig/gig.service";
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service';
 import { removeGig, addGig, updateGig, loadGigs } from '../store/actions/gig.actions';
 import { useParams, useSearchParams } from 'react-router-dom';
@@ -228,9 +229,10 @@ export function GigIndex() {
         console.log('filterBy updated:', filterBy)
     }, [filterBy])
 
+
     const availableTags = useMemo(
-        () => Array.from(new Set(gigs.flatMap(g => g.tags || []))),
-        [gigs]
+    () => Array.from(new Set((Array.isArray(gigs) ? gigs : []).flatMap(g => g.tags || []))),
+    [gigs]
     );
 
     return (

@@ -45,32 +45,37 @@ export function AppHeader() {
   }, [isHomePage])
   
   
+  function useDebouncedValue(value, delay = 300) {
+  const [debouncedValue, setDebouncedValue] = useState(value)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setDebouncedValue(value), delay)
+    return () => clearTimeout(timeout)
+  }, [value, delay])
+
+  return debouncedValue
+}
 
   const [localGigs, setLocalGigs] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [suggestions, setSuggestions] = useState([])
+  const debouncedSearchTerm = useDebouncedValue(searchTerm, 300)  
 
   useEffect(() => {
-    loadGigs({})
+    gigService.query().then(setLocalGigs)
   }, [])
 
   useEffect(() => {
-    gigService.query({}).then(gigs => setLocalGigs(gigs))
-  }, [])
-
-  useEffect(() => {
-    const txt = searchTerm.trim().toLowerCase()
+    const txt = debouncedSearchTerm.trim().toLowerCase()
     if (!txt) return setSuggestions([])
-  
-    const filtered = localGigs
-      .filter(gig => {
-        const words = gig.title.toLowerCase().split(' ')
-        return words.some(word => word.includes(txt))
-      })
-      .slice(0, 5)
-  
+
+    const filtered = localGigs.filter(gig => {
+      const words = gig.title.toLowerCase().split(' ')
+      return words.some(word => word.includes(txt))
+    }).slice(0, 5)
+
     setSuggestions(filtered)
-  }, [searchTerm, localGigs])
+  }, [debouncedSearchTerm, localGigs])
   
 
   function onSearch(ev) {
@@ -126,36 +131,41 @@ export function AppHeader() {
 
               {suggestions.length > 0 && (
                 <ul className="search-suggestions">
-                {suggestions.map(gig => {
-                  const txt = searchTerm.toLowerCase()
-                  const words = gig.title.split(' ')
-                  let highlightedTitle = gig.title
+                  {suggestions.map(gig => {
+                    const txt = debouncedSearchTerm.toLowerCase()
+                    const words = gig.title.split(' ')
+                    const lowerWords = gig.title.toLowerCase().split(' ')
+                    const matchIndex = lowerWords.findIndex(word => word.includes(txt))
 
-                  for (let word of words) {
-                    const index = word.toLowerCase().indexOf(txt)
-                    if (index !== -1) {
-                      const match = word.slice(index, index + txt.length)
-                      const before = word.slice(0, index)
-                      const after = word.slice(index + txt.length)
-                      const highlightedWord = `${before}<span class="highlight">${match}</span>${after}`
-                      highlightedTitle = gig.title.replace(word, highlightedWord)
-                      break
+                    let highlightedTitle = gig.title
+
+                    if (matchIndex !== -1) {
+                      const start = Math.max(0, matchIndex - 3)
+                      const end = Math.min(words.length, matchIndex + 4)
+                      const snippet = words.slice(start, end).map(word => {
+                        if (word.toLowerCase().includes(txt)) {
+                          return word.replace(
+                            new RegExp(txt, 'i'),
+                            `<span class="highlight">$&</span>`
+                          )
+                        }
+                        return word
+                      }).join(' ')
+                      highlightedTitle = snippet
                     }
-                  }
 
-                  return (
-                    <li
-                      key={gig._id}
-                      onClick={() => {
-                        navigate(`/gigs/${gig._id}`, { state: { gig } })
-                        setSearchTerm('')
-                        setSuggestions([])
-                      }}
-                      dangerouslySetInnerHTML={{ __html: highlightedTitle }}
-                    />
-                  )
-                })}
-
+                    return (
+                      <li
+                        key={gig._id}
+                        onClick={() => {
+                          navigate(`/gig/${gig._id}`, { state: { gig } })
+                          setSearchTerm('')
+                          setSuggestions([])
+                        }}
+                        dangerouslySetInnerHTML={{ __html: highlightedTitle }}
+                      />
+                    )
+                  })}
                 </ul>
               )}
             </div>

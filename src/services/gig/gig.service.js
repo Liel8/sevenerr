@@ -1,11 +1,13 @@
 import { httpService } from '../http.service'
 
+
 export const gigService = {
     query,
     getById,
     save,
     remove,
-    addGigMsg
+    addGigMsg,
+    getFilterFromParams
 }
 
 async function query(filterBy = { txt: '', price: 0 }) {
@@ -32,4 +34,11 @@ async function save(gig) {
 async function addGigMsg(gigId, txt) {
     const savedMsg = await httpService.post(`gig/${gigId}/msg`, {txt})
     return savedMsg
+}
+
+function getFilterFromParams(searchParams, category) {
+  return {
+    category,
+    txt: searchParams.get('txt') || ''
+  }
 }
