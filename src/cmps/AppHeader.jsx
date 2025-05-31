@@ -172,7 +172,7 @@ export function AppHeader() {
           )}
 
 
-          <nav className="links-container">
+          {/* <nav className="links-container">
             <Link className="btn" to="/gigs">Explore</Link>
             <Link className="btn login" to="/login">Login</Link>
 
@@ -200,7 +200,39 @@ export function AppHeader() {
             </span>
 
             <Link className="btn join" to="/join">Join</Link>
+          </nav> */}
+          <nav className="links-container">
+            <Link className="btn" to="/gigs">Explore</Link>
+
+            {!user && (
+              <>
+                <Link className="btn login" to="/login">Login</Link>
+                <Link className="btn join" to="/join">Join</Link>
+              </>
+            )}
+
+            {user && (
+              <>
+                <span className="user-info">
+                  <DropdownBtn
+                    selectedBtn={selectedDropDownBtn}
+                    setSelectedBtn={setSelectedDropDownBtn}
+                    onLogout={onLogout}
+                    icon={
+                      <img
+                        className="profile-btn"
+                        src={user.imgUrl || defaultUserImg}
+                        onError={e => e.currentTarget.src = defaultUserImg}
+                        alt="User avatar"
+                      />
+                    }
+                  />
+                </span>
+              </>
+            )}
           </nav>
+
+
         </header>
       </section>
 

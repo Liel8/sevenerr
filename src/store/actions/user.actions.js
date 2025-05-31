@@ -1,4 +1,4 @@
-import { userService } from '../../services/user'
+import { userService } from '../../services/user/user.service.remote'
 // import { socketService } from '../../services/socket.service'
 import { store } from '../store'
 
@@ -30,6 +30,7 @@ export async function removeUser(userId) {
 export async function login(credentials) {
     try {
         const user = await userService.login(credentials)
+        console.log('Logged in user:', user)
         store.dispatch({
             type: SET_USER,
             user
@@ -58,18 +59,18 @@ export async function signup(credentials) {
 }
 
 export async function logout() {
-    try {
-        await userService.logout()
-        store.dispatch({
-            type: SET_USER,
-            user: null
-        })
-        socketService.logout()
-    } catch (err) {
-        console.log('Cannot logout', err)
-        throw err
-    }
+  try {
+    await userService.logout()
+  } catch (err) {
+    console.warn('Logout failed:', err)
+    // אל תזרוק שגיאה, כדי שלא תיכנס ל־showErrorMsg
+  }
+
+  store.dispatch({ type: SET_USER, user: null })
+  socketService.logout()
 }
+
+
 
 export async function loadUser(userId) {
     try {

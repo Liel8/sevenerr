@@ -54,7 +54,7 @@ import { login } from '../store/actions/user.actions'
 
 export function Login() {
   const [users, setUsers] = useState([])
-  const [credentials, setCredentials] = useState({ username: '', password: '' })
+  const [credentials, setCredentials] = useState({ username: '', password: '', fullname: '' })
   const [showPassword, setShowPassword] = useState(false)
   const navigate = useNavigate()
 
@@ -74,7 +74,7 @@ export function Login() {
   }
     function handleSubmit(ev) {
     ev.preventDefault()
-    // כאן לקרוא לפעולת login
+    onLogin(ev)
   }
 
     return (
@@ -90,13 +90,13 @@ export function Login() {
 
         <form className="login-form" onSubmit={handleSubmit}>
         <div className="form-field">
-            <label htmlFor="usernameOrEmail">Email or username</label>
+            <label htmlFor="username">username</label>
             <input
-            id="usernameOrEmail"
-            name="usernameOrEmail"
+            id="username"
+            name="username"
             type="text"
             autoComplete="email"
-            value={credentials.usernameOrEmail}
+            value={credentials.username}
             onChange={handleChange}
             required
             />
@@ -140,7 +140,7 @@ export function Login() {
             <span onClick={() => navigate('/forgot')}>Forgot password?</span>
         </div>
 
-        <button type="submit" className="btn-login">Sign In</button>
+        <button type="submit" className= "btn-login">Sign In</button>
         </form>
     </div>
   )

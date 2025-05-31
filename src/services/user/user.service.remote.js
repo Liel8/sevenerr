@@ -12,6 +12,7 @@ export const userService = {
 	update,
     getLoggedinUser,
     saveLoggedinUser,
+	getEmptyUser
 }
 
 function getUsers() {
@@ -51,9 +52,14 @@ async function signup(userCred) {
 }
 
 async function logout() {
-	sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
-	return await httpService.post('auth/logout')
+  sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
+  try {
+    await httpService.post('auth/logout')
+  } catch (err) {
+    console.warn('Logout request failed silently:', err)
+  }
 }
+
 
 function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
@@ -61,13 +67,30 @@ function getLoggedinUser() {
 }
 
 function saveLoggedinUser(user) {
-	user = { 
-        _id: user._id, 
-        fullname: user.fullname, 
-        imgUrl: user.imgUrl, 
-        score: user.score, 
-        isAdmin: user.isAdmin 
-    }
+user = { 
+	_id: user._id,
+	fullname: user.fullname,
+	imgUrl: user.imgUrl,
+	country: user.country,
+	isSeller: user.isSeller,
+	rate: user.rate, 
+	level: user.level 
+}
 	sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
 	return user
+}
+
+function getEmptyUser() {
+    return {
+        fullname: '',
+        username: '',
+        password: '',
+        desc: '',
+        isSeller: '',
+        location: 'Israel',
+        rate: utilService.getRandomFloat(4.5, 5),
+        reviews: [],
+        lang: ["English", "Hebrew"],
+        level: 1
+    }
 }

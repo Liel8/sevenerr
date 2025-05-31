@@ -14,6 +14,7 @@
 // }
 
 import { Outlet, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export function LoginSignup() {
   const navigate = useNavigate()
@@ -64,6 +65,10 @@ export function LoginSignup() {
         </div>
 
         <div className="modal-right">
+          <nav>
+              <NavLink to=".">Login</NavLink>
+              <NavLink to="signup">Signup</NavLink>
+          </nav>
           <Outlet />
         </div>
       </div>
