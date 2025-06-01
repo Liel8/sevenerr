@@ -241,6 +241,7 @@ export function UserProfile() {
   }, [user])
 
   function handleStatusChange(updatedOrder) {
+      console.log('handleStatusChange called!', updatedOrder);
     updateOrder(updatedOrder)
   }
 
@@ -248,6 +249,7 @@ export function UserProfile() {
   const userGigs = gigs.filter(gig => gig.owner?._id === user?._id)
   const isExpanded = visibleCount >= userGigs.length
   const visibleGigs = userGigs.slice(0, visibleCount)
+  const asSellerOrders = orders.filter(order => order.seller && order.seller._id === user._id)
 
   function handleToggle() {
     if (!isExpanded) {
@@ -402,7 +404,7 @@ export function UserProfile() {
           <h1>Manage Orders</h1>
         </div>
         <OrdersTable
-          orders={orders}
+          orders={asSellerOrders}
           mode="seller"
           onAction={handleStatusChange}
         />

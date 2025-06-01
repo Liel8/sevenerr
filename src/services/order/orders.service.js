@@ -1,14 +1,10 @@
-import { orders as defaultOrders } from '../../assets/data/orderData'
+import Axios from 'axios'
 
-const STORAGE_KEY = 'orderDB'
+const BASE_URL = process.env.NODE_ENV === 'production'
+  ? '/api/order/'
+  : '//localhost:3030/api/order/'
 
-// סידור סינכרוני של ה-seed לפני כל קריאה
-;(function _createOrders() {
-  const data = JSON.parse(localStorage.getItem(STORAGE_KEY))
-  if (!data || !data.length) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultOrders))
-  }
-})()
+const axios = Axios.create({ withCredentials: true })
 
 export const ordersService = {
   query,
@@ -16,28 +12,63 @@ export const ordersService = {
   updateOrder,
 }
 
-// מחזיר את כל ההזמנות של המשתמש
-function query(userId) {
-  const all = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
-  const userOrders = all.filter(order => order.userId === userId)
-  return Promise.resolve(userOrders)
+async function query(userId) {
+  const res = await axios.get(BASE_URL, { params: { userId } })
+  return res.data
 }
 
-// מוסיף הזמנה חדשה לשמירה ב-localStorage
-function addOrder(order) {
-  const all = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
-  all.push(order)
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(all))
-  return Promise.resolve(order)
+async function addOrder(order) {
+  const res = await axios.post(BASE_URL, order)
+  return res.data
 }
 
-function updateOrder(order) {
-  const all = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
-  const idx = all.findIndex(o => o._id === order._id)
-  if (idx !== -1) all[idx] = order
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(all))
-  return Promise.resolve(order)
+async function updateOrder(order) {
+  const res = await axios.put(`${BASE_URL}${order._id}`, order) // במקום BASE_URL בלבד
+  return res.data
 }
+
+
+
+// import { orders as defaultOrders } from '../../assets/data/orderData'
+
+// const STORAGE_KEY = 'orderDB'
+
+// // סידור סינכרוני של ה-seed לפני כל קריאה
+// ;(function _createOrders() {
+//   const data = JSON.parse(localStorage.getItem(STORAGE_KEY))
+//   if (!data || !data.length) {
+//     localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultOrders))
+//   }
+// })()
+
+// export const ordersService = {
+//   query,
+//   addOrder,
+//   updateOrder,
+// }
+
+// // מחזיר את כל ההזמנות של המשתמש
+// function query(userId) {
+//   const all = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
+//   const userOrders = all.filter(order => order.userId === userId)
+//   return Promise.resolve(userOrders)
+// }
+
+// // מוסיף הזמנה חדשה לשמירה ב-localStorage
+// function addOrder(order) {
+//   const all = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
+//   all.push(order)
+//   localStorage.setItem(STORAGE_KEY, JSON.stringify(all))
+//   return Promise.resolve(order)
+// }
+
+// function updateOrder(order) {
+//   const all = JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
+//   const idx = all.findIndex(o => o._id === order._id)
+//   if (idx !== -1) all[idx] = order
+//   localStorage.setItem(STORAGE_KEY, JSON.stringify(all))
+//   return Promise.resolve(order)
+// }
 
 
 

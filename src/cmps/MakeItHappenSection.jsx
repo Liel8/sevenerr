@@ -41,7 +41,7 @@ export function MakeItHappenSection() {
             ))}
         </ul>
         <div className="make-it-happen__button-wrapper">
-            <button className="make-it-happen__button" onClick={() => navigate('/login')}>
+            <button className="make-it-happen__button" onClick={() => navigate('/login/signup')}>
             Join now
             </button>
         </div>

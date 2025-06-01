@@ -1,6 +1,6 @@
 import { storageService } from '../async-storage.service'
 import { loadFromStorage, makeId, saveToStorage } from '../util.service'
-import { userService } from '../user'
+import { userService } from '../user/user.service.remote.js'
 import { gigs } from '../../assets/data/gigData.js'
 
 const STORAGE_KEY = 'gigDB'

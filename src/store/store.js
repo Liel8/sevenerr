@@ -11,7 +11,7 @@ import { ordersReducer }   from './reducers/orders.reducer'    // ← ייבוא
 
 
 // ← ייבוא הפונקציה שמחזירה את היוזר הקבוע מ-localStorage או מ-user.constant
-import { userService } from '../services/user/user.service.local'
+import { userService } from '../services/user/user.service.remote'
 
 const rootReducer = combineReducers({
   gigModule:      gigReducer,

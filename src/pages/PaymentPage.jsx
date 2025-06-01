@@ -38,29 +38,42 @@ if (!gig || !gig._id) return (
   ? parseInt(selectedPackage.delivery.match(/\d+/)?.[0])
   : gig.daysToMake || 3
 
-  async function onConfirmPay() {
-    const newOrder = {
-      _id: Date.now().toString(),
-      userId: user._id,
-      gig: {
-        _id: gig._id,
-        title: gig.title,
-        imgUrl: Array.isArray(gig.imgUrl) ? gig.imgUrl[0] : gig.imgUrl
-      },
-      packageName,
-      packagePrice,
-      daysToMake,
-      createdAt:  Date.now(),
-      status: 'accepted'
-    };
-
-    try {
-      await addOrder(newOrder)
-      navigate('/orders')
-    } catch (err) {
-      console.error('Could not place order', err)
-    }
+async function onConfirmPay() {
+  if (!user || !user._id) {
+    console.error('User not logged in – cannot place order')
+    return
   }
+
+  const newOrder = {
+    buyer: {
+      _id: user._id,
+      fullname: user.fullname
+    },
+    seller: {
+      _id: gig.owner._id,
+      fullname: gig.owner.fullname
+    },
+    gig: {
+      _id: gig._id,
+      title: gig.title,
+      imgUrl: Array.isArray(gig.imgUrl) ? gig.imgUrl[0] : gig.imgUrl
+    },
+    title: gig.title,
+    packagePrice: packagePrice,
+    daysToMake,
+    createdAt: Date.now(),
+    status: 'accepted'
+  }
+
+  try {
+    await addOrder(newOrder)
+    navigate('/orders')
+  } catch (err) {
+    console.error('Could not place order', err)
+  }
+}
+
+
 
     return (
         <section className="payment-page">

@@ -31,7 +31,10 @@ export function OrderPreview({ order, mode, onAction }) {
       </td>
       <td>{orderDate}</td>
       <td>{dueOn}</td>
-      <td>₪{order.packagePrice.toFixed(2)}</td>
+      <td>₪{typeof order.packagePrice === 'number' && !isNaN(order.packagePrice)
+      ? order.packagePrice.toFixed(2)
+      : '--'}</td>
+
       <td>
         <div className="status-cell">
           {(mode === 'buyer' || (mode === 'seller' && currentStatus !== 'pending')) && (

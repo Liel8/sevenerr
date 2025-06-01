@@ -100,115 +100,149 @@
 //     console.log('newUser: ', newUser)
 // }
 
-import { storageService } from '../async-storage.service'
+// src/services/user.service.local.js
+
+import { storageService } from '../async-storage.service.js'
+import { usersDb }       from '../../assets/data/userData.js'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
 export const userService = {
-    login,
-    logout,
-    signup,
-    getUsers,
-    getById,
-    remove,
-    update,
-    getLoggedinUser,
-    saveLoggedinUser,
+  login,
+  logout,
+  signup,
+  getUsers,
+  getById,
+  remove,
+  update,
+  getLoggedinUser,
+  saveLoggedinUser,
 }
 
-// קבלת כל המשתמשים (ללא סיסמאות)
+// ---------------------------------------------
+// Seed: יצירת יוזרי דמו אם אין כלל משתמשים
+// ---------------------------------------------
+async function _createDemoUsersIfNeeded() {
+  const existingUsers = await storageService.query('user')
+  if (!existingUsers || !existingUsers.length) {
+    // usersDb הוא מערך של אובייקטים עם שדות _id, username, password וכדומה
+    for (const user of usersDb) {
+      // אם ברצונכם לשמור על ה-_id המקורי מתוך usersDb, 
+      // תעדכנו את post כך שלא יחליף _id אם קיים.
+      await storageService.post('user', user)
+    }
+  }
+}
+// קוראים ל-seed ברגע שהמודול נטען:
+_createDemoUsersIfNeeded()
+
+
+// ---------------------------------------------
+// 1) getUsers: מחזיר את כל המשתמשים ללא שדה password
+// ---------------------------------------------
 async function getUsers() {
-    const users = await storageService.query('user')
-    return users.map(user => {
-        const userCopy = { ...user }
-        delete userCopy.password
-        return userCopy
-    })
+  const users = await storageService.query('user')
+  return users.map(user => {
+    const { password, ...safeUser } = user
+    return safeUser
+  })
 }
 
-// קבלת משתמש לפי ID
+// ---------------------------------------------
+// 2) getById: מחזיר משתמש מלא לפי _id
+// ---------------------------------------------
 async function getById(userId) {
-    return await storageService.get('user', userId)
+  return await storageService.get('user', userId)
 }
 
-// מחיקת משתמש
+// ---------------------------------------------
+// 3) remove: מוחק משתמש לפי _id
+// ---------------------------------------------
 function remove(userId) {
-    return storageService.remove('user', userId)
+  return storageService.remove('user', userId)
 }
 
-// עדכון פרטי משתמש
+// ---------------------------------------------
+// 4) update: מעדכן פרטי משתמש קיים
+// ---------------------------------------------
 async function update(userToUpdate) {
-    const user = await storageService.put('user', userToUpdate)
+  const updatedUser = await storageService.put('user', userToUpdate)
 
-    const loggedinUser = getLoggedinUser()
-    if (loggedinUser && loggedinUser._id === user._id) {
-        saveLoggedinUser(user)
-    }
+  // אם המשתמש המחובר הוא זה שעודכן, נשמור את השינויים גם ב-sessionStorage
+  const loggedin = getLoggedinUser()
+  if (loggedin && loggedin._id === updatedUser._id) {
+    saveLoggedinUser(updatedUser)
+  }
 
-    return user
+  return updatedUser
 }
 
-// התחברות
+// ---------------------------------------------
+// 5) login: בודק התאמה username+password ושומר ב-sessionStorage
+// ---------------------------------------------
 async function login(userCred) {
-    const users = await storageService.query('user')
-    const user = users.find(user =>
-        user.username === userCred.username &&
-        user.password === userCred.password
-    )
-
-    if (!user) throw new Error('Invalid credentials')
-    return saveLoggedinUser(user)
+  const users = await storageService.query('user')
+  const user = users.find(
+    u => u.username === userCred.username && u.password === userCred.password
+  )
+  if (!user) throw new Error('Invalid credentials')
+  return saveLoggedinUser(user)
 }
 
-// הרשמה
+// ---------------------------------------------
+// 6) signup: יוצר משתמש חדש ושומר ל-storage + sessionStorage
+// ---------------------------------------------
 async function signup(userCred) {
-    if (!userCred.imgUrl) {
-        userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
-    }
+  // שדות ברירת מחדל אם חסרים
+  if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
+  userCred.score = 10000
+  userCred.isSeller = false
+  userCred.level = 'basic'
+  userCred.rate = 4.5
+  userCred.country = 'Israel'
 
-    userCred.score = 10000
-    userCred.isSeller = false
-    userCred.level = 'basic'
-    userCred.rate = 4.5
-    userCred.country = 'Israel'
-
-    const user = await storageService.post('user', userCred)
-    return saveLoggedinUser(user)
+  // storageService.post יוצר _id באופן אוטומטי באמצעות makeId()
+  const newUser = await storageService.post('user', userCred)
+  return saveLoggedinUser(newUser)
 }
 
-// התנתקות
+// ---------------------------------------------
+// 7) logout: מסיר את המשתמש המחובר מ-sessionStorage
+// ---------------------------------------------
 async function logout() {
-    sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
+  sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
 }
 
-// קבלת משתמש מחובר מה-session
+// ---------------------------------------------
+// 8) getLoggedinUser: מחזיר את אובייקט המשתמש המחובר, או null
+// ---------------------------------------------
 function getLoggedinUser() {
-//     // return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
-    return {
-        _id: 'u101',                // או מה שצריך
-        username: 'yaz',
-        fullname: 'Yazan Meray',
-        imgUrl: '/img/yazanprofileimg.png',
-        balance: 0
-        
-    }
+  try {
+    const userJson = sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER)
+    return userJson ? JSON.parse(userJson) : null
+  } catch {
+    return null
+  }
 }
 
-
-// שמירת משתמש מחובר
+// ---------------------------------------------
+// 9) saveLoggedinUser: שומר אובייקט מינימלי (ללא password) ב-sessionStorage
+// ---------------------------------------------
 function saveLoggedinUser(user) {
-    const minimalUser = {
-        _id: user._id,
-        fullname: user.fullname,
-        imgUrl: user.imgUrl,
-        isSeller: user.isSeller,
-        level: user.level,
-        rate: user.rate,
-        country: user.country
-    }
-    sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(minimalUser))
-    return minimalUser
+  const minimalUser = {
+    _id: user._id,
+    fullname: user.fullname,
+    username: user.username,
+    imgUrl: user.imgUrl,
+    isSeller: user.isSeller,
+    level: user.level,
+    rate: user.rate,
+    country: user.country,
+  }
+  sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(minimalUser))
+  return minimalUser
 }
+
 
 // ליצירת אדמין לבדיקה - לא חובה להריץ
 // async function _createAdmin() {

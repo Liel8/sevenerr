@@ -28,21 +28,26 @@ export function OrdersPage() {
     }
   })
 
-  function handleReorder(order) {
-    const newOrder = {
-      _id: Date.now().toString(),
-      userId: user._id,
-      gig: order.gig,
-      packageName: order.packageName,
-      packagePrice: order.packagePrice,
-      daysToMake: order.daysToMake,
-      createdAt: Date.now(),
-      status: 'pending'
-    }
-    addOrder(newOrder)
-      .then(() => setFilter('ALL'))
-      .catch(err => console.error('Cannot reorder', err))
+function handleReorder(order) {
+  const newOrder = {
+    buyer: {
+      _id: user._id,
+      fullname: user.fullname
+    },
+    seller: order.seller,           // תעתיקי מהמוצר המקורי
+    gig: order.gig,
+    title: order.title,
+    packageName: order.packageName,
+    packagePrice: order.packagePrice,
+    daysToMake: order.daysToMake,
+    createdAt: Date.now(),
+    status: 'pending'
   }
+  addOrder(newOrder)
+    .then(() => setFilter('ALL'))
+    .catch(err => console.error('Cannot reorder', err))
+}
+
 
   return (
     <section className="orders-page main-layout">
