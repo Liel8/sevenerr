@@ -1,8 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export function MakeItHappenSection() {
-
+    const user = useSelector(state => state.userModule.user)
     const navigate = useNavigate()
     const items = [
         {
@@ -40,11 +41,16 @@ export function MakeItHappenSection() {
             </li>
             ))}
         </ul>
-        <div className="make-it-happen__button-wrapper">
-            <button className="make-it-happen__button" onClick={() => navigate('/login/signup')}>
-            Join now
+        {!user && (
+            <div className="make-it-happen__button-wrapper">
+            <button
+                className="make-it-happen__button"
+                onClick={() => navigate('/login/signup')}
+            >
+                Join now
             </button>
-        </div>
+            </div>
+        )}
         </section>
     )
 }

@@ -9,7 +9,7 @@ import { HeroSection } from './HeroSection'
 import { DropdownBtn } from './DropDownBtn'
 import { PaymentHeader } from './PaymentHeader'
 import { gigService } from '../services/gig/gig.service.local'
-
+import { OrdersDropdown } from './OrdersDropdown'
 
 
 
@@ -17,6 +17,7 @@ export function AppHeader() {
   const [selectedDropDownBtn, setSelectedDropDownBtn] = useState(null)
   const user = useSelector(storeState => storeState.userModule.user)
   const [showHeaderSearch, setShowHeaderSearch] = useState(true)
+  const orders = useSelector(state => state.orderModule.orders) || []
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -89,12 +90,13 @@ export function AppHeader() {
   async function onLogout() {
     try {
       await logout()
-      navigate('/')
-      showSuccessMsg('Bye now')
+      navigate('/', { replace: true })
     } catch (err) {
-      showErrorMsg('Cannot logout')
+      console.error('Logout failed:', err) // אפשר למחוק אם לא צריך
     }
   }
+
+
   if (isPaymentPage) return <PaymentHeader />
   
   return (
@@ -213,6 +215,10 @@ export function AppHeader() {
 
             {user && (
               <>
+                <OrdersDropdown
+                  selectedBtn={selectedDropDownBtn}
+                  setSelectedBtn={setSelectedDropDownBtn}
+                />
                 <span className="user-info">
                   <DropdownBtn
                     selectedBtn={selectedDropDownBtn}
@@ -231,8 +237,6 @@ export function AppHeader() {
               </>
             )}
           </nav>
-
-
         </header>
       </section>
 

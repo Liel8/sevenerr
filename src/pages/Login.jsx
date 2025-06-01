@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import { login } from '../store/actions/user.actions'
 // מייבאים את שירות המשתמש
 import { userService } from '../services/user/user.service.remote'
 
@@ -25,9 +25,10 @@ export function Login() {
     setLoading(true)
     try {
       // מנסה להתחבר
-      await userService.login(credentials)
+      // await userService.login(credentials)
       // שולח הודעת הצלחה לפני הניווט
-      showSuccessMsg('You have successfully signed in!')
+      await login(credentials)
+      // showSuccessMsg('You have successfully signed in!')
       // סוגר את המודל על-ידי ניווט ישיר אל "/"
       navigate('/')
     } catch (err) {

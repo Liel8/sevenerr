@@ -141,12 +141,13 @@
     .links-container {
       display: flex;
       align-items: center;
+      // gap: 24px;
 
       .btn {
         // margin-inline-end: 1.5em;
         font-size: 1rem;
-        font-weight: 700;
-        color: #62646a;
+        font-weight: 600;
+        color: #74767e;
         transition: color 0.2s;
 
         &:hover {
@@ -171,8 +172,7 @@
             color: #fff;
           }
         }
-      }
-
+     }
       .profile-btn {
         // margin-right: 1.5em;
 
@@ -182,12 +182,7 @@
           border-radius: 50%;
           object-fit: cover;
         }
-      }
-      
-
+      }  
     }
   }
 }
-
-
-

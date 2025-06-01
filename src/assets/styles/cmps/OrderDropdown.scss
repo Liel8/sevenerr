@@ -1,0 +1,130 @@
+.orders-dropdown-btn {
+  position: relative;
+
+  &.open::after {
+    content: "";
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    width: 14px;
+    height: 10px;
+    background: #fff;
+    transform: translateX(-50%) rotate(45deg);
+    box-shadow: -1px 0px 1px rgba(0, 0, 0.5, 0.2);
+    z-index: 1000;
+  }
+
+  .orders-toggle-btn {
+    padding: 24px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #74767e;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    &:hover {
+      color: #1db773;
+    }
+  }
+
+  .orders-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 360px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .order-preview-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 20px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: #f7f7f7;
+        }
+
+        .user-with-img {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+
+          img {
+            width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+          }
+
+          .order-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #404145;
+            line-height: 1.4;
+            max-width: 220px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+
+    // Empty state
+    .no-orders {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 240px;
+      padding: 24px;
+
+      .empty-orders-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .empty-icon-circle {
+          background-color: #f5f5f5;
+          border-radius: 50%;
+          width: 80px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 16px;
+
+          svg {
+            width: 40px;
+            height: 40px;
+          }
+        }
+
+        .empty-title {
+          font-weight: 600;
+          font-size: 16px;
+          color: #404145;
+          margin-bottom: 8px;
+        }
+
+        .empty-subtitle {
+          font-size: 14px;
+          color: #7a7d85;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-
+import { signup  } from '../store/actions/user.actions'
 import { ImgUploader } from '../cmps/ImgUploader'
-import { userService } from '../services/user/user.service.remote'
+// import { userService } from '../services/user/user.service.remote'
 
 export function Signup() {
   const navigate = useNavigate()
@@ -57,8 +57,9 @@ export function Signup() {
     setLoading(true)
     try {
       // קריאה לשירות המוק מקומי (נשנה בהמשך ל־Axios/backend אמיתי)
-      await userService.signup(credentials)
+      // await userService.signup(credentials)
       // After successful signup, אפשר גם ל־navigate ל־dashboard
+      await signup(credentials)
       navigate('/')
     } catch (err) {
       setError(err.message || 'Signup failed')

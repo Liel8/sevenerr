@@ -230,6 +230,13 @@ export function UserProfile() {
   const orders = useSelector(state => state.orderModule.orders)
   const gigs = useSelector(state => state.gigModule.gigs)
 
+  useEffect(() => {
+    if (!user) {
+      navigate('/', { replace: true })
+    }
+  }, [user])
+  
+
   const [visibleCount, setVisibleCount] = useState(6)
   const gigsListRef = useRef(null) 
 
@@ -239,7 +246,8 @@ export function UserProfile() {
       loadGigs()
     }
   }, [user])
-
+  
+  if (!user) return null
   function handleStatusChange(updatedOrder) {
       console.log('handleStatusChange called!', updatedOrder);
     updateOrder(updatedOrder)
