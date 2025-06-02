@@ -295,11 +295,21 @@ export function PaymentPage() {
     ? parseInt(selectedPackage.delivery.match(/\d+/)?.[0])
     : gig.daysToMake || 3
 
-  async function onConfirmPay() {
-    if (!user || !user._id) {
-      console.error('User not logged in – cannot place order')
-      return
-    }
+  // async function onConfirmPay() {
+  //   if (!user || !user._id) {
+  //     console.error('User not logged in – cannot place order')
+  //     return
+  //   }
+    async function onConfirmPay() {
+      console.log('onConfirmPay נקרא, user =', user)
+      if (!user?._id) {
+        console.log('אין משתמש, מעביר ל-/login')
+        navigate('/login', { replace: true })
+        return
+      }
+      // שאר הלוגיקה…
+
+
 
     const newOrder = {
       buyer: {
@@ -322,12 +332,23 @@ export function PaymentPage() {
       status: 'accepted'
     }
 
-    try {
-      await addOrder(newOrder)
-      navigate('/orders')
-    } catch (err) {
-      console.error('Could not place order', err)
-    }
+    // try {
+    //   await addOrder(newOrder)
+    //   navigate('/orders')
+    // } catch (err) {
+    //   console.error('Could not place order', err)
+    // }
+      try {
+        await addOrder(newOrder);
+        navigate('/orders', { replace: true });
+      } catch (err) {
+        // ברגע שמקבלים 401, מפנים ל־Login
+        if (err.response?.status === 401) {
+          navigate('/login', { replace: true });
+          return;
+        }
+        console.error('Could not place order', err);
+      }
   }
 
 
@@ -478,6 +499,7 @@ export function PaymentPage() {
 
           <div className="pay-button-component">
             <button
+              type='button'
               className="confirm-pay-button"
               onClick={onConfirmPay}>
               Confirm &amp; Pay
