@@ -252,7 +252,28 @@
             padding-left: 2px;
           }
         }
+        .delete-gig-btn {
+          background: transparent; /* רקע שקוף */
+          border: none;            /* בלי גבול */
+          padding: 0;              /* מפסיקים את הפדינג ההתחלתי של הכפתור */
+          margin: 0;               /* רצוי לאפס גם מרג׳ין אם לא רוצים רווחים */
+          cursor: pointer;         /* כדי שה-pointer יופיע כשמזיזים מעל */
+        }
+
+        .delete-gig-btn img {
+          width: 25px;
+          height: 25px;
+          margin-left: 2px;
+          margin-top: 3px;
+          transition: width 0.1s ease, height 0.1s ease; /* אנימציית מעבר קטנה */
+        }
+
+        .delete-gig-btn img:hover {
+           transform: scale(1.2);
+        }
       }
+
+
 .toggle-wrapper {
   width: 100%;
   display: flex;
