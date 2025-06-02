@@ -5,10 +5,20 @@ import { SET_ORDERS, ADD_ORDER, UPDATE_ORDER } from '../reducers/orders.reducer'
 // טעינת ההזמנות של משתמש לפי userId
 export async function loadOrders(userId) {
   try {
-    const orders = await ordersService.query(userId)
+    const orders = await ordersService.queryByRole(userId, 'buyer')
     store.dispatch(_setOrders(orders))
   } catch (err) {
     console.error('Cannot load orders', err)
+    throw err
+  }
+}
+
+export async function loadSellerOrders(userId) {
+  try {
+    const orders = await ordersService.queryByRole(userId, 'seller')
+    store.dispatch(_setOrders(orders))
+  } catch (err) {
+    console.error('Cannot load seller orders', err)
     throw err
   }
 }
