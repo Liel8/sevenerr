@@ -493,7 +493,7 @@
       font-size: 16px;
       border: 1px solid $light-clr4;
       font-weight: 600;
-      background: #f9f9f9;    // להבליט קצת את הכותרת
+      // background: #f9f9f9;    // להבליט קצת את הכותרת
     }
 
     // ** אפשרויות תשלום (כרטיסי אשראי + לוגואים) **
@@ -527,7 +527,7 @@
     // ** טופס פרטי כרטיס אשראי **
     .credit-card-details-wrapper {
       // במקום פדינג קבוע בצד אחד, ניתן להשתמש ב־padding אחיד:
-      padding: 24px 24px;
+      padding: 24px 18px 24px 40px;
       // אם רוצים בדשבורד מלא, אפשר להשאיר את מה שהיה (24px 18px 24px 40px)
       // אבל כדי לרספונסיביות נחזיר אחיד
 
@@ -562,8 +562,13 @@
             border: 1px solid #ccc;
             border-radius: 8px;
 
-            img.card-logo,
-            img.locker-icon {
+            .card-logo {
+              width: 24px;
+              height: 16px;
+              color: #95979d;
+            }
+
+            .locker-icon {
               width: 24px;
               height: 16px;
             }
@@ -571,6 +576,7 @@
             input {
               font-size: 16px;
               width: 100%;
+              height: 100%;
               border: none;
               margin: 0;
             }
@@ -615,7 +621,7 @@
           flex-direction: column;
           gap: 8px;
           width: 100%;         // במקום 77%, נעשה מלא רוחב
-          max-width: 400px;    // אפשר להגביל בגודל טבלאי
+          // max-width: 400px;    // אפשר להגביל בגודל טבלאי
 
           input {
             width: 100%;
@@ -640,9 +646,13 @@
 
           input[type="checkbox"] {
             margin: 0;
-            height: 16px;
-            width: 16px;       // כדי שיהיה בגודל סביר
+            height: 12px;
+            width: 12px;       // כדי שיהיה בגודל סביר
           }
+          // .checkmark {
+          //   width: 16px;
+          //   height: 16px;
+          // }
 
           .checkbox-message {
             margin: 0;
@@ -686,7 +696,7 @@
     border-radius: 4px;
     margin-right: 81px;     // נוריד את הערך בהתאמה במסכים קטנים
     font-weight: 500;
-    // height: auto;
+    height: auto;
 
     .order-details-container {
       display: flex;
@@ -702,7 +712,7 @@
         gap: 12px; 
 
         .image-container {
-          flex: 0 0 80px;    // הגדרת Flex-basis של 80px וגם מונעת התכווצות/התפשטות
+          flex: 0 0 125px;    // הגדרת Flex-basis של 80px וגם מונעת התכווצות/התפשטות
           height: 80px;
 
           .order-image {
@@ -710,6 +720,7 @@
             height: 100%;
             border-radius: 4px;
             object-fit: cover;
+            // margin-right: 16px;
           }
         }
 
@@ -717,7 +728,8 @@
           flex: 1;           // יתפוס את שאר הרוחב הפנוי
           font-size: 16px;
           font-weight: 700;
-          margin: 0;         
+          margin-bottom: 4px;   
+          margin-left: 16px;      
           color: #62646a;
           line-height: 1.3;  // וודא שהטקסט עוטף יפה, לא חונק
           word-break: break-word; // במידת הצורך לשבור מילים ארוכות
@@ -741,7 +753,7 @@
         .order-details-general-price {
           font-size: 16px;
           color: #62646a;
-          margin-left: 4px;
+           margin: 0px 0px 0px 4px;
         }
       }
 
@@ -749,22 +761,20 @@
         margin-top: 0;      // כבר יש ריווח מעל
         display: flex;
         flex-wrap: wrap;    // כל Feature יכול לעטוף שורה
-        gap: 8px;
+        // gap: 8px;
 
         .order-details-item {
           display: flex;
           align-items: center;
-          padding: 4px 8px;
-          background: #fff;
-          border-radius: 4px;
-          font-size: 14px;
+         margin: 0px 9px 12px 0px;
+          font-size: 16px;
           color: #62646a;
 
           svg {
-            margin-right: 4px;
-            width: 14px;
-            height: 14px;
-            fill: #62646a;
+            margin-right: 9px;
+            // width: 14px;
+            // height: 14px;
+            // fill: #62646a;
           }
 
           &.disabled {
@@ -784,7 +794,7 @@
       border: 1px solid #e4e5e7;
       font-size: 16px;
       color: #62646a;
-      margin-top: 16px;
+      // margin-top: 16px;
 
       .promo-code-input-hidden {
         display: flex;
@@ -800,7 +810,7 @@
     // סיכום הסכומים
     .summary {
       padding: 16px 24px;
-      margin-top: 16px;
+      // margin-top: 16px;
 
       .summary-table {
         color: #62646a;
@@ -837,6 +847,7 @@
           font-weight: 700;
           color: #62646a;
           padding-bottom: 8px;
+          // padding: 16px 0;
         }
 
         .delivery-date {
@@ -861,7 +872,7 @@
         border: none;
         border-radius: 4px;
         cursor: pointer;
-        transition: background 0.2s;
+        // transition: background 0.2s;
 
         &:hover {
           background: #333;
@@ -879,10 +890,10 @@
       margin-top: 8px;
       line-height: 22px;
 
-      .ssl-locker {
-        width: 14px;
-        height: 16px;
-      }
+      // .ssl-locker {
+      //   width: 14px;
+      //   height: 16px;
+      // }
     }
 
     .currency-message {
