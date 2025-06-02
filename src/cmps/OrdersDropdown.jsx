@@ -157,7 +157,7 @@ export function OrdersDropdown({ selectedBtn, setSelectedBtn }) {
         <div className="orders-dropdown">
           {buyerOrders.length > 0 ? (
             <ul>
-              {buyerOrders.slice(0, 5).map(order => (
+              {buyerOrders.map(order => (
                 <li
                   key={order._id}
                   className="order-preview-item"
