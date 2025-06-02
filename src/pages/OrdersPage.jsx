@@ -89,6 +89,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { loadOrders, addOrder } from '../store/actions/orders.actions'
 import { OrdersTable } from '../cmps/OrdersTable'
+import { Navigate } from 'react-router-dom'
 
 export function OrdersPage() {
   const user   = useSelector(state => state.userModule.user)
@@ -96,8 +97,13 @@ export function OrdersPage() {
   const [filter, setFilter] = useState('ALL')
 
   useEffect(() => {
-    if (user?._id) loadOrders(user._id) // כעת loadOrders שולח גם role=buyer
+    if (user?._id) loadOrders(user._id)  // כעת loadOrders שולח גם role=buyer
   }, [user])
+
+  // ברגע שאין user, מחזירים <Navigate> שמפנה ל־“/”
+  if (!user?._id) {
+    return <Navigate to="/" replace={true} />
+  }
 
   // ממשיכים לסנן רק לפי סטטוס, מתוך המערך שכבר הגיע מסונן
   const filtered = orders.filter(order => {
