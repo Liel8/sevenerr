@@ -8,12 +8,18 @@ const axios = Axios.create({ withCredentials: true })
 
 export const ordersService = {
   query,
+  queryByRole,
   addOrder,
   updateOrder,
 }
 
 async function query(userId) {
   const res = await axios.get(BASE_URL, { params: { userId } })
+  return res.data
+}
+
+async function queryByRole(userId, role) {
+  const res = await axios.get(BASE_URL, { params: { userId, role } })
   return res.data
 }
 
