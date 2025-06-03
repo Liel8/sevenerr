@@ -11,6 +11,7 @@ export const gigService = {
 }
 
 async function query(filterBy = { txt: '', price: 0 }) {
+    console.log("@@@@@@")
     return httpService.get(`gig`, filterBy)
 }
 
