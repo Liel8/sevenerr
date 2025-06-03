@@ -38,13 +38,13 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: '../backend/public',
-    emptyOutDir: true,
+    // outDir: '../backend/public',
+    // emptyOutDir: true,
   },
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3030', // כתובת ה-backend שלך
+        target: process.env.HOME_PAGE || 'http://localhost:3030', // כתובת ה-backend שלך
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
