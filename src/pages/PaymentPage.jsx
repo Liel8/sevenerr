@@ -364,7 +364,7 @@ export function PaymentPage() {
           <section className="payments-option">
             <label>
               <span>Credit & Debit Cards</span>
-              <img src="/public/img/credit-cards.jpg" alt="credit-cards" />
+              <img src="/img/credit-cards.jpg" alt="credit-cards" />
             </label>
           </section>
 
@@ -376,9 +376,9 @@ export function PaymentPage() {
                   <span>Card number</span>
                 </label>
                 <label className="credit-card-input-wrapper">
-                  <img src="/public/icons/credit-card-icon.svg" alt="credit-card-icon" className="card-logo" fill='#95979d' />
+                  <img src="/icons/credit-card-icon.svg" alt="credit-card-icon" className="card-logo" fill='#95979d' />
                   <input className="input" type="text" defaultValue="5326 1000 2000 3000" />
-                  <img src="/public/icons/locker-icon.svg" alt="locker icon" className="locker-icon" />
+                  <img src="/icons/locker-icon.svg" alt="locker icon" className="locker-icon" />
                 </label>
               </div>
 
