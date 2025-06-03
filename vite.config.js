@@ -44,7 +44,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: process.env.HOME_PAGE || 'http://localhost:3030', // כתובת ה-backend שלך
+        target:  "https://sevenerr.onrender.com/",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
