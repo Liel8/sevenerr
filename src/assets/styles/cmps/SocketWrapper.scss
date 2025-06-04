@@ -1,0 +1,63 @@
+// src/SocketWrapper.scss
+
+// צבעים וערכים כלליים
+$toast-bg: #1DBF73;
+$toast-color: #fff;
+$toast-shadow: rgba(0, 0, 0, 0.1);
+$toast-success: #2ecc71;
+$toast-error:   #e74c3c;
+
+.socket-wrapper {
+  /* מיכל של כל ההתראות בפינה הימנית-עליונה */
+  .user-msg-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    z-index: 1000;
+  }
+
+  /* עיצוב בסיסי לכל Toast */
+  .user-msg {
+    display: flex;
+    align-items: center;
+    background-color: $toast-bg;
+    color: $toast-color;
+    font-size: 14px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px $toast-shadow;
+    border-left: 4px solid $toast-success;
+    min-width: 260px;
+    max-width: 320px;
+    animation: slideIn 0.25s ease-out;
+
+    .icon {
+      margin-right: 8px;
+      font-size: 18px;
+    }
+
+    /* הסתרת כפתור הסגירה לחלוטין */
+    .close-btn {
+      display: none !important;
+    }
+
+    &.error {
+      border-left-color: $toast-error;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
