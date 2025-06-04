@@ -1,6 +1,5 @@
 .header-container {
   width: 100%;
-  /* קו תחתון דק (אפור בהיר) */
   border-block-end: 1px solid #e5e5e7;
   background-color: #fff;
   transition: background-color 0.6s, border-color 0.6s;
@@ -15,14 +14,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* ריווח אופקי */
-    // padding-inline: 20px;
-    /* ריווח אנכי */
     padding-block: 7px;
-    // padding-right: 32px;
-    // padding-left: 32px;
 
-    /* לוגו (כולל נקודה ירוקה) */
     .logo-container {
       display: flex;
       align-items: center;
@@ -33,8 +26,8 @@
         font-weight: 1000;
         font-size: 2rem;
         letter-spacing: -0.15rem;
-        color: #404145; /* צבע טקסט כהה */
-        text-shadow: none; /* ביטול הצללה אם לא נחוצה */
+        color: #404145; 
+        text-shadow: none; 
         display: inline-flex;
         align-items: flex-end;
         cursor: pointer;
@@ -43,32 +36,28 @@
           width: 7px;
           height: 7px;
           border-radius: 50%;
-          background-color: #1eb569; /* נקודה ירוקה */
+          background-color: #1eb569; 
           margin-left: 2px;
-          transform: translateY(-8px); /* העלאת הנקודה מעט */
+          transform: translateY(-8px); 
         }
       }
     }
 
-    /* אזור החיפוש */
     .searchbar-container {
-      /* מאפשר לשורת החיפוש לגדול ולתפוס מקום מרכזי */
       display: flex; 
-      /* ריווח אופציונלי בין הלוגו לחיפוש */
       margin-inline: 2em;
       width: 100%;
-      max-width: 550px; /* רוחב מקסימלי לשורת החיפוש */
-      position: relative; /* בשביל למקם את ה-dropdown */
+      max-width: 550px; 
+      position: relative; 
     
       .search-bar-filter-form {
         display: flex;
         width: min(100%, 34.375em);
     
-        /* שדה החיפוש */
         .search-bar {
           font-size: 1rem;
           width: 100%;
-          padding: 0.625rem 0.75rem; /* ~10px 12px */
+          padding: 0.625rem 0.75rem; 
           border: 1px solid #e5e5e7;
           border-right: none;
           border-top-left-radius: 4px;
@@ -76,7 +65,6 @@
           outline: 0;
         }
     
-        /* כפתור החיפוש (שחור עם אייקון או טקסט) */
         .search-icon {
           width: 48px;
           background-color: #222325;
@@ -96,15 +84,14 @@
         }
       }
     
-      /* ה-dropdown של ההצעות */
       .search-suggestions {
         position: absolute;
-        top: 100%;        /* מתחת לפרופורציה של הפורם */
+        top: 100%;       
         left: 0;
         right: 0;
         background: #fff;
         border: 1px solid #ddd;
-        border-top: none; /* בלי קו עליון כדי להתחבר לשדה */
+        border-top: none; 
         max-height: 200px;
         overflow-y: auto;
         z-index: 50;
@@ -112,9 +99,9 @@
         margin: 0;
         padding: 0;
 
-        scrollbar-width: none;       // ל־Firefox
-        -ms-overflow-style: none;    // ל־IE
-        &::-webkit-scrollbar {       // ל־Chrome/Safari
+        scrollbar-width: none;       
+        -ms-overflow-style: none;    
+        &::-webkit-scrollbar {       
           display: none;
         }
     
@@ -136,8 +123,6 @@
       }
     }
     
-
-    /* קישורי ניווט מימין */
     .links-container {
       display: flex;
       align-items: center;
@@ -158,7 +143,6 @@
           margin: 1.5em;
         }
 
-        /* כפתור join עם גבול ירוק והחלפת צבע בהובר */
         &.join {
           border: 1px solid black;
           padding: 6px 14px;
@@ -186,3 +170,96 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-wrap: wrap;           
+    padding-block: 5px;
+
+    .logo-container {
+      .logo {
+        font-size: 1.5rem;    
+      }
+    }
+
+    .links-container {
+      flex-shrink: 0;
+      margin-left: auto;      
+      .btn {
+        font-size: 0.875rem;   
+        padding: 4px 10px;     
+      }
+      .btn.login {
+        margin: 1em;           
+      }
+      .profile-btn img {
+        width: 24px;           
+        height: 24px;
+      }
+    }
+
+    .searchbar-container {
+      order: 1;                
+      flex: 1 1 100%;
+      max-width: 100%;
+      margin-inline: 2em 0;    
+      margin-block-start: 8px;
+
+      .search-bar-filter-form {
+        width: 100%;
+        .search-bar {
+          font-size: 0.875rem; 
+          padding: 0.5rem 0.5rem;
+        }
+        .search-icon {
+          width: 40px;         
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding-block: 4px;
+
+    .logo-container {
+      .logo {
+        font-size: 1.25rem;    
+      }
+    }
+
+    .links-container {
+      .btn {
+        font-size: 0.8rem;     
+        padding: 3px 4px;     
+      }
+      .btn.login {
+        margin: 0.8em;
+      }
+      .profile-btn img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .searchbar-container {
+      margin-block-start: 6px;
+      margin-inline: 1em;
+
+      .search-bar-filter-form {
+        .search-bar {
+          font-size: 0.8rem;
+          padding: 0.4rem 0.4rem;
+        }
+        .search-icon {
+          width: 36px;
+        }
+      }
+    }
+  }
+}
+
+
+
+

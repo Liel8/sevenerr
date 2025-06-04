@@ -1,81 +1,230 @@
 
-.user-with-img {
-    display: flex;
-    align-items: center;
+// .user-with-img {
+//     display: flex;
+//     align-items: center;
   
-    img {
-      width: 70px;
-      height: 45px;
-      border-radius: 4px;
-      object-fit: cover;
-      margin-right: 12px;
-    }
+//     img {
+//       width: 70px;
+//       height: 45px;
+//       border-radius: 4px;
+//       object-fit: cover;
+//       margin-right: 12px;
+//     }
   
-    .order-title {
-      font-size: 14px;
-      color: #0e0e0f;
-    }
-  }
+//     .order-title {
+//       font-size: 14px;
+//       color: #0e0e0f;
+//     }
+//   }
   
-  .label {
-    display: inline-block;
-    padding: 4px 8px 6px 4px;
-    border-radius: 2px;
-    font-size: 12px;
-    font-weight: 500;
-    text-align: center;
+//   .label {
+//     display: inline-block;
+//     padding: 4px 8px 6px 4px;
+//     border-radius: 2px;
+//     font-size: 12px;
+//     font-weight: 500;
+//     text-align: center;
   
-    &.fulfilled-label {
-      background: #1dbf73;
-      color: #fff;
-      width: 90px;
-    }
-    &.rejected-label {
-      background: #898b91;
-      color: #fff;
-      width: 90px;
-      text-align: center;
-    }
-    &.pending-label {
-      background: #f5f9ee;
-      width: 90px;
-      text-align: center;
-      // font-size: 14px;
-      // padding: 4px 0;
-      color: #222325;
-      // letter-spacing: 0.3cap;
+//     &.fulfilled-label {
+//       background: #1dbf73;
+//       color: #fff;
+//       width: 90px;
+//     }
+//     &.rejected-label {
+//       background: #898b91;
+//       color: #fff;
+//       width: 90px;
+//       text-align: center;
+//     }
+//     &.pending-label {
+//       background: #f5f9ee;
+//       width: 90px;
+//       text-align: center;
+//       // font-size: 14px;
+//       // padding: 4px 0;
+//       color: #222325;
+//       // letter-spacing: 0.3cap;
       
-    }
+//     }
+//   }
+  
+//   .order-again-btn {
+//     background-color: #1dbf73;
+//     color: #fff;
+//     border: none;
+//     border-radius: 2px;
+//     padding: 8px 12px 10px 12px;
+//     font-size: 12px;
+//     font-weight: 500;
+//     cursor: pointer;
+//     transition: background-color 0.2s;
+  
+//     &:hover {
+//       background-color: darken(#1dbf73, 5%);
+//     }
+//     &:disabled {
+//       background: #dadbdd;
+//       cursor: default;
+//     }
+//   }
+
+//   .accepted-label {
+//     background: #3498db;
+//     color: #fff;
+//   }
+
+//   .status-cell {
+//     display: flex;
+//     justify-content: flex-end;
+//     align-items: center;
+//   }
+  
+.user-with-img {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 70px;
+    height: 45px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-right: 12px;
   }
-  
-  .order-again-btn {
-    background-color: #1dbf73;
+
+  .order-title {
+    font-size: 14px;
+    color: #0e0e0f;
+  }
+}
+
+/* תגיות סטטוס */
+.label {
+  display: inline-block;
+  padding: 4px 8px 6px 4px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+
+  &.fulfilled-label {
+    background: #1dbf73;
     color: #fff;
-    border: none;
-    border-radius: 2px;
-    padding: 8px 12px 10px 12px;
-    font-size: 12px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  
-    &:hover {
-      background-color: darken(#1dbf73, 5%);
+    width: 90px;
+  }
+  &.rejected-label {
+    background: #898b91;
+    color: #fff;
+    width: 90px;
+    text-align: center;
+  }
+  &.pending-label {
+    background: #f5f9ee;
+    width: 90px;
+    text-align: center;
+    color: #222325;
+  }
+}
+
+/* כפתור הזמנה מחדש */
+.order-again-btn {
+  background-color: #1dbf73;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  padding: 8px 12px 10px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: darken(#1dbf73, 5%);
+  }
+  &:disabled {
+    background: #dadbdd;
+    cursor: default;
+  }
+}
+
+/* תווית מצב נוספת */
+.accepted-label {
+  background: #3498db;
+  color: #fff;
+}
+
+/* תא סטטוס בתוך הטבלה */
+.status-cell {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* ===================================================
+   התאמות רספונסיביות למסכים קטנים מבלי לשנות עיצוב
+   =================================================== */
+
+/* ---------- מסך בינוני (≤ 768px) ---------- */
+@media (max-width: 768px) {
+  .user-with-img {
+    img {
+      width: 60px;   /* מצמצמים קצת את תמונת הפרויקט */
+      height: 40px;
+      margin-right: 8px;
     }
-    &:disabled {
-      background: #dadbdd;
-      cursor: default;
+    .order-title {
+      font-size: 13px;  /* מצמצמים מעט את פונט הכותרת */
     }
   }
 
-  .accepted-label {
-    background: #3498db;
-    color: #fff;
+  .label {
+    font-size: 11px;    /* פונט קטן יותר */
+    padding: 3px 6px 5px 3px;
+    &.fulfilled-label,
+    &.rejected-label,
+    &.pending-label {
+      width: 75px;     /* צמצום רוחב הקופסה */
+    }
+  }
+
+  .order-again-btn {
+    padding: 6px 10px 8px 10px;  /* מצמצמים פדינג */
+    font-size: 11px;             /* פונט קטן יותר */
   }
 
   .status-cell {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    /* אין שינוי משמעותי, ישמרו יישור לימין */
   }
-  
+}
+
+/* ---------- מסך קטן (≤ 480px) ---------- */
+@media (max-width: 480px) {
+  .user-with-img {
+    img {
+      width: 50px;   /* קטן יותר */
+      height: 35px;
+      margin-right: 6px;
+    }
+    .order-title {
+      font-size: 12px;  /* פונט דחוס */
+    }
+  }
+
+  .label {
+    font-size: 10px;
+    padding: 2px 5px 4px 2px;
+    &.fulfilled-label,
+    &.rejected-label,
+    &.pending-label {
+      width: 60px;   /* רוחב מצומצם */
+    }
+  }
+
+  .order-again-btn {
+    padding: 5px 8px 6px 8px;
+    font-size: 10px;
+  }
+
+  .status-cell {
+    /* שומר על יישור לימין, אין שינוי נוסף */
+  }
+}
