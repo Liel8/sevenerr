@@ -53,6 +53,44 @@
             }
           }
         }
+
+        @media (max-width: 989px) {
+          th,
+          td {
+            padding: 10px 12px;
+            font-size: 13px;
+          }
+          th {
+            font-size: 11px;
+          }
+        }
+
+        /* ≤ 767px */
+        @media (max-width: 767px) {
+          th,
+          td {
+            padding: 8px 10px;
+            font-size: 12px;
+          }
+          th {
+            font-size: 10px;
+          }
+        }
+
+        /* ≤ 479px */
+        @media (max-width: 479px) {
+          th,
+          td {
+            padding: 6px 8px;
+            font-size: 11px;
+          }
+          th {
+            font-size: 9px;
+          }
+        }
       }
     }
   }
+
+
+

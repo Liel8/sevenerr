@@ -1,41 +1,146 @@
+// .order-list {
+//     width: 100%;
+//     border-collapse: collapse;
+//     background: #fff;
+//     border: 1px solid #dadbdd;
+//     overflow: hidden;
+  
+//     th, td {
+//       padding: 12px 16px;
+//       font-size: 14px;
+//       color: #404145;
+//       border-bottom: 1px solid #eee;
+//       text-align: left;
+//       vertical-align: middle;
+//     }
+
+//     td.no-orders-message {
+//       font-size: 16px;
+//       padding: 16px;
+//     }
+
+//     select {
+//       padding: 4px 2px;
+//     }
+  
+//     th {
+//       background: #f9f9f9;
+//       font-weight: 400;
+//       text-transform: uppercase;
+//       letter-spacing: 0.5px;
+//       font-size: 12px;
+//     }
+
+//     .th-status {
+//       text-align: right;
+//     }
+  
+//     tbody tr:hover {
+//       background: #fafafa;
+//     }
+//   }
+
 .order-list {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    border: 1px solid #dadbdd;
-    overflow: hidden;
-  
-    th, td {
-      padding: 12px 16px;
-      font-size: 14px;
-      color: #404145;
-      border-bottom: 1px solid #eee;
-      text-align: left;
-      vertical-align: middle;
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #dadbdd;
+  overflow: hidden;
+
+  th,
+  td {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #404145;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  td.no-orders-message {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  select {
+    padding: 4px 2px;
+  }
+
+  th {
+    background: #f9f9f9;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+  }
+
+  .th-status {
+    text-align: right;
+  }
+
+  tbody tr:hover {
+    background: #fafafa;
+  }
+
+  /* ============================================
+     רספונסיביות: תאפשר גלילת טבלה אופקית 
+     תוך התאמת פונט ופדינג למסכים קטנים יותר
+     ============================================ */
+
+  /* לטאבלטים ומעלה (≤ 989px) */
+  @media (max-width: 989px) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* גלילה חלקה באייפון */
+    white-space: nowrap;               /* למנוע שבר של טקסט בתאים */
+
+    th,
+    td {
+      padding: 10px 12px; /* מצמצמים מעט פדינג */
+      font-size: 13px;    /* מצמצמים מעט פונט */
     }
 
-    td.no-orders-message {
-      font-size: 16px;
-      padding: 16px;
-    }
-
-    select {
-      padding: 4px 2px;
-    }
-  
     th {
-      background: #f9f9f9;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      font-size: 11px;
+    }
+  }
+
+  /* למובייל (≤ 767px) */
+  @media (max-width: 767px) {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    th,
+    td {
+      padding: 8px 10px; /* עוד יותר מצומצם */
       font-size: 12px;
     }
 
+    th {
+      font-size: 10px;
+    }
+  }
+
+  /* למובייל צר מאוד (< 480px) */
+  @media (max-width: 479px) {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    th,
+    td {
+      padding: 6px 8px; /* קומפקטי מאוד */
+      font-size: 11px;
+    }
+
+    th {
+      font-size: 9px;
+    }
+
+    /* כדי שכותרת הסטטוס תישאר מיושרת לימין גם במובייל */
     .th-status {
       text-align: right;
     }
-  
-    tbody tr:hover {
-      background: #fafafa;
-    }
   }
+}

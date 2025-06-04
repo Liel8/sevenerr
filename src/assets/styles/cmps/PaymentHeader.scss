@@ -1,225 +1,209 @@
- 
-// .payment-header {
-//     width: 100%;
+  
+// .app-header.payment {
+//     display: flex;
+//     align-items: center;
+    
+//     min-height: 80px;
 //     background-color: #fff;
-//     border-bottom: 1px solid #dadbdd;
-//     padding: 16px 24px;
-  
-//     .header-row {
-//       display: flex;
-//       align-items: center;
-//       gap: 32px; // ← המרווח בין הלוגו ל־breadcrumbs
-//       max-width: 1200px;
-//       margin: 0 auto;
-//     }
-  
-//     .site-logo {
-//       text-decoration: none;
-  
-//       .logo-container {
-//         display: flex;
-//         align-items: center;
-  
-//         .logo {
-//           font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-//           font-size: 28px;
-//           font-weight: 700;
-//           color: #404145;
-//           position: relative;
-  
-//           .dot {
-//             display: inline-block;
-//             width: 6px;
-//             height: 6px;
-//             background-color: #1dbf73;
-//             border-radius: 50%;
-//             position: absolute;
-//             top: 50%;
-//             right: -10px;
-//             transform: translateY(-50%);
-//           }
-//         }
-//       }
-//     }
+//     border-bottom: 1px solid #e4e5e7;
   
 //     .header-breadcrumbs {
-//       flex: 1;
-  
-//       ul {
-//         display: flex;
-//         align-items: center;
-//         list-style: none;
-//         gap: 24px;
-//         padding: 0;
-//         margin: 0;
-  
-//         li.step {
-//           display: flex;
-//           align-items: center;
-//           gap: 8px;
-  
-//           .crumb-icon {
-//             width: 24px;
-//             height: 24px;
-//             min-width: 24px;
-//             min-height: 24px;
-//             border-radius: 50%;
-//             background-color: #e4e5e7;
-//             color: #62646a;
-//             font-size: 14px;
-//             font-weight: 600;
-//             display: flex;
-//             align-items: center;
-//             justify-content: center;
-//           }
-  
-//           .crumb-label {
-//             font-weight: 600;
-//             font-size: 14px;
-//             color: #62646a;
-//           }
-  
-//           .crumb-arrow {
-//             margin-inline-start: 4px;
-//             display: flex;
-//             align-items: center;
-//           }
-  
-//           &.current {
-//             .crumb-icon {
-//               background-color: #404145;
-//               color: #fff;
-//             }
-  
-//             .crumb-label {
-//               color: #404145;
-//             }
-//           }
-  
-//           &.done {
-//             .crumb-icon {
-//               background-color: #404145;
-//               color: #fff;
-//             }
-  
-//             .crumb-label {
-//               color: #404145;
-//             }
-//           }
-  
-//           &.future {
-//             .crumb-icon {
-//               background-color: #e4e5e7;
-//               color: #b5b6ba;
-//             }
-  
-//             .crumb-label {
-//               color: #b5b6ba;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-  
-.app-header.payment {
-    display: flex;
-    align-items: center;
-    
-    min-height: 80px;
-    background-color: #fff;
-    border-bottom: 1px solid #e4e5e7;
-  
-    .header-breadcrumbs {
-              flex: 1;
-              margin-left: 32px;
+//               flex: 1;
+//               margin-left: 32px;
           
-              ul {
-                display: flex;
-                align-items: center;
-                list-style: none;
-                gap: 24px;
-                padding: 0;
-                margin: 0;
-                // font-size: 16px;
+//               ul {
+//                 display: flex;
+//                 align-items: center;
+//                 list-style: none;
+//                 gap: 24px;
+//                 padding: 0;
+//                 margin: 0;
+//                 // font-size: 16px;
 
           
-                li.step {
-                  display: flex;
-                  align-items: center;
-                  gap: 8px;
+//                 li.step {
+//                   display: flex;
+//                   align-items: center;
+//                   gap: 8px;
 
-                  .crumb-icon {
-                    width: 24px;
-                    height: 24px;
-                    min-width: 24px;
-                    min-height: 24px;
-                    border-radius: 50%;
-                    background-color: #e4e5e7;
-                    color: #62646a;
-                    font-size: 14px;
-                    font-weight: 600;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                  }
+//                   .crumb-icon {
+//                     width: 24px;
+//                     height: 24px;
+//                     min-width: 24px;
+//                     min-height: 24px;
+//                     border-radius: 50%;
+//                     background-color: #e4e5e7;
+//                     color: #62646a;
+//                     font-size: 14px;
+//                     font-weight: 600;
+//                     display: flex;
+//                     align-items: center;
+//                     justify-content: center;
+//                   }
           
-                  .crumb-label {
-                    font-weight: 600;
-                    font-size: 16px;
-                    color: #62646a;
-                    text-decoration: none;
-                    cursor: pointer;
-                  }
+//                   .crumb-label {
+//                     font-weight: 600;
+//                     font-size: 16px;
+//                     color: #62646a;
+//                     text-decoration: none;
+//                     cursor: pointer;
+//                   }
                   
           
-                  .crumb-arrow {
-                    margin-inline-start: 4px;
-                    display: flex;
-                    align-items: center;
-                  }
+//                   .crumb-arrow {
+//                     margin-inline-start: 4px;
+//                     display: flex;
+//                     align-items: center;
+//                   }
           
-                  &.current {
-                    .crumb-icon {
-                      background-color: #222325;
-                      color: #fff;
+//                   &.current {
+//                     .crumb-icon {
+//                       background-color: #222325;
+//                       color: #fff;
 
-                    }
+//                     }
           
-                    .crumb-label {
-                      color: #222325;
+//                     .crumb-label {
+//                       color: #222325;
                       
-                    }
-                  }
+//                     }
+//                   }
           
-                  &.done {
-                    .crumb-icon {
-                      background-color: #222325;
-                      color: #fff;
-                    }
+//                   &.done {
+//                     .crumb-icon {
+//                       background-color: #222325;
+//                       color: #fff;
+//                     }
           
-                    .crumb-label {
-                        color: #222325;
+//                     .crumb-label {
+//                         color: #222325;
 
-                      &:hover {
-                        text-decoration: underline 2px solid #404145;
-                      }
+//                       &:hover {
+//                         text-decoration: underline 2px solid #404145;
+//                       }
                       
-                    }
-                  }
+//                     }
+//                   }
           
-                  &.future {
-                    .crumb-icon {
-                        background-color: #222325;
-                        color: #fff
-                    }
+//                   &.future {
+//                     .crumb-icon {
+//                         background-color: #222325;
+//                         color: #fff
+//                     }
           
-                    .crumb-label {
-                      color: #b5b6ba;
-                    }
-                  }
-                }
-              }
-            }
+//                     .crumb-label {
+//                       color: #b5b6ba;
+//                     }
+//                   }
+//                 }
+//               }
+//             }
+//   }
+  .app-header.payment {
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #e4e5e7;
+
+  .logo-container {
+    flex: 0 0 auto;
+    margin: 0 auto; /* במצב רגיל ישמר באמצע רק כשאין משהו אחר */
   }
-  
+
+  .header-breadcrumbs {
+    flex: 1;
+    margin-left: 32px;
+
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 24px;
+      padding: 0;
+      margin: 0;
+
+      li.step {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .crumb-icon {
+          width: 24px;
+          height: 24px;
+          min-width: 24px;
+          min-height: 24px;
+          border-radius: 50%;
+          background-color: #e4e5e7;
+          color: #62646a;
+          font-size: 14px;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .crumb-label {
+          font-weight: 600;
+          font-size: 16px;
+          color: #62646a;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .crumb-arrow {
+          margin-inline-start: 4px;
+          display: flex;
+          align-items: center;
+        }
+
+        &.current {
+          .crumb-icon {
+            background-color: #222325;
+            color: #fff;
+          }
+          .crumb-label {
+            color: #222325;
+          }
+        }
+
+        &.done {
+          .crumb-icon {
+            background-color: #222325;
+            color: #fff;
+          }
+          .crumb-label {
+            color: #222325;
+            &:hover {
+              text-decoration: underline 2px solid #404145;
+            }
+          }
+        }
+
+        &.future {
+          .crumb-icon {
+            background-color: #222325;
+            color: #fff;
+          }
+          .crumb-label {
+            color: #b5b6ba;
+          }
+        }
+      }
+    }
+  }
+
+  /* במסכים קטנים (≤ 768px): מסתירים את הלחם פירור והלוגו במרכז */
+  @media (max-width: 768px) {
+    justify-content: center;
+
+    .header-breadcrumbs {
+      display: none;
+    }
+
+    .logo-container {
+      margin: 0; /* כבר במרכז בגלל justify-content: center */
+    }
+  }
+}
+
