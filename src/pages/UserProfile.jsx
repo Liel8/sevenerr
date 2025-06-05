@@ -2,14 +2,10 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import {
-  loadSellerOrders,
-  updateOrder,
-} from '../store/actions/orders.actions'
-import {
-  loadGigs,
-  removeGig,
-} from '../store/actions/gig.actions'
+import { loadSellerOrders, updateOrder } 
+from '../store/actions/orders.actions'
+import { loadGigs, removeGig } 
+from '../store/actions/gig.actions'
 import { OrdersTable } from '../cmps/OrdersTable'
 
 export function UserProfile() {
@@ -71,6 +67,7 @@ export function UserProfile() {
     removeGig(gigId)
       .catch(err => console.error('Cannot delete gig', err))
   }
+  
 
   return (
     <section className="details-container">
@@ -85,7 +82,8 @@ export function UserProfile() {
             <div className="user-profile-label">
               <div className="username-line flex column align-center">
                 <div className="username-info">{user.fullname}</div>
-                <div className="secondary-name">@{user.username}</div>
+                {/* <div className="secondary-name">@{user.username}</div> */}
+                <div className="secondary-name">{user.username}</div>
               </div>
             </div>
             <div className="user-stats-desc">
@@ -107,7 +105,7 @@ export function UserProfile() {
                     </svg>
                     From
                   </span>
-                  <b>{user.location || '—'}</b>
+                  <b>{user.location || 'Israel'}</b>
                 </li>
                 <li className="member-since info-card-style flex">
                   <span>
@@ -127,7 +125,8 @@ export function UserProfile() {
                     Member since
                   </span>
                   <b>
-                    {new Date(user.createdAt).toLocaleDateString() || '—'}
+                    {/* {new Date(user.createdAt).toLocaleDateString() || '2025'} */}
+                    2025
                   </b>
                 </li>
                 <li className="member-res-time info-card-style flex">
@@ -165,7 +164,7 @@ export function UserProfile() {
                     Description
                   </h3>
                 </div>
-                <p>{user.desc || 'No description available.'}</p>
+                <p>{user.desc || "Bachelor's degree in Computer Science"}</p>
               </div>
               <div className="user-lang with-border-top">
                 <div className="header flex">
@@ -180,11 +179,11 @@ export function UserProfile() {
                       </li>
                     ))
                   ) : (
-                    <li>No languages specified.</li>
+                    <li>Hebrew  |  English  | Arabic</li>
                   )}
                 </ul>
               </div>
-              <div className="user-linked with-border-top">
+              {/* <div className="user-linked with-border-top">
                 <div className="header flex">
                   <h3>Linked Accounts</h3>
                 </div>
@@ -214,7 +213,7 @@ export function UserProfile() {
                     </span>
                   </li>
                 </ul>
-              </div>
+              </div> */}
               <div className="user-skills with-border-top">
                 <div className="header flex">
                   <h3 title="Let your buyers know your skills. Skills gained through your previous jobs, hobbies or even everyday life.">
@@ -223,19 +222,19 @@ export function UserProfile() {
                 </div>
                 <ul>
                   <li>
-                    <span className="pill">Website design</span>
+                    <span className="pill">Website Design</span>
                   </li>
                   <li>
-                    <span className="pill">Shopify marketing</span>
+                    <span className="pill">Deep Learning</span>
                   </li>
                   <li>
                     <span className="pill">Python</span>
                   </li>
                   <li>
-                    <span className="pill">JavaScript</span>
+                    <span className="pill">Java Script</span>
                   </li>
                   <li>
-                    <span className="pill">Sales</span>
+                    <span className="pill">React</span>
                   </li>
                 </ul>
               </div>
@@ -247,11 +246,11 @@ export function UserProfile() {
                 </div>
                 <ul>
                   <li>
-                    <span className="title">M.B.A. – Financial Management</span>
+                    <span className="title">B.Sc. – Computer Science</span>
                   </li>
                   <li>
                     <span className="empty">
-                      Universität Berlin, Germany, Graduated 2017
+                      CLB, Graduated 2023
                     </span>
                   </li>
                 </ul>

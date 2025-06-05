@@ -217,21 +217,21 @@ export function GigPurchaseSidebar({ gig }) {
 
     return {
       basic: {
-        title: "SILVER",
+        title: "Basic",
         description: "Basic plan for essential delivery",
         delivery: "2-Day Delivery",
         price: basePrice,
         features: mapFeatures('basic')
       },
       standard: {
-        title: "GOLD",
+        title: "Standard",
         description: "Standard plan with more value and features",
         delivery: "4-Day Delivery",
         price: Math.round(basePrice * 1.3),
         features: mapFeatures('standard')
       },
       premium: {
-        title: "PLATINUM",
+        title: "Premium",
         description: "All features included in the premium plan",
         delivery: "6-Day Delivery",
         price: Math.round(basePrice * 1.3 * 1.5),

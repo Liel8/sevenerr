@@ -1,3 +1,4 @@
+
 .gig-add {
   padding: 30px 15px;
   max-width: 720px;
@@ -101,25 +102,25 @@
           display: block;
         }
 
-.remove-image-btn {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 20px;
-  height: 20px;
+        .remove-image-btn {
+          position: absolute;
+          top: 4px;
+          right: 4px;
 
-  display: flex;            /* הוסף */
-  align-items: center;      /* הוסף */
-  justify-content: center;  /* הוסף */
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-size: 14px;
-  cursor: pointer;
-}
+          padding: 0;
+          border: none;
+          border-radius: 50%;
+          background: rgba(0, 0, 0, 0.6);
+          color: #fff;
+          font-size: 14px;
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+        }
       }
     }
 
@@ -135,5 +136,49 @@
 
       &:hover { background-color: #19a463; }
     }
+  }
+}
+
+/*---- אנימציה של הקפיצה ----*/
+@keyframes slideUp {
+  from {
+    transform: translateY(50vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* SCSS עבור המודל הקרוב לחלק העליון */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* רקע חצי־שקוף כהה */
+  display: flex;
+  align-items: flex-start;    /* דוחף את התוכן להתחלה על הציר האנכי */
+  justify-content: center;
+  padding-top: 40px;          /* מרחק מהקצה העליון */
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px 24px;
+  max-width: 300px;
+  width: 80%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: slideUp 0.5s ease-out; /* מפעיל את האנימציה */
+  
+  h3 {
+    font-size: 18px;
+    margin: 0;
+    color: #404145;
   }
 }

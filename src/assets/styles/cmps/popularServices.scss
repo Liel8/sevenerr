@@ -103,19 +103,60 @@
       }
     }
   }
+
+@media (max-width: 600px) {
+  .popular-services {
+    .ps-slider-wrapper {
+      width: calc(200px * 2 ); /* רוחב ל-2 כרטיסים + 16px gap */
+      margin: 0 auto;
+      overflow: hidden;
+
+      .ps-slides-track {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+
+        .ps-slide {
+          flex: 0 0 200px;
+        }
+      }
+
+      /* מוסרים את החצים במסכים קטנים */
+      .ps-btn {
+        display: none;
+      }
+
+      .ps-card {
+        width: 200px;
+        height: 260px;
+        padding: 0.75rem;
+
+        .ps-card-img {
+          height: 150px;
+        }
+        .ps-card-title {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
   
-  // @media (max-width: 600px) { רספונסיביות
-  //   .ps-card {
-  //     width: 140px;
-  //     height: 220px;
-  //     padding: 0.75rem;
-  //   }
+//   @media (max-width: 600px) { רספונסיביות
+//     .ps-card {
+//       width: 140px;
+//       height: 220px;
+//       padding: 0.75rem;
+//     }
   
-  //   .ps-card-img {
-  //     height: 120px;
-  //   }
+//     .ps-card-img {
+//       height: 120px;
+//     }
   
-  //   .ps-card-title {
-  //     font-size: 0.9rem;
-  //   }
-  // }
+//     .ps-card-title {
+//       font-size: 0.9rem;
+//     }
+//   }
+

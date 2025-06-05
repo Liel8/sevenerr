@@ -1,502 +1,30 @@
-// .payment-page {
-//   display: flex;
-//   justify-content: space-between;
-//   padding-top: 48px;
-//   margin-bottom: 200px;
 
-
-//   .payment-container {
-//     width: 57%;
-//     background: #fff;
-//     border-radius: 4px;
-//     overflow: hidden;
-//     border: 1px solid $light-clr4;
-
-//     /* HEADER */
-//     .payment-methods-header {
-//       padding: 16px;
-//       margin: 0;
-//       font-size: 16px;
-//       border: 1px solid $light-clr4;
-//       font-weight: 600;
-//     }
-
-//     /* RADIO + LOGOS */
-//     .payments-option {
-//       padding: 16px;
-//       margin-bottom: 4px;
-//       display: flex;
-//       align-items: center;
-//       gap: 12px;
-//       height: 64px;
-//       border-bottom: 1px solid $light-clr4;
-
-//       label {
-//         display: flex;
-//         align-items: center;
-//         gap: 8px;
-//         font-size: 16px;
-//         color: #333;
-
-//       }  
-
-//       input {
-//         width: 20px;
-//         border: #dadbdd;
-//       }
-
-//       span {
-//         padding-left: 24px;
-//       }
-     
-      
-//     }
-
-//     /* CREDIT CARD FORM */
-//     .credit-card-details-wrapper {
-//       padding: 24px 18px 24px 40px;
-//       // border: 1px solid $light-clr4;
-//       // height: 518px;
-
-//       span {
-//         color: #222325;
-//         font-size: 16px;
-//       }
-    
-
-//       label {
-//         font-size: 16px;
-//         margin: 0;
-//         color: #333;
-//         width: 77%;
-//       }
-
-//       .credit-card-details {
-//         display: flex;
-//         flex-direction: column;
-//         gap: 20px;
-
-        
-
-//         /* Card Number Field */
-//         .card-number {
-//           display: flex;
-//           flex-direction: column;
-//           gap: 8px;
-
-
-
-//           .credit-card-input-wrapper {
-//             display: flex;
-//             align-items: center;
-//             gap: 10px;
-//             padding: 12px;
-//             border: 1px solid #ccc;
-//             border-radius: 8px;
-            
-//             input {
-//               font-size: 16px;
-//             }
-
-//             .card-logo {
-//               width: 24px;
-//               height: 16px;
-//               color: #95979d;
-//             }
-
-//             .locker-icon {
-//               width: 24px;
-//               height: 16px;
-//             }
-
-//             input {
-//               // border: none;
-//               // flex: 1;
-//               // font-size: 14px;
-//               // padding: 0;
-//               width: 100%;
-//               height: 100%;
-//               margin: 0;
-//               border: none;
-
-//             }
-//           }
-//         }
-
-//         /* Expiration + Security Code on one line */
-//         .card:nth-of-type(2) {
-//           display: flex;
-//           gap: 15px;
-//           width: 77%;
-
-//           .expiration-date,
-//           .security-code {
-//             flex: 1;
-//             display: flex;
-//             flex-direction: column;
-//             gap: 8px;
-
-//             label {
-//               font-size: 16px;
-//               margin: 0;
-//               color: #333;
-
-//             }
-
-//             input {
-//               padding: 12px;
-//               font-size: 16px;
-//               border: 1px solid #ccc;
-//               border-radius: 8px;
-//             }
-//           }
-//         }
-
-//         /* Cardholder Name & Display Name */
-//         .full-name,
-//         .display-name {
-//           display: flex;
-//           flex-direction: column;
-//           gap: 8px;
-//           width: 77%;
-
-//           // label {
-//           //   font-size: 16px;
-//           //   margin: 0;
-//           //   color: #333;
-
-//           // }
-
-//           input {
-//             width: 100%;
-//             padding: 12px;
-//             font-size: 16px;
-//             border: 1px solid #ccc;
-//             border-radius: 8px;
-//           }
-//         }
-
-//         /* Save Card Checkbox */
-//         .save-card-field {
-//           padding-top: 8px;
-//         }
-
-//         .checkbox-row {
-//           display: flex;
-//           align-items: baseline; 
-//           gap: 8px;
-//           cursor: pointer;       
-//         }
-
-//         input[type="checkbox"] {
-//           margin: 0;
-//           height: 12px;
-//         }
-
-//         .checkmark {
-//           width: 16px;
-//           height: 16px;
-//         }
-
-//         .checkbox-message {
-//           margin: 0;
-//           font-size: 16px;
-//           color: #333;
-//         }
-//       }
-//     }
-
-//     /* PayPal Option */
-//     // .payments-option-1 {
-//     //   padding: 0 20px 20px;
-//     //   display: flex;
-//     //   align-items: center;
-//     //   gap: 12px;
-//     //   height: 64px;
-
-//     //   label {
-//     //     display: flex;
-//     //     // align-items: center;
-//     //     cursor: pointer;
-//     //     gap: 8px;
-//     //   }
-
-//     //   input {
-//     //     width: 20px;
-//     //     border: #dadbdd;
-//     //     border-color: #222325;
-//     //   }
-
-//     //   .radio:checked {
-//     //     border-width: 5px;
-//     //     border-color: #222325;
-//     //   }
-//     // }
-//   }
-
-//   /* RIGHT SIDEBAR */
-//   .side-content {
-//     width: 28%;
-//     background: #fff;
-//     border: 1px solid #e4e5e7;
-//     border-radius: 4px;
-//     margin-right: 81px;
-//     font-weight: 500;
-//     // height: 649px;
-
-//     .order-details-container {
-//       display: flex;
-//       background: #f9f9f9;
-//       padding: 16px 24px;
-//       border-radius: 8px;
-
-//       .order-details-header {
-//         display: flex;
-//         padding-bottom: 16px;
-        
-
-
-//         .image-container {
-//           position: relative;
-
-//           .order-image {
-//             width: 125px;
-//             max-width: 125px;
-//             height: 80px;
-//             border-radius: 4px;
-//             margin-right: 16px;
-//           }
-//         }
-
-//         .order-title {
-//           font-size: 16px;
-//           font-weight: 700;
-//           margin-bottom: 4px;
-//           text-align: left;
-//           color: #62646a;
-//           margin-left: 16px;
-
-//         }
-//       }
-
-
-
-//       .order-details-general {
-//         display: flex;
-//         justify-content: space-between;
-//         align-items: center;
-//         gap: 8px;
-//         font-size: 14px;
-
-//         .order-details-general-title {
-//           font-weight: 700;
-//           font-size: 16px;
-//           color: #62646a;
-//         }
-
-//         .order-details-general-price {
-//           font-size: 16px;
-//           color: #62646a;
-//           margin: 0px 0px 0px 4px;
-//         }
-//       }
-
-//       .order-details-items-container {
-//         margin-top: 16px;
-
-
-//         .order-details-item {
-//           position: relative;
-//           color: #62646a;
-//           font-size: 16px;
-//           margin: 0px 9px 12px 0px;
-//           &
-//           svg {
-//             margin-right: 9px;
-            
-//           }
-//           &.disabled {
-//             // color: #b5b6ba;
-//             color: #999;
-            
-//               svg {
-//                 // color: #d4d5d9;
-//                 fill: #ccc;
-//               }
-            
-//           }
-//         }
-//       }
-//     }
-
-//     .promo-code {
-//       padding: 16px 24px;
-//       border: 1px solid  #e4e5e7;
-//       font-size: 16px;
-//       color: #62646a;
-
-//       .promo-code-input-hidden {
-//         display: flex;
-//         align-items: center;
-
-//         svg {
-//           color: #95979d;
-//           margin-left: 7px;
-//         }
-
-//       }
-
-//     }
-
-//     .summary {
-//       padding: 16px 24px;
-      
-
-
-//       .summary-table {
-//         color: #62646a;
-
-//         .table-row {
-//           display: flex;
-//           justify-content: space-between;
-//           padding-bottom: 12px;
-          
-//           svg {
-//             margin-left: 7px;
-//           }
-
-//           .tax-row {
-//             padding-top: 6px;
-//           }
-
-//           .row-title,
-//           .price {
-//             font-size: 16px;
-//           }
-//         }
-//       }
-
-//       .summary-footer {
-//         border-top: 1px solid #e4e5e7;
-//         margin-top: 4px;
-
-//         .total-price {
-//           display: flex;
-//           justify-content: space-between;
-//           font-size: 18px;
-//           font-weight: 700;
-//           color: #62646a;
-//           padding: 16px 0;
-
-//         }
-
-//         .delivery-date {
-//           display: flex;
-//           justify-content: space-between;
-//           font-size: 16px;
-//           color: #62646a;
-//         }
-//       }
-//     }
-
-//     .pay-button-component {
-//       margin-top: 16px;
-
-//       .confirm-pay-button {
-//         width: 100%;
-//         padding: 14px;
-//         background: #000;
-//         color: #fff;
-//         font-size: 16px;
-//         font-weight: 600;
-//         border: none;
-//         border-radius: 4px;
-//         cursor: pointer;
-//         margin: 0;
-
-//       }
-//     }
-//     .secure-payment {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       gap: 8px;
-//       font-size: 14px;
-//       color: #62646a;
-//       margin-top: 8px;
-//       line-height: 22px;
-
-//     }
-
-//     .currency-message {
-//       color: #74767e;
-//       margin-top: 16px;
-//       font-size: 14px;
-//       line-height: 21px;
-
-//       .price {
-//         margin-left: 4px;
-//       }
-//     }
-//   }
-// }
-
-
-// .loading-wrapper {
-//   height: 100vh;          
-//   display: flex;
-//   align-items: center;     
-//   justify-content: center; 
-// }
-
-// .loading-gif {
-//   width: 40px;
-//   height: 40px;
-//   margin-top: 0;
-// }
-
-
-// .input:focus {
-//   outline: none;
-//   box-shadow: none;
-// }
 
 .payment-page {
   display: flex;
-  flex-wrap: wrap;            // מאפשר מעבר לשורה חדשה כשאין רוחב מספק
+  flex-wrap: wrap;            
   justify-content: space-between;
   padding-top: 48px;
   margin-bottom: 200px;
-
-  // גובה אוטומטי; אפשר להסיר אם הוא מפריע
   // height: auto;
-
-  // ****************************
-  // המחלקה השמאלית: Payment container
-  // ****************************
   .payment-container {
-    // במקום width: 57% נעדיף flex-basis ו־max-width
-    flex: 1 1 57%;            // יתפוס לפחות 57% מהרוחב, אבל יתכווץ אם צריך
-    max-width: 700px;         // פה נבחר ערך ריאלי, תלוי בעיצוב שלך
+    flex: 1 1 57%;            
+    max-width: 700px;       
     background: #fff;
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid $light-clr4;
+    padding: 0;              
 
-    // שיטת פדינג מקורי:
-    padding: 0;               // ננקה קודם לפי מה שמוגדר בתוך הפעולות הפנימיות
-
-    // ** ראש הכרטיסיות **
     .payment-methods-header {
       padding: 16px;
       margin: 0;
       font-size: 16px;
       border: 1px solid $light-clr4;
       font-weight: 600;
-      // background: #f9f9f9;    // להבליט קצת את הכותרת
+      // background: #f9f9f9;   
     }
 
-    // ** אפשרויות תשלום (כרטיסי אשראי + לוגואים) **
     .payments-option {
       padding: 16px;
       margin-bottom: 4px;
@@ -524,12 +52,9 @@
       }
     }
 
-    // ** טופס פרטי כרטיס אשראי **
+
     .credit-card-details-wrapper {
-      // במקום פדינג קבוע בצד אחד, ניתן להשתמש ב־padding אחיד:
       padding: 24px 18px 24px 40px;
-      // אם רוצים בדשבורד מלא, אפשר להשאיר את מה שהיה (24px 18px 24px 40px)
-      // אבל כדי לרספונסיביות נחזיר אחיד
 
       span {
         color: #222325;
@@ -540,7 +65,7 @@
         font-size: 16px;
         margin: 0;
         color: #333;
-        width: auto;         // נרצה גמישות, לכן לא קבוע 77%
+        width: auto;        
       }
 
       .credit-card-details {
@@ -548,7 +73,6 @@
         flex-direction: column;
         gap: 20px;
 
-        /* מספר כרטיס */
         .card-number {
           display: flex;
           flex-direction: column;
@@ -583,16 +107,15 @@
           }
         }
 
-        /* Expiration + Security Code */
         .card:nth-of-type(2) {
           display: flex;
           gap: 15px;
-          width: 100%;         // במקום 77%, נעשה 100% ברירת מחדל
-          flex-wrap: wrap;     // בשורה אחת, אבל עטיפה במידת הצורך
+          width: 100%;        
+          flex-wrap: wrap;   
 
           .expiration-date,
           .security-code {
-            flex: 1 1 150px;   // כל אחד יתפוס לפחות 150px ואז יתכווץ
+            flex: 1 1 150px;  
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -614,14 +137,13 @@
           }
         }
 
-        /* Cardholder Name & Display Name */
         .full-name,
         .display-name {
           display: flex;
           flex-direction: column;
           gap: 8px;
-          width: 100%;         // במקום 77%, נעשה מלא רוחב
-          // max-width: 400px;    // אפשר להגביל בגודל טבלאי
+          width: 100%;       
+          // max-width: 400px;    
 
           input {
             width: 100%;
@@ -633,7 +155,6 @@
           }
         }
 
-        /* Save Card Checkbox */
         .save-card-field {
           padding-top: 8px;
 
@@ -647,7 +168,7 @@
           input[type="checkbox"] {
             margin: 0;
             height: 12px;
-            width: 12px;       // כדי שיהיה בגודל סביר
+            width: 12px;    
           }
           // .checkmark {
           //   width: 16px;
@@ -663,9 +184,6 @@
       }
     }
 
-    // ******************************************
-    // נקודות שבירה למובייל / טאבלט בתוך .payment-container
-    // ******************************************
     @media (max-width: 1024px) {
       .credit-card-details-wrapper {
         padding: 16px 16px;
@@ -677,46 +195,41 @@
     }
 
     @media (max-width: 768px) {
-      // כדי שהקונטיינר יתפוס כמעט כל הרוחב במובייל
       flex: 1 1 100%;
       max-width: 100%;
-      margin-bottom: 24px;  // רווח בין העמודות כשמתחת
+      margin-bottom: 24px;  
     }
   }
 
-  // ****************************
-  // המחלקה הימנית: Side-content (סיכום ההזמנה)
-  // ****************************
   .side-content {
-    // במקום width: 28% נשתמש גם פה ב־flex
     flex: 1 1 28%;
-    max-width: 350px;       // ריאלי עבור סיכום
+    max-width: 350px;       
     background: #fff;
     border: 1px solid #e4e5e7;
     border-radius: 4px;
-    margin-right: 81px;     // נוריד את הערך בהתאמה במסכים קטנים
+    margin-right: 81px;     
     font-weight: 500;
     height: auto;
 
     .order-details-container {
       display: flex;
-      flex-direction: column; // כדי שהכותרת/תמונה והפרטים מונחים אנכית
+      flex-direction: column; 
       background: #f9f9f9;
       padding: 16px 24px;
       border-radius: 8px;
 
       .order-details-header {
         display: flex;
-        align-items: flex-start; // שינינו ל-flex-start במקום center
+        align-items: flex-start; 
         padding-bottom: 16px;
         gap: 12px; 
 
         .image-container {
-          flex: 0 0 125px;    // הגדרת Flex-basis של 80px וגם מונעת התכווצות/התפשטות
+          flex: 0 0 125px;    
           height: 80px;
 
           .order-image {
-            width: 100%;     // למלא את הקונטיינר של 80px
+            width: 100%;     
             height: 100%;
             border-radius: 4px;
             object-fit: cover;
@@ -725,14 +238,14 @@
         }
 
         .order-title {
-          flex: 1;           // יתפוס את שאר הרוחב הפנוי
+          flex: 1;          
           font-size: 16px;
           font-weight: 700;
           margin-bottom: 4px;   
           margin-left: 16px;      
           color: #62646a;
-          line-height: 1.3;  // וודא שהטקסט עוטף יפה, לא חונק
-          word-break: break-word; // במידת הצורך לשבור מילים ארוכות
+          line-height: 1.3;  
+          word-break: break-word; 
         }
       }
 
@@ -758,9 +271,10 @@
       }
 
       .order-details-items-container {
-        margin-top: 0;      // כבר יש ריווח מעל
+        margin-top: 0;      
         display: flex;
-        flex-wrap: wrap;    // כל Feature יכול לעטוף שורה
+        flex-direction: column;
+        // flex-wrap: wrap;    
         // gap: 8px;
 
         .order-details-item {
@@ -788,7 +302,6 @@
       }
     }
 
-    // קוד פרומו
     .promo-code {
       padding: 16px 24px;
       border: 1px solid #e4e5e7;
@@ -807,7 +320,6 @@
       }
     }
 
-    // סיכום הסכומים
     .summary {
       padding: 16px 24px;
       // margin-top: 16px;
@@ -907,14 +419,10 @@
       }
     }
 
-    // ****************************
-    // נקודות שבירה ל־side-content
-    // ****************************
-
     @media (max-width: 1024px) {
-      margin-right: 24px;    // מצמצמים רווח צדדי
+      margin-right: 24px;    
       max-width: 100%;
-      flex: 1 1 48%;         // כדי שיתיישב מתחת לשמאל אם צריך
+      flex: 1 1 48%;         
     }
 
     @media (max-width: 768px) {
@@ -925,7 +433,6 @@
   }
 }
 
-/* לחצן טעינה */
 .loading-wrapper {
   height: 100vh;          
   display: flex;
@@ -939,7 +446,6 @@
   margin-top: 0;
 }
 
-/* הוצאת מסגרות ברירת מחדל ממוקד קלט */
 .input:focus {
   outline: none;
   box-shadow: none;

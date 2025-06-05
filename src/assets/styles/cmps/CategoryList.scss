@@ -1,3 +1,73 @@
+// .category-list-wrapper {
+//   background-color: #fff;
+//   z-index: 100;
+//   padding: 28px 10px;
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .category-list {
+//   max-width: 1600px;
+//   width: 100%;
+// }
+
+// .category-list ul {
+//   list-style: none;
+//   margin: 0;
+//   padding: 0;
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 15px;
+//   justify-content: flex-start;
+// }
+
+// .category-list li {
+//   width: 129px;
+//   height: 129px;
+//   background-color: #fff;
+//   border: 1px solid #ddd;
+//   border-radius: 16px;
+//   padding: 14px;
+//   transition: background 0.3s ease, box-shadow 0.3s ease;
+//   cursor: pointer;
+//   text-align: left;
+
+//   &:hover {
+//     background: radial-gradient(63.44% 63.44% at 50% 50%, #c2ffe2 0, #fff 100%), #fff;
+//     // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+//   }
+
+//   img {
+//     width: 32px;
+//     height: 32px;
+//     margin-bottom: 8px;
+//     display: block;
+//     margin-right: auto;
+//   }
+
+//   h3 {
+//     margin: 0;
+//     font-size: 14px;
+//     color: #333;
+//     font-weight: 500;
+//     font-weight: bold;
+//     margin-top: 12px;
+//   }
+
+//   a {
+
+//     text-decoration: none;
+//     color: inherit;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center; // מרכז אנכית
+//     height: 100%;
+//   }
+// }
+
+
+  
+
 .category-list-wrapper {
   background-color: #fff;
   z-index: 100;
@@ -18,7 +88,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  justify-content: flex-start;
+  justify-content: flex-start; /* תצמיד שמאלה כברירת מחדל במסכים רחבים */
 }
 
 .category-list li {
@@ -34,7 +104,6 @@
 
   &:hover {
     background: radial-gradient(63.44% 63.44% at 50% 50%, #c2ffe2 0, #fff 100%), #fff;
-    // box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 
   img {
@@ -49,90 +118,50 @@
     margin: 0;
     font-size: 14px;
     color: #333;
-    font-weight: 500;
     font-weight: bold;
     margin-top: 12px;
+    line-height: 1.2;
   }
 
   a {
-
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
-    justify-content: center; // מרכז אנכית
+    justify-content: center;
     height: 100%;
   }
 }
 
+/* ============================= */
+/* מסכים קטנים (עד 600px) – 3 קוביות בשורה בגודל 100×100, יישור שמאלה */
+@media (max-width: 600px) {
+  .category-list ul {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 8px;
+    width: 100%;            /* חובה כדי שלא יהיה גלילה אופקית */
+    margin: 0;              /* אין margin בשביל להיצמד לשמאל */
+    padding: 0;
+    justify-content: start; /* מוודא שכל התוכן יהיה משמאל */
+  }
 
-  
+  .category-list li {
+    width: 100px;           /* רוחב קבוע לכל קוביה */
+    height: 100px;          /* גובה קבוע כדי שיהיה ריבוע */
+    padding: 6px;           /* צמצום padding כדי שהתוכן יתאים */
+  }
 
-/* עיצוב הקונטיינר הכללי */
-// .category-list {
-//   // position: sticky;
-//   // top: 90px; /* הגובה של ה־AppHeader */
-//   // background-color: #fff;
-//   // z-index: 100;
-//   // padding-block: 10px;
-//     max-width: 1250px; /* אפשר לשנות בהתאם לעיצוב שלך */
-//     margin: 0 auto;
-//     padding: 12px 0;
-//     padding-inline: 32px;
-//   }
-  
-//   /* עיצוב הרשימה */
-//   .category-list ul {
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 0;
-//     /* Flex מאפשר לפריטים להיות בשורה, ו-flex-wrap מאפשר להם לרדת שורה אם לא נכנס */
-//     display: flex;
-//     flex-wrap: wrap;
-//     gap: 12px; /* רווח אופקי/אנכי בין הקטגוריות */
-//     /* אופציונלי: אם רוצים את כולם מיושרים במרכז */
-//     justify-content: start;
-//   }
-  
-//   /* עיצוב הפריט ברשימה - כל כרטיס קטגוריה */
-//   .category-list li {
-//     width: 120px;                /* גודל אחיד לכרטיס */
-//     background-color: #fff;
-//     border: 1px solid #ddd;
-//     border-radius: 8px;
-//     padding: 14px;
-//     // text-align: center;
-//     transition: box-shadow 0.3s ease;
-//     cursor: pointer;
-//   }
-  
-//   /* אפקט רחף (hover) */
-//   .category-list li:hover {
-//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-//   }
-  
-//   /* עיצוב האייקון (התמונה) */
-//   .category-list li img {
-//     width: 32px;
-//     height: 32px;
-//     // margin: 0 auto 8px; /* מרכז אופקית, עם 8px למטה */
-//     margin-bottom: 2px;
-//     display: block;
-    
-//   }
-  
-//   /* עיצוב כותרת הקטגוריה */
-//   .category-list li h3 {
-//     margin: 0;
-//     font-size: 14px;
-//     color: #333;
-//     font-weight: 500;
-//   }
-  
-//   /* קישור ללא עיצוב דיפולטי */
-//   .category-list li a {
-//     text-decoration: none;
-//     color: inherit;
-//     display: block; /* כדי שכל הכרטיס יהיה לחיץ */
-//   }
-  
+  .category-list li img {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
+  }
+
+  .category-list li h3 {
+    font-size: 12px;
+    margin-top: 4px;
+    text-align: center;
+    line-height: 1.2;
+  }
+}

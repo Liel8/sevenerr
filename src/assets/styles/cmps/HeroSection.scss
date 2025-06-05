@@ -191,6 +191,18 @@
   }
 }
 
+/* מסתיר את ה-hero-section במסכים צרי רוחב */
+@media (max-width: 768px) {
+  .hero-section {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    display: none;
+  }
+}
 
 
 
